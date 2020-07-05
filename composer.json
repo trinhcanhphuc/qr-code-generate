@@ -1,4 +1,6 @@
 {
+  "name": "qr-code-generater",
+  "description": "Make QR code from any sources",
   "require" : {
     "silex/silex": "^2.0.4",
     "monolog/monolog": "^1.22",
