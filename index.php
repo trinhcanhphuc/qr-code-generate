@@ -2,18 +2,54 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="/public/css/bootstrap.min.css">
-  <script src="/public/js/jquery-3.5.1.min.js"></script>
-  <script src="/public/js/bootstrap.min.js"></script>
+  <title>QR CODE Generate</title>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' href='/public/css/bootstrap.min.css'>
+  <script src='/public/js/jquery-3.5.1.min.js'></script>
+  <script src='/public/js/bootstrap.min.js'></script>
+  <link rel='stylesheet' href='/public/css/main.css'>
 </head>
 
 <body>
+  <div class='container'>
+    <div class='form-group'>
+      <h1>QR Code generate link</h1>
+    </div>
+    <div class='form-group'>
+      <img src='' alt='qr-code-image'>
+    </div>
+    <div class='form-group'>
+      <input type='text' id='qr-link'/>
+    </div>
+    <div class='form-group'>
+      <button type='button' class='btn btn-primary' id='btn-get-qr-image'>
+        Get QR Image
+      </button>
+    </div>
+  </div>
 
-<h1>My first PHP page</h1>
+  <?php
 
-<?php
-echo "Hello World!!";
-?> 
+  ?>
 
+  <script>
+    $('#btn-get-qr-image').click(function() {
+      $.ajax({
+        method: 'POST',
+        url: 'qr_address_generate.php',
+        data: {url: 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=http%3A%2F%2Fwww.google.com%2F&choe=UTF-8'},
+      })
+      .done(function(result) {
+        console.log('done')
+        console.log(result)
+      })
+      .fail(function(error) {
+        console.log(error)
+      })
+      .always(function() {
+      })
+    })
+  </script>
 </body>
 </html>
