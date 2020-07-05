@@ -5,10 +5,10 @@
   <title>QR CODE Generate</title>
   <meta charset='utf-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel='stylesheet' href='/public/css/bootstrap.min.css'>
-  <script src='/public/js/jquery-3.5.1.min.js'></script>
-  <script src='/public/js/bootstrap.min.js'></script>
-  <link rel='stylesheet' href='/public/css/main.css'>
+  <link rel='stylesheet' href='/css/bootstrap.min.css'>
+  <script src='/js/jquery-3.5.1.min.js'></script>
+  <script src='/js/bootstrap.min.js'></script>
+  <link rel='stylesheet' href='/css/main.css'>
 </head>
 
 <body>
