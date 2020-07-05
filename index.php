@@ -17,7 +17,7 @@
       <h1>QR Code generate link</h1>
     </div>
     <div class='form-group'>
-      <img src='' alt='qr-code-image'>
+      <img src='' id='qr-code-image'>
     </div>
     <div class='form-group'>
       <input type='text' id='qr-link'/>
@@ -38,11 +38,10 @@
       $.ajax({
         method: 'POST',
         url: 'qr_address_generate.php',
-        data: {url: 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=http%3A%2F%2Fwww.google.com%2F&choe=UTF-8'},
+        data: {url: $('#qr-link').val()},
       })
       .done(function(result) {
-        console.log('done')
-        console.log(result)
+        $('#qr-code-image').attr('src','data:image/png;base64, ' + result);
       })
       .fail(function(error) {
         console.log(error)
