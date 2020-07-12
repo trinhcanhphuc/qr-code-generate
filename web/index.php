@@ -10,7 +10,7 @@
 
 <body>
   <div class='w-80'>
-    <div id='qrcode-img' class='p-5'>
+    <div id='qrcode-img' class='p-5' style='height: 300px'>
       <img src='' />
     </div>
     <div id='qrcode-title'></div>
@@ -40,9 +40,9 @@
   <style>
 
   </style>
-  <script type='text/javascript' src='/js/libs/jquery.min.js' defer></script>
-  <script type='text/javascript' src='/js/libs/jquery-qrcode.min.js' defer></script>
-  <script type='text/javascript' src='/js/utils/qr_code.js' defer></script>
+  <script type='text/javascript' src='/js/libs/jquery.min.js'></script>
+  <script type='text/javascript' src='/js/libs/jquery-qrcode.min.js'></script>
+  <script type='text/javascript' src='/js/utils/qr_code.js'></script>
   <script type='text/javascript' src='/js/home.js' defer></script>
 </body>
 </html>
