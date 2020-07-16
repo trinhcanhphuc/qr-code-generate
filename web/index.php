@@ -17,27 +17,46 @@
       <img src='' />
     </div>
     <div id='qrcode-title'></div>
-    <div class=''>
-      <div class='flex-ns justify-between-ns mv2'>
-        <div class='b'>Choose Input Type</div>
+    <div class='ma3'>
+      <div class='flex justify-between mv2'>
+        <div class='b lh-copy'>Choose Input Type</div>
         <select id='select-input-type' class='bg-gray-05 pa1'>
           <option value='url' class='' selected>Url</option>
           <option value='text' class=''>Text</option>
           <option value='phone' class=''>Phone</option>
         </select>
       </div>
-      <textarea id='qrcode-text' class='bg-gray-05 br2 pa2' value=''></textarea>
+      <textarea id='qrcode-text' class='bg-gray-05 br2 pa2 w-100 txtr-v' value=''></textarea>
       <div id='input-error' class='red dn'>Phone number invalid!</div>
-    </div>
-    <div class=''>
-      <button id='btn_save_qr' class='b b-0 grow inline-flex items-center ma2 no-underline pa2 tc'>
-        <svg class='dib h1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z'/></svg>
-        <span class='f6 ml3 pr2'>Download</span>
-      </button>
+      <div class='mv2 tc'>
+        <button id='btn_save_qr' class='b b-0 grow inline-flex items-center no-underline pa2 tc'>
+          <svg class='dib h1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z'/></svg>
+          <span class='f6 ml3 pr2'>Download</span>
+        </button>
+      </div>
     </div>
   </div>
 
   <?php
+
+    include('./phpqrcode/qrlib.php');
+
+    // how to build raw content - QRCode to send SMS
+    
+    $tempDir = 'C:\Users\trinh\Projects\qr-code-generate\web';
+    
+    // here our data
+    $phoneNo = '(049)012-345-678';
+    
+    // we building raw data
+    $codeContents = 'sms:'.$phoneNo;
+    
+    // generating
+    QRcode::png($codeContents, $tempDir.'021.png', QR_ECLEVEL_L, 3);
+
+    // displaying
+    echo '<img src="'.$tempDir.'021.png" />';
+    
 
   ?>
   <style>
@@ -56,7 +75,22 @@
     .bg-gray-10 { background-color: rgba( 0, 0, 47, .1 ); }
     .bg-gray-05 { background-color: rgba( 0, 0, 47, .05 ); }
     #qrcode-img {
+      width: 300px;
       height: 300px;
+    }
+    #qrcode-text {
+      height: 100px;
+      min-height: 50px;
+      max-height: 150px;
+    }
+    .txtr-v {
+      resize: vertical;
+    }
+    .txtr-h {
+      resize: horizontal;
+    }
+    .txtr-n {
+      resize: none;
     }
   </style>
   <script type='text/javascript' src='/js/home.js'></script>
