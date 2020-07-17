@@ -45,7 +45,9 @@
   }
 
   function render_qr_by_url($url) {
-    
+    $tempDir = 'C:\Users\trinh\Projects\qr-code-generate\web';
+    QRcode::png($url, $tempDir.'\url.png');
+    echo '<img src="'.'\url.png" />';
   }
 
   function render_qr_by_phone($phoneNumber) {
@@ -57,8 +59,8 @@
   function render_qr_by_sms($phoneNumber) {
     $content = 'sms:'.$phoneNumber;
     $tempDir = 'C:\Users\trinh\Projects\qr-code-generate\web';
-    QRcode::png($content, $tempDir.'\email.png');
-    echo '<img src="'.'\email.png" />';
+    QRcode::png($content, $tempDir.'\sms.png');
+    echo '<img src="'.'\sms.png" />';
   }
 
   function render_qr_by_email($email) {
@@ -75,7 +77,10 @@
   }
 
   function render_qr_by_skype($skype) {
-    
+    $content = 'skype:'.$skype.'?call';
+    $tempDir = 'C:\Users\trinh\Projects\qr-code-generate\web';
+    QRcode::png($content, $tempDir.'\skype.png');
+    echo '<img src="'.'\skype.png" />';
   }
 
 ?>

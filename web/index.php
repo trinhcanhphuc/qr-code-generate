@@ -42,6 +42,8 @@
 
     echo "<br>render_qr_by_text<br>";
     render_qr_code('text', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin nibh augue, suscipit a');
+    echo "<br>render_qr_by_url<br>";
+    render_qr_code('url', 'https://www.google.com');
     echo "<br>render_qr_by_phone<br>";
     render_qr_code('phone', '(049)012-345-678');
     echo "<br>render_qr_by_email<br>";
@@ -54,6 +56,8 @@
     ]);
     echo "<br>render_qr_by_sms<br>";
     render_qr_code('sms', '(049)012-345-678');
+    echo "<br>render_qr_by_skype<br>";
+    render_qr_code('skype', 'live:johndoe');
     echo "<br><br><br>";
   ?>
   <style>
