@@ -39,8 +39,9 @@
 
   <?php
     include('./render_qr_code.php');
-    render_qr_code('phone', '(049)012-345-678');
 
+    render_qr_code('text','Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin nibh augue, suscipit a');
+    render_qr_code('phone', '(049)012-345-678');
   ?>
   <style>
     .b-0 {
