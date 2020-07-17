@@ -8,13 +8,11 @@
     'SMS' => 'sms',
     'EMAIL' => 'email',
     'EMAIL_WITH_CONTENT' => 'email_with_content',
-    'SKYPE' => 'skype'
+    'SKYPE' => 'skype',
+    'BUSINESS_CARD' => 'business_card'
   ];
 
   function render_qr_code($inputType, $data) {
-    echo "render_qr_code";
-    echo $inputType;
-    echo $data;
     switch($inputType) {
       case QR_INPUT_TYPE['TEXT']:
         render_qr_by_text($data);
@@ -29,7 +27,6 @@
         render_qr_by_sms($data);
         break;
       case QR_INPUT_TYPE['EMAIL']:
-        echo "render_qr_by_email";
         render_qr_by_email($data);
         break;
       case QR_INPUT_TYPE['EMAIL_WITH_CONTENT']:
@@ -57,8 +54,11 @@
     echo '<img src="'.'\phone.png" />';
   }
 
-  function render_qr_by_sms($sms) {
-    
+  function render_qr_by_sms($phoneNumber) {
+    $content = 'sms:'.$phoneNumber;
+    $tempDir = 'C:\Users\trinh\Projects\qr-code-generate\web';
+    QRcode::png($content, $tempDir.'\email.png');
+    echo '<img src="'.'\email.png" />';
   }
 
   function render_qr_by_email($email) {
@@ -67,8 +67,11 @@
     echo '<img src="'.'\email.png" />';
   }
 
-  function render_qr_by_email_with_content($content) {
-    
+  function render_qr_by_email_with_content($data) {
+    $content = 'mailto:'.$data['email'].'?subject='.urlencode($data['subject']).'&body='.urlencode($data['body']);
+    $tempDir = 'C:\Users\trinh\Projects\qr-code-generate\web';
+    QRcode::png($content, $tempDir.'\email_with_content.png');
+    echo '<img src="'.'\email_with_content.png" />';
   }
 
   function render_qr_by_skype($skype) {
