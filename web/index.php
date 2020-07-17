@@ -39,24 +39,23 @@
 
   <?php
 
-    include('./phpqrcode/qrlib.php');
+    // // how to build raw content - QRCode to send SMS
+    
+    // $tempDir = 'C:\Users\trinh\Projects\qr-code-generate\web';
+    
+    // // here our data
+    // $phoneNo = '(049)012-345-678';
+    
+    // // we building raw data
+    // $codeContents = 'sms:'.$phoneNo;
+    
+    // // generating
+    // QRcode::png($codeContents, $tempDir.'021.png', QR_ECLEVEL_L, 3);
 
-    // how to build raw content - QRCode to send SMS
-    
-    $tempDir = 'C:\Users\trinh\Projects\qr-code-generate\web';
-    
-    // here our data
-    $phoneNo = '(049)012-345-678';
-    
-    // we building raw data
-    $codeContents = 'sms:'.$phoneNo;
-    
-    // generating
-    QRcode::png($codeContents, $tempDir.'021.png', QR_ECLEVEL_L, 3);
-
-    // displaying
-    echo '<img src="'.$tempDir.'021.png" />';
-    
+    // // displaying
+    // echo '<img src="'.$tempDir.'021.png" />';
+    include('./render_qr_code.php');
+    render_qr_code('phone', '(049)012-345-678');
 
   ?>
   <style>
