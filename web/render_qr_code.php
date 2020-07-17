@@ -35,6 +35,9 @@
       case QR_INPUT_TYPE['SKYPE']:
         render_qr_by_skype($data);
         break;
+      case QR_INPUT_TYPE['BUSINESS_CARD']:
+        render_qr_by_business_card($data);
+        break;
     }
   }
 
@@ -64,8 +67,9 @@
   }
 
   function render_qr_by_email($email) {
+    $content = 'mailto:'.$email;
     $tempDir = 'C:\Users\trinh\Projects\qr-code-generate\web';
-    QRcode::png($email, $tempDir.'\email.png');
+    QRcode::png($content, $tempDir.'\email.png');
     echo '<img src="'.'\email.png" />';
   }
 
@@ -81,6 +85,52 @@
     $tempDir = 'C:\Users\trinh\Projects\qr-code-generate\web';
     QRcode::png($content, $tempDir.'\skype.png');
     echo '<img src="'.'\skype.png" />';
+  }
+
+  function render_qr_by_business_card($data) {
+    switch ($data['type']) {
+      case 'simple':
+        $content  = 'BEGIN:VCARD'.'\n';
+        $content .= 'FN:'.$data['name'].'\n';
+        $content .= 'TEL;WORK;VOICE:'.$data['phone'].'\n';
+        $content .= 'END:VCARD';
+        $tempDir = 'C:\Users\trinh\Projects\qr-code-generate\web';
+        QRcode::png($content, $tempDir.'\business_card_simple.png');
+        echo '<img src="'.'\business_card_simple.png" />';
+        break;
+      case 'detailed':
+        $content  = 'BEGIN:VCARD'.'\n';
+        $content .= 'VERSION:2.1'.'\n';
+        $content .= 'N:'.$data['sort_name'].'\n';
+        $content .= 'FN:'.$data['name'].'\n';
+        $content .= 'ORG:'.$data['org_name'].'\n';
+
+        $content .= 'TEL;WORK;VOICE:'.$data['phone'].'\n';
+        $content .= 'TEL;HOME;VOICE:'.$data['phone_private'].'\n';
+        $content .= 'TEL;TYPE=cell:'.$data['phone_cell'].'\n';
+
+        $address = $data['address'];
+        $content .= 'ADR;TYPE=work;'.
+          'LABEL="'.$address['label'].'":'
+          .$address['pobox'].';'
+          .$address['ext'].';'
+          .$address['street'].';'
+          .$address['town'].';'
+          .$address['region'].';'
+          .$address['post_code'].';'
+          .$address['country']
+        .'\n';
+
+        $content .= 'EMAIL:'.$data['email'].'\n';
+
+        $content .= 'END:VCARD';
+        $tempDir = 'C:\Users\trinh\Projects\qr-code-generate\web';
+        QRcode::png($content, $tempDir.'\business_card_detailed.png');
+        echo '<img src="'.'\business_card_detailed.png" />';
+        break;
+      case 'photo':
+        break;
+    }
   }
 
 ?>

@@ -58,6 +58,39 @@
     render_qr_code('sms', '(049)012-345-678');
     echo "<br>render_qr_by_skype<br>";
     render_qr_code('skype', 'live:johndoe');
+    echo "<br>render_qr_by_business_card_simple<br>";
+    render_qr_code('business_card', [
+      'type' => 'simple',
+      'name' => 'John Doe',
+      'phone' => '(049)012-345-678'
+    ]);
+    echo "<br>render_qr_by_business_card_detailed<br>";
+    render_qr_code('business_card', [
+      'type' => 'detailed',
+      'name' => 'John Doe',
+      'sort_name' => 'Doe;John',
+      'phone' => '(049)012-345-678',
+      'phone_private' => '(049)012-345-987',
+      'phone_cell' => '(049)888-123-123',
+      'org_name' => 'My Company Inc.',
+      'email' => 'john.doe@example.com',
+      'address' => [
+        'label' => 'Our Office',
+        'pobox' => '',
+        'ext' => 'Suite 123',
+        'street' => '7th Avenue',
+        'town' => 'New York',
+        'region' => 'NY',
+        'post_code' => '91921-1234',
+        'country' => 'USA'
+      ]
+    ]);
+    echo "<br>render_qr_by_business_card_photo<br>";
+    render_qr_code('business_card', [
+      'type' => 'photo',
+      'name' => 'John Doe',
+      'phone' => '(049)012-345-678'
+    ]);
     echo "<br><br><br>";
   ?>
   <style>
