@@ -20,34 +20,62 @@
       <div id='qrcode-title'></div>
       <div class='ma3'>
         <div class='pv4 ph2'>
-          <div class='link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer'>
-            <i class='fa fa-link'></i>
-            <span class='f6 db ml2'>URL</span>
-          </div>
-          <div class='link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer'>
-            <i class='fa fa-align-left'></i>
-            <span class='f6 db ml2'>Text</span>
-          </div>
-          <div class='link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer'>
-            <i class='fa fa-phone'></i>
-            <span class='f6 db ml2'>Phone</span>
-          </div>
-          <div class='link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer'>
-            <i class='fa fa-sms'></i>
-            <span class='f6 db ml2'>SMS</span>
-          </div>
-          <div class='link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer'>
-            <i class='far fa-envelope'></i>
-            <span class='f6 db ml2'>Email</span>
-          </div>
-          <div class='link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer'>
-            <i class='fab fa-skype'></i>
-            <span class='f6 db ml2'>Skype</span>
-          </div>
-          <div class='link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer'>
-            <i class='fa fa-id-card'></i>
-            <span class='f6 db ml2'>Card</span>
-          </div>
+          <label class='container'>
+            <input type='radio' name='qr-type' value='url'>
+            <span class='checkmark'>
+              <i class='fa fa-link'></i>
+            </span>
+            URL
+          </label>
+          <label class='container'>
+            <input type='radio' name='qr-type' value='text'>
+            <span class='checkmark'>
+              <i class='fa fa-align-left'></i>
+            </span>
+            Text
+          </label>
+          <label class='container'>
+            <input type='radio' name='qr-type' value='phone'>
+            <span class='checkmark'>
+              <i class='fa fa-phone'></i>
+            </span>
+            Phone
+          </label>
+          <label class='container'>
+            <input type='radio' name='qr-type' value='sms'>
+            <span class='checkmark'>
+              <i class='fa fa-sms'></i>
+            </span>
+            SMS
+          </label>
+          <label class='container'>
+            <input type='radio' name='qr-type' value='email'>
+            <span class='checkmark'>
+              <i class='far fa-envelope'></i>
+            </span>
+            Email
+          </label>
+          <label class='container'>
+            <input type='radio' name='qr-type' value='sms'>
+            <span class='checkmark'>
+              <i class='fa fa-sms'></i>
+            </span>
+            SMS
+          </label>
+          <label class='container'>
+            <input type='radio' name='qr-type' value='skype'>
+            <span class='checkmark'>
+              <i class='fab fa-skype'></i>
+            </span>
+            Skype
+          </label>
+          <label class='container'>
+            <input type='radio' name='qr-type' value='card'>
+            <span class='checkmark'>
+              <i class='fa fa-id-card'></i>
+            </span>
+            Card
+          </label>
         </div>
         <textarea id='qrcode-text' class='bg-gray-05 br2 pa2 w-100 txtr-v' value=''></textarea>
         <div id='input-error' class='red dn'>Phone number invalid!</div>
@@ -73,12 +101,22 @@
   </div>
 
   <script>
+    $("input[name='qr-type']").click(() => {
+      $('#qrcode-text').val('');
+    });
     $('#btn-create-qr').click(function() {
+      let qr_type;
+      for (const rb of document.querySelectorAll('input[name="qr-type"]')) {
+        if (rb.checked) {
+          qr_type = rb.value;
+          break;
+        }
+      }
       $.ajax({
         method: 'POST',
         url: 'render_qr_code.php',
         data: {
-          'type': 'url',
+          'type': qr_type,
           'data': $('#qrcode-text').val()
         },
       })
@@ -123,6 +161,49 @@
     }
     .txtr-n {
       resize: none;
+    }
+
+    /* The container */
+    .container {
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* Hide the browser's default radio button */
+    .container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+
+    /* On mouse-over, add a grey background color */
+    .container:hover input ~ .checkmark {
+      background-color: #ccc;
+    }
+
+    /* When the radio button is checked, add a blue background */
+    .container input:checked ~ .checkmark {
+      background-color: #2196F3;
+    }
+
+
+    /* Show the indicator (dot/circle) when checked */
+    .container input:checked ~ .checkmark:after {
+      display: block;
+    }
+
+    /* Style the indicator (dot/circle) */
+    .container .checkmark:after {
+      top: 9px;
+      left: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
     }
   </style>
   <link rel='stylesheet' href='/css/libs/fontawesome.min.css'>
