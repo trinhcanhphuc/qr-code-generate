@@ -20,56 +20,42 @@
       <div id='qrcode-title'></div>
       <div class='ma3'>
         <div class='pv4 ph2'>
-          <label class='container'>
-            <input type='radio' name='qr-type' value='url'>
+          <label class='container inline-flex'>
+            <input type='radio' name='qr-type' value='url' checked>
             <span class='checkmark'>
               <i class='fa fa-link'></i>
             </span>
             URL
           </label>
-          <label class='container'>
+          <label class='container inline-flex'>
             <input type='radio' name='qr-type' value='text'>
             <span class='checkmark'>
               <i class='fa fa-align-left'></i>
             </span>
             Text
           </label>
-          <label class='container'>
+          <label class='container inline-flex'>
             <input type='radio' name='qr-type' value='phone'>
             <span class='checkmark'>
               <i class='fa fa-phone'></i>
             </span>
             Phone
           </label>
-          <label class='container'>
+          <label class='container inline-flex'>
             <input type='radio' name='qr-type' value='sms'>
             <span class='checkmark'>
               <i class='fa fa-sms'></i>
             </span>
             SMS
           </label>
-          <label class='container'>
+          <label class='container inline-flex'>
             <input type='radio' name='qr-type' value='email'>
             <span class='checkmark'>
               <i class='far fa-envelope'></i>
             </span>
             Email
           </label>
-          <label class='container'>
-            <input type='radio' name='qr-type' value='sms'>
-            <span class='checkmark'>
-              <i class='fa fa-sms'></i>
-            </span>
-            SMS
-          </label>
-          <label class='container'>
-            <input type='radio' name='qr-type' value='skype'>
-            <span class='checkmark'>
-              <i class='fab fa-skype'></i>
-            </span>
-            Skype
-          </label>
-          <label class='container'>
+          <label class='container inline-flex'>
             <input type='radio' name='qr-type' value='card'>
             <span class='checkmark'>
               <i class='fa fa-id-card'></i>
@@ -77,7 +63,26 @@
             Card
           </label>
         </div>
-        <textarea id='qrcode-text' class='bg-gray-05 br2 pa2 w-100 txtr-v' value=''></textarea>
+        <textarea id='qrcode-text' class='bg-gray-05 br2 pa2 w-100 txtr-v qrcode-input-form' value=''></textarea>
+        <div id='qrcode-email-form' class='qrcode-input-form dn'>
+          <div class='w-100 inline-flex justify-between'>
+            <div class='w-20'>Email:</div>
+            <input name='email' class='w-80'>
+          </div>
+          <div class='w-100 inline-flex justify-between'>
+            <div class='w-20'>Subject:</div>
+            <input name='subject' class='w-80'>
+          </div>
+          <div class='w-100 inline-flex justify-between'>
+            <div class='w-20'>Body:</div>
+            <textarea name='body' class='w-80'>
+          
+            </textarea>
+          </div>
+        </div>
+        <div id='qrcode-card-form' class='qrcode-input-form dn'>
+
+        </div>
         <div id='input-error' class='red dn'>Phone number invalid!</div>
         <div class='mv2 tc'>
           <button id='btn-create-qr' class='b b-0 grow inline-flex items-center no-underline pa2 tc'>
@@ -101,23 +106,45 @@
   </div>
 
   <script>
-    $("input[name='qr-type']").click(() => {
-      $('#qrcode-text').val('');
+    var qrcode_type = 'url';
+    $("input[name='qr-type']").click((e) => {
+      $('.qrcode-input-form').hide();
+      qrcode_type = e.target.value;
+      switch(qrcode_type) {
+        case 'email':
+          $('#qrcode-email-form').show();
+          break;
+        case 'card':
+          $('#qrcode-card-form').show();
+          break;
+        default:
+          $('#qrcode-text').show();
+          $('#qrcode-text').val('');
+      }
     });
     $('#btn-create-qr').click(function() {
-      let qr_type;
-      for (const rb of document.querySelectorAll('input[name="qr-type"]')) {
-        if (rb.checked) {
-          qr_type = rb.value;
+      switch(qrcode_type) {
+        case 'email':
+          data = {
+            'email': $("#qrcode-email-form *[name='email']").val(),
+            'subject': $("#qrcode-email-form *[name='subject']").val(),
+            'body': $("#qrcode-email-form *[name='body']").val()
+          }
           break;
-        }
+        case 'card':
+          data = {
+
+          }
+          break;
+        default:
+          data = $('#qrcode-text').val();
       }
       $.ajax({
         method: 'POST',
         url: 'render_qr_code.php',
         data: {
-          'type': qr_type,
-          'data': $('#qrcode-text').val()
+          'type': qrcode_type,
+          'data': data
         },
       })
       .done(function(result) {
