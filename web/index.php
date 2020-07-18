@@ -12,86 +12,63 @@
 </head>
 
 <body>
-  <div class=''>
-    <div id='qrcode-img'>
+  <div class='header'>
+
+  </div>
+  <div class='content inline-flex-ns w-100'>
+    <div class='w-60-ns center'>
+      <div id='qrcode-title'></div>
+      <div class='ma3'>
+        <div class='pv4 ph2'>
+          <div class="link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer">
+            <i class="fa fa-link"></i>
+            <span class="f6 db ml2">URL</span>
+          </div>
+          <div class="link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer">
+            <i class="fa fa-align-left"></i>
+            <span class="f6 db ml2">Text</span>
+          </div>
+          <div class="link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer">
+            <i class="fa fa-phone"></i>
+            <span class="f6 db ml2">Phone</span>
+          </div>
+          <div class="link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer">
+            <i class="fa fa-sms"></i>
+            <span class="f6 db ml2">SMS</span>
+          </div>
+          <div class="link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer">
+            <i class="far fa-envelope"></i>
+            <span class="f6 db ml2">Email</span>
+          </div>
+          <div class="link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer">
+            <i class="fab fa-skype"></i>
+            <span class="f6 db ml2">Skype</span>
+          </div>
+          <div class="link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer">
+            <i class="fa fa-id-card"></i>
+            <span class="f6 db ml2">Card</span>
+          </div>
+        </div>
+        <textarea id='qrcode-text' class='bg-gray-05 br2 pa2 w-100 txtr-v' value=''></textarea>
+        <div id='input-error' class='red dn'>Phone number invalid!</div>
+        <div class='mv2 tc'>
+          <button id='btn_save_qr' class='b b-0 grow inline-flex items-center no-underline pa2 tc'>
+            <svg class='dib h1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z'/></svg>
+            <span class='f6 ml3 pr2'>Download</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id='qrcode-img' class='center'>
       <img src='' />
     </div>
-    <div id='qrcode-title'></div>
-    <div class='ma3'>
-      <div class='flex justify-between mv2'>
-        <div class='b lh-copy'>Choose Input Type</div>
-        <select id='select-input-type' class='bg-gray-05 pa1'>
-          <option value='url' class='' selected>Url</option>
-          <option value='text' class=''>Text</option>
-          <option value='phone' class=''>Phone</option>
-        </select>
-      </div>
-      <textarea id='qrcode-text' class='bg-gray-05 br2 pa2 w-100 txtr-v' value=''></textarea>
-      <div id='input-error' class='red dn'>Phone number invalid!</div>
-      <div class='mv2 tc'>
-        <button id='btn_save_qr' class='b b-0 grow inline-flex items-center no-underline pa2 tc'>
-          <svg class='dib h1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z'/></svg>
-          <span class='f6 ml3 pr2'>Download</span>
-        </button>
-      </div>
-    </div>
+  </div>
+  <div class='footer'>
+
   </div>
 
   <?php
     include('./render_qr_code.php');
-
-    echo "<br>render_qr_by_text<br>";
-    render_qr_code('text', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin nibh augue, suscipit a');
-    // echo "<br>render_qr_by_url<br>";
-    // render_qr_code('url', 'https://www.google.com');
-    // echo "<br>render_qr_by_phone<br>";
-    // render_qr_code('phone', '(049)012-345-678');
-    // echo "<br>render_qr_by_email<br>";
-    // render_qr_code('email', 'test.example@gmail.com');
-    // echo "<br>render_qr_by_email_with_content<br>";
-    // render_qr_code('email_with_content', [
-    //   'email' => 'test.example@gmail.com',
-    //   'subject' => 'Question',
-    //   'body' => 'Please write your question here!'
-    // ]);
-    // echo "<br>render_qr_by_sms<br>";
-    // render_qr_code('sms', '(049)012-345-678');
-    // echo "<br>render_qr_by_skype<br>";
-    // render_qr_code('skype', 'live:johndoe');
-    // echo "<br>render_qr_by_business_card_simple<br>";
-    // render_qr_code('business_card', [
-    //   'type' => 'simple',
-    //   'name' => 'John Doe',
-    //   'phone' => '(049)012-345-678'
-    // ]);
-    // echo "<br>render_qr_by_business_card_detailed<br>";
-    // render_qr_code('business_card', [
-    //   'type' => 'detailed',
-    //   'name' => 'John Doe',
-    //   'sort_name' => 'Doe;John',
-    //   'phone' => '(049)012-345-678',
-    //   'phone_private' => '(049)012-345-987',
-    //   'phone_cell' => '(049)888-123-123',
-    //   'org_name' => 'My Company Inc.',
-    //   'email' => 'john.doe@example.com',
-    //   'address' => [
-    //     'label' => 'Our Office',
-    //     'pobox' => '',
-    //     'ext' => 'Suite 123',
-    //     'street' => '7th Avenue',
-    //     'town' => 'New York',
-    //     'region' => 'NY',
-    //     'post_code' => '91921-1234',
-    //     'country' => 'USA'
-    //   ]
-    // ]);
-    // echo "<br>render_qr_by_business_card_photo<br>";
-    // render_qr_code('business_card', [
-    //   'type' => 'photo',
-    //   'name' => 'John Doe',
-    //   'phone' => '(049)012-345-678'
-    // ]);
-    echo "<br><br><br>";
   ?>
   <style>
     .b-0 {
@@ -127,6 +104,7 @@
       resize: none;
     }
   </style>
+  <link rel='stylesheet' href='/css/libs/fontawesome.min.css'>
   <script type='text/javascript' src='/js/home.js'></script>
 </body>
 </html>
