@@ -1,5 +1,6 @@
 <?php
   include('./phpqrcode/qrlib.php');
+  include('./env.php');
   
   const QR_INPUT_TYPE = [
     'TEXT' => 'text',
@@ -13,6 +14,7 @@
   ];
 
   function render_qr_code($inputType, $data) {
+    echo QR_IMAGES_PATH;
     switch($inputType) {
       case QR_INPUT_TYPE['TEXT']:
         render_qr_by_text($data);
