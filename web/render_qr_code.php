@@ -1,20 +1,14 @@
 <?php
   include('./phpqrcode/qrlib.php');
   include('./env.php');
-  
-  const QR_INPUT_TYPE = [
-    'TEXT' => 'text',
-    'URL' => 'url',
-    'PHONE' => 'phone',
-    'SMS' => 'sms',
-    'EMAIL' => 'email',
-    'EMAIL_WITH_CONTENT' => 'email_with_content',
-    'SKYPE' => 'skype',
-    'BUSINESS_CARD' => 'business_card'
-  ];
+  include('./qr_type.php');
+
+  # execute
+  $type = $_POST['type'];
+  $data = $_POST['data'];
+  render_qr_code($type, $data);
 
   function render_qr_code($inputType, $data) {
-    echo QR_IMAGES_PATH;
     switch($inputType) {
       case QR_INPUT_TYPE['TEXT']:
         render_qr_by_text($data);
@@ -50,9 +44,8 @@
   }
 
   function render_qr_by_url($url) {
-    $tempDir = 'C:\Users\trinh\Projects\qr-code-generate\web';
-    QRcode::png($url, $tempDir.'\url.png');
-    echo '<img src="'.'\url.png" />';
+    QRcode::png($url, QR_IMAGES_PATH . 'url.png');
+    echo '/qr_images/url.png';
   }
 
   function render_qr_by_phone($phoneNumber) {

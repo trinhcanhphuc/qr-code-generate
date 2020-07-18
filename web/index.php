@@ -20,37 +20,42 @@
       <div id='qrcode-title'></div>
       <div class='ma3'>
         <div class='pv4 ph2'>
-          <div class="link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer">
-            <i class="fa fa-link"></i>
-            <span class="f6 db ml2">URL</span>
+          <div class='link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer'>
+            <i class='fa fa-link'></i>
+            <span class='f6 db ml2'>URL</span>
           </div>
-          <div class="link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer">
-            <i class="fa fa-align-left"></i>
-            <span class="f6 db ml2">Text</span>
+          <div class='link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer'>
+            <i class='fa fa-align-left'></i>
+            <span class='f6 db ml2'>Text</span>
           </div>
-          <div class="link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer">
-            <i class="fa fa-phone"></i>
-            <span class="f6 db ml2">Phone</span>
+          <div class='link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer'>
+            <i class='fa fa-phone'></i>
+            <span class='f6 db ml2'>Phone</span>
           </div>
-          <div class="link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer">
-            <i class="fa fa-sms"></i>
-            <span class="f6 db ml2">SMS</span>
+          <div class='link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer'>
+            <i class='fa fa-sms'></i>
+            <span class='f6 db ml2'>SMS</span>
           </div>
-          <div class="link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer">
-            <i class="far fa-envelope"></i>
-            <span class="f6 db ml2">Email</span>
+          <div class='link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer'>
+            <i class='far fa-envelope'></i>
+            <span class='f6 db ml2'>Email</span>
           </div>
-          <div class="link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer">
-            <i class="fab fa-skype"></i>
-            <span class="f6 db ml2">Skype</span>
+          <div class='link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer'>
+            <i class='fab fa-skype'></i>
+            <span class='f6 db ml2'>Skype</span>
           </div>
-          <div class="link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer">
-            <i class="fa fa-id-card"></i>
-            <span class="f6 db ml2">Card</span>
+          <div class='link near-black hover-silver inline-flex w-20 mv3 mr2 tc pointer'>
+            <i class='fa fa-id-card'></i>
+            <span class='f6 db ml2'>Card</span>
           </div>
         </div>
         <textarea id='qrcode-text' class='bg-gray-05 br2 pa2 w-100 txtr-v' value=''></textarea>
         <div id='input-error' class='red dn'>Phone number invalid!</div>
+        <div class='mv2 tc'>
+          <button id='btn-create-qr' class='b b-0 grow inline-flex items-center no-underline pa2 tc'>
+            <span class='f6 ml3 pr2'>Create QR</span>
+          </button>
+        </div>
         <div class='mv2 tc'>
           <button id='btn_save_qr' class='b b-0 grow inline-flex items-center no-underline pa2 tc'>
             <svg class='dib h1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z'/></svg>
@@ -67,9 +72,25 @@
 
   </div>
 
-  <?php
-    include('./render_qr_code.php');
-  ?>
+  <script>
+    $('#btn-create-qr').click(function() {
+      $.ajax({
+        method: 'POST',
+        url: 'render_qr_code.php',
+        data: {
+          'type': 'url',
+          'data': $('#qrcode-text').val()
+        },
+      })
+      .done(function(result) {
+        $('#qrcode-img img').attr('src', result);
+      })
+      .fail(function(error) {
+      })
+      .always(function() {
+      })
+    })
+  </script>
   <style>
     .b-0 {
       border: 0;
