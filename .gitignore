@@ -1,2 +1,3 @@
 web/qr_images/
 web/env.php
+node_modules/
