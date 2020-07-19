@@ -65,19 +65,17 @@
         </div>
         <textarea id='qrcode-text' class='bg-gray-05 br2 pa2 w-100 txtr-v qrcode-input-form' value=''></textarea>
         <div id='qrcode-email-form' class='qrcode-input-form dn'>
-          <div class='w-100 inline-flex justify-between'>
+          <div class='w-100 inline-flex justify-between mv2'>
             <div class='w-20'>Email:</div>
-            <input name='email' class='w-80'>
+            <input name='email' class='w-80 bg-gray-05 br2 pa2'>
           </div>
-          <div class='w-100 inline-flex justify-between'>
+          <div class='w-100 inline-flex justify-between mv2'>
             <div class='w-20'>Subject:</div>
-            <input name='subject' class='w-80'>
+            <input name='subject' class='w-80 bg-gray-05 br2 pa2'>
           </div>
-          <div class='w-100 inline-flex justify-between'>
+          <div class='w-100 inline-flex justify-between mv2'>
             <div class='w-20'>Body:</div>
-            <textarea name='body' class='w-80'>
-          
-            </textarea>
+            <textarea name='body' class='w-80 bg-gray-05 br2 pa2 txtr-v'></textarea>
           </div>
         </div>
         <div id='qrcode-card-form' class='qrcode-input-form dn'>
