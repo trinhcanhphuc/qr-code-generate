@@ -1,7 +1,4 @@
-var fore_bg;
-var back_bg;
 var img_size;
-var is_transparnet_bg;
 var select_input_type = 'url';
 const PHONE_NUMER_PATTERN = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 
