@@ -15,11 +15,11 @@
   <div class='header'>
 
   </div>
-  <div class='content inline-flex-ns w-100'>
-    <div class='w-60-ns center'>
+  <div class='content flex w-100'>
+    <div class='w-3/5 m-auto'>
       <div id='qrcode-title'></div>
-      <div class='ma3'>
-        <div class='pv4 ph2'>
+      <div class='mx-10'>
+        <div class='flex'>
           <label class='container inline-flex'>
             <input type='radio' name='qr-type' value='url' checked>
             <span class='checkmark'>
@@ -82,21 +82,17 @@
 
         </div>
         <div id='input-error' class='red dn'>Phone number invalid!</div>
-        <div class='mv2 tc'>
-          <button id='btn-create-qr' class='b b-0 grow inline-flex items-center no-underline pa2 tc'>
-            <span class='f6 ml3 pr2'>Create QR</span>
-          </button>
-        </div>
-        <div class='mv2 tc'>
-          <button id='btn_save_qr' class='b b-0 grow inline-flex items-center no-underline pa2 tc'>
-            <svg class='dib h1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z'/></svg>
-            <span class='f6 ml3 pr2'>Download</span>
-          </button>
-        </div>
+        <button id='btn-create-qr' class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+          <i class="fas fa-plus"></i>
+          <span>Create QR</span>
+        </button>
+        <button id='btn_save_qr' class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+          <i class="fas fa-download"></i>
+          <span>Download</span>
+        </button>
       </div>
     </div>
-    <div id='qrcode-img' class='center'>
-      <img src='' />
+    <div id='qrcode-img' class='w-2/5 center'>
     </div>
   </div>
   <div class='footer'>
@@ -169,9 +165,10 @@
     .bg-gray-20 { background-color: rgba( 0, 0, 47, .2 ); }
     .bg-gray-10 { background-color: rgba( 0, 0, 47, .1 ); }
     .bg-gray-05 { background-color: rgba( 0, 0, 47, .05 ); }
-    #qrcode-img {
+    #qrcode-img img {
       width: 300px;
       height: 300px;
+      margin: auto;
     }
     #qrcode-text {
       height: 100px;
