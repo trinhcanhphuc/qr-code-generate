@@ -15,11 +15,11 @@
   <div class='header'>
 
   </div>
-  <div class='content flex w-100'>
-    <div class='w-3/5 m-auto'>
+  <div class='content flex w-100 h-100'>
+    <div class='w-3/5 mx-auto mt-10'>
       <div id='qrcode-title'></div>
       <div class='mx-10'>
-        <div class='flex'>
+        <div class='flex mb-3'>
           <label class='container inline-flex'>
             <input type='radio' name='qr-type' value='url' checked>
             <span class='checkmark'>
@@ -63,36 +63,36 @@
             Card
           </label>
         </div>
-        <textarea id='qrcode-text' class='bg-gray-05 br2 pa2 w-100 txtr-v qrcode-input-form' value=''></textarea>
-        <div id='qrcode-email-form' class='qrcode-input-form dn'>
-          <div class='w-100 inline-flex justify-between mv2'>
-            <div class='w-20'>Email:</div>
-            <input name='email' class='w-80 bg-gray-05 br2 pa2'>
+        <textarea id='qrcode-text' class='w-full bg-gray-200 resize-y rounded-lg focus:outline-none focus:shadow-outline h-24 mb-3 p-3 qrcode-input-form' value='' placeholder='http://example.com'></textarea>
+        <div id='qrcode-email-form' class='hidden qrcode-input-form mb-3'>
+          <div class='w-full inline-flex my-2 p-1'>
+            <div class='w-1/5 leading-10'>Email:</div>
+            <input name='email' class='w-4/5 bg-gray-200 h-10 rounded-lg p-3'  placeholder='example@email.com'>
           </div>
-          <div class='w-100 inline-flex justify-between mv2'>
-            <div class='w-20'>Subject:</div>
-            <input name='subject' class='w-80 bg-gray-05 br2 pa2'>
+          <div class='w-full inline-flex my-2 p-1'>
+            <div class='w-1/5 leading-10'>Subject:</div>
+            <input name='subject' class='w-4/5 bg-gray-200 h-10 rounded-lg p-3' placeholder='Greeting!'>
           </div>
-          <div class='w-100 inline-flex justify-between mv2'>
-            <div class='w-20'>Body:</div>
-            <textarea name='body' class='w-80 bg-gray-05 br2 pa2 txtr-v'></textarea>
+          <div class='w-full inline-flex my-2 p-1'>
+            <div class='w-1/5 leading-10'>Body:</div>
+            <textarea name='body' class='w-4/5 bg-gray-200 resize-y h-24 rounded-lg p-3' placeholder='Today, I write this email to inform'></textarea>
           </div>
         </div>
-        <div id='qrcode-card-form' class='qrcode-input-form dn'>
+        <div id='qrcode-card-form' class='qrcode-input-form'>
 
         </div>
-        <div id='input-error' class='red dn'>Phone number invalid!</div>
+        <div id='input-error' class='text-red-500 hidden'>Phone number invalid!</div>
         <button id='btn-create-qr' class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
           <i class="fas fa-plus"></i>
-          <span>Create QR</span>
+          <span class='ml-2'>Create QR</span>
         </button>
         <button id='btn_save_qr' class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
           <i class="fas fa-download"></i>
-          <span>Download</span>
+          <span class='ml-2'>Download</span>
         </button>
       </div>
     </div>
-    <div id='qrcode-img' class='w-2/5 center'>
+    <div id='qrcode-img' class='w-2/5 center flex'>
     </div>
   </div>
   <div class='footer'>
@@ -151,24 +151,9 @@
     })
   </script>
   <style>
-    .b-0 {
-      border: 0;
-    }
-    .bg-gray { background-color: #777; }
-    .bg-gray-90 { background-color: rgba( 0, 0, 47, .9 ); }
-    .bg-gray-80 { background-color: rgba( 0, 0, 47, .8 ); }
-    .bg-gray-70 { background-color: rgba( 0, 0, 47, .7 ); }
-    .bg-gray-60 { background-color: rgba( 0, 0, 47, .6 ); }
-    .bg-gray-50 { background-color: rgba( 0, 0, 47, .5 ); }
-    .bg-gray-40 { background-color: rgba( 0, 0, 47, .4 ); }
-    .bg-gray-30 { background-color: rgba( 0, 0, 47, .3 ); }
-    .bg-gray-20 { background-color: rgba( 0, 0, 47, .2 ); }
-    .bg-gray-10 { background-color: rgba( 0, 0, 47, .1 ); }
-    .bg-gray-05 { background-color: rgba( 0, 0, 47, .05 ); }
     #qrcode-img img {
-      width: 300px;
-      height: 300px;
       margin: auto;
+      display: flex;
     }
     #qrcode-text {
       height: 100px;
@@ -183,6 +168,10 @@
     }
     .txtr-n {
       resize: none;
+    }
+
+    .h-100 {
+      height: 25rem;
     }
 
     /* The container */
