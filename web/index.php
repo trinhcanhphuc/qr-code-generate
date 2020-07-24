@@ -7,8 +7,6 @@
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <link rel='stylesheet' href='/css/libs/tailwind.min.css'>
   <script type='text/javascript' src='/js/libs/jquery.min.js'></script>
-  <script type='text/javascript' src='/js/libs/jquery-qrcode.min.js'></script>
-  <script type='text/javascript' src='/js/utils/qr_code.js'></script>
 </head>
 
 <body>
@@ -93,6 +91,10 @@
       </div>
     </div>
     <div id='qrcode-img' class='w-2/5 center flex'>
+      <img src='<?php
+        include('./render_qr_code.php');
+        render_qr_code('url', 'http://localhost:3000/');
+      ?>'/>
     </div>
   </div>
   <div class='footer'>
@@ -133,27 +135,14 @@
         default:
           data = $('#qrcode-text').val();
       }
-      $.ajax({
-        method: 'POST',
-        url: 'render_qr_code.php',
-        data: {
-          'type': qrcode_type,
-          'data': data
-        },
-      })
-      .done(function(result) {
-        $('#qrcode-img img').attr('src', result);
-      })
-      .fail(function(error) {
-      })
-      .always(function() {
-      })
     })
   </script>
   <style>
     #qrcode-img img {
       margin: auto;
       display: flex;
+      width: 300px;
+      height: 300px;
     }
     #qrcode-text {
       height: 100px;
@@ -218,6 +207,5 @@
     }
   </style>
   <link rel='stylesheet' href='/css/libs/fontawesome.min.css'>
-  <script type='text/javascript' src='/js/main.js'></script>
 </body>
 </html>
