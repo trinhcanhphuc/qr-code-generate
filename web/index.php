@@ -135,6 +135,21 @@
         default:
           data = $('#qrcode-text').val();
       }
+      $.ajax({
+        method: 'POST',
+        url: 'render_qr_code.php',
+        data: {
+          'type': qrcode_type,
+          'data': data
+        },
+      })
+      .done(function(result) {
+        $('#qrcode-img img').attr('src', result);
+      })
+      .fail(function(error) {
+      })
+      .always(function() {
+      })
     })
   </script>
   <style>
