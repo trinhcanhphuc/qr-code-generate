@@ -18,7 +18,7 @@
       <div id='qrcode-title'></div>
       <div class='mx-10'>
         <div class='flex mb-3'>
-          <div class='qr-type-radios hover:bg-blue-100 active relative'>
+          <div class='qr-type-radios hover:bg-blue-100 active relative rounded-md'>
             <label class='inline-flex items-center cursor-pointer px-3 py-1'>
               <input type='radio' class='form-radio opacity-0' name='qr-type' value='url' checked>
               <span class='ml-2'>
@@ -26,7 +26,7 @@
               </span>
             </label>
           </div>
-          <div class='qr-type-radios hover:bg-blue-100 relative'>
+          <div class='qr-type-radios hover:bg-blue-100 relative rounded-md'>
             <label class='inline-flex items-center cursor-pointer px-3 py-1'>
               <input type='radio' class='form-radio opacity-0' name='qr-type' value='text'>
               <span class='ml-2'>
@@ -34,7 +34,7 @@
               </span>
             </label>
           </div>
-          <div class='qr-type-radios hover:bg-blue-100 relative'>
+          <div class='qr-type-radios hover:bg-blue-100 relative rounded-md'>
             <label class='inline-flex items-center cursor-pointer px-3 py-1'>
               <input type='radio' class='form-radio opacity-0' name='qr-type' value='phone'>
               <span class='ml-2'>
@@ -42,7 +42,7 @@
               </span>
             </label>
           </div>
-          <div class='qr-type-radios hover:bg-blue-100 relative'>
+          <div class='qr-type-radios hover:bg-blue-100 relative rounded-md'>
             <label class='inline-flex items-center cursor-pointer px-3 py-1'>
               <input type='radio' class='form-radio opacity-0' name='qr-type' value='sms'>
               <span class='ml-2'>
@@ -50,7 +50,7 @@
               </span>
             </label>
           </div>
-          <div class='qr-type-radios hover:bg-blue-100 relative'>
+          <div class='qr-type-radios hover:bg-blue-100 relative rounded-md'>
             <label class='inline-flex items-center cursor-pointer px-3 py-1'>
               <input type='radio' class='form-radio opacity-0' name='qr-type' value='email'>
               <span class='ml-2'>
@@ -58,9 +58,9 @@
               </span>
             </label>
           </div>
-          <div class='qr-type-radios hover:bg-blue-100 relative'>
+          <div class='qr-type-radios hover:bg-blue-100 relative rounded-md'>
             <label class='inline-flex items-center cursor-pointer px-3 py-1'>
-              <input type='radio' class='form-radio opacity-0' name='qr-type' value='card'>
+              <input type='radio' class='form-radio opacity-0' name='qr-type' value='business_card'>
               <span class='ml-2'>
                 <i class='fa fa-id-card absolute' style='top: 0.5rem; left: 0.5rem'></i>Card
               </span>
@@ -82,8 +82,57 @@
             <textarea name='body' class='w-4/5 bg-gray-200 resize-y h-24 rounded-lg p-3' placeholder='Today, I write this email to inform'></textarea>
           </div>
         </div>
-        <div id='qrcode-card-form' class='qrcode-input-form'>
-
+        <div id='qrcode-card-form' class='hidden qrcode-input-form mb-3'>
+          <div class='w-full inline-flex my-2 p-1'>
+            <div class='w-1/5 leading-10'>Full Name:</div>
+            <input name='full_name' class='w-4/5 bg-gray-200 h-10 rounded-lg p-3'  placeholder='Phuc Trinh'>
+          </div>
+          <div class='w-full inline-flex my-2 p-1'>
+            <div class='w-1/5 leading-10'>Email:</div>
+            <input name='email' class='w-4/5 bg-gray-200 h-10 rounded-lg p-3'  placeholder='example@email.com'>
+          </div>
+          <div class='w-full inline-flex my-2 p-1'>
+            <div class='w-1/5 leading-10'>Phone:</div>
+          </div>
+          <div class='w-full inline-flex my-2 p-1'>
+            <div class='w-1/5 leading-10'>Work Phone:</div>
+            <input name='work_phone' class='w-4/5 bg-gray-200 h-10 rounded-lg p-3'  placeholder='0963*******'>
+          </div>
+          <div class='w-full inline-flex my-2 p-1'>
+            <div class='w-1/5 leading-10'>Private Phone:</div>
+            <input name='private_phone' class='w-4/5 bg-gray-200 h-10 rounded-lg p-3'  placeholder='0963*******'>
+          </div>
+          <div class='w-full inline-flex my-2 p-1'>
+            <div class='w-1/5 leading-10'>Cell Phone:</div>
+            <input name='phone_cell' class='w-4/5 bg-gray-200 h-10 rounded-lg p-3'  placeholder='0963*******'>
+          </div>
+          <div class='w-full inline-flex my-2 p-1'>
+            <div class='w-1/5 leading-10'>Address:</div>
+          </div>
+          <div class='w-full inline-flex my-2 p-1'>
+            <div class='w-1/5 leading-10'>Label:</div>
+            <input name='address_label' class='w-4/5 bg-gray-200 h-10 rounded-lg p-3'  placeholder='Our Office'>
+          </div>
+          <div class='w-full inline-flex my-2 p-1'>
+            <div class='w-1/5 leading-10'>Street:</div>
+            <input name='address_street' class='w-4/5 bg-gray-200 h-10 rounded-lg p-3'  placeholder='Nam Ki Khoi Nghia'>
+          </div>
+          <div class='w-full inline-flex my-2 p-1'>
+            <div class='w-1/5 leading-10'>Town:</div>
+            <input name='address_town' class='w-4/5 bg-gray-200 h-10 rounded-lg p-3'  placeholder='District 1'>
+          </div>
+          <div class='w-full inline-flex my-2 p-1'>
+            <div class='w-1/5 leading-10'>Region:</div>
+            <input name='address_region' class='w-4/5 bg-gray-200 h-10 rounded-lg p-3'  placeholder='Ho Chi Minh'>
+          </div>
+          <div class='w-full inline-flex my-2 p-1'>
+            <div class='w-1/5 leading-10'>Postcode:</div>
+            <input name='address_postcode' class='w-4/5 bg-gray-200 h-10 rounded-lg p-3'  placeholder='700000'>
+          </div>
+          <div class='w-full inline-flex my-2 p-1'>
+            <div class='w-1/5 leading-10'>Country:</div>
+            <input name='address_country' class='w-4/5 bg-gray-200 h-10 rounded-lg p-3'  placeholder='Viet Nam'>
+          </div>
         </div>
         <div id='input-error' class='text-red-500 hidden'>Phone number invalid!</div>
         <button id='btn-create-qr' class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
@@ -134,9 +183,22 @@
             'body': $("#qrcode-email-form *[name='body']").val()
           }
           break;
-        case 'card':
+        case 'business_card':
           data = {
-
+            'type': 'detailed',
+            'full_name': $("#qrcode-card-form input[name='full_name']").val(),
+            'work_phone': $("#qrcode-card-form input[name='work_phone']").val(),
+            'private_phone': $("#qrcode-card-form input[name='private_phone']").val(),
+            'phone_cell': $("#qrcode-card-form input[name='phone_cell']").val(),
+            'company': $("#qrcode-card-form input[name='company']").val(),
+            'email': $("#qrcode-card-form input[name='email']").val(),
+            'address_label': $("#qrcode-card-form input[name='address_label']").val(),
+            'address_ext': $("#qrcode-card-form input[name='address_ext']").val(),
+            'address_street': $("#qrcode-card-form input[name='address_street']").val(),
+            'address_town': $("#qrcode-card-form input[name='address_town']").val(),
+            'address_region': $("#qrcode-card-form input[name='address_region']").val(),
+            'address_postcode': $("#qrcode-card-form input[name='address_postcode']").val(),
+            'address_country': $("#qrcode-card-form input[name='address_country']").val()
           }
           break;
         default:

@@ -31,7 +31,7 @@
         $content = render_qr_by_skype($data);
         break;
       case QR_INPUT_TYPE['BUSINESS_CARD']:
-        $content = render_qr_by_business_card($data);
+        $content = render_qr_by_business_card($data, $data['type']);
         break;
     }
     switch($format) {
@@ -69,37 +69,33 @@
     return 'skype:'.$skype.'?call';
   }
 
-  function render_qr_by_business_card($data) {
-    switch ($data['type']) {
+  function render_qr_by_business_card($data, $data_type='detailed') {
+    switch ($data_type) {
       case 'simple':
         $content  = 'BEGIN:VCARD'.'\n';
         $content .= 'FN:'.$data['name'].'\n';
         $content .= 'TEL;WORK;VOICE:'.$data['phone'].'\n';
         $content .= 'END:VCARD';
-        $tempDir = 'C:\Users\trinh\Projects\qr-code-generate\web';
         return $content;
         break;
       case 'detailed':
         $content  = 'BEGIN:VCARD'.'\n';
         $content .= 'VERSION:2.1'.'\n';
-        $content .= 'N:'.$data['sort_name'].'\n';
-        $content .= 'FN:'.$data['name'].'\n';
-        $content .= 'ORG:'.$data['org_name'].'\n';
+        $content .= 'N:'.$data['full_name'].'\n';
+        $content .= 'ORG:'. 'IMT Solutions'.'\n';
 
-        $content .= 'TEL;WORK;VOICE:'.$data['phone'].'\n';
-        $content .= 'TEL;HOME;VOICE:'.$data['phone_private'].'\n';
+        $content .= 'TEL;WORK;VOICE:'.$data['work_phone'].'\n';
+        $content .= 'TEL;HOME;VOICE:'.$data['private_phone'].'\n';
         $content .= 'TEL;TYPE=cell:'.$data['phone_cell'].'\n';
 
-        $address = $data['address'];
         $content .= 'ADR;TYPE=work;'.
-          'LABEL="'.$address['label'].'":'
-          .$address['pobox'].';'
-          .$address['ext'].';'
-          .$address['street'].';'
-          .$address['town'].';'
-          .$address['region'].';'
-          .$address['post_code'].';'
-          .$address['country']
+          'LABEL="'.$data['address_label'].'"'
+          .$data['address_ext'].';'
+          .$data['address_street'].';'
+          .$data['address_town'].';'
+          .$data['address_region'].';'
+          .$data['address_postcode'].';'
+          .$data['address_country']
         .'\n';
 
         $content .= 'EMAIL:'.$data['email'].'\n';
