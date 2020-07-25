@@ -18,48 +18,54 @@
       <div id='qrcode-title'></div>
       <div class='mx-10'>
         <div class='flex mb-3'>
-          <label class='container inline-flex'>
-            <input type='radio' name='qr-type' value='url' checked>
-            <span class='checkmark'>
-              <i class='fa fa-link'></i>
-            </span>
-            URL
-          </label>
-          <label class='container inline-flex'>
-            <input type='radio' name='qr-type' value='text'>
-            <span class='checkmark'>
-              <i class='fa fa-align-left'></i>
-            </span>
-            Text
-          </label>
-          <label class='container inline-flex'>
-            <input type='radio' name='qr-type' value='phone'>
-            <span class='checkmark'>
-              <i class='fa fa-phone'></i>
-            </span>
-            Phone
-          </label>
-          <label class='container inline-flex'>
-            <input type='radio' name='qr-type' value='sms'>
-            <span class='checkmark'>
-              <i class='fa fa-sms'></i>
-            </span>
-            SMS
-          </label>
-          <label class='container inline-flex'>
-            <input type='radio' name='qr-type' value='email'>
-            <span class='checkmark'>
-              <i class='far fa-envelope'></i>
-            </span>
-            Email
-          </label>
-          <label class='container inline-flex'>
-            <input type='radio' name='qr-type' value='card'>
-            <span class='checkmark'>
-              <i class='fa fa-id-card'></i>
-            </span>
-            Card
-          </label>
+          <div class='qr-type-radios hover:bg-blue-100 active relative'>
+            <label class='inline-flex items-center cursor-pointer px-3 py-1'>
+              <input type='radio' class='form-radio opacity-0' name='qr-type' value='url' checked>
+              <span class='ml-2'>
+                <i class='fa fa-link absolute' style='top: 0.5rem; left: 0.5rem'></i>URL
+              </span>
+            </label>
+          </div>
+          <div class='qr-type-radios hover:bg-blue-100 relative'>
+            <label class='inline-flex items-center cursor-pointer px-3 py-1'>
+              <input type='radio' class='form-radio opacity-0' name='qr-type' value='text'>
+              <span class='ml-2'>
+                <i class='fa fa-align-left absolute' style='top: 0.5rem; left: 0.5rem'></i>Text
+              </span>
+            </label>
+          </div>
+          <div class='qr-type-radios hover:bg-blue-100 relative'>
+            <label class='inline-flex items-center cursor-pointer px-3 py-1'>
+              <input type='radio' class='form-radio opacity-0' name='qr-type' value='phone'>
+              <span class='ml-2'>
+                <i class='fa fa-phone absolute' style='top: 0.5rem; left: 0.5rem'></i>Phone
+              </span>
+            </label>
+          </div>
+          <div class='qr-type-radios hover:bg-blue-100 relative'>
+            <label class='inline-flex items-center cursor-pointer px-3 py-1'>
+              <input type='radio' class='form-radio opacity-0' name='qr-type' value='sms'>
+              <span class='ml-2'>
+                <i class='fa fa-sms absolute' style='top: 0.5rem; left: 0.5rem'></i>SMS
+              </span>
+            </label>
+          </div>
+          <div class='qr-type-radios hover:bg-blue-100 relative'>
+            <label class='inline-flex items-center cursor-pointer px-3 py-1'>
+              <input type='radio' class='form-radio opacity-0' name='qr-type' value='email'>
+              <span class='ml-2'>
+                <i class='fa fa-envelope absolute' style='top: 0.5rem; left: 0.5rem'></i>Email
+              </span>
+            </label>
+          </div>
+          <div class='qr-type-radios hover:bg-blue-100 relative'>
+            <label class='inline-flex items-center cursor-pointer px-3 py-1'>
+              <input type='radio' class='form-radio opacity-0' name='qr-type' value='card'>
+              <span class='ml-2'>
+                <i class='fa fa-id-card absolute' style='top: 0.5rem; left: 0.5rem'></i>Card
+              </span>
+            </label>
+          </div>
         </div>
         <textarea id='qrcode-text' class='w-full bg-gray-200 resize-y rounded-lg focus:outline-none focus:shadow-outline h-24 mb-3 p-3 qrcode-input-form' value='' placeholder='http://example.com'></textarea>
         <div id='qrcode-email-form' class='hidden qrcode-input-form mb-3'>
@@ -103,9 +109,10 @@
 
   <script>
     var qrcode_type = 'url';
-    $("input[name='qr-type']").click((e) => {
+    $('.qr-type-radios').click((e) => {
       $('.qrcode-input-form').hide();
-      qrcode_type = e.target.value;
+      var qr_type_ele = $(e.target).parent().find("input[name='qr-type']");
+      qrcode_type = qr_type_ele.val();
       switch(qrcode_type) {
         case 'email':
           $('#qrcode-email-form').show();
@@ -151,6 +158,11 @@
       .always(function() {
       })
     })
+    $('.qr-type-radios').click(function(e) {
+      e.preventDefault();
+      $('.qr-type-radios').removeClass('active');
+      $(this).addClass('active');
+    });
   </script>
   <style>
     #qrcode-img img {
@@ -159,66 +171,8 @@
       width: 300px;
       height: 300px;
     }
-    #qrcode-text {
-      height: 100px;
-      min-height: 50px;
-      max-height: 150px;
-    }
-    .txtr-v {
-      resize: vertical;
-    }
-    .txtr-h {
-      resize: horizontal;
-    }
-    .txtr-n {
-      resize: none;
-    }
-
-    .h-100 {
-      height: 25rem;
-    }
-
-    /* The container */
-    .container {
-      cursor: pointer;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    /* Hide the browser's default radio button */
-    .container input {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-    }
-
-
-    /* On mouse-over, add a grey background color */
-    .container:hover input ~ .checkmark {
-      background-color: #ccc;
-    }
-
-    /* When the radio button is checked, add a blue background */
-    .container input:checked ~ .checkmark {
-      background-color: #2196F3;
-    }
-
-
-    /* Show the indicator (dot/circle) when checked */
-    .container input:checked ~ .checkmark:after {
-      display: block;
-    }
-
-    /* Style the indicator (dot/circle) */
-    .container .checkmark:after {
-      top: 9px;
-      left: 9px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: white;
+    .qr-type-radios.active {
+      background: #e2e8f0;
     }
   </style>
   <link rel='stylesheet' href='/css/libs/fontawesome.min.css'>
