@@ -144,7 +144,7 @@
         },
       })
       .done(function(result) {
-        $('#qrcode-img img').attr('src', result);
+        $('#qrcode-img img').attr('src', result + '?' + new Date().getTime());
       })
       .fail(function(error) {
       })
