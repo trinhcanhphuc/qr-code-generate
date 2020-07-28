@@ -10,8 +10,16 @@
 </head>
 
 <body>
-  <div class='header'>
-
+  <div class='header flex justify-between p-3 shadow-lg'>
+    <div class='logo flex'>
+      <img src='/images/logo.png' class='h-10' />
+      <span class='leading-10 font-bold'>QR Code Generator</span>
+    </div>
+    <div class='menu-bar flex'>
+      <a href='#' class='leading-10 text-blue-500 font-boldm mx-3'>QR Generator</a>
+      <a href='#' class='leading-10 font-bold mx-3'>QR Scanner</a>
+      <a href='#' class='mx-3 text-center block border border-blue-500 rounded py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white cursor-pointer'>Try it free</a>
+    </div>
   </div>
   <div class='content w-100 h-100 bg-gray-100'>
     <div class='qr-type-section mt-20'>
