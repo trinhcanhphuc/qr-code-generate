@@ -166,7 +166,7 @@
         case 'email':
           $('#qrcode-email-form').show();
           break;
-        case 'card':
+        case 'business_card':
           $('#qrcode-card-form').show();
           break;
         default:
