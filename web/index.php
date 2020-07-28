@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <div class='header flex justify-between p-3 shadow-lg sticky inset-x-0 top-0 left-0 bg-white'>
+  <div class='header flex justify-between p-3 shadow-lg sticky inset-x-0 top-0 left-0 bg-white z-10'>
     <div class='logo flex'>
       <img src='/images/logo.png' class='h-10' />
       <span class='leading-10 font-bold'>QR Code Generator</span>
