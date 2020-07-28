@@ -10,18 +10,26 @@
 </head>
 
 <body>
-  <div class='header flex justify-between p-3 shadow-lg'>
+  <div class='header flex justify-between p-3 shadow-lg sticky inset-x-0 top-0 left-0 bg-white'>
     <div class='logo flex'>
       <img src='/images/logo.png' class='h-10' />
       <span class='leading-10 font-bold'>QR Code Generator</span>
     </div>
     <div class='menu-bar flex'>
-      <a href='#' class='leading-10 text-blue-500 font-boldm mx-3'>QR Generator</a>
+      <a href='#' class='leading-10 text-blue-500 font-bold mx-3'>QR Generator</a>
       <a href='#' class='leading-10 font-bold mx-3'>QR Scanner</a>
       <a href='#' class='mx-3 text-center block border border-blue-500 rounded py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white cursor-pointer'>Try it free</a>
     </div>
   </div>
-  <div class='content w-100 h-100 bg-gray-100'>
+  <div class='content w-100 h-100'>
+    <div class='introduction text-center mt-16'>
+      <h1 class='text-5xl font-boldm'>
+        QR Code Generator
+      </h1>
+      <h3 class='text-xl font-boldm'>
+        Easily make a QR code for you
+      </h3>
+    </div>
     <div class='qr-type-section mt-20'>
       <div class='flex mb-3 w-3/5 ml-10'>
         <div class='qr-type-radios hover:bg-blue-100 active relative rounded-md select-none'>
