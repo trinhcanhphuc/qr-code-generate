@@ -72,21 +72,21 @@
   function render_qr_by_business_card($data, $data_type='detailed') {
     switch ($data_type) {
       case 'simple':
-        $content  = 'BEGIN:VCARD'.'\n';
-        $content .= 'FN:'.$data['name'].'\n';
-        $content .= 'TEL;WORK;VOICE:'.$data['phone'].'\n';
+        $content  = 'BEGIN:VCARD'."\n";
+        $content .= 'FN:'.$data['name']."\n";
+        $content .= 'TEL;WORK;VOICE:'.$data['phone']."\n";
         $content .= 'END:VCARD';
         return $content;
         break;
       case 'detailed':
-        $content  = 'BEGIN:VCARD'.'\n';
-        $content .= 'VERSION:2.1'.'\n';
-        $content .= 'N:'.$data['full_name'].'\n';
-        $content .= 'ORG:'. 'IMT Solutions'.'\n';
+        $content  = 'BEGIN:VCARD'."\n";
+        $content .= 'VERSION:2.1'."\n";
+        $content .= 'N:'.$data['full_name']."\n";
+        $content .= 'ORG:'. 'IMT Solutions'."\n";
 
-        $content .= 'TEL;WORK;VOICE:'.$data['work_phone'].'\n';
-        $content .= 'TEL;HOME;VOICE:'.$data['private_phone'].'\n';
-        $content .= 'TEL;TYPE=cell:'.$data['phone_cell'].'\n';
+        $content .= 'TEL;WORK;VOICE:'.$data['work_phone']."\n";
+        $content .= 'TEL;HOME;VOICE:'.$data['private_phone']."\n";
+        $content .= 'TEL;TYPE=cell:'.$data['phone_cell']."\n";
 
         $content .= 'ADR;TYPE=work;'.
           'LABEL="'.$data['address_label'].'"'
@@ -96,11 +96,12 @@
           .$data['address_region'].';'
           .$data['address_postcode'].';'
           .$data['address_country']
-        .'\n';
+        ."\n";
 
-        $content .= 'EMAIL:'.$data['email'].'\n';
+        $content .= 'EMAIL:'.$data['email']."\n";
 
         $content .= 'END:VCARD';
+    
         return $content;
         break;
       case 'photo':
