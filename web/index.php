@@ -18,7 +18,7 @@
       <div id='qrcode-title'></div>
       <div class='mx-10'>
         <div class='flex mb-3'>
-          <div class='qr-type-radios hover:bg-blue-100 active relative rounded-md'>
+          <div class='qr-type-radios hover:bg-blue-100 active relative rounded-md select-none'>
             <label class='inline-flex items-center cursor-pointer px-3 py-1'>
               <input type='radio' class='form-radio opacity-0' name='qr-type' value='url' checked>
               <span class='ml-2'>
@@ -26,7 +26,7 @@
               </span>
             </label>
           </div>
-          <div class='qr-type-radios hover:bg-blue-100 relative rounded-md'>
+          <div class='qr-type-radios hover:bg-blue-100 relative rounded-md select-none'>
             <label class='inline-flex items-center cursor-pointer px-3 py-1'>
               <input type='radio' class='form-radio opacity-0' name='qr-type' value='text'>
               <span class='ml-2'>
@@ -34,7 +34,7 @@
               </span>
             </label>
           </div>
-          <div class='qr-type-radios hover:bg-blue-100 relative rounded-md'>
+          <div class='qr-type-radios hover:bg-blue-100 relative rounded-md select-none'>
             <label class='inline-flex items-center cursor-pointer px-3 py-1'>
               <input type='radio' class='form-radio opacity-0' name='qr-type' value='phone'>
               <span class='ml-2'>
@@ -42,7 +42,7 @@
               </span>
             </label>
           </div>
-          <div class='qr-type-radios hover:bg-blue-100 relative rounded-md'>
+          <div class='qr-type-radios hover:bg-blue-100 relative rounded-md select-none'>
             <label class='inline-flex items-center cursor-pointer px-3 py-1'>
               <input type='radio' class='form-radio opacity-0' name='qr-type' value='sms'>
               <span class='ml-2'>
@@ -50,7 +50,7 @@
               </span>
             </label>
           </div>
-          <div class='qr-type-radios hover:bg-blue-100 relative rounded-md'>
+          <div class='qr-type-radios hover:bg-blue-100 relative rounded-md select-none'>
             <label class='inline-flex items-center cursor-pointer px-3 py-1'>
               <input type='radio' class='form-radio opacity-0' name='qr-type' value='email'>
               <span class='ml-2'>
@@ -58,7 +58,7 @@
               </span>
             </label>
           </div>
-          <div class='qr-type-radios hover:bg-blue-100 relative rounded-md'>
+          <div class='qr-type-radios hover:bg-blue-100 relative rounded-md select-none'>
             <label class='inline-flex items-center cursor-pointer px-3 py-1'>
               <input type='radio' class='form-radio opacity-0' name='qr-type' value='business_card'>
               <span class='ml-2'>
