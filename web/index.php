@@ -9,7 +9,7 @@
   <script type='text/javascript' src='/js/libs/jquery.min.js'></script>
 </head>
 
-<body>
+<body class='mb-20'>
   <div class='header flex justify-between p-3 shadow-lg sticky inset-x-0 top-0 left-0 bg-white z-10'>
     <div class='logo flex'>
       <img src='/images/logo.png' class='h-10' />
@@ -174,10 +174,20 @@
       </div>
     </div>
   </div>
-  <div class='footer'>
-
+  <div class='bottom-0 fixed flex header justify-between p-3 shadow-lg w-full z-10 bg-white'>
+    <div>@ QR Code <?php echo date(Y) ?></div>
+    <div>
+      <a href='https://www.facebook.com' class='mx-2'>
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a href='https://www.twitter.com' class='mx-2'>
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href='https://www.youtube.com' class='mx-2'>
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>
   </div>
-
   <script>
     var qrcode_type = 'url';
     $('.qr-type-radios').click((e) => {
