@@ -15,18 +15,20 @@
       <img src='/images/logo.png' class='h-10' />
       <span class='leading-10 font-bold'>QR Code Generator</span>
     </div>
-    <div class='block lg:hidden'>
-      <button class='flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white'>
-      <i class='fas fa-bars'></i>
-      </button>
-    </div>
-    <div class='text-sm flex lg:show'>
-      <a href='#' class='block mt-4 lg:inline-block lg:mt-0 hover:text-blue-200 mr-4 leading-10 text-blue-500 font-bold'>
-        QR Code Generator
-      </a>
-      <a href='#' class='block mt-4 lg:inline-block lg:mt-0 hover:text-blue-200 mr-4 leading-10 text-blue-500 font-bold'>
-        QR Scanner
-      </a>
+    <div>
+      <div class='block lg:hidden'>
+        <button class='btn-menu-item flex items-center px-3 py-2 border rounded text-black border-white hover:border-black ml-auto'>
+        <i class='fas fa-bars'></i>
+        </button>
+      </div>
+      <div class='nav-menu-item hidden lg:block lg:show text-sm'>
+        <a href='#' class='block mt-4 lg:inline-block lg:mt-0 hover:text-blue-200 mr-4 leading-10 text-blue-500 font-bold'>
+          QR Code Generator
+        </a>
+        <a href='#' class='block mt-4 lg:inline-block lg:mt-0 hover:text-blue-200 mr-4 leading-10 text-blue-500 font-bold'>
+          QR Scanner
+        </a>
+      </div>
     </div>
   </nav>
   <div class='content w-100 h-100'>
@@ -265,6 +267,9 @@
       $('.qr-type-radios').removeClass('active');
       $(this).addClass('active');
     });
+    $('.btn-menu-item').click(() => {
+      $('.nav-menu-item').toggle();
+    })
   </script>
   <style>
     #qrcode-img img {
