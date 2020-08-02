@@ -182,7 +182,7 @@
     </div>
   </div>
   <div class='bottom-0 fixed flex header justify-between p-3 shadow-lg w-full z-10 bg-white'>
-    <div>@ QR Code <?php echo date(Y) ?></div>
+    <div>@ QR Code <?php echo date('Y') ?></div>
     <div>
       <a href='https://www.facebook.com' class='mx-2'>
         <i class="fab fa-facebook"></i>
