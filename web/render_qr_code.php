@@ -36,29 +36,33 @@
     }
     switch($format) {
       case 'png':
-        QRcode::png($content, QR_IMAGES_PATH . 'result.' . $format);
+        $back_color = (int) $data['back_color'];
+        $fore_color = (int) $data['fore_color'];
+        QRcode::png($content, QR_IMAGES_PATH . 'result.' . $format, QR_ECLEVEL_L, 3, 4, FALSE, $back_color, $fore_color);
         break;
       case 'svg':
-        QRcode::svg($content, QR_IMAGES_PATH . 'result.' . $format);
+        $back_color = (int) $data['back_color'];
+        $fore_color = (int) $data['fore_color'];
+        QRcode::svg($content, QR_IMAGES_PATH . 'result.' . $format, QR_ECLEVEL_L, 3, 4, FALSE, $back_color, $fore_color);
         break;
     }
     echo '/qr_images/result.' . $format;
   }
 
-  function render_qr_by_text($text) {
-    return $text;
+  function render_qr_by_text($data) {
+    return $data['content'];
   }
 
-  function render_qr_by_url($url) {
-    return $url;
+  function render_qr_by_url($data) {
+    return $data['content'];
   }
 
-  function render_qr_by_phone($phoneNumber) {
-    return $phoneNumber;
+  function render_qr_by_phone($data) {
+    return $data['content'];
   }
 
-  function render_qr_by_sms($phoneNumber) {
-    return 'sms:'.$phoneNumber;
+  function render_qr_by_sms($data) {
+    return 'sms:'.$data['content'];
   }
 
   function render_qr_by_email($data) {

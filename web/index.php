@@ -96,7 +96,7 @@
     </div>
     <div class='qr-content-section md:flex lg:m-10 lg:p-10 m-3 mt-0 p-3 rounded-lg shadow-2xl sm:m-5 sm:p-5'>
       <div class='md:w-3/5'>
-        <textarea id='qrcode-text' class='w-full bg-gray-200 resize-y rounded-lg focus:outline-none focus:shadow-outline h-24 mb-3 p-3 qrcode-input-form' value='' placeholder='http://example.com'></textarea>
+        <textarea id='qrcode-text' class='w-full bg-gray-200 resize-y rounded-lg focus:outline-none focus:shadow-outline h-24 mb-3 p-3 qrcode-input-form' placeholder='http://example.com'>http://example.com</textarea>
         <div id='qrcode-email-form' class='hidden qrcode-input-form mb-3'>
           <div class='w-full inline-flex my-2 p-1'>
             <div class='w-1/5 leading-10'>Email:</div>
@@ -164,6 +164,16 @@
           </div>
         </div>
         <div id='input-error' class='text-red-500 hidden'>Phone number invalid!</div>
+        <div id='qr-colors-section'>
+          <div class='w-full inline-flex my-2 p-1'>
+            <div class='w-1/5 leading-10'>QR Code Color:</div>
+            <input name='fore_color' value='#00FF00' class='w-4/5 bg-gray-200 h-10 rounded-lg p-3'  placeholder='#000000'>
+          </div>
+          <div class='w-full inline-flex my-2 p-1'>
+            <div class='w-1/5 leading-10'>QR Background:</div>
+            <input name='back_color' value='#FF00FF' class='w-4/5 bg-gray-200 h-10 rounded-lg p-3' placeholder='#FFFFFF'>
+          </div>
+        </div>
         <button id='btn-create-qr' class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
           <i class="fas fa-plus"></i>
           <span class='ml-2'>Create QR</span>
@@ -176,7 +186,9 @@
       <div id='qrcode-img' class='md:w-2/5 center flex'>
         <img src='<?php
           include('./render_qr_code.php');
-          render_qr_code('url', 'http://localhost:3000/');
+          render_qr_code('url', [
+            'content' => 'http://localhost:3000/'
+          ]);
         ?>'/>
       </div>
     </div>
@@ -241,8 +253,12 @@
           }
           break;
         default:
-          data = $('#qrcode-text').val();
+          data = {
+            'content': $('#qrcode-text').val()
+          }
       }
+      data.fore_color = Number.parseInt(hexTo0x($("#qr-colors-section input[name='fore_color']").val()));
+      data.back_color = Number.parseInt(hexTo0x($("#qr-colors-section input[name='back_color']").val()));
       $.ajax({
         method: 'POST',
         url: 'render_qr_code.php',
@@ -267,6 +283,9 @@
     $('.btn-menu-item').click(() => {
       $('.nav-menu-item').toggle();
     })
+    function hexTo0x(color) {
+      return eval('0x' + color.substr(1));
+    }
   </script>
   <style>
     #qrcode-img img {
