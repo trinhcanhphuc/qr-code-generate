@@ -167,11 +167,11 @@
         <div id='qr-colors-section'>
           <div class='w-full inline-flex my-2 p-1'>
             <div class='w-1/5 leading-10'>QR Code Color:</div>
-            <input name='fore_color' value='#00FF00' class='w-4/5 bg-gray-200 h-10 rounded-lg p-3'  placeholder='#000000'>
+            <input name='fore_color' value='#000000' class='w-4/5 bg-gray-200 h-10 rounded-lg p-3'  placeholder='#000000'>
           </div>
           <div class='w-full inline-flex my-2 p-1'>
             <div class='w-1/5 leading-10'>QR Background:</div>
-            <input name='back_color' value='#FF00FF' class='w-4/5 bg-gray-200 h-10 rounded-lg p-3' placeholder='#FFFFFF'>
+            <input name='back_color' value='#FFFFFF' class='w-4/5 bg-gray-200 h-10 rounded-lg p-3' placeholder='#FFFFFF'>
           </div>
         </div>
         <button id='btn-create-qr' class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
