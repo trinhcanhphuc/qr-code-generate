@@ -174,6 +174,10 @@
             <input name='back_color' value='#FFFFFF' class='w-4/5 bg-gray-200 h-10 rounded-lg p-3' placeholder='#FFFFFF'>
           </div>
         </div>
+        <div id='qr-logo-section' class='w-full inline-flex my-2 p-1 mt-3'>
+          <img id="blah" name='logo' src="http://placehold.it/180" alt="your image" class='w-1/5 leading-10' />
+          <input type='file' onchange='readURL(this);' class='w-full inline-flex my-2 p-1' />
+        </div>
         <button id='btn-create-qr' class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
           <i class="fas fa-plus"></i>
           <span class='ml-2'>Create QR</span>
@@ -259,6 +263,7 @@
       }
       data.fore_color = Number.parseInt(hexTo0x($("#qr-colors-section input[name='fore_color']").val()));
       data.back_color = Number.parseInt(hexTo0x($("#qr-colors-section input[name='back_color']").val()));
+      data.logo = $("#qr-logo-section img[name='logo']").attr('src');
       $.ajax({
         method: 'POST',
         url: 'render_qr_code.php',
@@ -285,6 +290,18 @@
     })
     function hexTo0x(color) {
       return eval('0x' + color.substr(1));
+    }
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          $('#blah')
+            .attr('src', e.target.result);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+      }
     }
   </script>
   <style>

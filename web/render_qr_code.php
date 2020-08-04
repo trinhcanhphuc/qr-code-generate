@@ -40,9 +40,12 @@
         $fore_color = (int) $data['fore_color'];
         $QR_path = QR_IMAGES_PATH . 'result.' . $format;
         QRcode::png($content, $QR_path, QR_ECLEVEL_H, 20, 2, FALSE, $back_color, $fore_color);
+        
+        if ($data['logo']) {
+          $logo_decoded = decoded_base64_image($data['logo']);
+          combine_QR_with_logo($QR_path, $logo_decoded);
+        }
 
-        $logo_path = './images/fb.png';
-        combine_QR_with_logo($QR_path, $logo_path);
         break;
       case 'svg':
         $back_color = (int) $data['back_color'];
@@ -53,20 +56,22 @@
     echo '/qr_images/result.' . $format;
   }
 
-  function combine_QR_with_logo($QR_path, $logo_path) {
-    if (file_exists($logo_path)) {
-      $QR = imagecreatefromstring(file_get_contents($QR_path));
-      $logo = imagecreatefromstring(file_get_contents($logo_path));
-      $QR_width = imagesx($QR);
-      $QR_height = imagesy($QR);
-      $logo_width = imagesx($logo);
-      $logo_height = imagesy($logo);
-      $logo_qr_width = $QR_width / 4;
-      $scale = $logo_width/$logo_qr_width;
-      $logo_qr_height = $logo_height/$scale;
-      $from_width = ($QR_width - $logo_qr_width) / 2;
-      imagecopyresampled($QR, $logo, $from_width, $from_width, 0, 0, $logo_qr_width, $logo_qr_height, $logo_width, $logo_height);
-    }
+  function decoded_base64_image($base64_encoded) {
+    return base64_decode(explode(',', $base64_encoded, 2)[1]);
+  }
+
+  function combine_QR_with_logo($QR_path, $logo_decoded) {
+    $QR = imagecreatefromstring(file_get_contents($QR_path));
+    $logo = imagecreatefromstring($logo_decoded);
+    $QR_width = imagesx($QR);
+    $QR_height = imagesy($QR);
+    $logo_width = imagesx($logo);
+    $logo_height = imagesy($logo);
+    $logo_qr_width = $QR_width / 4;
+    $scale = $logo_width/$logo_qr_width;
+    $logo_qr_height = $logo_height/$scale;
+    $from_width = ($QR_width - $logo_qr_width) / 2;
+    imagecopyresampled($QR, $logo, $from_width, $from_width, 0, 0, $logo_qr_width, $logo_qr_height, $logo_width, $logo_height);
 
     //Output pictures
     imagepng($QR, $QR_path);
