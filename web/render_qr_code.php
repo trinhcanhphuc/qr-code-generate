@@ -9,7 +9,7 @@
   $format = $_POST['format'] ?? 'svg';
   render_qr_code($type, $data);
 
-  function render_qr_code($inputType, $data, $format='svg') {
+  function render_qr_code($inputType, $data, $format='png') {
     $content = '';
     switch($inputType) {
       case QR_INPUT_TYPE['TEXT']:
@@ -38,15 +38,47 @@
       case 'png':
         $back_color = (int) $data['back_color'];
         $fore_color = (int) $data['fore_color'];
-        QRcode::png($content, QR_IMAGES_PATH . 'result.' . $format, QR_ECLEVEL_L, 3, 4, FALSE, $back_color, $fore_color);
+        $QR_path = QR_IMAGES_PATH . 'result.' . $format;
+        QRcode::png($content, $QR_path, QR_ECLEVEL_H, 20, 2, FALSE, $back_color, $fore_color);
+
+        $logo_path = './images/fb.png';
+        combine_QR_with_logo($QR_path, $logo_path);
         break;
       case 'svg':
         $back_color = (int) $data['back_color'];
         $fore_color = (int) $data['fore_color'];
-        QRcode::svg($content, QR_IMAGES_PATH . 'result.' . $format, QR_ECLEVEL_L, 3, 4, FALSE, $back_color, $fore_color);
+        QRcode::svg($content, QR_IMAGES_PATH . 'result.' . $format, QR_ECLEVEL_L, 3, 2, FALSE, $back_color, $fore_color);
         break;
     }
     echo '/qr_images/result.' . $format;
+  }
+
+  function combine_QR_with_logo($QR_path, $logo_path) {
+    if (file_exists($logo_path)) {
+      $QR = imagecreatefromstring(file_get_contents($QR_path));
+      $logo = imagecreatefromstring(file_get_contents($logo_path));
+      $QR_width = imagesx($QR);
+      $QR_height = imagesy($QR);
+      $logo_width = imagesx($logo);
+      $logo_height = imagesy($logo);
+      $logo_qr_width = $QR_width / 4;
+      $scale = $logo_width/$logo_qr_width;
+      $logo_qr_height = $logo_height/$scale;
+      $from_width = ($QR_width - $logo_qr_width) / 2;
+      imagecopyresampled($QR, $logo, $from_width, $from_width, 0, 0, $logo_qr_width, $logo_qr_height, $logo_width, $logo_height);
+    }
+
+    //Output pictures
+    imagepng($QR, $QR_path);
+    imagedestroy($QR);
+    if(file_exists($QR_path))
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
   }
 
   function render_qr_by_text($data) {
