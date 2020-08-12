@@ -179,7 +179,7 @@ return [
     /*
     * Our Serice Providers ...
     */
-
+    SimpleSoftwareIO\QrCode\ServiceProvider::class
   ],
   
   /*
@@ -231,7 +231,7 @@ return [
     'URL' => Illuminate\Support\Facades\URL::class,
     'Validator' => Illuminate\Support\Facades\Validator::class,
     'View' => Illuminate\Support\Facades\View::class,
-    
+    'QRCode' => SimpleSoftwareIO\QrCode\Generator::class
   ],
   
 ];

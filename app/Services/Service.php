@@ -7,7 +7,7 @@ use App\Exceptions\ServiceException;
 class Service
 {
   protected static $namespace = '\\App\\Services';
-  protected static $service   = null;
+  protected static $service = null;
   
   public static function __callstatic($function, $arguments)
   {
