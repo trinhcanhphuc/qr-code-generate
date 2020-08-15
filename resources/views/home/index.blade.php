@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <title>QR Code Generate</title>
 
   <link href="{{ asset('css/app.css') }}" rel='stylesheet'>
@@ -96,7 +96,7 @@
     </div>
     <div class='qr-content-section md:flex lg:m-10 lg:p-10 m-3 mt-0 p-3 rounded-lg shadow-2xl sm:m-5 sm:p-5'>
       <div class='md:w-3/5'>
-        <textarea id='qrcode-text' class='w-full bg-gray-200 resize-y rounded-lg focus:outline-none focus:shadow-outline h-24 mb-3 p-3 qrcode-input-form' placeholder='http://example.com'>http://example.com</textarea>
+        <textarea id='qrcode-text' class='w-full bg-gray-200 resize-y rounded-lg focus:outline-none focus:shadow-outline h-24 mb-3 p-3 qrcode-input-form' placeholder='https://www.facebook.com/'>https://www.facebook.com/</textarea>
         <div id='qrcode-email-form' class='hidden qrcode-input-form mb-3'>
           <div class='w-full inline-flex my-2 p-1'>
             <div class='w-1/5 leading-10'>Email:</div>
@@ -188,7 +188,7 @@
         </button>
       </div>
       <div id='qrcode-img' class='md:w-2/5 center flex'>
-        <img src={{ $imgSrc }} />
+        <img src={{ $imgSrc }} class='border-8 border-gray-700'/>
       </div>
     </div>
   </div>
@@ -207,7 +207,7 @@
     </div>
   </div>
 
-  
+
   <script>
     var qrcode_type = 'url';
     $('.qr-type-radios').click((e) => {
@@ -258,19 +258,22 @@
             'content': $('#qrcode-text').val()
           }
       }
-      data.fore_color = Number.parseInt(hexTo0x($("#qr-colors-section input[name='fore_color']").val()));
-      data.back_color = Number.parseInt(hexTo0x($("#qr-colors-section input[name='back_color']").val()));
+      data.fore_color = $("#qr-colors-section input[name='fore_color']").val().slice(1).convertToRGB();
+      data.back_color = $("#qr-colors-section input[name='back_color']").val().slice(1).convertToRGB();
       data.logo = $("#qr-logo-section img[name='logo']").attr('src');
       $.ajax({
         method: 'POST',
-        url: 'render_qr_code.php',
+        url: 'render_qr_code',
         data: {
           'type': qrcode_type,
-          'data': data
+          'data': data,
+          '_token': '{{ csrf_token() }}'
         },
       })
       .done(function(result) {
         $('#qrcode-img img').attr('src', result + '?' + new Date().getTime());
+        console.log()
+        $("#qrcode-img img").css('border-color', $("#qr-colors-section input[name='back_color']").val());
       })
       .fail(function(error) {
       })
@@ -299,6 +302,19 @@
 
         reader.readAsDataURL(input.files[0]);
       }
+    }
+    String.prototype.convertToRGB = function(){
+      if(this.length != 6){
+        throw "Only six-digit hex colors are allowed.";
+      }
+
+      var aRgbHex = this.match(/.{1,2}/g);
+      var aRgb = [
+        parseInt(aRgbHex[0], 16),
+        parseInt(aRgbHex[1], 16),
+        parseInt(aRgbHex[2], 16)
+      ];
+      return aRgb;
     }
   </script>
   <style>

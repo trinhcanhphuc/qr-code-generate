@@ -56,17 +56,19 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
     }
     switch($this->format) {
       case 'png':
-        $back_color = (int) $this->data['back_color'];
-        $fore_color = (int) $this->data['fore_color'];
+        $fore_color = isset($this->data['fore_color']) ? $this->data['fore_color'] : [255, 255, 255];
+        $back_color = isset($this->data['back_color']) ? $this->data['back_color'] : [0, 0, 0];
         $QR_path = RenderQRCode::get_qr_images_path() . 'result.' . $this->format;
         $qrcode = new QRcode();
-        $qrcode->format('png')->merge(public_path('logos/fb.png'), 0.3, true)
+        $qrcode->format('png')->merge($this->data['logo'], 0.3, true)
         ->size(500)->errorCorrection('H')
-        ->generate('Make me into a QrCode!', $this->get_qr_images_path());
+        ->color($fore_color[0], $fore_color[1], $fore_color[2])
+        ->backgroundColor($back_color[0], $back_color[1], $back_color[2])
+        ->generate($content, $this->get_qr_images_path());
       break;
       case 'svg':
-        $back_color = (int) $this->data['back_color'];
-        $fore_color = (int) $this->data['fore_color'];
+        $fore_color = isset($this->data['fore_color']) ? $this->data['fore_color'] : [255, 255, 255];
+        $back_color = isset($this->data['back_color']) ? $this->data['back_color'] : [0, 0, 0];
         $qrcode = new QRcode();
         $qrcode->generate('Make me into a QrCode!', $this->get_qr_images_path());
       break;

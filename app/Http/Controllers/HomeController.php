@@ -13,9 +13,8 @@ class HomeController extends Controller
     $imgSrc = QRCodeService::RenderQRCode(
       'url',
       [
-        'content' => request()->getHttpHost(),
-        'back_color' => 1,
-        'fore_color' => 1
+        'content' => 'https://www.facebook.com',
+        'logo' => public_path('images/logos/fb.png')
       ],
       'png');
 

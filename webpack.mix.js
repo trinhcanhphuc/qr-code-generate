@@ -22,3 +22,5 @@ mix.sass('resources/sass/app.scss', 'public/css')
   })
 
 mix.copy('node_modules/@fortawesome/fontawesome-free/webfonts', 'public/webfonts')
+
+mix.copy('resources/images', 'public/images')
