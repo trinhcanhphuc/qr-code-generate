@@ -17,7 +17,7 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
     'SKYPE' => 'skype',
     'BUSINESS_CARD' => 'business_card'
   ];
-  
+
   public function __construct(
     string $type,
     array $data,
@@ -27,7 +27,7 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
     $this->data = $data;
     $this->format = $format;
   }
-    
+
   public function execute()
   {
     $content = '';
@@ -58,9 +58,11 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
       case 'png':
         $back_color = (int) $this->data['back_color'];
         $fore_color = (int) $this->data['fore_color'];
-        $QR_path = RenderQRCode::get_qr_images_path()  . 'result.' . $this->format;
+        $QR_path = RenderQRCode::get_qr_images_path() . 'result.' . $this->format;
         $qrcode = new QRcode();
-        $qrcode->format('png')->mergeString(public_path('logos/beaver.png'), .3)->generate('Make me into a QrCode!', public_path('qr_images/result.png'));
+        $qrcode->format('png')->merge(public_path('logos/fb.png'), 0.3, true)
+        ->size(500)->errorCorrection('H')
+        ->generate('Make me into a QrCode!', $this->get_qr_images_path());
       break;
       case 'svg':
         $back_color = (int) $this->data['back_color'];
@@ -71,15 +73,15 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
     }
     return '/qr_images/result.' . $this->format;
   }
-  
+
   function get_qr_images_path() {
-    return public_path('qr_images/result.svg');
+    return public_path('qr_images/result.png');
   }
-  
+
   function decoded_base64_image($base64_encoded) {
     return base64_decode(explode(',', $base64_encoded, 2)[1]);
   }
-  
+
   function combine_QR_with_logo($QR_path, $logo_decoded) {
     $QR = imagecreatefromstring(file_get_contents($QR_path));
     $logo = imagecreatefromstring($logo_decoded);
@@ -92,7 +94,7 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
     $logo_qr_height = $logo_height/$scale;
     $from_width = ($QR_width - $logo_qr_width) / 2;
     imagecopyresampled($QR, $logo, $from_width, $from_width, 0, 0, $logo_qr_width, $logo_qr_height, $logo_width, $logo_height);
-    
+
     //Output pictures
     imagepng($QR, $QR_path);
     imagedestroy($QR);
@@ -105,31 +107,31 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
       return false;
     }
   }
-  
+
   function render_qr_by_text($data) {
     return $data['content'];
   }
-  
+
   function render_qr_by_url($data) {
     return $data['content'];
   }
-  
+
   function render_qr_by_phone($data) {
     return $data['content'];
   }
-  
+
   function render_qr_by_sms($data) {
     return 'sms:'.$data['content'];
   }
-  
+
   function render_qr_by_email($data) {
     return 'mailto:'.$data['email'].'?subject='.$data['subject'].'&body='.$data['body'];
   }
-  
+
   function render_qr_by_skype($skype) {
     return 'skype:'.$skype.'?call';
   }
-  
+
   function render_qr_by_business_card($data, $data_type='detailed') {
     switch ($data_type) {
       case 'simple':
@@ -144,11 +146,11 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
         $content .= 'VERSION:2.1'."\n";
         $content .= 'N:'.$data['full_name']."\n";
         $content .= 'ORG:'. 'IMT Solutions'."\n";
-        
+
         $content .= 'TEL;WORK;VOICE:'.$data['work_phone']."\n";
         $content .= 'TEL;HOME;VOICE:'.$data['private_phone']."\n";
         $content .= 'TEL;TYPE=cell:'.$data['phone_cell']."\n";
-        
+
         $content .= 'ADR;TYPE=work;'.
         'LABEL="'.$data['address_label'].'"'
         .$data['address_ext'].';'
@@ -158,11 +160,11 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
         .$data['address_postcode'].';'
         .$data['address_country']
         ."\n";
-        
+
         $content .= 'EMAIL:'.$data['email']."\n";
-        
+
         $content .= 'END:VCARD';
-        
+
         return $content;
       break;
       case 'photo':
