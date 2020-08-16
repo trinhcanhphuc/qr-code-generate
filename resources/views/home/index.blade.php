@@ -41,52 +41,58 @@
       </h3>
     </div>
     <div class='qr-type-section mt-20'>
-      <div class='sm:flex mb-3 w-3/5 ml-10'>
+      <div class='flex mb-3 sm:w-3/5 ml-4'>
         <div class='qr-type-radios hover:bg-blue-100 active relative rounded-md select-none'>
-          <label class='inline-flex items-center cursor-pointer px-3 py-1'>
+          <label class='inline-flex items-center cursor-pointer sm:px-3 py-1'>
             <input type='radio' class='form-radio opacity-0' name='qr-type' value='url' checked>
-            <span class='ml-2'>
-              <i class='fa fa-link absolute' style='top: 0.5rem; left: 0.5rem'></i>URL
+            <span class='sm:ml-2'>
+              <i class='fa fa-link absolute' style='top: 0.5rem; left: 0.5rem'></i>
+              <span class='invisible sm:visible'>URL</span>
             </span>
           </label>
         </div>
         <div class='qr-type-radios hover:bg-blue-100 relative rounded-md select-none'>
-          <label class='inline-flex items-center cursor-pointer px-3 py-1'>
+          <label class='inline-flex items-center cursor-pointer sm:px-3 py-1'>
             <input type='radio' class='form-radio opacity-0' name='qr-type' value='text'>
-            <span class='ml-2'>
-              <i class='fa fa-align-left absolute' style='top: 0.5rem; left: 0.5rem'></i>Text
+            <span class='sm:ml-2'>
+              <i class='fa fa-align-left absolute' style='top: 0.5rem; left: 0.5rem'></i>
+              <span class='invisible sm:visible'>Text</span>
             </span>
           </label>
         </div>
         <div class='qr-type-radios hover:bg-blue-100 relative rounded-md select-none'>
-          <label class='inline-flex items-center cursor-pointer px-3 py-1'>
+          <label class='inline-flex items-center cursor-pointer sm:px-3 py-1'>
             <input type='radio' class='form-radio opacity-0' name='qr-type' value='phone'>
-            <span class='ml-2'>
-              <i class='fa fa-phone absolute' style='top: 0.5rem; left: 0.5rem'></i>Phone
+            <span class='sm:ml-2'>
+              <i class='fa fa-phone absolute' style='top: 0.5rem; left: 0.5rem'></i>
+              <span class='invisible sm:visible'>Phone</span>
             </span>
           </label>
         </div>
         <div class='qr-type-radios hover:bg-blue-100 relative rounded-md select-none'>
-          <label class='inline-flex items-center cursor-pointer px-3 py-1'>
+          <label class='inline-flex items-center cursor-pointer sm:px-3 py-1'>
             <input type='radio' class='form-radio opacity-0' name='qr-type' value='sms'>
-            <span class='ml-2'>
-              <i class='fa fa-sms absolute' style='top: 0.5rem; left: 0.5rem'></i>SMS
+            <span class='sm:ml-2'>
+              <i class='fa fa-sms absolute' style='top: 0.5rem; left: 0.5rem'></i>
+              <span class='invisible sm:visible'>SMS</span>
             </span>
           </label>
         </div>
         <div class='qr-type-radios hover:bg-blue-100 relative rounded-md select-none'>
-          <label class='inline-flex items-center cursor-pointer px-3 py-1'>
+          <label class='inline-flex items-center cursor-pointer sm:px-3 py-1'>
             <input type='radio' class='form-radio opacity-0' name='qr-type' value='email'>
-            <span class='ml-2'>
-              <i class='fa fa-envelope absolute' style='top: 0.5rem; left: 0.5rem'></i>Email
+            <span class='sm:ml-2'>
+              <i class='fa fa-envelope absolute' style='top: 0.5rem; left: 0.5rem'></i>
+              <span class='invisible sm:visible'>Email</span>
             </span>
           </label>
         </div>
         <div class='qr-type-radios hover:bg-blue-100 relative rounded-md select-none'>
-          <label class='inline-flex items-center cursor-pointer px-3 py-1'>
+          <label class='inline-flex items-center cursor-pointer sm:px-3 py-1'>
             <input type='radio' class='form-radio opacity-0' name='qr-type' value='business_card'>
-            <span class='ml-2'>
-              <i class='fa fa-id-card absolute' style='top: 0.5rem; left: 0.5rem'></i>Card
+            <span class='sm:ml-2'>
+              <i class='fa fa-id-card absolute' style='top: 0.5rem; left: 0.5rem'></i>
+              <span class='invisible sm:visible'>Card</span>
             </span>
           </label>
         </div>

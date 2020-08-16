@@ -64,13 +64,15 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
         ->size(500)->errorCorrection('H')
         ->color($fore_color[0], $fore_color[1], $fore_color[2])
         ->backgroundColor($back_color[0], $back_color[1], $back_color[2])
+        ->encoding('UTF-8')
         ->generate($content, $this->get_qr_images_path());
       break;
       case 'svg':
         $fore_color = isset($this->data['fore_color']) ? $this->data['fore_color'] : [255, 255, 255];
         $back_color = isset($this->data['back_color']) ? $this->data['back_color'] : [0, 0, 0];
         $qrcode = new QRcode();
-        $qrcode->generate('Make me into a QrCode!', $this->get_qr_images_path());
+        $qrcode->encoding('UTF-8')
+        ->generate('Make me into a QrCode!', $this->get_qr_images_path());
       break;
     }
     return '/qr_images/result.' . $this->format;
