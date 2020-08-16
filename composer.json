@@ -15,7 +15,8 @@
     "laravel/framework": "^7.24",
     "laravel/tinker": "^2.0",
     "simplesoftwareio/simple-qrcode": "^3.0",
-    "ext-pdo_sqlite": "*"
+    "ext-pdo_sqlite": "*",
+    "ext-imagick": "*"
   },
   "require-dev": {
     "facade/ignition": "^2.0",
