@@ -188,13 +188,13 @@
           <i class='fas fa-plus'></i>
           <span class='ml-2'>Create QR</span>
         </button>
-        <button id='btn_save_qr' class='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center'>
+      </div>
+      <div id='qrcode-img' class='md:w-2/5 center'>
+        <img src={{ $imgSrc }} class='border-8 border-gray-700'/>
+        <button id='btn_save_qr' class='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded block mx-auto mt-5'>
           <i class='fas fa-download'></i>
           <span class='ml-2'>Download</span>
         </button>
-      </div>
-      <div id='qrcode-img' class='md:w-2/5 center flex'>
-        <img src={{ $imgSrc }} class='border-8 border-gray-700'/>
       </div>
     </div>
   </div>
@@ -286,6 +286,7 @@
       .always(function() {
       })
     })
+    $('#btn_save_qr').click(() => saveQRCode());
     $('.qr-type-radios').click(function(e) {
       e.preventDefault();
       $('.qr-type-radios').removeClass('active');
@@ -321,6 +322,12 @@
         parseInt(aRgbHex[2], 16)
       ];
       return aRgb;
+    }
+    function saveQRCode() {
+      var qr_tag = document.createElement('a');
+      qr_tag.href = $('#qrcode-img').find('img')[0].src;
+      qr_tag.download = 'qr_code.png';
+      qr_tag.click();
     }
   </script>
   <style>
