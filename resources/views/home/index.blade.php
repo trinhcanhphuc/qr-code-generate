@@ -7,7 +7,7 @@
   <title>QR Code Generate</title>
 
   <link href="{{ asset('css/app.css') }}" rel='stylesheet'>
-  <script type='text/javascript' src='/js/libs/jquery.min.js'></script>
+  <script type='text/javascript' src="{{ asset('/js/app.js') }}"></script>
 </head>
 <body class='mb-20'>
   <nav class='header flex items-center justify-between flex-wrap bg-white p-6 shadow-lg sticky inset-x-0 top-0 left-0 z-10'>
@@ -42,6 +42,7 @@
     </div>
     <div class='qr-type-section mt-20'>
       <div class='flex mb-3 sm:w-3/5 ml-4'>
+        <input name='token' type='hidden' value='{{ csrf_token() }}' />
         <div class='qr-type-radios hover:bg-blue-100 active relative rounded-md select-none'>
           <label class='inline-flex items-center cursor-pointer sm:px-3 py-1'>
             <input type='radio' class='form-radio opacity-0' name='qr-type' value='url' checked>
@@ -184,7 +185,7 @@
           <img id="blah" name='logo' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==' alt='your image' class='w-1/5 leading-10' />
           <input type='file' onchange='readURL(this);' class='w-full inline-flex my-2 p-1' />
         </div>
-        <button id='btn-create-qr' class='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center'>
+        <button id='btn-create-qr' class='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center' onclick="createQRCode()">
           <i class='fas fa-plus'></i>
           <span class='ml-2'>Create QR</span>
         </button>
@@ -212,135 +213,5 @@
       </a>
     </div>
   </div>
-
-
-  <script>
-    var qrcode_type = 'url';
-    $('.qr-type-radios').click((e) => {
-      $('.qrcode-input-form').hide();
-      var qr_type_ele = $(e.target).parent().find("input[name='qr-type']");
-      qrcode_type = qr_type_ele.val();
-      switch(qrcode_type) {
-        case 'email':
-          $('#qrcode-email-form').show();
-          break;
-        case 'business_card':
-          $('#qrcode-card-form').show();
-          break;
-        default:
-          $('#qrcode-text').show();
-          $('#qrcode-text').val('');
-      }
-    });
-    $('#btn-create-qr').click(function() {
-      switch(qrcode_type) {
-        case 'email':
-          data = {
-            'email': $("#qrcode-email-form *[name='email']").val(),
-            'subject': $("#qrcode-email-form *[name='subject']").val(),
-            'body': $("#qrcode-email-form *[name='body']").val()
-          }
-          break;
-        case 'business_card':
-          data = {
-            'type': 'detailed',
-            'full_name': $("#qrcode-card-form input[name='full_name']").val(),
-            'work_phone': $("#qrcode-card-form input[name='work_phone']").val(),
-            'private_phone': $("#qrcode-card-form input[name='private_phone']").val(),
-            'phone_cell': $("#qrcode-card-form input[name='phone_cell']").val(),
-            'company': $("#qrcode-card-form input[name='company']").val(),
-            'email': $("#qrcode-card-form input[name='email']").val(),
-            'address_label': $("#qrcode-card-form input[name='address_label']").val(),
-            'address_ext': $("#qrcode-card-form input[name='address_ext']").val(),
-            'address_street': $("#qrcode-card-form input[name='address_street']").val(),
-            'address_town': $("#qrcode-card-form input[name='address_town']").val(),
-            'address_region': $("#qrcode-card-form input[name='address_region']").val(),
-            'address_postcode': $("#qrcode-card-form input[name='address_postcode']").val(),
-            'address_country': $("#qrcode-card-form input[name='address_country']").val()
-          }
-          break;
-        default:
-          data = {
-            'content': $('#qrcode-text').val()
-          }
-      }
-      data.fore_color = $("#qr-colors-section input[name='fore_color']").val().slice(1).convertToRGB();
-      data.back_color = $("#qr-colors-section input[name='back_color']").val().slice(1).convertToRGB();
-      data.logo = $("#qr-logo-section img[name='logo']").attr('src');
-      $.ajax({
-        method: 'POST',
-        url: 'render_qr_code',
-        data: {
-          'type': qrcode_type,
-          'data': data,
-          '_token': '{{ csrf_token() }}'
-        },
-      })
-      .done(function(result) {
-        $('#qrcode-img img').attr('src', result + '?' + new Date().getTime());
-        console.log()
-        $("#qrcode-img img").css('border-color', $("#qr-colors-section input[name='back_color']").val());
-      })
-      .fail(function(error) {
-      })
-      .always(function() {
-      })
-    })
-    $('#btn_save_qr').click(() => saveQRCode());
-    $('.qr-type-radios').click(function(e) {
-      e.preventDefault();
-      $('.qr-type-radios').removeClass('active');
-      $(this).addClass('active');
-    });
-    $('.btn-menu-item').click(() => {
-      $('.nav-menu-item').toggle();
-    })
-    function hexTo0x(color) {
-      return eval('0x' + color.substr(1));
-    }
-    function readURL(input) {
-      if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-          $('#blah')
-            .attr('src', e.target.result);
-        };
-
-        reader.readAsDataURL(input.files[0]);
-      }
-    }
-    String.prototype.convertToRGB = function(){
-      if(this.length != 6){
-        throw "Only six-digit hex colors are allowed.";
-      }
-
-      var aRgbHex = this.match(/.{1,2}/g);
-      var aRgb = [
-        parseInt(aRgbHex[0], 16),
-        parseInt(aRgbHex[1], 16),
-        parseInt(aRgbHex[2], 16)
-      ];
-      return aRgb;
-    }
-    function saveQRCode() {
-      var qr_tag = document.createElement('a');
-      qr_tag.href = $('#qrcode-img').find('img')[0].src;
-      qr_tag.download = 'qr_code.png';
-      qr_tag.click();
-    }
-  </script>
-  <style>
-    #qrcode-img img {
-      margin-left: auto;
-      margin-right: auto;
-      display: flex;
-      width: 300px;
-      height: 300px;
-    }
-    .qr-type-radios.active {
-      background: #e2e8f0;
-    }
-  </style>
 </body>
 </html>
