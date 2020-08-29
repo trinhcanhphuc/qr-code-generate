@@ -1,29 +1,36 @@
 global.$ = global.jQuery = require('jquery');
+
+window.createQRCode = createQRCode;
+window.hexTo0x = hexTo0x;
+window.readURL = readURL;
+window.saveQRCode = saveQRCode;
+
+$( document ).ready( () => {
+
 var qrcode_type = 'url';
-$('.qr-type-radios').click((e) => {
-  $('.qrcode-input-form').hide();
-  var qr_type_ele = $(e.target).parent().find("input[name='qr-type']");
-  qrcode_type = qr_type_ele.val();
-  switch(qrcode_type) {
-    case 'email':
-      $('#qrcode-email-form').show();
-      break;
-    case 'business_card':
-      $('#qrcode-card-form').show();
-      break;
-    default:
-      $('#qrcode-text').show();
-      $('#qrcode-text').val('');
-  }
-});
-$('#btn_save_qr').click(() => saveQRCode());
-$('.qr-type-radios').click(function(e) {
-  e.preventDefault();
-  $('.qr-type-radios').removeClass('active');
-  $(this).addClass('active');
-});
-$('.btn-menu-item').click(() => {
-  $('.nav-menu-item').toggle();
+  $('.qr-type-radios').click((e) => {
+    e.stopPropagation();
+    $('.qr-type-radios').removeClass('active');
+    $(this).addClass('active');
+    $('.qrcode-input-form').hide();
+    var qr_type_ele = $(e.target).closest("input");
+    qrcode_type = qr_type_ele.val();
+    switch(qrcode_type) {
+      case 'email':
+        $('#qrcode-email-form').show();
+        break;
+      case 'business_card':
+        $('#qrcode-card-form').show();
+        break;
+      default:
+        $('#qrcode-text').show();
+        $('#qrcode-text').val('');
+    }
+  });
+  $('#btn_save_qr').click(() => saveQRCode());
+  $('.btn-menu-item').click(() => {
+    $('.nav-menu-item').toggle();
+  })
 })
 function hexTo0x(color) {
   return eval('0x' + color.substr(1));
@@ -114,8 +121,3 @@ String.prototype.convertToRGB = function(){
   ];
   return aRgb;
 }
-window.createQRCode = createQRCode;
-window.hexTo0x = hexTo0x;
-window.readURL = readURL;
-window.saveQRCode = saveQRCode;
-
