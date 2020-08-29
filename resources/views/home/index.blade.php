@@ -185,14 +185,14 @@
           <img id="blah" name='logo' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==' alt='your image' class='w-1/5 leading-10' />
           <input type='file' onchange='readURL(this);' class='w-full inline-flex my-2 p-1' />
         </div>
-        <button id='btn-create-qr' class='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center' onclick="createQRCode()">
+        <button id='btn-create-qr' class='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center select-none' onclick="createQRCode()">
           <i class='fas fa-plus'></i>
           <span class='ml-2'>Create QR</span>
         </button>
       </div>
       <div id='qrcode-img' class='md:w-2/5 center'>
         <img src={{ $imgSrc }} class='border-8 border-gray-700'/>
-        <button id='btn_save_qr' class='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded block mx-auto mt-5'>
+        <button id='btn_save_qr' class='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded block mx-auto mt-5 select-none'>
           <i class='fas fa-download'></i>
           <span class='ml-2'>Download</span>
         </button>
