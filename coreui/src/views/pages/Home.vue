@@ -40,7 +40,7 @@
           </div>
 
           <div id="qrcode-card-form" v-show="showCardForm">
-            <CardForm :work_phone="work_phone" @update-work-phone="updateWorkPhone"></CardForm>
+            <CardForm :card_form_data="card_form_data" @update-card-form-data="updateCardFormData"></CardForm>
           </div>
 
           <div id='qr-colors-section'>
@@ -84,7 +84,19 @@ export default {
       showCardForm: false,
       selectedQrType: 'url',
       qrImageSrc: 'img/brand/qr-logo.png',
-      work_phone: '',
+      card_form_data: {
+        'full_name': '',
+        'email': '',
+        'work_phone': '',
+        'private_phone': '',
+        'cell_phone': '',
+        'address_label': '',
+        'address_postcode': '',
+        'address_street': '',
+        'address_town': '',
+        'address_region': '',
+        'address_country': ''
+      }
     }
   },
   methods: {
@@ -117,11 +129,11 @@ export default {
       qr_tag.download = 'qr_code.png';
       qr_tag.click();
     },
-    updateWorkPhone(phone) {
-      this.work_phone = phone;
+    updateCardFormData(cardFormData) {
+      this.card_form_data = cardFormData;
     },
     createQR() {
-      console.log(this.work_phone);
+      console.log(this.card_form_data);
     }
   }
 }

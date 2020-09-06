@@ -1,85 +1,16 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[12],{
 
-/***/ "../coreui/src/views/resources/EditResource.vue":
-/*!******************************************************!*\
-  !*** ../coreui/src/views/resources/EditResource.vue ***!
-  \******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _EditResource_vue_vue_type_template_id_79fd35e8_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EditResource.vue?vue&type=template&id=79fd35e8&scoped=true& */ "../coreui/src/views/resources/EditResource.vue?vue&type=template&id=79fd35e8&scoped=true&");
-/* harmony import */ var _EditResource_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EditResource.vue?vue&type=script&lang=js& */ "../coreui/src/views/resources/EditResource.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _laravel_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../laravel/node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_laravel_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _EditResource_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _EditResource_vue_vue_type_template_id_79fd35e8_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _EditResource_vue_vue_type_template_id_79fd35e8_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  "79fd35e8",
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "coreui/src/views/resources/EditResource.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "../coreui/src/views/resources/EditResource.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************!*\
-  !*** ../coreui/src/views/resources/EditResource.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _laravel_node_modules_babel_loader_lib_index_js_ref_4_0_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_EditResource_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../laravel/node_modules/babel-loader/lib??ref--4-0!../../../../laravel/node_modules/vue-loader/lib??vue-loader-options!./EditResource.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/resources/EditResource.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_laravel_node_modules_babel_loader_lib_index_js_ref_4_0_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_EditResource_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "../coreui/src/views/resources/EditResource.vue?vue&type=template&id=79fd35e8&scoped=true&":
-/*!*************************************************************************************************!*\
-  !*** ../coreui/src/views/resources/EditResource.vue?vue&type=template&id=79fd35e8&scoped=true& ***!
-  \*************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_EditResource_vue_vue_type_template_id_79fd35e8_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../laravel/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../laravel/node_modules/vue-loader/lib??vue-loader-options!./EditResource.vue?vue&type=template&id=79fd35e8&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/resources/EditResource.vue?vue&type=template&id=79fd35e8&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_EditResource_vue_vue_type_template_id_79fd35e8_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_EditResource_vue_vue_type_template_id_79fd35e8_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "../coreui/src/views/resources/UpdateResourceField.vue":
+/***/ "../coreui/src/views/resources/CreateResourceField.vue":
 /*!*************************************************************!*\
-  !*** ../coreui/src/views/resources/UpdateResourceField.vue ***!
+  !*** ../coreui/src/views/resources/CreateResourceField.vue ***!
   \*************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _UpdateResourceField_vue_vue_type_template_id_6cccf2c2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./UpdateResourceField.vue?vue&type=template&id=6cccf2c2& */ "../coreui/src/views/resources/UpdateResourceField.vue?vue&type=template&id=6cccf2c2&");
-/* harmony import */ var _UpdateResourceField_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./UpdateResourceField.vue?vue&type=script&lang=js& */ "../coreui/src/views/resources/UpdateResourceField.vue?vue&type=script&lang=js&");
+/* harmony import */ var _CreateResourceField_vue_vue_type_template_id_a87daa68___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CreateResourceField.vue?vue&type=template&id=a87daa68& */ "../coreui/src/views/resources/CreateResourceField.vue?vue&type=template&id=a87daa68&");
+/* harmony import */ var _CreateResourceField_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CreateResourceField.vue?vue&type=script&lang=js& */ "../coreui/src/views/resources/CreateResourceField.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _laravel_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../laravel/node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -89,9 +20,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_laravel_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _UpdateResourceField_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _UpdateResourceField_vue_vue_type_template_id_6cccf2c2___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _UpdateResourceField_vue_vue_type_template_id_6cccf2c2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _CreateResourceField_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CreateResourceField_vue_vue_type_template_id_a87daa68___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CreateResourceField_vue_vue_type_template_id_a87daa68___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -101,193 +32,115 @@ var component = Object(_laravel_node_modules_vue_loader_lib_runtime_componentNor
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "coreui/src/views/resources/UpdateResourceField.vue"
+component.options.__file = "coreui/src/views/resources/CreateResourceField.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "../coreui/src/views/resources/UpdateResourceField.vue?vue&type=script&lang=js&":
+/***/ "../coreui/src/views/resources/CreateResourceField.vue?vue&type=script&lang=js&":
 /*!**************************************************************************************!*\
-  !*** ../coreui/src/views/resources/UpdateResourceField.vue?vue&type=script&lang=js& ***!
+  !*** ../coreui/src/views/resources/CreateResourceField.vue?vue&type=script&lang=js& ***!
   \**************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _laravel_node_modules_babel_loader_lib_index_js_ref_4_0_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_UpdateResourceField_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../laravel/node_modules/babel-loader/lib??ref--4-0!../../../../laravel/node_modules/vue-loader/lib??vue-loader-options!./UpdateResourceField.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/resources/UpdateResourceField.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_laravel_node_modules_babel_loader_lib_index_js_ref_4_0_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_UpdateResourceField_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _laravel_node_modules_babel_loader_lib_index_js_ref_4_0_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateResourceField_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../laravel/node_modules/babel-loader/lib??ref--4-0!../../../../laravel/node_modules/vue-loader/lib??vue-loader-options!./CreateResourceField.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/resources/CreateResourceField.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_laravel_node_modules_babel_loader_lib_index_js_ref_4_0_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateResourceField_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "../coreui/src/views/resources/UpdateResourceField.vue?vue&type=template&id=6cccf2c2&":
+/***/ "../coreui/src/views/resources/CreateResourceField.vue?vue&type=template&id=a87daa68&":
 /*!********************************************************************************************!*\
-  !*** ../coreui/src/views/resources/UpdateResourceField.vue?vue&type=template&id=6cccf2c2& ***!
+  !*** ../coreui/src/views/resources/CreateResourceField.vue?vue&type=template&id=a87daa68& ***!
   \********************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_UpdateResourceField_vue_vue_type_template_id_6cccf2c2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../laravel/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../laravel/node_modules/vue-loader/lib??vue-loader-options!./UpdateResourceField.vue?vue&type=template&id=6cccf2c2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/resources/UpdateResourceField.vue?vue&type=template&id=6cccf2c2&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_UpdateResourceField_vue_vue_type_template_id_6cccf2c2___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateResourceField_vue_vue_type_template_id_a87daa68___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../laravel/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../laravel/node_modules/vue-loader/lib??vue-loader-options!./CreateResourceField.vue?vue&type=template&id=a87daa68& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/resources/CreateResourceField.vue?vue&type=template&id=a87daa68&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateResourceField_vue_vue_type_template_id_a87daa68___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_UpdateResourceField_vue_vue_type_template_id_6cccf2c2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateResourceField_vue_vue_type_template_id_a87daa68___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/resources/EditResource.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!../coreui/src/views/resources/EditResource.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************************************************************/
+/***/ "../coreui/src/views/resources/CreateResources.vue":
+/*!*********************************************************!*\
+  !*** ../coreui/src/views/resources/CreateResources.vue ***!
+  \*********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _UpdateResourceField__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./UpdateResourceField */ "../coreui/src/views/resources/UpdateResourceField.vue");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "../coreui/node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var _CreateResources_vue_vue_type_template_id_ec537a36_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CreateResources.vue?vue&type=template&id=ec537a36&scoped=true& */ "../coreui/src/views/resources/CreateResources.vue?vue&type=template&id=ec537a36&scoped=true&");
+/* harmony import */ var _CreateResources_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CreateResources.vue?vue&type=script&lang=js& */ "../coreui/src/views/resources/CreateResources.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _laravel_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../laravel/node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'CreateResources',
-  components: {
-    'UpdateResourceField': _UpdateResourceField__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
-  data: function data() {
-    return {
-      message: '',
-      dismissSecs: 7,
-      dismissCountDown: 0,
-      form: {},
-      columns: [],
-      relations: [],
-      inputOptions: [],
-      receiveFormFields: [],
-      getData: false
-    };
-  },
-  watch: {
-    activePage: function activePage() {
-      this.getResources();
-    }
-  },
-  computed: {},
-  methods: {
-    goBack: function goBack() {
-      this.$router.go(-1);
-    },
-    updateFirstStep: function updateFirstStep() {
-      this.getData = true;
-    },
-    receiveDataFormField: function receiveDataFormField(data) {
-      var self = this;
-      self.receiveFormFields.push(data);
 
-      if (self.receiveFormFields.length == self.columns.length) {
-        self.update();
-      }
-    },
-    preparePostDataForStore: function preparePostDataForStore() {
-      var formData = new FormData();
 
-      for (var i = 0; i < this.receiveFormFields.length; i++) {
-        formData.append(this.receiveFormFields[i].name, this.receiveFormFields[i].data);
-      }
 
-      formData.append('_method', 'PUT');
-      return formData;
-    },
-    update: function update(files, event) {
-      var self = this;
-      var postData = self.preparePostDataForStore();
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/resource/' + self.$route.params.bread + '/resource/' + self.$route.params.id + '?token=' + localStorage.getItem("api_token"), postData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      }).then(function () {
-        self.$router.go(-1);
-        self.message = 'Successfully edited ' + self.form.name;
-        self.showAlert();
-      })["catch"](function (error) {
-        console.log(error);
-        self.$router.push({
-          path: '/login'
-        });
-      });
-    },
-    countDownChanged: function countDownChanged(dismissCountDown) {
-      this.dismissCountDown = dismissCountDown;
-    },
-    showAlert: function showAlert() {
-      this.dismissCountDown = this.dismissSecs;
-    },
-    getFields: function getFields() {
-      var self = this;
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/resource/' + self.$route.params.bread + '/resource/' + self.$route.params.id + '/edit?token=' + localStorage.getItem("api_token")).then(function (response) {
-        self.form = response.data.form;
-        self.columns = response.data.columns;
-        self.relations = response.data.relations;
-        self.inputOptions = response.data.inputOptions;
-      })["catch"](function (error) {
-        console.log(error);
-        self.$router.push({
-          path: '/login'
-        });
-      });
-    }
-  },
-  mounted: function mounted() {
-    this.getFields();
-  }
-});
+/* normalize component */
+
+var component = Object(_laravel_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CreateResources_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CreateResources_vue_vue_type_template_id_ec537a36_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CreateResources_vue_vue_type_template_id_ec537a36_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "ec537a36",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "coreui/src/views/resources/CreateResources.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/resources/UpdateResourceField.vue?vue&type=script&lang=js&":
+/***/ "../coreui/src/views/resources/CreateResources.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** ../coreui/src/views/resources/CreateResources.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _laravel_node_modules_babel_loader_lib_index_js_ref_4_0_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateResources_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../laravel/node_modules/babel-loader/lib??ref--4-0!../../../../laravel/node_modules/vue-loader/lib??vue-loader-options!./CreateResources.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/resources/CreateResources.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_laravel_node_modules_babel_loader_lib_index_js_ref_4_0_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateResources_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "../coreui/src/views/resources/CreateResources.vue?vue&type=template&id=ec537a36&scoped=true&":
+/*!****************************************************************************************************!*\
+  !*** ../coreui/src/views/resources/CreateResources.vue?vue&type=template&id=ec537a36&scoped=true& ***!
+  \****************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateResources_vue_vue_type_template_id_ec537a36_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../laravel/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../laravel/node_modules/vue-loader/lib??vue-loader-options!./CreateResources.vue?vue&type=template&id=ec537a36&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/resources/CreateResources.vue?vue&type=template&id=ec537a36&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateResources_vue_vue_type_template_id_ec537a36_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateResources_vue_vue_type_template_id_ec537a36_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/resources/CreateResourceField.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!../coreui/src/views/resources/UpdateResourceField.vue?vue&type=script&lang=js& ***!
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!../coreui/src/views/resources/CreateResourceField.vue?vue&type=script&lang=js& ***!
   \**********************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -380,8 +233,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       test: 'test',
-      file: false,
-      model: null
+      model: null,
+      file: false
     };
   },
   computed: {
@@ -419,141 +272,161 @@ __webpack_require__.r(__webpack_exports__);
         this.getDataFunction();
       }
     }
-  },
-  mounted: function mounted() {
-    this.model = this.column.value;
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/resources/EditResource.vue?vue&type=template&id=79fd35e8&scoped=true&":
-/*!*******************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!../coreui/src/views/resources/EditResource.vue?vue&type=template&id=79fd35e8&scoped=true& ***!
-  \*******************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/resources/CreateResources.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!../coreui/src/views/resources/CreateResources.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "CRow",
-    [
-      _c(
-        "CCol",
-        { attrs: { col: "12", xl: "6" } },
-        [
-          _c(
-            "transition",
-            { attrs: { name: "slide" } },
-            [
-              _c(
-                "CCard",
-                [
-                  _c(
-                    "CCardBody",
-                    [
-                      _c("h3", [
-                        _vm._v(
-                          "\n            Edit " +
-                            _vm._s(_vm.form.name) +
-                            "\n          "
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "CAlert",
-                        {
-                          attrs: {
-                            show: _vm.dismissCountDown,
-                            color: "primary",
-                            fade: ""
-                          },
-                          on: {
-                            "update:show": function($event) {
-                              _vm.dismissCountDown = $event
-                            }
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n            (" +
-                              _vm._s(_vm.dismissCountDown) +
-                              ") " +
-                              _vm._s(_vm.message) +
-                              "\n          "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _vm._l(_vm.columns, function(column) {
-                        return _c("UpdateResourceField", {
-                          key: column.id,
-                          attrs: {
-                            column: column,
-                            relations: _vm.relations,
-                            options: _vm.inputOptions,
-                            getData: _vm.getData
-                          },
-                          on: { sendData: _vm.receiveDataFormField }
-                        })
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "CButton",
-                        {
-                          staticClass: "mt-2",
-                          attrs: { color: "primary" },
-                          on: {
-                            click: function($event) {
-                              return _vm.updateFirstStep()
-                            }
-                          }
-                        },
-                        [_vm._v("Edit")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "CButton",
-                        {
-                          staticClass: "mt-2",
-                          attrs: { color: "primary" },
-                          on: { click: _vm.goBack }
-                        },
-                        [_vm._v("Back")]
-                      )
-                    ],
-                    2
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
+/* harmony import */ var _CreateResourceField__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CreateResourceField */ "../coreui/src/views/resources/CreateResourceField.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "../coreui/node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'CreateResources',
+  components: {
+    'CreateResourceField': _CreateResourceField__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      message: '',
+      dismissSecs: 7,
+      dismissCountDown: 0,
+      form: {},
+      columns: [],
+      relations: [],
+      inputOptions: [],
+      receiveFormFields: [],
+      getData: false
+    };
+  },
+  watch: {
+    activePage: function activePage() {
+      this.getResources();
+    }
+  },
+  computed: {},
+  methods: {
+    goBack: function goBack() {
+      this.$router.go(-1);
+    },
+    storeFirstStep: function storeFirstStep() {
+      this.getData = true;
+    },
+    receiveDataFormField: function receiveDataFormField(data) {
+      var self = this;
+      self.receiveFormFields.push(data);
+
+      if (self.receiveFormFields.length == self.columns.length) {
+        self.store();
+      }
+    },
+    preparePostDataForStore: function preparePostDataForStore() {
+      var formData = new FormData();
+
+      for (var i = 0; i < this.receiveFormFields.length; i++) {
+        formData.append(this.receiveFormFields[i].name, this.receiveFormFields[i].data);
+      }
+
+      return formData;
+    },
+    store: function store(files, event) {
+      var self = this;
+      var postData = self.preparePostDataForStore();
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/resource/' + self.$route.params.bread + '/resource?token=' + localStorage.getItem("api_token"), postData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }).then(function () {
+        self.$router.go(-1);
+        self.message = 'Successfully added to ' + self.form.name;
+        self.showAlert();
+      })["catch"](function (error) {
+        console.log(error);
+        self.$router.push({
+          path: '/login'
+        });
+      });
+    },
+    countDownChanged: function countDownChanged(dismissCountDown) {
+      this.dismissCountDown = dismissCountDown;
+    },
+    showAlert: function showAlert() {
+      this.dismissCountDown = this.dismissSecs;
+    },
+    getFields: function getFields() {
+      var self = this;
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/resource/' + self.$route.params.bread + '/resource/create?token=' + localStorage.getItem("api_token")).then(function (response) {
+        self.form = response.data.form;
+        self.columns = response.data.columns;
+        self.relations = response.data.relations;
+        self.inputOptions = response.data.inputOptions;
+      })["catch"](function (error) {
+        console.log(error);
+        self.$router.push({
+          path: '/login'
+        });
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.getFields();
+  }
+});
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/resources/UpdateResourceField.vue?vue&type=template&id=6cccf2c2&":
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/resources/CreateResourceField.vue?vue&type=template&id=a87daa68&":
 /*!**************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!../coreui/src/views/resources/UpdateResourceField.vue?vue&type=template&id=6cccf2c2& ***!
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!../coreui/src/views/resources/CreateResourceField.vue?vue&type=template&id=a87daa68& ***!
   \**************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -723,6 +596,130 @@ var render = function() {
           ])
         ])
   ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/resources/CreateResources.vue?vue&type=template&id=ec537a36&scoped=true&":
+/*!**********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!../coreui/src/views/resources/CreateResources.vue?vue&type=template&id=ec537a36&scoped=true& ***!
+  \**********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "CRow",
+    [
+      _c(
+        "CCol",
+        { attrs: { col: "12", xl: "6" } },
+        [
+          _c(
+            "transition",
+            { attrs: { name: "slide" } },
+            [
+              _c(
+                "CCard",
+                [
+                  _c(
+                    "CCardBody",
+                    [
+                      _c("h3", [
+                        _vm._v(
+                          "\n            Create " +
+                            _vm._s(_vm.form.name) +
+                            "\n          "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "CAlert",
+                        {
+                          attrs: {
+                            show: _vm.dismissCountDown,
+                            color: "primary",
+                            fade: ""
+                          },
+                          on: {
+                            "update:show": function($event) {
+                              _vm.dismissCountDown = $event
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n            (" +
+                              _vm._s(_vm.dismissCountDown) +
+                              ") " +
+                              _vm._s(_vm.message) +
+                              "\n          "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _vm._l(_vm.columns, function(column) {
+                        return _c("CreateResourceField", {
+                          key: column.id,
+                          attrs: {
+                            column: column,
+                            relations: _vm.relations,
+                            options: _vm.inputOptions,
+                            getData: _vm.getData
+                          },
+                          on: { sendData: _vm.receiveDataFormField }
+                        })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "CButton",
+                        {
+                          staticClass: "mt-2",
+                          attrs: { color: "primary" },
+                          on: {
+                            click: function($event) {
+                              return _vm.storeFirstStep()
+                            }
+                          }
+                        },
+                        [_vm._v("Create")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "CButton",
+                        {
+                          staticClass: "mt-2",
+                          attrs: { color: "primary" },
+                          on: { click: _vm.goBack }
+                        },
+                        [_vm._v("Back")]
+                      )
+                    ],
+                    2
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

@@ -1,16 +1,16 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[6],{
 
-/***/ "../coreui/src/views/base/Table.vue":
+/***/ "../coreui/src/views/pages/Home.vue":
 /*!******************************************!*\
-  !*** ../coreui/src/views/base/Table.vue ***!
+  !*** ../coreui/src/views/pages/Home.vue ***!
   \******************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Table_vue_vue_type_template_id_4a1c900c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Table.vue?vue&type=template&id=4a1c900c& */ "../coreui/src/views/base/Table.vue?vue&type=template&id=4a1c900c&");
-/* harmony import */ var _Table_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Table.vue?vue&type=script&lang=js& */ "../coreui/src/views/base/Table.vue?vue&type=script&lang=js&");
+/* harmony import */ var _Home_vue_vue_type_template_id_4a750f18___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Home.vue?vue&type=template&id=4a750f18& */ "../coreui/src/views/pages/Home.vue?vue&type=template&id=4a750f18&");
+/* harmony import */ var _Home_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Home.vue?vue&type=script&lang=js& */ "../coreui/src/views/pages/Home.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _laravel_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../laravel/node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -20,9 +20,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_laravel_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Table_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Table_vue_vue_type_template_id_4a1c900c___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Table_vue_vue_type_template_id_4a1c900c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _Home_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Home_vue_vue_type_template_id_4a750f18___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Home_vue_vue_type_template_id_4a750f18___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -32,55 +32,56 @@ var component = Object(_laravel_node_modules_vue_loader_lib_runtime_componentNor
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "coreui/src/views/base/Table.vue"
+component.options.__file = "coreui/src/views/pages/Home.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "../coreui/src/views/base/Table.vue?vue&type=script&lang=js&":
+/***/ "../coreui/src/views/pages/Home.vue?vue&type=script&lang=js&":
 /*!*******************************************************************!*\
-  !*** ../coreui/src/views/base/Table.vue?vue&type=script&lang=js& ***!
+  !*** ../coreui/src/views/pages/Home.vue?vue&type=script&lang=js& ***!
   \*******************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _laravel_node_modules_babel_loader_lib_index_js_ref_4_0_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_Table_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../laravel/node_modules/babel-loader/lib??ref--4-0!../../../../laravel/node_modules/vue-loader/lib??vue-loader-options!./Table.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/base/Table.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_laravel_node_modules_babel_loader_lib_index_js_ref_4_0_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_Table_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _laravel_node_modules_babel_loader_lib_index_js_ref_4_0_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../laravel/node_modules/babel-loader/lib??ref--4-0!../../../../laravel/node_modules/vue-loader/lib??vue-loader-options!./Home.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/pages/Home.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_laravel_node_modules_babel_loader_lib_index_js_ref_4_0_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "../coreui/src/views/base/Table.vue?vue&type=template&id=4a1c900c&":
+/***/ "../coreui/src/views/pages/Home.vue?vue&type=template&id=4a750f18&":
 /*!*************************************************************************!*\
-  !*** ../coreui/src/views/base/Table.vue?vue&type=template&id=4a1c900c& ***!
+  !*** ../coreui/src/views/pages/Home.vue?vue&type=template&id=4a750f18& ***!
   \*************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_Table_vue_vue_type_template_id_4a1c900c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../laravel/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../laravel/node_modules/vue-loader/lib??vue-loader-options!./Table.vue?vue&type=template&id=4a1c900c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/base/Table.vue?vue&type=template&id=4a1c900c&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_Table_vue_vue_type_template_id_4a1c900c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_template_id_4a750f18___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../laravel/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../laravel/node_modules/vue-loader/lib??vue-loader-options!./Home.vue?vue&type=template&id=4a750f18& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/pages/Home.vue?vue&type=template&id=4a750f18&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_template_id_4a750f18___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_Table_vue_vue_type_template_id_4a1c900c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_template_id_4a750f18___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "../coreui/src/views/base/Tables.vue":
+/***/ "../coreui/src/views/qr/CardForm.vue":
 /*!*******************************************!*\
-  !*** ../coreui/src/views/base/Tables.vue ***!
+  !*** ../coreui/src/views/qr/CardForm.vue ***!
   \*******************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Tables_vue_vue_type_template_id_f21e2f2e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Tables.vue?vue&type=template&id=f21e2f2e& */ "../coreui/src/views/base/Tables.vue?vue&type=template&id=f21e2f2e&");
-/* harmony import */ var _Tables_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Tables.vue?vue&type=script&lang=js& */ "../coreui/src/views/base/Tables.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _laravel_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../laravel/node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _CardForm_vue_vue_type_template_id_342089a8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CardForm.vue?vue&type=template&id=342089a8& */ "../coreui/src/views/qr/CardForm.vue?vue&type=template&id=342089a8&");
+/* harmony import */ var _CardForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CardForm.vue?vue&type=script&lang=js& */ "../coreui/src/views/qr/CardForm.vue?vue&type=script&lang=js&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _CardForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _CardForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _laravel_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../laravel/node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -89,9 +90,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_laravel_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Tables_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Tables_vue_vue_type_template_id_f21e2f2e___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Tables_vue_vue_type_template_id_f21e2f2e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _CardForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CardForm_vue_vue_type_template_id_342089a8___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CardForm_vue_vue_type_template_id_342089a8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -101,194 +102,161 @@ var component = Object(_laravel_node_modules_vue_loader_lib_runtime_componentNor
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "coreui/src/views/base/Tables.vue"
+component.options.__file = "coreui/src/views/qr/CardForm.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "../coreui/src/views/base/Tables.vue?vue&type=script&lang=js&":
+/***/ "../coreui/src/views/qr/CardForm.vue?vue&type=script&lang=js&":
 /*!********************************************************************!*\
-  !*** ../coreui/src/views/base/Tables.vue?vue&type=script&lang=js& ***!
+  !*** ../coreui/src/views/qr/CardForm.vue?vue&type=script&lang=js& ***!
   \********************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _laravel_node_modules_babel_loader_lib_index_js_ref_4_0_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_Tables_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../laravel/node_modules/babel-loader/lib??ref--4-0!../../../../laravel/node_modules/vue-loader/lib??vue-loader-options!./Tables.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/base/Tables.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_laravel_node_modules_babel_loader_lib_index_js_ref_4_0_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_Tables_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _laravel_node_modules_babel_loader_lib_index_js_ref_4_0_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_CardForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../laravel/node_modules/babel-loader/lib??ref--4-0!../../../../laravel/node_modules/vue-loader/lib??vue-loader-options!./CardForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/qr/CardForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_laravel_node_modules_babel_loader_lib_index_js_ref_4_0_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_CardForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "../coreui/src/views/base/Tables.vue?vue&type=template&id=f21e2f2e&":
+/***/ "../coreui/src/views/qr/CardForm.vue?vue&type=template&id=342089a8&":
 /*!**************************************************************************!*\
-  !*** ../coreui/src/views/base/Tables.vue?vue&type=template&id=f21e2f2e& ***!
+  !*** ../coreui/src/views/qr/CardForm.vue?vue&type=template&id=342089a8& ***!
   \**************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_Tables_vue_vue_type_template_id_f21e2f2e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../laravel/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../laravel/node_modules/vue-loader/lib??vue-loader-options!./Tables.vue?vue&type=template&id=f21e2f2e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/base/Tables.vue?vue&type=template&id=f21e2f2e&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_Tables_vue_vue_type_template_id_f21e2f2e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_CardForm_vue_vue_type_template_id_342089a8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../laravel/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../laravel/node_modules/vue-loader/lib??vue-loader-options!./CardForm.vue?vue&type=template&id=342089a8& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/qr/CardForm.vue?vue&type=template&id=342089a8&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_CardForm_vue_vue_type_template_id_342089a8___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_Tables_vue_vue_type_template_id_f21e2f2e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_CardForm_vue_vue_type_template_id_342089a8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "../coreui/src/views/users/UsersData.js":
-/*!**********************************************!*\
-  !*** ../coreui/src/views/users/UsersData.js ***!
-  \**********************************************/
+/***/ "../coreui/src/views/qr/EmailForm.vue":
+/*!********************************************!*\
+  !*** ../coreui/src/views/qr/EmailForm.vue ***!
+  \********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var usersData = [{
-  username: 'Samppa Nori',
-  registered: '2012/01/01',
-  role: 'Member',
-  status: 'Active'
-}, {
-  username: 'Estavan Lykos',
-  registered: '2012/02/01',
-  role: 'Staff',
-  status: 'Banned'
-}, {
-  username: 'Chetan Mohamed',
-  registered: '2012/02/01',
-  role: 'Admin',
-  status: 'Inactive'
-}, {
-  username: 'Derick Maximinus',
-  registered: '2012/03/01',
-  role: 'Member',
-  status: 'Pending'
-}, {
-  username: 'Friderik Dávid',
-  registered: '2012/01/21',
-  role: 'Staff',
-  status: 'Active'
-}, {
-  username: 'Yiorgos Avraamu',
-  registered: '2012/01/01',
-  role: 'Member',
-  status: 'Active'
-}, {
-  username: 'Avram Tarasios',
-  registered: '2012/02/01',
-  role: 'Staff',
-  status: 'Banned',
-  _classes: 'table-success'
-}, {
-  username: 'Quintin Ed',
-  registered: '2012/02/01',
-  role: 'Admin',
-  status: 'Inactive'
-}, {
-  username: 'Enéas Kwadwo',
-  registered: '2012/03/01',
-  role: 'Member',
-  status: 'Pending'
-}, {
-  username: 'Agapetus Tadeáš',
-  registered: '2012/01/21',
-  role: 'Staff',
-  status: 'Active'
-}, {
-  username: 'Carwyn Fachtna',
-  registered: '2012/01/01',
-  role: 'Member',
-  status: 'Active',
-  _classes: 'table-success'
-}, {
-  username: 'Nehemiah Tatius',
-  registered: '2012/02/01',
-  role: 'Staff',
-  status: 'Banned'
-}, {
-  username: 'Ebbe Gemariah',
-  registered: '2012/02/01',
-  role: 'Admin',
-  status: 'Inactive'
-}, {
-  username: 'Eustorgios Amulius',
-  registered: '2012/03/01',
-  role: 'Member',
-  status: 'Pending'
-}, {
-  username: 'Leopold Gáspár',
-  registered: '2012/01/21',
-  role: 'Staff',
-  status: 'Active'
-}, {
-  username: 'Pompeius René',
-  registered: '2012/01/01',
-  role: 'Member',
-  status: 'Active'
-}, {
-  username: 'Paĉjo Jadon',
-  registered: '2012/02/01',
-  role: 'Staff',
-  status: 'Banned'
-}, {
-  username: 'Micheal Mercurius',
-  registered: '2012/02/01',
-  role: 'Admin',
-  status: 'Inactive'
-}, {
-  username: 'Ganesha Dubhghall',
-  registered: '2012/03/01',
-  role: 'Member',
-  status: 'Pending'
-}, {
-  username: 'Hiroto Šimun',
-  registered: '2012/01/21',
-  role: 'Staff',
-  status: 'Active'
-}, {
-  username: 'Vishnu Serghei',
-  registered: '2012/01/01',
-  role: 'Member',
-  status: 'Active'
-}, {
-  username: 'Zbyněk Phoibos',
-  registered: '2012/02/01',
-  role: 'Staff',
-  status: 'Banned'
-}, {
-  username: 'Einar Randall',
-  registered: '2012/02/01',
-  role: 'Admin',
-  status: 'Inactive',
-  _classes: 'table-danger'
-}, {
-  username: 'Félix Troels',
-  registered: '2012/03/21',
-  role: 'Staff',
-  status: 'Active'
-}, {
-  username: 'Aulus Agmundr',
-  registered: '2012/01/01',
-  role: 'Member',
-  status: 'Pending'
-}];
-/* harmony default export */ __webpack_exports__["default"] = (usersData);
+/* harmony import */ var _EmailForm_vue_vue_type_template_id_37ceb77c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EmailForm.vue?vue&type=template&id=37ceb77c& */ "../coreui/src/views/qr/EmailForm.vue?vue&type=template&id=37ceb77c&");
+/* harmony import */ var _laravel_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../laravel/node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_laravel_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _EmailForm_vue_vue_type_template_id_37ceb77c___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _EmailForm_vue_vue_type_template_id_37ceb77c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "coreui/src/views/qr/EmailForm.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/base/Table.vue?vue&type=script&lang=js&":
+/***/ "../coreui/src/views/qr/EmailForm.vue?vue&type=template&id=37ceb77c&":
+/*!***************************************************************************!*\
+  !*** ../coreui/src/views/qr/EmailForm.vue?vue&type=template&id=37ceb77c& ***!
+  \***************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_EmailForm_vue_vue_type_template_id_37ceb77c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../laravel/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../laravel/node_modules/vue-loader/lib??vue-loader-options!./EmailForm.vue?vue&type=template&id=37ceb77c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/qr/EmailForm.vue?vue&type=template&id=37ceb77c&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_EmailForm_vue_vue_type_template_id_37ceb77c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_EmailForm_vue_vue_type_template_id_37ceb77c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "../coreui/src/views/qr/TextForm.vue":
+/*!*******************************************!*\
+  !*** ../coreui/src/views/qr/TextForm.vue ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TextForm_vue_vue_type_template_id_087ee6c5___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TextForm.vue?vue&type=template&id=087ee6c5& */ "../coreui/src/views/qr/TextForm.vue?vue&type=template&id=087ee6c5&");
+/* harmony import */ var _laravel_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../laravel/node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_laravel_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _TextForm_vue_vue_type_template_id_087ee6c5___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TextForm_vue_vue_type_template_id_087ee6c5___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "coreui/src/views/qr/TextForm.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "../coreui/src/views/qr/TextForm.vue?vue&type=template&id=087ee6c5&":
+/*!**************************************************************************!*\
+  !*** ../coreui/src/views/qr/TextForm.vue?vue&type=template&id=087ee6c5& ***!
+  \**************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_TextForm_vue_vue_type_template_id_087ee6c5___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../laravel/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../laravel/node_modules/vue-loader/lib??vue-loader-options!./TextForm.vue?vue&type=template&id=087ee6c5& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/qr/TextForm.vue?vue&type=template&id=087ee6c5&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_TextForm_vue_vue_type_template_id_087ee6c5___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _laravel_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_TextForm_vue_vue_type_template_id_087ee6c5___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/pages/Home.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!../coreui/src/views/base/Table.vue?vue&type=script&lang=js& ***!
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!../coreui/src/views/pages/Home.vue?vue&type=script&lang=js& ***!
   \***************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _qr_TextForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../qr/TextForm */ "../coreui/src/views/qr/TextForm.vue");
+/* harmony import */ var _qr_CardForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../qr/CardForm */ "../coreui/src/views/qr/CardForm.vue");
+/* harmony import */ var _qr_EmailForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../qr/EmailForm */ "../coreui/src/views/qr/EmailForm.vue");
 //
 //
 //
@@ -319,47 +287,126 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Table',
-  props: {
-    items: Array,
-    fields: {
-      type: Array,
-      "default": function _default() {
-        return ['username', 'registered', 'role', 'status'];
+  name: 'Dashboard',
+  components: {
+    TextForm: _qr_TextForm__WEBPACK_IMPORTED_MODULE_0__["default"],
+    EmailForm: _qr_EmailForm__WEBPACK_IMPORTED_MODULE_2__["default"],
+    CardForm: _qr_CardForm__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  data: function data() {
+    return {
+      showTextForm: true,
+      showEmailForm: false,
+      showCardForm: false,
+      selectedQrType: 'url',
+      qrImageSrc: 'img/brand/qr-logo.png',
+      card_form_data: {
+        'full_name': '',
+        'email': '',
+        'work_phone': '',
+        'private_phone': '',
+        'cell_phone': '',
+        'address_label': '',
+        'address_postcode': '',
+        'address_street': '',
+        'address_town': '',
+        'address_region': '',
+        'address_country': ''
       }
-    },
-    caption: {
-      type: String,
-      "default": 'Table'
-    },
-    hover: Boolean,
-    striped: Boolean,
-    bordered: Boolean,
-    small: Boolean,
-    fixed: Boolean,
-    dark: Boolean
+    };
   },
   methods: {
-    getBadge: function getBadge(status) {
-      return status === 'Active' ? 'success' : status === 'Inactive' ? 'secondary' : status === 'Pending' ? 'warning' : status === 'Banned' ? 'danger' : 'primary';
+    selectQrType: function selectQrType(type) {
+      this.selectedQrType = type;
+      this.showForm();
+    },
+    showForm: function showForm() {
+      switch (this.selectedQrType) {
+        case 'email':
+          this.showTextForm = false;
+          this.showEmailForm = true;
+          this.showCardForm = false;
+          break;
+
+        case 'card':
+          this.showTextForm = false;
+          this.showEmailForm = false;
+          this.showCardForm = true;
+          break;
+
+        default:
+          this.showTextForm = true;
+          this.showEmailForm = false;
+          this.showCardForm = false;
+          break;
+      }
+    },
+    downloadQr: function downloadQr() {
+      var qr_tag = document.createElement('a');
+      qr_tag.href = this.qrImageSrc;
+      qr_tag.download = 'qr_code.png';
+      qr_tag.click();
+    },
+    updateCardFormData: function updateCardFormData(cardFormData) {
+      this.card_form_data = cardFormData;
+    },
+    createQR: function createQR() {
+      console.log(this.card_form_data);
     }
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/base/Tables.vue?vue&type=script&lang=js&":
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/qr/CardForm.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!../coreui/src/views/base/Tables.vue?vue&type=script&lang=js& ***!
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!../coreui/src/views/qr/CardForm.vue?vue&type=script&lang=js& ***!
   \****************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Table_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Table.vue */ "../coreui/src/views/base/Table.vue");
-/* harmony import */ var _users_UsersData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../users/UsersData */ "../coreui/src/views/users/UsersData.js");
 //
 //
 //
@@ -440,35 +487,63 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Tables',
-  components: {
-    CTableWrapper: _Table_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  name: "CardForm",
+  props: {
+    card_form_data: {
+      type: Object,
+      required: true
+    }
   },
   methods: {
-    shuffleArray: function shuffleArray(array) {
-      for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-      }
-
-      return array;
-    },
-    getShuffledUsersData: function getShuffledUsersData() {
-      return this.shuffleArray(_users_UsersData__WEBPACK_IMPORTED_MODULE_1__["default"].slice(0));
+    updateFormData: function updateFormData(key, value) {
+      console.log(key);
+      var formData = this.card_form_data;
+      formData[key] = value;
+      this.$emit("update-card-form-data", formData);
     }
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/base/Table.vue?vue&type=template&id=4a1c900c&":
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/pages/Home.vue?vue&type=template&id=4a750f18&":
 /*!*******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!../coreui/src/views/base/Table.vue?vue&type=template&id=4a1c900c& ***!
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!../coreui/src/views/pages/Home.vue?vue&type=template&id=4a750f18& ***!
   \*******************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -481,64 +556,255 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "CCard",
-    [
+  return _c("div", [
+    _c("div", { staticClass: "row" }, [
       _c(
-        "CCardHeader",
+        "div",
+        { staticClass: "col-md-9" },
         [
-          _vm._t("header", [
-            _c("CIcon", { attrs: { name: "cil-grid" } }),
-            _vm._v(" " + _vm._s(_vm.caption) + "\n    ")
-          ])
+          _c("input", { attrs: { name: "token", type: "hidden", value: "" } }),
+          _vm._v(" "),
+          _c(
+            "CButtonGroup",
+            { staticClass: "w-100 d-flex", attrs: { size: "lg" } },
+            [
+              _c(
+                "CButton",
+                {
+                  attrs: {
+                    color: _vm.selectedQrType == "url" ? "info" : "primary"
+                  },
+                  on: {
+                    click: function($event) {
+                      return _vm.selectQrType("url")
+                    }
+                  }
+                },
+                [
+                  _vm._v("\n          URL\n          "),
+                  _c("input", {
+                    staticClass: "w-0",
+                    attrs: { type: "radio", value: "url" }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "CButton",
+                {
+                  attrs: {
+                    color: _vm.selectedQrType == "text" ? "info" : "primary"
+                  },
+                  on: {
+                    click: function($event) {
+                      return _vm.selectQrType("text")
+                    }
+                  }
+                },
+                [
+                  _vm._v("\n          Text\n          "),
+                  _c("input", {
+                    staticClass: "w-0",
+                    attrs: { type: "radio", value: "text" }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "CButton",
+                {
+                  attrs: {
+                    color: _vm.selectedQrType == "phone" ? "info" : "primary"
+                  },
+                  on: {
+                    click: function($event) {
+                      return _vm.selectQrType("phone")
+                    }
+                  }
+                },
+                [
+                  _vm._v("\n          Phone\n          "),
+                  _c("input", {
+                    staticClass: "w-0",
+                    attrs: { type: "radio", value: "phone" }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "CButton",
+                {
+                  attrs: {
+                    color: _vm.selectedQrType == "sms" ? "info" : "primary"
+                  },
+                  on: {
+                    click: function($event) {
+                      return _vm.selectQrType("sms")
+                    }
+                  }
+                },
+                [
+                  _vm._v("\n          SMS\n          "),
+                  _c("input", {
+                    staticClass: "w-0",
+                    attrs: { type: "radio", value: "sms" }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "CButton",
+                {
+                  attrs: {
+                    color: _vm.selectedQrType == "email" ? "info" : "primary"
+                  },
+                  on: {
+                    click: function($event) {
+                      return _vm.selectQrType("email")
+                    }
+                  }
+                },
+                [
+                  _vm._v("\n          Email\n          "),
+                  _c("input", {
+                    staticClass: "w-0",
+                    attrs: { type: "radio", value: "email" }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "CButton",
+                {
+                  attrs: {
+                    color: _vm.selectedQrType == "card" ? "info" : "primary"
+                  },
+                  on: {
+                    click: function($event) {
+                      return _vm.selectQrType("card")
+                    }
+                  }
+                },
+                [
+                  _vm._v("\n          Card\n          "),
+                  _c("input", {
+                    staticClass: "w-0",
+                    attrs: { type: "radio", value: "card" }
+                  })
+                ]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "mt-3" }, [
+            _c(
+              "div",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.showTextForm,
+                    expression: "showTextForm"
+                  }
+                ],
+                staticClass: "qrcode-text-form"
+              },
+              [_c("TextForm")],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.showEmailForm,
+                    expression: "showEmailForm"
+                  }
+                ],
+                attrs: { id: "qrcode-email-form" }
+              },
+              [_c("EmailForm")],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.showCardForm,
+                    expression: "showCardForm"
+                  }
+                ],
+                attrs: { id: "qrcode-card-form" }
+              },
+              [
+                _c("CardForm", {
+                  attrs: { card_form_data: _vm.card_form_data },
+                  on: { "update-card-form-data": _vm.updateCardFormData }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c("div", { attrs: { id: "qr-colors-section" } })
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "mt-3 mb-3 text-center" },
+            [
+              _c(
+                "CButton",
+                {
+                  staticClass: "mt-3",
+                  attrs: { id: "btn_create_qr", color: "primary", size: "lg" },
+                  on: {
+                    click: function($event) {
+                      return _vm.createQR()
+                    }
+                  }
+                },
+                [_vm._v("\n          Create QR\n        ")]
+              )
+            ],
+            1
+          )
         ],
-        2
+        1
       ),
       _vm._v(" "),
       _c(
-        "CCardBody",
+        "div",
+        { staticClass: "col-md-3 text-center", attrs: { id: "qrcode-img" } },
         [
-          _c("CDataTable", {
-            attrs: {
-              hover: _vm.hover,
-              striped: _vm.striped,
-              bordered: _vm.bordered,
-              small: _vm.small,
-              fixed: _vm.fixed,
-              items: _vm.items,
-              fields: _vm.fields,
-              "items-per-page": _vm.small ? 10 : 5,
-              dark: _vm.dark,
-              pagination: ""
-            },
-            scopedSlots: _vm._u([
-              {
-                key: "status",
-                fn: function(ref) {
-                  var item = ref.item
-                  return [
-                    _c(
-                      "td",
-                      [
-                        _c(
-                          "CBadge",
-                          { attrs: { color: _vm.getBadge(item.status) } },
-                          [_vm._v(_vm._s(item.status))]
-                        )
-                      ],
-                      1
-                    )
-                  ]
+          _c("img", { staticClass: "w-100", attrs: { src: _vm.qrImageSrc } }),
+          _vm._v(" "),
+          _c(
+            "CButton",
+            {
+              staticClass: "mt-3",
+              attrs: { id: "btn_save_qr", color: "primary", size: "lg" },
+              on: {
+                click: function($event) {
+                  return _vm.downloadQr()
                 }
               }
-            ])
-          })
+            },
+            [_vm._v("\n        Download\n      ")]
+          )
         ],
         1
       )
-    ],
-    1
-  )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -547,9 +813,9 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/base/Tables.vue?vue&type=template&id=f21e2f2e&":
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/qr/CardForm.vue?vue&type=template&id=342089a8&":
 /*!********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!../coreui/src/views/base/Tables.vue?vue&type=template&id=f21e2f2e& ***!
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!../coreui/src/views/qr/CardForm.vue?vue&type=template&id=342089a8& ***!
   \********************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -570,92 +836,19 @@ var render = function() {
         [
           _c(
             "CCol",
-            { attrs: { lg: "6" } },
+            { attrs: { sm: "12" } },
             [
-              _c("CTableWrapper", {
-                attrs: { items: _vm.getShuffledUsersData() },
-                scopedSlots: _vm._u([
-                  {
-                    key: "header",
-                    fn: function() {
-                      return [
-                        _c("CIcon", { attrs: { name: "cil-grid" } }),
-                        _vm._v(" Simple Table\n          "),
-                        _c("div", { staticClass: "card-header-actions" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "card-header-action",
-                              attrs: {
-                                href:
-                                  "https://coreui.io/vue/docs/components/nav",
-                                rel: "noreferrer noopener",
-                                target: "_blank"
-                              }
-                            },
-                            [
-                              _c("small", { staticClass: "text-muted" }, [
-                                _vm._v("docs")
-                              ])
-                            ]
-                          )
-                        ])
-                      ]
-                    },
-                    proxy: true
+              _c("CInput", {
+                attrs: {
+                  label: "Full Name",
+                  name: "full_name",
+                  value: _vm.card_form_data.full_name,
+                  placeholder: "Your Name"
+                },
+                on: {
+                  keyup: function($event) {
+                    return _vm.updateFormData("full_name", $event.target.value)
                   }
-                ])
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "CCol",
-            { attrs: { lg: "6" } },
-            [
-              _c("CTableWrapper", {
-                attrs: {
-                  items: _vm.getShuffledUsersData(),
-                  striped: "",
-                  caption: "Striped Table"
-                }
-              })
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "CRow",
-        [
-          _c(
-            "CCol",
-            { attrs: { lg: "6" } },
-            [
-              _c("CTableWrapper", {
-                attrs: {
-                  items: _vm.getShuffledUsersData(),
-                  small: "",
-                  caption: "Condensed Table"
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "CCol",
-            { attrs: { lg: "6" } },
-            [
-              _c("CTableWrapper", {
-                attrs: {
-                  items: _vm.getShuffledUsersData(),
-                  fixed: "",
-                  bordered: "",
-                  caption: "Bordered Table"
                 }
               })
             ],
@@ -672,15 +865,294 @@ var render = function() {
             "CCol",
             { attrs: { sm: "12" } },
             [
-              _c("CTableWrapper", {
+              _c("CInput", {
                 attrs: {
-                  items: _vm.getShuffledUsersData(),
-                  hover: "",
-                  striped: "",
-                  bordered: "",
-                  small: "",
-                  fixed: "",
-                  caption: "Combined All Table"
+                  label: "Email",
+                  name: "email",
+                  value: _vm.card_form_data.email,
+                  placeholder: "example@email.com"
+                },
+                on: {
+                  keyup: function($event) {
+                    return _vm.updateFormData("email", $event.target.value)
+                  }
+                }
+              })
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "CRow",
+        [
+          _c(
+            "CCol",
+            { attrs: { sm: "4" } },
+            [
+              _c("CInput", {
+                attrs: {
+                  label: "Work Phone",
+                  name: "work_phone",
+                  value: _vm.card_form_data.work_phone,
+                  placeholder: "0963*******"
+                },
+                on: {
+                  keyup: function($event) {
+                    return _vm.updateFormData("work_phone", $event.target.value)
+                  }
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "CCol",
+            { attrs: { sm: "4" } },
+            [
+              _c("CInput", {
+                attrs: {
+                  label: "Private Phone",
+                  name: "private_phone",
+                  value: _vm.card_form_data.private_phone,
+                  placeholder: "0963*******"
+                },
+                on: {
+                  keyup: function($event) {
+                    return _vm.updateFormData(
+                      "private_phone",
+                      $event.target.value
+                    )
+                  }
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "CCol",
+            { attrs: { sm: "4" } },
+            [
+              _c("CInput", {
+                attrs: {
+                  label: "Cell Phone",
+                  name: "cell_phone",
+                  value: _vm.card_form_data.cell_phone,
+                  placeholder: "0963*******"
+                },
+                on: {
+                  keyup: function($event) {
+                    return _vm.updateFormData("cell_phone", $event.target.value)
+                  }
+                }
+              })
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "CRow",
+        [
+          _c(
+            "CCol",
+            { attrs: { sm: "8" } },
+            [
+              _c("CInput", {
+                attrs: {
+                  label: "Your Company",
+                  name: "address_label",
+                  value: _vm.card_form_data.address_label,
+                  placeholder: "Your Office"
+                },
+                on: {
+                  keyup: function($event) {
+                    return _vm.updateFormData(
+                      "address_label",
+                      $event.target.value
+                    )
+                  }
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "CCol",
+            { attrs: { sm: "4" } },
+            [
+              _c("CInput", {
+                attrs: {
+                  label: "Postcode",
+                  name: "address_postcode",
+                  value: _vm.card_form_data.address_postcode,
+                  placeholder: "700000"
+                },
+                on: {
+                  keyup: function($event) {
+                    return _vm.updateFormData(
+                      "address_postcode",
+                      $event.target.value
+                    )
+                  }
+                }
+              })
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "CRow",
+        [
+          _c(
+            "CCol",
+            { attrs: { sm: "3" } },
+            [
+              _c("CInput", {
+                attrs: {
+                  label: "Street",
+                  name: "address_street",
+                  value: _vm.card_form_data.address_street,
+                  placeholder: "Nam Ki Khoi Nghia"
+                },
+                on: {
+                  keyup: function($event) {
+                    return _vm.updateFormData(
+                      "address_street",
+                      $event.target.value
+                    )
+                  }
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "CCol",
+            { attrs: { sm: "3" } },
+            [
+              _c("CInput", {
+                attrs: {
+                  label: "Town",
+                  name: "address_town",
+                  value: _vm.card_form_data.address_town,
+                  placeholder: "District 1"
+                },
+                on: {
+                  keyup: function($event) {
+                    return _vm.updateFormData(
+                      "address_town",
+                      $event.target.value
+                    )
+                  }
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "CCol",
+            { attrs: { sm: "3" } },
+            [
+              _c("CInput", {
+                attrs: {
+                  label: "Region",
+                  name: "address_region",
+                  value: _vm.card_form_data.address_region,
+                  placeholder: "Ho Chi Minh"
+                },
+                on: {
+                  keyup: function($event) {
+                    return _vm.updateFormData(
+                      "address_region",
+                      $event.target.value
+                    )
+                  }
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "CCol",
+            { attrs: { sm: "3" } },
+            [
+              _c("CInput", {
+                attrs: {
+                  label: "Country",
+                  name: "address_country",
+                  value: _vm.card_form_data.address_country,
+                  placeholder: "Viet Nam"
+                },
+                on: {
+                  keyup: function($event) {
+                    return _vm.updateFormData(
+                      "address_country",
+                      $event.target.value
+                    )
+                  }
+                }
+              })
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/qr/EmailForm.vue?vue&type=template&id=37ceb77c&":
+/*!*********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!../coreui/src/views/qr/EmailForm.vue?vue&type=template&id=37ceb77c& ***!
+  \*********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "CRow",
+        [
+          _c(
+            "CCol",
+            { attrs: { sm: "12" } },
+            [
+              _c("CInput", {
+                attrs: {
+                  label: "Email",
+                  name: "email",
+                  placeholder: "example@email.com"
                 }
               })
             ],
@@ -697,16 +1169,84 @@ var render = function() {
             "CCol",
             { attrs: { sm: "12" } },
             [
-              _c("CTableWrapper", {
+              _c("CInput", {
                 attrs: {
-                  items: _vm.getShuffledUsersData(),
-                  hover: "",
-                  striped: "",
-                  bordered: "",
-                  small: "",
-                  fixed: "",
-                  dark: "",
-                  caption: "Combined All dark Table"
+                  label: "Subject",
+                  name: "subject",
+                  placeholder: "Greeting!"
+                }
+              })
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "CRow",
+        [
+          _c(
+            "CCol",
+            { attrs: { sm: "12" } },
+            [
+              _c("CTextarea", {
+                attrs: {
+                  id: "qrcode-text",
+                  label: "Body",
+                  name: "body",
+                  placeholder: "Today, I write this email to inform",
+                  rows: "3"
+                }
+              })
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/qr/TextForm.vue?vue&type=template&id=087ee6c5&":
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!../coreui/src/views/qr/TextForm.vue?vue&type=template&id=087ee6c5& ***!
+  \********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "CRow",
+        [
+          _c(
+            "CCol",
+            { attrs: { sm: "12" } },
+            [
+              _c("CTextarea", {
+                attrs: {
+                  id: "qrcode-text",
+                  label: "URL",
+                  placeholder: "https://www.facebook.com/",
+                  rows: "2"
                 }
               })
             ],
