@@ -23,6 +23,8 @@
         <CInput
             label="Work Phone"
             name="work_phone"
+            :value="work_phone"
+            @keyup="updateWorkPhone($event.target.value)"
             placeholder="0963*******"
         />
       </CCol>
@@ -89,3 +91,19 @@
     </CRow>
   </div>
 </template>
+
+<script>
+export default {
+  name: "CardForm",
+  props: {
+    work_phone: {
+      required: true
+    }
+  },
+  methods: {
+    updateWorkPhone(phone) {
+      this.$emit("update-work-phone", phone);
+    }
+  }
+}
+</script>

@@ -40,12 +40,18 @@
           </div>
 
           <div id="qrcode-card-form" v-show="showCardForm">
-            <CardForm></CardForm>
+            <CardForm :work_phone="work_phone" @update-work-phone="updateWorkPhone"></CardForm>
           </div>
 
           <div id='qr-colors-section'>
 
           </div>
+        </div>
+
+        <div class="mt-3 mb-3 text-center">
+          <CButton id="btn_create_qr" color="primary" size="lg" class="mt-3" v-on:click="createQR()">
+            Create QR
+          </CButton>
         </div>
       </div>
       <div id="qrcode-img" class="col-md-3 text-center">
@@ -77,7 +83,8 @@ export default {
       showEmailForm: false,
       showCardForm: false,
       selectedQrType: 'url',
-      qrImageSrc: 'img/brand/qr-logo.png'
+      qrImageSrc: 'img/brand/qr-logo.png',
+      work_phone: '',
     }
   },
   methods: {
@@ -109,6 +116,12 @@ export default {
       qr_tag.href = this.qrImageSrc;
       qr_tag.download = 'qr_code.png';
       qr_tag.click();
+    },
+    updateWorkPhone(phone) {
+      this.work_phone = phone;
+    },
+    createQR() {
+      console.log(this.work_phone);
     }
   }
 }

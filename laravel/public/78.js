@@ -79,15 +79,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CardForm_vue_vue_type_template_id_342089a8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CardForm.vue?vue&type=template&id=342089a8& */ "../coreui/src/views/qr/CardForm.vue?vue&type=template&id=342089a8&");
-/* harmony import */ var _laravel_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../laravel/node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _CardForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CardForm.vue?vue&type=script&lang=js& */ "../coreui/src/views/qr/CardForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _laravel_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../laravel/node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_laravel_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_laravel_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CardForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _CardForm_vue_vue_type_template_id_342089a8___WEBPACK_IMPORTED_MODULE_0__["render"],
   _CardForm_vue_vue_type_template_id_342089a8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -101,6 +103,20 @@ var component = Object(_laravel_node_modules_vue_loader_lib_runtime_componentNor
 if (false) { var api; }
 component.options.__file = "coreui/src/views/qr/CardForm.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "../coreui/src/views/qr/CardForm.vue?vue&type=script&lang=js&":
+/*!********************************************************************!*\
+  !*** ../coreui/src/views/qr/CardForm.vue?vue&type=script&lang=js& ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _laravel_node_modules_babel_loader_lib_index_js_ref_4_0_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_CardForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../laravel/node_modules/babel-loader/lib??ref--4-0!../../../../laravel/node_modules/vue-loader/lib??vue-loader-options!./CardForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/qr/CardForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_laravel_node_modules_babel_loader_lib_index_js_ref_4_0_laravel_node_modules_vue_loader_lib_index_js_vue_loader_options_CardForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -300,6 +316,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -316,7 +338,8 @@ __webpack_require__.r(__webpack_exports__);
       showEmailForm: false,
       showCardForm: false,
       selectedQrType: 'url',
-      qrImageSrc: 'img/brand/qr-logo.png'
+      qrImageSrc: 'img/brand/qr-logo.png',
+      work_phone: ''
     };
   },
   methods: {
@@ -350,6 +373,131 @@ __webpack_require__.r(__webpack_exports__);
       qr_tag.href = this.qrImageSrc;
       qr_tag.download = 'qr_code.png';
       qr_tag.click();
+    },
+    updateWorkPhone: function updateWorkPhone(phone) {
+      this.work_phone = phone;
+    },
+    createQR: function createQR() {
+      console.log(this.work_phone);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!../coreui/src/views/qr/CardForm.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!../coreui/src/views/qr/CardForm.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "CardForm",
+  props: {
+    work_phone: {
+      required: true
+    }
+  },
+  methods: {
+    updateWorkPhone: function updateWorkPhone(phone) {
+      this.$emit("update-work-phone", phone);
     }
   }
 });
@@ -560,12 +708,38 @@ var render = function() {
                 ],
                 attrs: { id: "qrcode-card-form" }
               },
-              [_c("CardForm")],
+              [
+                _c("CardForm", {
+                  attrs: { work_phone: _vm.work_phone },
+                  on: { "update-work-phone": _vm.updateWorkPhone }
+                })
+              ],
               1
             ),
             _vm._v(" "),
             _c("div", { attrs: { id: "qr-colors-section" } })
-          ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "mt-3 mb-3 text-center" },
+            [
+              _c(
+                "CButton",
+                {
+                  staticClass: "mt-3",
+                  attrs: { id: "btn_create_qr", color: "primary", size: "lg" },
+                  on: {
+                    click: function($event) {
+                      return _vm.createQR()
+                    }
+                  }
+                },
+                [_vm._v("\n          Create QR\n        ")]
+              )
+            ],
+            1
+          )
         ],
         1
       ),
@@ -673,7 +847,13 @@ var render = function() {
                 attrs: {
                   label: "Work Phone",
                   name: "work_phone",
+                  value: _vm.work_phone,
                   placeholder: "0963*******"
+                },
+                on: {
+                  keyup: function($event) {
+                    return _vm.updateWorkPhone($event.target.value)
+                  }
                 }
               })
             ],
