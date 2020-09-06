@@ -4,27 +4,27 @@
       <div class="col-md-9">
         <input name="token" type="hidden" value="" />
         <CButtonGroup class="w-100 d-flex" size="lg">
-          <CButton color="primary" v-on:click="showForm('url')">
+          <CButton :color="selectedQrType == 'url' ? 'info' : 'primary'" v-on:click="selectQrType('url')">
             URL
             <input type="radio" value="url" class="w-0">
           </CButton>
-          <CButton color="primary" v-on:click="showForm('text')">
+          <CButton :color="selectedQrType == 'text' ? 'info' : 'primary'" v-on:click="selectQrType('text')">
             Text
             <input type="radio" value="text" class="w-0">
           </CButton>
-          <CButton color="primary" v-on:click="showForm('phone')">
+          <CButton :color="selectedQrType == 'phone' ? 'info' : 'primary'" v-on:click="selectQrType('phone')">
             Phone
             <input type="radio" value="phone" class="w-0">
           </CButton>
-          <CButton color="primary" v-on:click="showForm('sms')">
+          <CButton :color="selectedQrType == 'sms' ? 'info' : 'primary'" v-on:click="selectQrType('sms')">
             SMS
             <input type="radio" value="sms" class="w-0">
           </CButton>
-          <CButton color="primary" v-on:click="showForm('email')">
+          <CButton :color="selectedQrType == 'email' ? 'info' : 'primary'" v-on:click="selectQrType('email')">
             Email
             <input type="radio" value="email" class="w-0">
           </CButton>
-          <CButton color="primary" v-on:click="showForm('card')">
+          <CButton :color="selectedQrType == 'card' ? 'info' : 'primary'" v-on:click="selectQrType('card')">
             Card
             <input type="radio" value="card" class="w-0">
           </CButton>
@@ -49,8 +49,8 @@
         </div>
       </div>
       <div id="qrcode-img" class="col-md-3 text-center">
-        <img src="img/brand/qr-logo.png" class="w-100" />
-        <CButton id="btn_save_qr" color="primary" size="lg" class="mt-3">
+        <img v-bind:src=qrImageSrc class="w-100" />
+        <CButton id="btn_save_qr" color="primary" size="lg" class="mt-3" v-on:click="downloadQr()">
           Download
         </CButton>
       </div>
@@ -76,11 +76,17 @@ export default {
       showTextForm: true,
       showEmailForm: false,
       showCardForm: false,
+      selectedQrType: 'url',
+      qrImageSrc: 'img/brand/qr-logo.png'
     }
   },
   methods: {
-    showForm(value) {
-      switch (value) {
+    selectQrType(type) {
+      this.selectedQrType = type;
+      this.showForm();
+    },
+    showForm() {
+      switch (this.selectedQrType) {
         case 'email':
           this.showTextForm = false;
           this.showEmailForm = true;
@@ -97,6 +103,12 @@ export default {
           this.showCardForm = false;
           break;
       }
+    },
+    downloadQr() {
+      var qr_tag = document.createElement('a');
+      qr_tag.href = this.qrImageSrc;
+      qr_tag.download = 'qr_code.png';
+      qr_tag.click();
     }
   }
 }

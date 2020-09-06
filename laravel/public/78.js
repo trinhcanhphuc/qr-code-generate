@@ -314,12 +314,18 @@ __webpack_require__.r(__webpack_exports__);
     return {
       showTextForm: true,
       showEmailForm: false,
-      showCardForm: false
+      showCardForm: false,
+      selectedQrType: 'url',
+      qrImageSrc: 'img/brand/qr-logo.png'
     };
   },
   methods: {
-    showForm: function showForm(value) {
-      switch (value) {
+    selectQrType: function selectQrType(type) {
+      this.selectedQrType = type;
+      this.showForm();
+    },
+    showForm: function showForm() {
+      switch (this.selectedQrType) {
         case 'email':
           this.showTextForm = false;
           this.showEmailForm = true;
@@ -338,6 +344,12 @@ __webpack_require__.r(__webpack_exports__);
           this.showCardForm = false;
           break;
       }
+    },
+    downloadQr: function downloadQr() {
+      var qr_tag = document.createElement('a');
+      qr_tag.href = this.qrImageSrc;
+      qr_tag.download = 'qr_code.png';
+      qr_tag.click();
     }
   }
 });
@@ -374,10 +386,12 @@ var render = function() {
               _c(
                 "CButton",
                 {
-                  attrs: { color: "primary" },
+                  attrs: {
+                    color: _vm.selectedQrType == "url" ? "info" : "primary"
+                  },
                   on: {
                     click: function($event) {
-                      return _vm.showForm("url")
+                      return _vm.selectQrType("url")
                     }
                   }
                 },
@@ -393,10 +407,12 @@ var render = function() {
               _c(
                 "CButton",
                 {
-                  attrs: { color: "primary" },
+                  attrs: {
+                    color: _vm.selectedQrType == "text" ? "info" : "primary"
+                  },
                   on: {
                     click: function($event) {
-                      return _vm.showForm("text")
+                      return _vm.selectQrType("text")
                     }
                   }
                 },
@@ -412,10 +428,12 @@ var render = function() {
               _c(
                 "CButton",
                 {
-                  attrs: { color: "primary" },
+                  attrs: {
+                    color: _vm.selectedQrType == "phone" ? "info" : "primary"
+                  },
                   on: {
                     click: function($event) {
-                      return _vm.showForm("phone")
+                      return _vm.selectQrType("phone")
                     }
                   }
                 },
@@ -431,10 +449,12 @@ var render = function() {
               _c(
                 "CButton",
                 {
-                  attrs: { color: "primary" },
+                  attrs: {
+                    color: _vm.selectedQrType == "sms" ? "info" : "primary"
+                  },
                   on: {
                     click: function($event) {
-                      return _vm.showForm("sms")
+                      return _vm.selectQrType("sms")
                     }
                   }
                 },
@@ -450,10 +470,12 @@ var render = function() {
               _c(
                 "CButton",
                 {
-                  attrs: { color: "primary" },
+                  attrs: {
+                    color: _vm.selectedQrType == "email" ? "info" : "primary"
+                  },
                   on: {
                     click: function($event) {
-                      return _vm.showForm("email")
+                      return _vm.selectQrType("email")
                     }
                   }
                 },
@@ -469,10 +491,12 @@ var render = function() {
               _c(
                 "CButton",
                 {
-                  attrs: { color: "primary" },
+                  attrs: {
+                    color: _vm.selectedQrType == "card" ? "info" : "primary"
+                  },
                   on: {
                     click: function($event) {
-                      return _vm.showForm("card")
+                      return _vm.selectQrType("card")
                     }
                   }
                 },
@@ -550,16 +574,18 @@ var render = function() {
         "div",
         { staticClass: "col-md-3 text-center", attrs: { id: "qrcode-img" } },
         [
-          _c("img", {
-            staticClass: "w-100",
-            attrs: { src: "img/brand/qr-logo.png" }
-          }),
+          _c("img", { staticClass: "w-100", attrs: { src: _vm.qrImageSrc } }),
           _vm._v(" "),
           _c(
             "CButton",
             {
               staticClass: "mt-3",
-              attrs: { id: "btn_save_qr", color: "primary", size: "lg" }
+              attrs: { id: "btn_save_qr", color: "primary", size: "lg" },
+              on: {
+                click: function($event) {
+                  return _vm.downloadQr()
+                }
+              }
             },
             [_vm._v("\n        Download\n      ")]
           )
