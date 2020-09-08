@@ -42,9 +42,17 @@
           <div id="qrcode-card-form" v-show="showCardForm">
             <CardForm :card_form_data="card_form_data" @update-card-form-data="updateCardFormData"></CardForm>
           </div>
+        </div>
 
-          <div id='qr-colors-section'>
-
+        <div class="mt-3 customize">
+          <div id="qr-colors-section">
+            <ColorForm></ColorForm>
+          </div>
+          <div id="qr-logo">
+            <LogoForm></LogoForm>
+          </div>
+          <div id="qr-eyes-style">
+            <EyesForm></EyesForm>
           </div>
         </div>
 
@@ -69,13 +77,19 @@
 import TextForm from "../qr/TextForm";
 import CardForm from "../qr/CardForm";
 import EmailForm from "../qr/EmailForm";
+import ColorForm from "../qr/ColorForm";
+import LogoForm from "../qr/LogoForm";
+import EyesForm from "../qr/EyesForm";
 
 export default {
   name: 'Dashboard',
   components: {
     TextForm,
     EmailForm,
-    CardForm
+    CardForm,
+    ColorForm,
+    LogoForm,
+    EyesForm
   },
   data () {
     return {
