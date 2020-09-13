@@ -1,0 +1,19 @@
+0000000000000000000000000000000000000000 6e2ad7720a484910e79a915a4e309026611924ee Phuc Trinh <trinhcanhphuc@gmail.com> 1597477019 +0700	branch: Created from origin/master
+6e2ad7720a484910e79a915a4e309026611924ee 1360259e863fb5c98abdc7993a3fbe07ee2cfd82 Phuc Trinh <trinhcanhphuc@gmail.com> 1597477965 +0700	commit: Fix font awesome not work
+1360259e863fb5c98abdc7993a3fbe07ee2cfd82 2e795c3538c44ae5c34474f72e6a199da8dd5b5c Phuc Trinh <trinhcanhphuc@gmail.com> 1597485071 +0700	commit: Fix sample create QR Custom
+2e795c3538c44ae5c34474f72e6a199da8dd5b5c b5d2fb1ac26f26d32d9d3783569d6f7f832fe02e Phuc Trinh <trinhcanhphuc@gmail.com> 1597555063 +0700	commit: Update UI
+b5d2fb1ac26f26d32d9d3783569d6f7f832fe02e 03a9cf3f6a073437503cf1b64ced8625a3b91871 Phuc Trinh <trinhcanhphuc@gmail.com> 1597557108 +0700	commit: Procfile for Heroku
+03a9cf3f6a073437503cf1b64ced8625a3b91871 1dfe48840b0ed02b4c162a538238abd3678f3dec Phuc Trinh <trinhcanhphuc@gmail.com> 1597559447 +0700	commit: Fix heroku deploy
+1dfe48840b0ed02b4c162a538238abd3678f3dec 067e57ae16bb44c2cff43554e1ce3bcd00a8dac2 Phuc Trinh <trinhcanhphuc@gmail.com> 1597559885 +0700	commit: Fix heroku deploy imagick
+067e57ae16bb44c2cff43554e1ce3bcd00a8dac2 95d19ab2e495c308a3c137af3351a6648594df37 Phuc Trinh <trinhcanhphuc@gmail.com> 1597570373 +0700	commit: Update webpack mix
+95d19ab2e495c308a3c137af3351a6648594df37 f26d7c9ae645b90a350bb75d66556f7372ace54c Phuc Trinh <trinhcanhphuc@gmail.com> 1598671172 +0700	commit: Fix qr type radios button not working
+f26d7c9ae645b90a350bb75d66556f7372ace54c eaae59694488da411c26b2c095f5a4f999f1b8f3 Phuc Trinh <trinhcanhphuc@gmail.com> 1598672675 +0700	commit: Prevent select button
+eaae59694488da411c26b2c095f5a4f999f1b8f3 919d765a066d5fdcbf65f06a784708699a892918 Phuc Trinh <trinhcanhphuc@gmail.com> 1599032228 +0700	pull --no-commit origin master: Fast-forward
+919d765a066d5fdcbf65f06a784708699a892918 08cbee36aa9f5066441a7bdd512c7bc70118c275 Phuc Trinh <trinhcanhphuc@gmail.com> 1599039706 +0700	commit: Home Page: update UI
+08cbee36aa9f5066441a7bdd512c7bc70118c275 919d765a066d5fdcbf65f06a784708699a892918 Phuc Trinh <trinhcanhphuc@gmail.com> 1599366057 +0700	reset: moving to 919d765a066d5fdcbf65f06a784708699a892918
+919d765a066d5fdcbf65f06a784708699a892918 08cbee36aa9f5066441a7bdd512c7bc70118c275 Phuc Trinh <trinhcanhphuc@gmail.com> 1599366114 +0700	pull --no-commit origin master: Fast-forward
+08cbee36aa9f5066441a7bdd512c7bc70118c275 bcd624834d8c8e3eddd25abb34ec7f95e41e3768 Phuc Trinh <trinhcanhphuc@gmail.com> 1599375703 +0700	commit: Make qr type radio event listener
+bcd624834d8c8e3eddd25abb34ec7f95e41e3768 d572701b6dc18cd183f55b2753878c36fb267e23 Phuc Trinh <trinhcanhphuc@gmail.com> 1599377665 +0700	commit: Make Download QR event
+d572701b6dc18cd183f55b2753878c36fb267e23 c03af0149162c6c8f4b11dd5df9cc19704274d59 Phuc Trinh <trinhcanhphuc@gmail.com> 1599387620 +0700	commit: Add binding data between parent and child
+c03af0149162c6c8f4b11dd5df9cc19704274d59 f9b18944a5bb1455976b82f0ea60bfbffdf13635 Phuc Trinh <trinhcanhphuc@gmail.com> 1599397000 +0700	commit: Add Card Form emit handle
+f9b18944a5bb1455976b82f0ea60bfbffdf13635 4a9e380f0f5acb8ef430611e3c38ad25be28b20f Phuc Trinh <trinhcanhphuc@gmail.com> 1599571404 +0700	commit: Fix qr logo upload

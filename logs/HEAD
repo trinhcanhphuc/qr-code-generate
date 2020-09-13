@@ -1,0 +1,68 @@
+0000000000000000000000000000000000000000 3cb86ad438a7113741ec7b276d98722c44acf9fe Phuc Trinh <trinhcanhphuc@gmail.com> 1593947556 +0700	clone: from https://github.com/trinhcanhphuc/qr-code-generate.git
+3cb86ad438a7113741ec7b276d98722c44acf9fe 11e797a262cea4aac545718669248d2014a4e0ba Phuc Trinh <trinhcanhphuc@gmail.com> 1593949183 +0700	commit: Init source
+11e797a262cea4aac545718669248d2014a4e0ba d95ab15846b801f3ab89c32e2cada6501f70071f Phuc Trinh <trinhcanhphuc@gmail.com> 1593956960 +0700	commit: add qr_address_generate
+d95ab15846b801f3ab89c32e2cada6501f70071f c75b6ae406edf3e4f67028cd0c7a97011466d9b7 Phuc Trinh <trinhcanhphuc@gmail.com> 1594533022 +0700	pull: Fast-forward
+c75b6ae406edf3e4f67028cd0c7a97011466d9b7 50d728490848e34f723df9437b1ee88b2e5457fa Phuc Trinh <trinhcanhphuc@gmail.com> 1594541218 +0700	commit: remove bootstrap, make atom css
+50d728490848e34f723df9437b1ee88b2e5457fa a6e4201cb1e211a0cdcde39ed35d12bd0049fb78 Phuc Trinh <trinhcanhphuc@gmail.com> 1594543039 +0700	commit: make qr code height
+a6e4201cb1e211a0cdcde39ed35d12bd0049fb78 a52c1e5e622b3071ca50d9699b3a3398b8938aee Phuc Trinh <trinhcanhphuc@gmail.com> 1594543283 +0700	commit: README: Add deploy
+a52c1e5e622b3071ca50d9699b3a3398b8938aee ea3fc16ada50d282b5626fdcb52e1b36861abc4b Phuc Trinh <trinhcanhphuc@gmail.com> 1594547659 +0700	commit: update components UI base on tachyons
+ea3fc16ada50d282b5626fdcb52e1b36861abc4b 0e36754113d09ceff4509363b23e3a4f1552f7b0 Phuc Trinh <trinhcanhphuc@gmail.com> 1595040672 +0700	pull: Fast-forward
+0e36754113d09ceff4509363b23e3a4f1552f7b0 f6fbbfc9c68d3a63f06dd92ef4b036d9e963f9a9 Phuc Trinh <trinhcanhphuc@gmail.com> 1595042947 +0700	commit: Add env file
+f6fbbfc9c68d3a63f06dd92ef4b036d9e963f9a9 d97e4c962167d790e8aa6a59f7e56c8f6c73e614 Phuc Trinh <trinhcanhphuc@gmail.com> 1595051803 +0700	commit: add font awesome
+d97e4c962167d790e8aa6a59f7e56c8f6c73e614 bfc53ecb72fa2980d1eccd44fb86e78c8ae808fe Phuc Trinh <trinhcanhphuc@gmail.com> 1595055790 +0700	commit: Add create button handle
+bfc53ecb72fa2980d1eccd44fb86e78c8ae808fe 30cb2a46bfb4af8d983754c4876332c5601a3b42 Phuc Trinh <trinhcanhphuc@gmail.com> 1595060014 +0700	commit: add qr-type radio buttons
+30cb2a46bfb4af8d983754c4876332c5601a3b42 c66386a689b8d6920804e832083ce4d900a34e89 Phuc Trinh <trinhcanhphuc@gmail.com> 1595131488 +0700	pull --no-commit origin master: Fast-forward
+c66386a689b8d6920804e832083ce4d900a34e89 358d37bd9cefb2c3506072f212c5b2e945c490c7 Phuc Trinh <trinhcanhphuc@gmail.com> 1595135567 +0700	commit: Update Email form UI
+358d37bd9cefb2c3506072f212c5b2e945c490c7 358d37bd9cefb2c3506072f212c5b2e945c490c7 Phuc Trinh <trinhcanhphuc@gmail.com> 1595157077 +0700	checkout: moving from master to add-webpack
+358d37bd9cefb2c3506072f212c5b2e945c490c7 70a24c58f05a00d5752fb679b95a6b7a8100de28 Phuc Trinh <trinhcanhphuc@gmail.com> 1595157099 +0700	commit: add webpack and tailwind css
+70a24c58f05a00d5752fb679b95a6b7a8100de28 358d37bd9cefb2c3506072f212c5b2e945c490c7 Phuc Trinh <trinhcanhphuc@gmail.com> 1595425757 +0700	checkout: moving from add-webpack to master
+358d37bd9cefb2c3506072f212c5b2e945c490c7 70a24c58f05a00d5752fb679b95a6b7a8100de28 Phuc Trinh <trinhcanhphuc@gmail.com> 1595425771 +0700	checkout: moving from master to add-webpack
+70a24c58f05a00d5752fb679b95a6b7a8100de28 358d37bd9cefb2c3506072f212c5b2e945c490c7 Phuc Trinh <trinhcanhphuc@gmail.com> 1595425891 +0700	checkout: moving from add-webpack to master
+358d37bd9cefb2c3506072f212c5b2e945c490c7 6ee831d9036973c12e3c9c8c2439219678062c33 Phuc Trinh <trinhcanhphuc@gmail.com> 1595425898 +0700	pull: Fast-forward
+6ee831d9036973c12e3c9c8c2439219678062c33 1b501d41160ea9178bc7f4b9e79b1734dd532f42 Phuc Trinh <trinhcanhphuc@gmail.com> 1595426773 +0700	commit: Make temp project structure
+1b501d41160ea9178bc7f4b9e79b1734dd532f42 90da72773c6d74c6ea96aea466c5ebe5336e4b46 Phuc Trinh <trinhcanhphuc@gmail.com> 1595428395 +0700	commit: Update UI home page
+90da72773c6d74c6ea96aea466c5ebe5336e4b46 bf3eb59fbace3b5a9cad154ee94bb612855abce0 Phuc Trinh <trinhcanhphuc@gmail.com> 1595651434 +0700	pull: Fast-forward
+bf3eb59fbace3b5a9cad154ee94bb612855abce0 78c17f6904ca04682ade5abb84d340462019549e Phuc Trinh <trinhcanhphuc@gmail.com> 1595652554 +0700	commit: Make reload image cache
+78c17f6904ca04682ade5abb84d340462019549e 16a1e2dfeaf342197ac0a72541eaa4cc4f546f5f Phuc Trinh <trinhcanhphuc@gmail.com> 1595658257 +0700	commit: Update UI qr-code-type radios
+16a1e2dfeaf342197ac0a72541eaa4cc4f546f5f 34c9e3ba3b7fbbe3d3d60e5594bf888366e8ceb6 Phuc Trinh <trinhcanhphuc@gmail.com> 1595666656 +0700	commit: Make create qr code by bussiness card information
+34c9e3ba3b7fbbe3d3d60e5594bf888366e8ceb6 d480a1b749370fa398e5d634163504734398cdcb Phuc Trinh <trinhcanhphuc@gmail.com> 1596344539 +0700	pull: Fast-forward
+d480a1b749370fa398e5d634163504734398cdcb e83ee397b4fb13a0e380f319ad35cde9245caf5f Phuc Trinh <trinhcanhphuc@gmail.com> 1596344631 +0700	commit: Fix year license in footer
+e83ee397b4fb13a0e380f319ad35cde9245caf5f 764e5b0b2af9a3f578af0b579f58e377406ccdd9 Phuc Trinh <trinhcanhphuc@gmail.com> 1596360134 +0700	commit: Add QR custom color
+764e5b0b2af9a3f578af0b579f58e377406ccdd9 d992ad8d188352b80cdbf3597ee860182747b9b7 Phuc Trinh <trinhcanhphuc@gmail.com> 1596379644 +0700	commit: Set default qr color
+d992ad8d188352b80cdbf3597ee860182747b9b7 d992ad8d188352b80cdbf3597ee860182747b9b7 Phuc Trinh <trinhcanhphuc@gmail.com> 1596386170 +0700	checkout: moving from master to make-qr-with-logo
+d992ad8d188352b80cdbf3597ee860182747b9b7 71e53215c036053358a0ec391284c6df058700a1 Phuc Trinh <trinhcanhphuc@gmail.com> 1596549737 +0700	commit: Make example create qr code with logo
+71e53215c036053358a0ec391284c6df058700a1 d992ad8d188352b80cdbf3597ee860182747b9b7 Phuc Trinh <trinhcanhphuc@gmail.com> 1596879994 +0700	checkout: moving from make-qr-with-logo to master
+d992ad8d188352b80cdbf3597ee860182747b9b7 54c6b98b28321eb9546b9f085da4ae5a12bff43d Phuc Trinh <trinhcanhphuc@gmail.com> 1596879998 +0700	pull: Fast-forward
+54c6b98b28321eb9546b9f085da4ae5a12bff43d 39f281905f876e7fad03a4376cf94576d945c6be Phuc Trinh <trinhcanhphuc@gmail.com> 1597463295 +0700	checkout: moving from master to move-project-to-laravel
+39f281905f876e7fad03a4376cf94576d945c6be 3578b612decde640564c528626dae707fe9759be Phuc Trinh <trinhcanhphuc@gmail.com> 1597476740 +0700	commit: Fix error qr code when load page
+3578b612decde640564c528626dae707fe9759be 54c6b98b28321eb9546b9f085da4ae5a12bff43d Phuc Trinh <trinhcanhphuc@gmail.com> 1597476752 +0700	checkout: moving from move-project-to-laravel to master
+54c6b98b28321eb9546b9f085da4ae5a12bff43d d4f94b642681586a5e8c4f811bc75d958f0a1362 Phuc Trinh <trinhcanhphuc@gmail.com> 1597476773 +0700	pull --no-commit --rebase origin master: Fast-forward
+d4f94b642681586a5e8c4f811bc75d958f0a1362 71e53215c036053358a0ec391284c6df058700a1 Phuc Trinh <trinhcanhphuc@gmail.com> 1597476791 +0700	checkout: moving from master to make-qr-with-logo
+71e53215c036053358a0ec391284c6df058700a1 6e2ad7720a484910e79a915a4e309026611924ee Phuc Trinh <trinhcanhphuc@gmail.com> 1597477019 +0700	checkout: moving from make-qr-with-logo to master
+6e2ad7720a484910e79a915a4e309026611924ee 1360259e863fb5c98abdc7993a3fbe07ee2cfd82 Phuc Trinh <trinhcanhphuc@gmail.com> 1597477965 +0700	commit: Fix font awesome not work
+1360259e863fb5c98abdc7993a3fbe07ee2cfd82 2e795c3538c44ae5c34474f72e6a199da8dd5b5c Phuc Trinh <trinhcanhphuc@gmail.com> 1597485071 +0700	commit: Fix sample create QR Custom
+2e795c3538c44ae5c34474f72e6a199da8dd5b5c b5d2fb1ac26f26d32d9d3783569d6f7f832fe02e Phuc Trinh <trinhcanhphuc@gmail.com> 1597555063 +0700	commit: Update UI
+b5d2fb1ac26f26d32d9d3783569d6f7f832fe02e 03a9cf3f6a073437503cf1b64ced8625a3b91871 Phuc Trinh <trinhcanhphuc@gmail.com> 1597557108 +0700	commit: Procfile for Heroku
+03a9cf3f6a073437503cf1b64ced8625a3b91871 1dfe48840b0ed02b4c162a538238abd3678f3dec Phuc Trinh <trinhcanhphuc@gmail.com> 1597559447 +0700	commit: Fix heroku deploy
+1dfe48840b0ed02b4c162a538238abd3678f3dec 067e57ae16bb44c2cff43554e1ce3bcd00a8dac2 Phuc Trinh <trinhcanhphuc@gmail.com> 1597559885 +0700	commit: Fix heroku deploy imagick
+067e57ae16bb44c2cff43554e1ce3bcd00a8dac2 95d19ab2e495c308a3c137af3351a6648594df37 Phuc Trinh <trinhcanhphuc@gmail.com> 1597570373 +0700	commit: Update webpack mix
+95d19ab2e495c308a3c137af3351a6648594df37 f26d7c9ae645b90a350bb75d66556f7372ace54c Phuc Trinh <trinhcanhphuc@gmail.com> 1598671172 +0700	commit: Fix qr type radios button not working
+f26d7c9ae645b90a350bb75d66556f7372ace54c eaae59694488da411c26b2c095f5a4f999f1b8f3 Phuc Trinh <trinhcanhphuc@gmail.com> 1598672675 +0700	commit: Prevent select button
+eaae59694488da411c26b2c095f5a4f999f1b8f3 eaae59694488da411c26b2c095f5a4f999f1b8f3 Phuc Trinh <trinhcanhphuc@gmail.com> 1598672700 +0700	checkout: moving from master to move-laravel-core-ui-vue
+eaae59694488da411c26b2c095f5a4f999f1b8f3 eaae59694488da411c26b2c095f5a4f999f1b8f3 Phuc Trinh <trinhcanhphuc@gmail.com> 1598760772 +0700	checkout: moving from move-laravel-core-ui-vue to master
+eaae59694488da411c26b2c095f5a4f999f1b8f3 eaae59694488da411c26b2c095f5a4f999f1b8f3 Phuc Trinh <trinhcanhphuc@gmail.com> 1598760780 +0700	checkout: moving from master to move-laravel-core-ui-vue
+eaae59694488da411c26b2c095f5a4f999f1b8f3 eaae59694488da411c26b2c095f5a4f999f1b8f3 Phuc Trinh <trinhcanhphuc@gmail.com> 1598760788 +0700	checkout: moving from move-laravel-core-ui-vue to master
+eaae59694488da411c26b2c095f5a4f999f1b8f3 eaae59694488da411c26b2c095f5a4f999f1b8f3 Phuc Trinh <trinhcanhphuc@gmail.com> 1598760790 +0700	checkout: moving from master to move-laravel-core-ui-vue
+eaae59694488da411c26b2c095f5a4f999f1b8f3 87565b089ea0427508a7514dae6a210c9fcfbffb Phuc Trinh <trinhcanhphuc@gmail.com> 1599032031 +0700	commit: move to laravel core ui vue
+87565b089ea0427508a7514dae6a210c9fcfbffb eaae59694488da411c26b2c095f5a4f999f1b8f3 Phuc Trinh <trinhcanhphuc@gmail.com> 1599032089 +0700	reset: moving to eaae59694488da411c26b2c095f5a4f999f1b8f3
+eaae59694488da411c26b2c095f5a4f999f1b8f3 291460fa1f6d76aa41cdf1d164da6274031b218e Phuc Trinh <trinhcanhphuc@gmail.com> 1599032147 +0700	commit: Move to laravel core ui vue
+291460fa1f6d76aa41cdf1d164da6274031b218e eaae59694488da411c26b2c095f5a4f999f1b8f3 Phuc Trinh <trinhcanhphuc@gmail.com> 1599032220 +0700	checkout: moving from move-laravel-core-ui-vue to master
+eaae59694488da411c26b2c095f5a4f999f1b8f3 919d765a066d5fdcbf65f06a784708699a892918 Phuc Trinh <trinhcanhphuc@gmail.com> 1599032228 +0700	pull --no-commit origin master: Fast-forward
+919d765a066d5fdcbf65f06a784708699a892918 08cbee36aa9f5066441a7bdd512c7bc70118c275 Phuc Trinh <trinhcanhphuc@gmail.com> 1599039706 +0700	commit: Home Page: update UI
+08cbee36aa9f5066441a7bdd512c7bc70118c275 919d765a066d5fdcbf65f06a784708699a892918 Phuc Trinh <trinhcanhphuc@gmail.com> 1599366057 +0700	reset: moving to 919d765a066d5fdcbf65f06a784708699a892918
+919d765a066d5fdcbf65f06a784708699a892918 08cbee36aa9f5066441a7bdd512c7bc70118c275 Phuc Trinh <trinhcanhphuc@gmail.com> 1599366114 +0700	pull --no-commit origin master: Fast-forward
+08cbee36aa9f5066441a7bdd512c7bc70118c275 bcd624834d8c8e3eddd25abb34ec7f95e41e3768 Phuc Trinh <trinhcanhphuc@gmail.com> 1599375703 +0700	commit: Make qr type radio event listener
+bcd624834d8c8e3eddd25abb34ec7f95e41e3768 d572701b6dc18cd183f55b2753878c36fb267e23 Phuc Trinh <trinhcanhphuc@gmail.com> 1599377665 +0700	commit: Make Download QR event
+d572701b6dc18cd183f55b2753878c36fb267e23 c03af0149162c6c8f4b11dd5df9cc19704274d59 Phuc Trinh <trinhcanhphuc@gmail.com> 1599387620 +0700	commit: Add binding data between parent and child
+c03af0149162c6c8f4b11dd5df9cc19704274d59 f9b18944a5bb1455976b82f0ea60bfbffdf13635 Phuc Trinh <trinhcanhphuc@gmail.com> 1599397000 +0700	commit: Add Card Form emit handle
+f9b18944a5bb1455976b82f0ea60bfbffdf13635 4a9e380f0f5acb8ef430611e3c38ad25be28b20f Phuc Trinh <trinhcanhphuc@gmail.com> 1599571404 +0700	commit: Fix qr logo upload

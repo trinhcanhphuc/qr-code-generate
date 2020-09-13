@@ -1,0 +1,2 @@
+0000000000000000000000000000000000000000 39f281905f876e7fad03a4376cf94576d945c6be Phuc Trinh <trinhcanhphuc@gmail.com> 1597463295 +0700	branch: Created from refs/remotes/origin/move-project-to-laravel
+39f281905f876e7fad03a4376cf94576d945c6be 3578b612decde640564c528626dae707fe9759be Phuc Trinh <trinhcanhphuc@gmail.com> 1597476740 +0700	commit: Fix error qr code when load page
