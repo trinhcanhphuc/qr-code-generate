@@ -263,6 +263,36 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/qr/ColorForm.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/qr/ColorForm.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      swatches: [["#FF0000", "#AA0000", "#550000"], ["#FFFF00", "#AAAA00", "#555500"], ["#00FF00", "#00AA00", "#005500"], ["#00FFFF", "#00AAAA", "#005555"], ["#0000FF", "#0000AA", "#000055"]]
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/qr/LogoForm.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/qr/LogoForm.vue?vue&type=script&lang=js& ***!
@@ -362,6 +392,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_qr_ColorForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/qr/ColorForm */ "./resources/js/components/qr/ColorForm.vue");
 /* harmony import */ var _components_qr_LogoForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/qr/LogoForm */ "./resources/js/components/qr/LogoForm.vue");
 /* harmony import */ var _components_qr_EyesForm__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/qr/EyesForm */ "./resources/js/components/qr/EyesForm.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1353,7 +1396,20 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c(
+    "div",
+    [
+      _c("v-color-picker", {
+        staticClass: "ml-auto",
+        attrs: {
+          swatches: _vm.swatches,
+          "show-swatches": "",
+          "hide-canvas": ""
+        }
+      })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -1494,68 +1550,71 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "row m-0", staticStyle: { position: "relative" } },
-    [
-      _c(
-        "div",
-        { staticClass: "rounded-lg", staticStyle: { width: "100px" } },
-        [
-          _c("v-img", {
-            ref: "qrLogoUpload",
-            attrs: {
-              "max-height": "100",
-              "max-width": "100",
-              src: _vm.uploadedLogoSrc,
-              alt: "Your QR logo"
-            }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "ml-3 my-auto" },
-        [
-          _c("input", {
-            ref: "btnUploadLogo",
-            staticStyle: {
-              width: "30px",
-              opacity: "0",
-              position: "absolute",
-              left: "90px",
-              bottom: "-10px"
-            },
-            attrs: { type: "file", accept: ".jpg, .png, .svg, .jpeg" },
-            on: { change: _vm.readURL }
-          }),
-          _vm._v(" "),
-          _c(
-            "v-btn",
-            {
+  return _c("div", { staticStyle: { position: "relative" } }, [
+    _c(
+      "div",
+      {
+        staticClass: "rounded-lg m-auto",
+        staticStyle: { width: "200px", height: "200px" }
+      },
+      [
+        _c("v-img", {
+          ref: "qrLogoUpload",
+          attrs: {
+            height: "200",
+            width: "200",
+            src: _vm.uploadedLogoSrc,
+            alt: "Your QR logo"
+          }
+        }),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "ml-3 my-auto" },
+          [
+            _c("input", {
+              ref: "btnUploadLogo",
               staticStyle: {
+                width: "30px",
+                opacity: "0",
                 position: "absolute",
-                "z-index": "1",
-                left: "90px",
-                bottom: "-10px"
+                left: "calc(50% - 16px)",
+                bottom: "-16px"
               },
-              attrs: { elevation: "2", fab: "", "x-small": "" },
-              on: {
-                click: function($event) {
-                  return _vm.$refs.btnUploadLogo.click()
+              attrs: { type: "file", accept: ".jpg, .png, .svg, .jpeg" },
+              on: { change: _vm.readURL }
+            }),
+            _vm._v(" "),
+            _c(
+              "v-btn",
+              {
+                staticStyle: {
+                  position: "absolute",
+                  "z-index": "1",
+                  left: "calc(50% - 16px)",
+                  bottom: "-16px"
+                },
+                attrs: { elevation: "2", fab: "", "x-small": "" },
+                on: {
+                  click: function($event) {
+                    return _vm.$refs.btnUploadLogo.click()
+                  }
                 }
-              }
-            },
-            [_c("v-icon", { attrs: { small: "" } }, [_vm._v("fas fa-camera")])],
-            1
-          )
-        ],
-        1
-      )
-    ]
-  )
+              },
+              [
+                _c("v-icon", { attrs: { small: "" } }, [
+                  _vm._v("fas fa-camera")
+                ])
+              ],
+              1
+            )
+          ],
+          1
+        )
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -1956,14 +2015,28 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "mt-3 customize" }, [
-                _c(
-                  "div",
-                  { attrs: { id: "qr-colors-section" } },
-                  [_c("ColorForm")],
-                  1
-                ),
-                _vm._v(" "),
-                _c("div", { attrs: { id: "qr-logo" } }, [_c("LogoForm")], 1),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col-md-6",
+                      attrs: { id: "qr-colors-section" }
+                    },
+                    [_c("ColorForm")],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col-md-6 mt-auto",
+                      staticStyle: { "margin-bottom": "20px" },
+                      attrs: { id: "qr-logo" }
+                    },
+                    [_c("LogoForm")],
+                    1
+                  )
+                ]),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -61221,15 +61294,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ColorForm_vue_vue_type_template_id_4f0c2f84___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ColorForm.vue?vue&type=template&id=4f0c2f84& */ "./resources/js/components/qr/ColorForm.vue?vue&type=template&id=4f0c2f84&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _ColorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ColorForm.vue?vue&type=script&lang=js& */ "./resources/js/components/qr/ColorForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ColorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _ColorForm_vue_vue_type_template_id_4f0c2f84___WEBPACK_IMPORTED_MODULE_0__["render"],
   _ColorForm_vue_vue_type_template_id_4f0c2f84___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -61243,6 +61318,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/components/qr/ColorForm.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/qr/ColorForm.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/qr/ColorForm.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ColorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./ColorForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/qr/ColorForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ColorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 

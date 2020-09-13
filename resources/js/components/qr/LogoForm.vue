@@ -1,31 +1,31 @@
 <template>
-  <div class="row m-0" style="position: relative;">
-    <div class="rounded-lg" style="width: 100px;">
+  <div style="position: relative;">
+    <div class="rounded-lg m-auto" style="width: 200px; height: 200px;">
       <v-img
         ref="qrLogoUpload"
-        max-height="100"
-        max-width="100"
+        height="200"
+        width="200"
         :src="uploadedLogoSrc"
         alt="Your QR logo"
       />
-    </div>
-    <div class="ml-3 my-auto">
-      <input
-        ref="btnUploadLogo"
-        @change="readURL"
-        type="file"
-        accept=".jpg, .png, .svg, .jpeg"
-        style="width: 30px; opacity: 0; position: absolute; left: 90px; bottom: -10px"
-      />
-      <v-btn
-        elevation="2"
-        fab
-        x-small
-        @click="$refs.btnUploadLogo.click()"
-        style="position: absolute; z-index: 1; left: 90px; bottom: -10px"
-      >
-        <v-icon small>fas fa-camera</v-icon>
-      </v-btn>
+      <div class="ml-3 my-auto">
+        <input
+          ref="btnUploadLogo"
+          @change="readURL"
+          type="file"
+          accept=".jpg, .png, .svg, .jpeg"
+          style="width: 30px; opacity: 0; position: absolute; left: calc(50% - 16px); bottom: -16px"
+        />
+        <v-btn
+          elevation="2"
+          fab
+          x-small
+          @click="$refs.btnUploadLogo.click()"
+          style="position: absolute; z-index: 1; left: calc(50% - 16px); bottom: -16px"
+        >
+          <v-icon small>fas fa-camera</v-icon>
+        </v-btn>
+      </div>
     </div>
   </div>
 </template>

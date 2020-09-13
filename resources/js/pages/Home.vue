@@ -5,15 +5,20 @@
         <v-card elevation="8" class="p-4 rounded-lg">
           <input name="token" type="hidden" value />
           <v-slide-group show-arrows>
-            <v-slide-item v-for="type in qr_types" :key="type" v-slot:default="{ active, toggle }">
+            <v-slide-item
+              v-for="type in qr_types"
+              :key="type"
+              v-slot:default="{ active, toggle }"
+            >
               <v-btn
                 class="mx-2"
                 :input-value="active"
-                v-bind:class="{ 'purple white--text' : selectedQrType == type }"
+                v-bind:class="{ 'purple white--text': selectedQrType == type }"
                 depressed
                 rounded
                 @click="changeQrType(type)"
-              >{{ type }}</v-btn>
+                >{{ type }}</v-btn
+              >
             </v-slide-item>
           </v-slide-group>
 
@@ -47,11 +52,17 @@
           </div>
 
           <div class="mt-3 customize">
-            <div id="qr-colors-section">
-              <ColorForm></ColorForm>
-            </div>
-            <div id="qr-logo">
-              <LogoForm></LogoForm>
+            <div class="row">
+              <div id="qr-colors-section" class="col-md-6">
+                <ColorForm></ColorForm>
+              </div>
+              <div
+                id="qr-logo"
+                class="col-md-6 mt-auto"
+                style="margin-bottom: 20px"
+              >
+                <LogoForm></LogoForm>
+              </div>
             </div>
             <div id="qr-eyes-style">
               <EyesForm></EyesForm>
@@ -65,7 +76,8 @@
               size="lg"
               class="mt-3"
               v-on:click="createQR()"
-            >Create QR</v-btn>
+              >Create QR</v-btn
+            >
           </div>
         </v-card>
       </div>
@@ -78,7 +90,8 @@
             size="lg"
             class="mt-3"
             v-on:click="downloadQr()"
-          >Download</v-btn>
+            >Download</v-btn
+          >
         </v-card>
       </div>
     </div>
@@ -107,7 +120,7 @@ export default {
     CardForm,
     ColorForm,
     LogoForm,
-    EyesForm,
+    EyesForm
   },
   data() {
     return {
@@ -124,9 +137,9 @@ export default {
         address_street: "",
         address_town: "",
         address_region: "",
-        address_country: "",
+        address_country: ""
       },
-      qr_types: ["url", "text", "phone", "sms", "email", "card"],
+      qr_types: ["url", "text", "phone", "sms", "email", "card"]
     };
   },
   methods: {
@@ -144,7 +157,7 @@ export default {
     },
     createQR() {
       console.log(this.card_form_data);
-    },
-  },
+    }
+  }
 };
 </script>
