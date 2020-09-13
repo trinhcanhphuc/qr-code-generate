@@ -12,3 +12,21 @@
 
 // Material design icons
 @import "~@mdi/font/css/materialdesignicons.min.css";
+
+// Font awesome
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+// custom style
+@media (min-width: 1540px) {
+  .container {
+    max-width: 1480px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+.v-application--wrap {
+  background-color: #edf2f9;
+}

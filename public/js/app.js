@@ -297,6 +297,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "LogoForm",
   data: function data() {
@@ -347,11 +354,14 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_qr_TextForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/qr/TextForm */ "./resources/js/components/qr/TextForm.vue");
-/* harmony import */ var _components_qr_CardForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components//qr/CardForm */ "./resources/js/components/qr/CardForm.vue");
-/* harmony import */ var _components_qr_EmailForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components//qr/EmailForm */ "./resources/js/components/qr/EmailForm.vue");
-/* harmony import */ var _components_qr_ColorForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components//qr/ColorForm */ "./resources/js/components/qr/ColorForm.vue");
-/* harmony import */ var _components_qr_LogoForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components//qr/LogoForm */ "./resources/js/components/qr/LogoForm.vue");
-/* harmony import */ var _components_qr_EyesForm__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components//qr/EyesForm */ "./resources/js/components/qr/EyesForm.vue");
+/* harmony import */ var _components_qr_UrlForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/qr/UrlForm */ "./resources/js/components/qr/UrlForm.vue");
+/* harmony import */ var _components_qr_PhoneForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/qr/PhoneForm */ "./resources/js/components/qr/PhoneForm.vue");
+/* harmony import */ var _components_qr_SmsForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/qr/SmsForm */ "./resources/js/components/qr/SmsForm.vue");
+/* harmony import */ var _components_qr_CardForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components//qr/CardForm */ "./resources/js/components/qr/CardForm.vue");
+/* harmony import */ var _components_qr_EmailForm__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/qr/EmailForm */ "./resources/js/components/qr/EmailForm.vue");
+/* harmony import */ var _components_qr_ColorForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/qr/ColorForm */ "./resources/js/components/qr/ColorForm.vue");
+/* harmony import */ var _components_qr_LogoForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/qr/LogoForm */ "./resources/js/components/qr/LogoForm.vue");
+/* harmony import */ var _components_qr_EyesForm__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/qr/EyesForm */ "./resources/js/components/qr/EyesForm.vue");
 //
 //
 //
@@ -416,6 +426,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
 
 
 
@@ -426,17 +462,17 @@ __webpack_require__.r(__webpack_exports__);
   name: "Dashboard",
   components: {
     TextForm: _components_qr_TextForm__WEBPACK_IMPORTED_MODULE_0__["default"],
-    EmailForm: _components_qr_EmailForm__WEBPACK_IMPORTED_MODULE_2__["default"],
-    CardForm: _components_qr_CardForm__WEBPACK_IMPORTED_MODULE_1__["default"],
-    ColorForm: _components_qr_ColorForm__WEBPACK_IMPORTED_MODULE_3__["default"],
-    LogoForm: _components_qr_LogoForm__WEBPACK_IMPORTED_MODULE_4__["default"],
-    EyesForm: _components_qr_EyesForm__WEBPACK_IMPORTED_MODULE_5__["default"]
+    UrlForm: _components_qr_UrlForm__WEBPACK_IMPORTED_MODULE_1__["default"],
+    PhoneForm: _components_qr_PhoneForm__WEBPACK_IMPORTED_MODULE_2__["default"],
+    SmsForm: _components_qr_SmsForm__WEBPACK_IMPORTED_MODULE_3__["default"],
+    EmailForm: _components_qr_EmailForm__WEBPACK_IMPORTED_MODULE_5__["default"],
+    CardForm: _components_qr_CardForm__WEBPACK_IMPORTED_MODULE_4__["default"],
+    ColorForm: _components_qr_ColorForm__WEBPACK_IMPORTED_MODULE_6__["default"],
+    LogoForm: _components_qr_LogoForm__WEBPACK_IMPORTED_MODULE_7__["default"],
+    EyesForm: _components_qr_EyesForm__WEBPACK_IMPORTED_MODULE_8__["default"]
   },
   data: function data() {
     return {
-      showTextForm: true,
-      showEmailForm: false,
-      showCardForm: false,
       selectedQrType: "url",
       qrImageSrc: "img/brand/qr-logo.png",
       card_form_data: {
@@ -451,34 +487,13 @@ __webpack_require__.r(__webpack_exports__);
         address_town: "",
         address_region: "",
         address_country: ""
-      }
+      },
+      qr_types: ["url", "text", "phone", "sms", "email", "card"]
     };
   },
   methods: {
-    selectQrType: function selectQrType(type) {
-      this.selectedQrType = type;
-      this.showForm();
-    },
-    showForm: function showForm() {
-      switch (this.selectedQrType) {
-        case "email":
-          this.showTextForm = false;
-          this.showEmailForm = true;
-          this.showCardForm = false;
-          break;
-
-        case "card":
-          this.showTextForm = false;
-          this.showEmailForm = false;
-          this.showCardForm = true;
-          break;
-
-        default:
-          this.showTextForm = true;
-          this.showEmailForm = false;
-          this.showCardForm = false;
-          break;
-      }
+    changeQrType: function changeQrType(qr_type) {
+      this.selectedQrType = qr_type;
     },
     downloadQr: function downloadQr() {
       var qr_tag = document.createElement("a");
@@ -1420,7 +1435,7 @@ var render = function() {
                   label: "Body",
                   name: "body",
                   placeholder: "Today, I write this email to inform",
-                  rows: "3"
+                  rows: "2"
                 }
               })
             ],
@@ -1481,21 +1496,38 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "row m-0" },
+    { staticClass: "row m-0", staticStyle: { position: "relative" } },
     [
-      _c("v-img", {
-        ref: "qrLogoUpload",
-        staticStyle: { height: "100px", width: "100px" },
-        attrs: { src: _vm.uploadedLogoSrc, alt: "Your QR logo" }
-      }),
+      _c(
+        "div",
+        { staticClass: "rounded-lg", staticStyle: { width: "100px" } },
+        [
+          _c("v-img", {
+            ref: "qrLogoUpload",
+            attrs: {
+              "max-height": "100",
+              "max-width": "100",
+              src: _vm.uploadedLogoSrc,
+              alt: "Your QR logo"
+            }
+          })
+        ],
+        1
+      ),
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "ml-3 my-auto", staticStyle: { position: "relative" } },
+        { staticClass: "ml-3 my-auto" },
         [
           _c("input", {
             ref: "btnUploadLogo",
-            staticStyle: { width: "30px", opacity: "0" },
+            staticStyle: {
+              width: "30px",
+              opacity: "0",
+              position: "absolute",
+              left: "90px",
+              bottom: "-10px"
+            },
             attrs: { type: "file", accept: ".jpg, .png, .svg, .jpeg" },
             on: { change: _vm.readURL }
           }),
@@ -1503,15 +1535,127 @@ var render = function() {
           _c(
             "v-btn",
             {
-              staticStyle: { position: "absolute", "z-index": "1", left: "0" },
-              attrs: { color: "primary" },
+              staticStyle: {
+                position: "absolute",
+                "z-index": "1",
+                left: "90px",
+                bottom: "-10px"
+              },
+              attrs: { elevation: "2", fab: "", "x-small": "" },
               on: {
                 click: function($event) {
                   return _vm.$refs.btnUploadLogo.click()
                 }
               }
             },
-            [_vm._v("Upload")]
+            [_c("v-icon", { attrs: { small: "" } }, [_vm._v("fas fa-camera")])],
+            1
+          )
+        ],
+        1
+      )
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/qr/PhoneForm.vue?vue&type=template&id=78c3028f&":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/qr/PhoneForm.vue?vue&type=template&id=78c3028f& ***!
+  \***************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-row",
+        [
+          _c(
+            "v-col",
+            { attrs: { cols: "12" } },
+            [
+              _c("v-text-field", {
+                attrs: {
+                  id: "qrcode-phone",
+                  label: "Phone Number",
+                  placeholder: "+84 *******"
+                }
+              })
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/qr/SmsForm.vue?vue&type=template&id=1e768cba&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/qr/SmsForm.vue?vue&type=template&id=1e768cba& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-row",
+        [
+          _c(
+            "v-col",
+            { attrs: { cols: "12" } },
+            [
+              _c("v-text-field", {
+                attrs: {
+                  id: "qrcode-phone",
+                  label: "Phone Number",
+                  placeholder: "+84 *******"
+                }
+              }),
+              _vm._v(" "),
+              _c("v-textarea", {
+                attrs: {
+                  id: "qrcode-message",
+                  label: "Your Message",
+                  placeholder: "Hello!",
+                  rows: "2"
+                }
+              })
+            ],
+            1
           )
         ],
         1
@@ -1557,7 +1701,56 @@ var render = function() {
                   id: "qrcode-text",
                   label: "Text",
                   placeholder: "Fill in your text",
-                  rows: "3"
+                  rows: "2"
+                }
+              })
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/qr/UrlForm.vue?vue&type=template&id=005fc260&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/qr/UrlForm.vue?vue&type=template&id=005fc260& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-row",
+        [
+          _c(
+            "v-col",
+            { attrs: { cols: "12" } },
+            [
+              _c("v-text-field", {
+                attrs: {
+                  id: "qrcode-text",
+                  label: "URL",
+                  placeholder: "https://www.facebook.com/"
                 }
               })
             ],
@@ -1592,185 +1785,217 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "row m-0" }, [
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row m-3" }, [
       _c(
         "div",
-        { staticClass: "col-md-9 px-3" },
+        { staticClass: "col-md-9" },
         [
-          _c("input", { attrs: { name: "token", type: "hidden", value: "" } }),
-          _vm._v(" "),
           _c(
-            "v-btn-toggle",
+            "v-card",
+            { staticClass: "p-4 rounded-lg", attrs: { elevation: "8" } },
             [
-              _c(
-                "v-btn",
-                {
-                  attrs: { value: "url" },
-                  on: {
-                    click: function($event) {
-                      return _vm.selectQrType("url")
-                    }
-                  }
-                },
-                [_vm._v("URL")]
-              ),
+              _c("input", {
+                attrs: { name: "token", type: "hidden", value: "" }
+              }),
               _vm._v(" "),
               _c(
-                "v-btn",
-                {
-                  attrs: { value: "text" },
-                  on: {
-                    click: function($event) {
-                      return _vm.selectQrType("text")
-                    }
-                  }
-                },
-                [_vm._v("Text")]
+                "v-slide-group",
+                { attrs: { "show-arrows": "" } },
+                _vm._l(_vm.qr_types, function(type) {
+                  return _c("v-slide-item", {
+                    key: type,
+                    scopedSlots: _vm._u(
+                      [
+                        {
+                          key: "default",
+                          fn: function(ref) {
+                            var active = ref.active
+                            var toggle = ref.toggle
+                            return [
+                              _c(
+                                "v-btn",
+                                {
+                                  staticClass: "mx-2",
+                                  class: {
+                                    "purple white--text":
+                                      _vm.selectedQrType == type
+                                  },
+                                  attrs: {
+                                    "input-value": active,
+                                    depressed: "",
+                                    rounded: ""
+                                  },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.changeQrType(type)
+                                    }
+                                  }
+                                },
+                                [_vm._v(_vm._s(type))]
+                              )
+                            ]
+                          }
+                        }
+                      ],
+                      null,
+                      true
+                    )
+                  })
+                }),
+                1
               ),
               _vm._v(" "),
-              _c(
-                "v-btn",
-                {
-                  attrs: { value: "phone" },
-                  on: {
-                    click: function($event) {
-                      return _vm.selectQrType("phone")
-                    }
-                  }
-                },
-                [_vm._v("Phone")]
-              ),
-              _vm._v(" "),
-              _c(
-                "v-btn",
-                {
-                  attrs: { value: "sms" },
-                  on: {
-                    click: function($event) {
-                      return _vm.selectQrType("sms")
-                    }
-                  }
-                },
-                [_vm._v("SMS")]
-              ),
-              _vm._v(" "),
-              _c(
-                "v-btn",
-                {
-                  attrs: { value: "email" },
-                  on: {
-                    click: function($event) {
-                      return _vm.selectQrType("email")
-                    }
-                  }
-                },
-                [_vm._v("Email")]
-              ),
-              _vm._v(" "),
-              _c(
-                "v-btn",
-                {
-                  attrs: { value: "card" },
-                  on: {
-                    click: function($event) {
-                      return _vm.selectQrType("card")
-                    }
-                  }
-                },
-                [_vm._v("Card")]
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "mt-3" }, [
-            _c(
-              "div",
-              {
-                directives: [
+              _c("div", { staticClass: "mt-3" }, [
+                _c(
+                  "div",
                   {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.showTextForm,
-                    expression: "showTextForm"
-                  }
-                ],
-                staticClass: "qrcode-text-form"
-              },
-              [_c("TextForm")],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                directives: [
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.selectedQrType == "text",
+                        expression: "selectedQrType == 'text'"
+                      }
+                    ],
+                    staticClass: "qrcode-text-form"
+                  },
+                  [_c("TextForm")],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
                   {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.showEmailForm,
-                    expression: "showEmailForm"
-                  }
-                ],
-                attrs: { id: "qrcode-email-form" }
-              },
-              [_c("EmailForm")],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                directives: [
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.selectedQrType == "url",
+                        expression: "selectedQrType == 'url'"
+                      }
+                    ],
+                    staticClass: "qrcode-text-form"
+                  },
+                  [_c("UrlForm")],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
                   {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.showCardForm,
-                    expression: "showCardForm"
-                  }
-                ],
-                attrs: { id: "qrcode-card-form" }
-              },
-              [
-                _c("CardForm", {
-                  attrs: { card_form_data: _vm.card_form_data },
-                  on: { "update-card-form-data": _vm.updateCardFormData }
-                })
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "mt-3 customize" }, [
-            _c(
-              "div",
-              { attrs: { id: "qr-colors-section" } },
-              [_c("ColorForm")],
-              1
-            ),
-            _vm._v(" "),
-            _c("div", { attrs: { id: "qr-logo" } }, [_c("LogoForm")], 1),
-            _vm._v(" "),
-            _c("div", { attrs: { id: "qr-eyes-style" } }, [_c("EyesForm")], 1)
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "mt-3 mb-3 text-center" },
-            [
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.selectedQrType == "phone",
+                        expression: "selectedQrType == 'phone'"
+                      }
+                    ],
+                    staticClass: "qrcode-text-form"
+                  },
+                  [_c("PhoneForm")],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.selectedQrType == "sms",
+                        expression: "selectedQrType == 'sms'"
+                      }
+                    ],
+                    staticClass: "qrcode-text-form"
+                  },
+                  [_c("SmsForm")],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.selectedQrType == "email",
+                        expression: "selectedQrType == 'email'"
+                      }
+                    ],
+                    attrs: { id: "qrcode-email-form" }
+                  },
+                  [_c("EmailForm")],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.selectedQrType == "card",
+                        expression: "selectedQrType == 'card'"
+                      }
+                    ],
+                    attrs: { id: "qrcode-card-form" }
+                  },
+                  [
+                    _c("CardForm", {
+                      attrs: { card_form_data: _vm.card_form_data },
+                      on: { "update-card-form-data": _vm.updateCardFormData }
+                    })
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mt-3 customize" }, [
+                _c(
+                  "div",
+                  { attrs: { id: "qr-colors-section" } },
+                  [_c("ColorForm")],
+                  1
+                ),
+                _vm._v(" "),
+                _c("div", { attrs: { id: "qr-logo" } }, [_c("LogoForm")], 1),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { attrs: { id: "qr-eyes-style" } },
+                  [_c("EyesForm")],
+                  1
+                )
+              ]),
+              _vm._v(" "),
               _c(
-                "v-btn",
-                {
-                  staticClass: "mt-3",
-                  attrs: { id: "btn_create_qr", color: "primary", size: "lg" },
-                  on: {
-                    click: function($event) {
-                      return _vm.createQR()
-                    }
-                  }
-                },
-                [_vm._v("Create QR")]
+                "div",
+                { staticClass: "mt-3 mb-3 text-center" },
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "mt-3",
+                      attrs: {
+                        id: "btn_create_qr",
+                        color: "primary",
+                        size: "lg"
+                      },
+                      on: {
+                        click: function($event) {
+                          return _vm.createQR()
+                        }
+                      }
+                    },
+                    [_vm._v("Create QR")]
+                  )
+                ],
+                1
               )
             ],
             1
@@ -1781,25 +2006,32 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        {
-          staticClass: "col-md-3 px-3 text-center",
-          attrs: { id: "qrcode-img" }
-        },
+        { staticClass: "col-md-3 text-center", attrs: { id: "qrcode-img" } },
         [
-          _c("img", { staticClass: "w-100", attrs: { src: _vm.qrImageSrc } }),
-          _vm._v(" "),
           _c(
-            "v-btn",
-            {
-              staticClass: "mt-3",
-              attrs: { id: "btn_save_qr", color: "primary", size: "lg" },
-              on: {
-                click: function($event) {
-                  return _vm.downloadQr()
-                }
-              }
-            },
-            [_vm._v("Download")]
+            "v-card",
+            { staticClass: "p-4 rounded-lg", attrs: { elevation: "8" } },
+            [
+              _c("img", {
+                staticClass: "w-100",
+                attrs: { src: _vm.qrImageSrc }
+              }),
+              _vm._v(" "),
+              _c(
+                "v-btn",
+                {
+                  staticClass: "mt-3",
+                  attrs: { id: "btn_save_qr", color: "primary", size: "lg" },
+                  on: {
+                    click: function($event) {
+                      return _vm.downloadQr()
+                    }
+                  }
+                },
+                [_vm._v("Download")]
+              )
+            ],
+            1
           )
         ],
         1
@@ -60762,7 +60994,12 @@ Vue.use(vuetify__WEBPACK_IMPORTED_MODULE_0___default.a);
 var app = new Vue({
   el: "#app",
   router: _routes__WEBPACK_IMPORTED_MODULE_1__["router"],
-  vuetify: new vuetify__WEBPACK_IMPORTED_MODULE_0___default.a()
+  vuetify: new vuetify__WEBPACK_IMPORTED_MODULE_0___default.a({
+    icons: {
+      iconfont: "fa" // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
+
+    }
+  })
 });
 
 /***/ }),
@@ -61202,6 +61439,112 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/qr/PhoneForm.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/components/qr/PhoneForm.vue ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _PhoneForm_vue_vue_type_template_id_78c3028f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PhoneForm.vue?vue&type=template&id=78c3028f& */ "./resources/js/components/qr/PhoneForm.vue?vue&type=template&id=78c3028f&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _PhoneForm_vue_vue_type_template_id_78c3028f___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _PhoneForm_vue_vue_type_template_id_78c3028f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/qr/PhoneForm.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/qr/PhoneForm.vue?vue&type=template&id=78c3028f&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/qr/PhoneForm.vue?vue&type=template&id=78c3028f& ***!
+  \*********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PhoneForm_vue_vue_type_template_id_78c3028f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./PhoneForm.vue?vue&type=template&id=78c3028f& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/qr/PhoneForm.vue?vue&type=template&id=78c3028f&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PhoneForm_vue_vue_type_template_id_78c3028f___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PhoneForm_vue_vue_type_template_id_78c3028f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/qr/SmsForm.vue":
+/*!************************************************!*\
+  !*** ./resources/js/components/qr/SmsForm.vue ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SmsForm_vue_vue_type_template_id_1e768cba___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SmsForm.vue?vue&type=template&id=1e768cba& */ "./resources/js/components/qr/SmsForm.vue?vue&type=template&id=1e768cba&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _SmsForm_vue_vue_type_template_id_1e768cba___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SmsForm_vue_vue_type_template_id_1e768cba___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/qr/SmsForm.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/qr/SmsForm.vue?vue&type=template&id=1e768cba&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/qr/SmsForm.vue?vue&type=template&id=1e768cba& ***!
+  \*******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SmsForm_vue_vue_type_template_id_1e768cba___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./SmsForm.vue?vue&type=template&id=1e768cba& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/qr/SmsForm.vue?vue&type=template&id=1e768cba&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SmsForm_vue_vue_type_template_id_1e768cba___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SmsForm_vue_vue_type_template_id_1e768cba___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/qr/TextForm.vue":
 /*!*************************************************!*\
   !*** ./resources/js/components/qr/TextForm.vue ***!
@@ -61250,6 +61593,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TextForm_vue_vue_type_template_id_44beaf64___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TextForm_vue_vue_type_template_id_44beaf64___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/qr/UrlForm.vue":
+/*!************************************************!*\
+  !*** ./resources/js/components/qr/UrlForm.vue ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _UrlForm_vue_vue_type_template_id_005fc260___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./UrlForm.vue?vue&type=template&id=005fc260& */ "./resources/js/components/qr/UrlForm.vue?vue&type=template&id=005fc260&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _UrlForm_vue_vue_type_template_id_005fc260___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _UrlForm_vue_vue_type_template_id_005fc260___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/qr/UrlForm.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/qr/UrlForm.vue?vue&type=template&id=005fc260&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/qr/UrlForm.vue?vue&type=template&id=005fc260& ***!
+  \*******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_UrlForm_vue_vue_type_template_id_005fc260___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./UrlForm.vue?vue&type=template&id=005fc260& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/qr/UrlForm.vue?vue&type=template&id=005fc260&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_UrlForm_vue_vue_type_template_id_005fc260___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_UrlForm_vue_vue_type_template_id_005fc260___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

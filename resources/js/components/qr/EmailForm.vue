@@ -17,7 +17,7 @@
           label="Body"
           name="body"
           placeholder="Today, I write this email to inform"
-          rows="3"
+          rows="2"
         />
       </v-col>
     </v-row>
