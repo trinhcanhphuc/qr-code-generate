@@ -2053,11 +2053,11 @@ var render = function() {
                   _c(
                     "v-btn",
                     {
-                      staticClass: "mt-3",
                       attrs: {
                         id: "btn_create_qr",
                         color: "primary",
-                        size: "lg"
+                        size: "lg",
+                        block: ""
                       },
                       on: {
                         click: function($event) {

@@ -74,7 +74,7 @@
               id="btn_create_qr"
               color="primary"
               size="lg"
-              class="mt-3"
+              block
               v-on:click="createQR()"
               >Create QR</v-btn
             >
