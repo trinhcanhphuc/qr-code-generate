@@ -3,7 +3,8 @@
     <v-color-picker
       class="ml-auto"
       :swatches="swatches"
-      :value="color"
+      :value="color_form_data"
+      @update:color="updateColorForm"
       show-swatches
       hide-canvas
     ></v-color-picker>
@@ -14,14 +15,14 @@
 export default {
   name: "ColorForm",
   props: {
-    color: {
+    color_form_data: {
       type: String,
       required: false,
     }
   },
   methods: {
-    updateColorForm(key, value) {
-      console.log(key + ': ' + value);
+    updateColorForm(value) {
+      this.$emit("update-color-form-data", value.hex);
     }
   },
   data: () => ({

@@ -283,17 +283,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ColorForm",
   props: {
-    color: {
+    color_form_data: {
       type: String,
       required: false
     }
   },
   methods: {
-    updateColorForm: function updateColorForm(key, value) {
-      console.log(key + ': ' + value);
+    updateColorForm: function updateColorForm(value) {
+      this.$emit("update-color-form-data", value.hex);
     }
   },
   data: function data() {
@@ -373,7 +374,7 @@ __webpack_require__.r(__webpack_exports__);
       }
       /*if (input.files && input.files[0]) {
         var reader = new FileReader();
-          reader.onload = function (e) {
+         reader.onload = function (e) {
           $('#blah')
               .attr('src', e.target.result);
         };
@@ -404,6 +405,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_qr_ColorForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/qr/ColorForm */ "./resources/js/components/qr/ColorForm.vue");
 /* harmony import */ var _components_qr_LogoForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/qr/LogoForm */ "./resources/js/components/qr/LogoForm.vue");
 /* harmony import */ var _components_qr_EyesForm__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/qr/EyesForm */ "./resources/js/components/qr/EyesForm.vue");
+//
 //
 //
 //
@@ -545,7 +547,7 @@ __webpack_require__.r(__webpack_exports__);
         address_region: "",
         address_country: ""
       },
-      color_form_data: '',
+      color_form_data: '#000000',
       qr_types: ["url", "text", "phone", "sms", "email", "card"]
     };
   },
@@ -567,6 +569,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     createQR: function createQR() {
       console.log(this.card_form_data);
+      console.log(this.color_form_data);
     }
   }
 });
@@ -1421,10 +1424,11 @@ var render = function() {
         staticClass: "ml-auto",
         attrs: {
           swatches: _vm.swatches,
-          value: _vm.color,
+          value: _vm.color_form_data,
           "show-swatches": "",
           "hide-canvas": ""
-        }
+        },
+        on: { "update:color": _vm.updateColorForm }
       })
     ],
     1
@@ -2043,6 +2047,7 @@ var render = function() {
                     },
                     [
                       _c("ColorForm", {
+                        attrs: { color_form_data: _vm.color_form_data },
                         on: {
                           "update-color-form-data": _vm.updateColorFormData
                         }
@@ -61889,8 +61894,8 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /media/phuctc/Extended data/Projects/qr-code/qr-code-generate/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /media/phuctc/Extended data/Projects/qr-code/qr-code-generate/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/phuctc/Projects/qr-code-generate/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/phuctc/Projects/qr-code-generate/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -55,6 +55,7 @@
             <div class="row">
               <div id="qr-colors-section" class="col-md-6">
                 <ColorForm
+                  :color_form_data="color_form_data"
                   @update-color-form-data="updateColorFormData"
                 ></ColorForm>
               </div>
@@ -141,7 +142,7 @@ export default {
         address_region: "",
         address_country: ""
       },
-      color_form_data: '',
+      color_form_data: '#000000',
       qr_types: ["url", "text", "phone", "sms", "email", "card"]
     };
   },
@@ -163,6 +164,7 @@ export default {
     },
     createQR() {
       console.log(this.card_form_data);
+      console.log(this.color_form_data);
     }
   }
 };
