@@ -3,6 +3,7 @@
     <v-color-picker
       class="ml-auto"
       :swatches="swatches"
+      :value="color"
       show-swatches
       hide-canvas
     ></v-color-picker>
@@ -11,6 +12,18 @@
 
 <script>
 export default {
+  name: "ColorForm",
+  props: {
+    color: {
+      type: String,
+      required: false,
+    }
+  },
+  methods: {
+    updateColorForm(key, value) {
+      console.log(key + ': ' + value);
+    }
+  },
   data: () => ({
     swatches: [
       ["#FF0000", "#AA0000", "#550000"],

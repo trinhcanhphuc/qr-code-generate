@@ -253,7 +253,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     updateFormData: function updateFormData(key, value) {
-      console.log(key);
       var formData = this.card_form_data;
       formData[key] = value;
       this.$emit("update-card-form-data", formData);
@@ -283,7 +282,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  name: "ColorForm",
+  props: {
+    color: {
+      type: String,
+      required: false
+    }
+  },
+  methods: {
+    updateColorForm: function updateColorForm(key, value) {
+      console.log(key + ': ' + value);
+    }
+  },
   data: function data() {
     return {
       swatches: [["#FF0000", "#AA0000", "#550000"], ["#FFFF00", "#AAAA00", "#555500"], ["#00FF00", "#00AA00", "#005500"], ["#00FFFF", "#00AAAA", "#005555"], ["#0000FF", "#0000AA", "#000055"]]
@@ -492,6 +504,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -531,6 +545,7 @@ __webpack_require__.r(__webpack_exports__);
         address_region: "",
         address_country: ""
       },
+      color_form_data: '',
       qr_types: ["url", "text", "phone", "sms", "email", "card"]
     };
   },
@@ -546,6 +561,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     updateCardFormData: function updateCardFormData(cardFormData) {
       this.card_form_data = cardFormData;
+    },
+    updateColorFormData: function updateColorFormData(colorFormData) {
+      this.color_form_data = colorFormData;
     },
     createQR: function createQR() {
       console.log(this.card_form_data);
@@ -1403,6 +1421,7 @@ var render = function() {
         staticClass: "ml-auto",
         attrs: {
           swatches: _vm.swatches,
+          value: _vm.color,
           "show-swatches": "",
           "hide-canvas": ""
         }
@@ -2022,7 +2041,13 @@ var render = function() {
                       staticClass: "col-md-6",
                       attrs: { id: "qr-colors-section" }
                     },
-                    [_c("ColorForm")],
+                    [
+                      _c("ColorForm", {
+                        on: {
+                          "update-color-form-data": _vm.updateColorFormData
+                        }
+                      })
+                    ],
                     1
                   ),
                   _vm._v(" "),
@@ -61864,8 +61889,8 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Projects\qr-code-generate\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Projects\qr-code-generate\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /media/phuctc/Extended data/Projects/qr-code/qr-code-generate/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /media/phuctc/Extended data/Projects/qr-code/qr-code-generate/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

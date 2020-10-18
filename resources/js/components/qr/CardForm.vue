@@ -123,8 +123,7 @@ export default {
   },
   methods: {
     updateFormData(key, value) {
-      console.log(key);
-      var formData = this.card_form_data;
+      let formData = this.card_form_data;
       formData[key] = value;
       this.$emit("update-card-form-data", formData);
     },

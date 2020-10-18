@@ -54,7 +54,9 @@
           <div class="mt-3 customize">
             <div class="row">
               <div id="qr-colors-section" class="col-md-6">
-                <ColorForm></ColorForm>
+                <ColorForm
+                  @update-color-form-data="updateColorFormData"
+                ></ColorForm>
               </div>
               <div
                 id="qr-logo"
@@ -139,6 +141,7 @@ export default {
         address_region: "",
         address_country: ""
       },
+      color_form_data: '',
       qr_types: ["url", "text", "phone", "sms", "email", "card"]
     };
   },
@@ -154,6 +157,9 @@ export default {
     },
     updateCardFormData(cardFormData) {
       this.card_form_data = cardFormData;
+    },
+    updateColorFormData(colorFormData) {
+      this.color_form_data = colorFormData;
     },
     createQR() {
       console.log(this.card_form_data);
