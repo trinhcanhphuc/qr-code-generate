@@ -5,13 +5,13 @@
         ref="qrLogoUpload"
         height="200"
         width="200"
-        :src="uploadedLogoSrc"
+        :src="logo_src"
         alt="Your QR logo"
       />
       <div class="ml-3 my-auto">
         <input
           ref="btnUploadLogo"
-          @change="readURL"
+          @change="updateFormData('logo_src', $event.target.value)"
           type="file"
           accept=".jpg, .png, .svg, .jpeg"
           style="width: 30px; opacity: 0; position: absolute; left: calc(50% - 16px); bottom: -16px"
@@ -33,34 +33,30 @@
 <script>
 export default {
   name: "LogoForm",
+  props: {
+    logo_form_data: {
+      type: Object,
+      required: true,
+    },
+  },
   data() {
     return {
-      uploadedLogoSrc:
-        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
-    };
+      logo_src: this.logo_form_data.logo_src
+    }
   },
   methods: {
-    readURL() {
-      console.log(this.$refs.btnUploadLogo);
-      console.log(this.$refs.btnUploadLogo.files);
-      var inputLogo = this.$refs.btnUploadLogo;
-      var qrLogoUpload = this.$refs.qrLogoUpload;
+    updateFormData(key, value) {
+      let formData = this.logo_form_data;
+      let inputLogo = this.$refs.btnUploadLogo;
       if (inputLogo.files && inputLogo.files[0]) {
-        var reader = new FileReader();
+        let reader = new FileReader();
         reader.onload = e => {
-          this.uploadedLogoSrc = e.target.result;
+          formData[key] = e.target.result;
+          this.logo_src = formData[key];
+          this.$emit('update-logo-form-data', formData);
         };
         reader.readAsDataURL(inputLogo.files[0]);
       }
-      /*if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-          $('#blah')
-              .attr('src', e.target.result);
-        };
-        reader.readAsDataURL(input.files[0]);
-      }*/
     }
   }
 };

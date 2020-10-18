@@ -13,21 +13,29 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:heroku" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="924ff746-2919-4f77-a6fc-ad4952b8b148" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/qr/CardForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/qr/CardForm.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/qr/ColorForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/qr/ColorForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/qr/EmailForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/qr/EmailForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/qr/LogoForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/qr/LogoForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/qr/PhoneForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/qr/PhoneForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/qr/SmsForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/qr/SmsForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/qr/TextForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/qr/TextForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/qr/UrlForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/qr/UrlForm.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/pages/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/Home.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +53,9 @@
         <option value="composer.json" />
       </list>
     </option>
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="BRANCH" value="master" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -191,6 +202,7 @@
       <updated>1602950242100</updated>
       <workItem from="1602950243713" duration="3028000" />
       <workItem from="1602986359032" duration="2159000" />
+      <workItem from="1603015676692" duration="11081000" />
     </task>
     <servers />
   </component>
@@ -226,10 +238,18 @@
       <screen x="0" y="28" width="2560" height="1412" />
     </state>
     <state x="1054" y="426" width="442" height="612" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.28.2560.1412@0.28.2560.1412" timestamp="1602951126834" />
+    <state x="433" y="28" width="1081" height="1398" key="dock-window-1" timestamp="1603027529665">
+      <screen x="0" y="28" width="2560" height="1412" />
+    </state>
+    <state x="433" y="28" width="1081" height="1398" key="dock-window-1/0.28.2560.1412@0.28.2560.1412" timestamp="1603027529665" />
     <state x="1311" y="335" width="598" height="768" key="find.popup" timestamp="1602987064734">
       <screen x="0" y="28" width="2560" height="1412" />
     </state>
     <state x="1311" y="335" width="598" height="768" key="find.popup/0.28.2560.1412@0.28.2560.1412" timestamp="1602987064734" />
+    <state x="1274" y="338" key="run.anything.popup" timestamp="1603027745722">
+      <screen x="0" y="28" width="2560" height="1412" />
+    </state>
+    <state x="1274" y="338" key="run.anything.popup/0.28.2560.1412@0.28.2560.1412" timestamp="1603027745722" />
     <state x="530" y="271" width="670" height="433" key="search.everywhere.popup" timestamp="1602996511759">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

@@ -114,7 +114,7 @@
 
 <script>
 export default {
-  name: "CardForm",
+  name: 'CardForm',
   props: {
     card_form_data: {
       type: Object,
@@ -125,7 +125,7 @@ export default {
     updateFormData(key, value) {
       let formData = this.card_form_data;
       formData[key] = value;
-      this.$emit("update-card-form-data", formData);
+      this.$emit('update-card-form-data', formData);
     },
   },
 };

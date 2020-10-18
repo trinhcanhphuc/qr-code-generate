@@ -244,7 +244,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "CardForm",
+  name: 'CardForm',
   props: {
     card_form_data: {
       type: Object,
@@ -255,7 +255,7 @@ __webpack_require__.r(__webpack_exports__);
     updateFormData: function updateFormData(key, value) {
       var formData = this.card_form_data;
       formData[key] = value;
-      this.$emit("update-card-form-data", formData);
+      this.$emit('update-card-form-data', formData);
     }
   }
 });
@@ -284,8 +284,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "ColorForm",
+  name: 'ColorForm',
   props: {
     color_form_data: {
       type: String,
@@ -293,14 +295,73 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
-    updateColorForm: function updateColorForm(value) {
-      this.$emit("update-color-form-data", value.hex);
+    updateColor: function updateColor(value) {
+      this.$emit('update-color', value.hex);
     }
   },
   data: function data() {
     return {
-      swatches: [["#FF0000", "#AA0000", "#550000"], ["#FFFF00", "#AAAA00", "#555500"], ["#00FF00", "#00AA00", "#005500"], ["#00FFFF", "#00AAAA", "#005555"], ["#0000FF", "#0000AA", "#000055"]]
+      swatches: [['#FF0000', '#AA0000', '#550000'], ['#FFFF00', '#AAAA00', '#555500'], ['#00FF00', '#00AA00', '#005500'], ['#00FFFF', '#00AAAA', '#005555'], ['#0000FF', '#0000AA', '#000055']]
     };
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/qr/EmailForm.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/qr/EmailForm.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'EmailForm',
+  props: {
+    email_form_data: {
+      type: Object,
+      required: true
+    }
+  },
+  methods: {
+    updateFormData: function updateFormData(key, value) {
+      var formData = this.email_form_data;
+      formData[key] = value;
+      this.$emit('update-email-form-data', formData);
+    }
   }
 });
 
@@ -349,38 +410,199 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "LogoForm",
+  props: {
+    logo_form_data: {
+      type: Object,
+      required: true
+    }
+  },
   data: function data() {
     return {
-      uploadedLogoSrc: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
+      logo_src: this.logo_form_data.logo_src
     };
   },
   methods: {
-    readURL: function readURL() {
+    updateFormData: function updateFormData(key, value) {
       var _this = this;
 
-      console.log(this.$refs.btnUploadLogo);
-      console.log(this.$refs.btnUploadLogo.files);
+      var formData = this.logo_form_data;
       var inputLogo = this.$refs.btnUploadLogo;
-      var qrLogoUpload = this.$refs.qrLogoUpload;
 
       if (inputLogo.files && inputLogo.files[0]) {
         var reader = new FileReader();
 
         reader.onload = function (e) {
-          _this.uploadedLogoSrc = e.target.result;
+          formData[key] = e.target.result;
+          _this.logo_src = formData[key];
+
+          _this.$emit('update-logo-form-data', formData);
         };
 
         reader.readAsDataURL(inputLogo.files[0]);
       }
-      /*if (input.files && input.files[0]) {
-        var reader = new FileReader();
-         reader.onload = function (e) {
-          $('#blah')
-              .attr('src', e.target.result);
-        };
-        reader.readAsDataURL(input.files[0]);
-      }*/
+    }
+  }
+});
 
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/qr/PhoneForm.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/qr/PhoneForm.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'PhoneForm',
+  props: {
+    phone_form_data: {
+      type: Object,
+      required: true
+    }
+  },
+  methods: {
+    updateFormData: function updateFormData(key, value) {
+      var formData = this.phone_form_data;
+      formData[key] = value;
+      this.$emit('update-phone-form-data', formData);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/qr/SmsForm.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/qr/SmsForm.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'SmsForm',
+  props: {
+    sms_form_data: {
+      type: Object,
+      required: true
+    }
+  },
+  methods: {
+    updateFormData: function updateFormData(key, value) {
+      var formData = this.sms_form_data;
+      formData[key] = value;
+      this.$emit('update-sms-form-data', formData);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/qr/TextForm.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/qr/TextForm.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'TextForm',
+  props: {
+    text_form_data: {
+      type: Object,
+      required: true
+    }
+  },
+  methods: {
+    updateFormData: function updateFormData(key, value) {
+      var formData = this.text_form_data;
+      formData[key] = value;
+      this.$emit('update-text-form-data', formData);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/qr/UrlForm.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/qr/UrlForm.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'UrlForm',
+  props: {
+    url_form_data: {
+      type: Object,
+      required: true
+    }
+  },
+  methods: {
+    updateFormData: function updateFormData(key, value) {
+      var formData = this.url_form_data;
+      formData[key] = value;
+      this.$emit('update-url-form-data', formData);
     }
   }
 });
@@ -508,6 +730,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -532,23 +782,45 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      selectedQrType: "url",
-      qrImageSrc: "img/brand/qr-logo.png",
+      selectedQrType: 'url',
+      qrImageSrc: 'img/brand/qr-logo.png',
       card_form_data: {
-        full_name: "",
-        email: "",
-        work_phone: "",
-        private_phone: "",
-        cell_phone: "",
-        address_label: "",
-        address_postcode: "",
-        address_street: "",
-        address_town: "",
-        address_region: "",
-        address_country: ""
+        full_name: '',
+        email: '',
+        work_phone: '',
+        private_phone: '',
+        cell_phone: '',
+        address_label: '',
+        address_postcode: '',
+        address_street: '',
+        address_town: '',
+        address_region: '',
+        address_country: ''
       },
-      color_form_data: '#000000',
-      qr_types: ["url", "text", "phone", "sms", "email", "card"]
+      url_form_data: {
+        url: ''
+      },
+      text_form_data: {
+        text: ''
+      },
+      phone_form_data: {
+        phone: ''
+      },
+      sms_form_data: {
+        phone: '',
+        message: ''
+      },
+      email_form_data: {
+        email: '',
+        subject: '',
+        body: ''
+      },
+      background_color: '#FFFFFF',
+      foreground_color: '#000000',
+      logo_form_data: {
+        logo_src: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=='
+      },
+      qr_types: ['url', 'text', 'phone', 'sms', 'email', 'card']
     };
   },
   methods: {
@@ -556,20 +828,78 @@ __webpack_require__.r(__webpack_exports__);
       this.selectedQrType = qr_type;
     },
     downloadQr: function downloadQr() {
-      var qr_tag = document.createElement("a");
+      var qr_tag = document.createElement('a');
       qr_tag.href = this.qrImageSrc;
-      qr_tag.download = "qr_code.png";
+      qr_tag.download = 'qr_code.png';
       qr_tag.click();
     },
-    updateCardFormData: function updateCardFormData(cardFormData) {
-      this.card_form_data = cardFormData;
+    updateTextFormData: function updateTextFormData(formData) {
+      this.text_form_data = formData;
     },
-    updateColorFormData: function updateColorFormData(colorFormData) {
-      this.color_form_data = colorFormData;
+    updateUrlFormData: function updateUrlFormData(formData) {
+      this.url_form_data = formData;
+    },
+    updatePhoneFormData: function updatePhoneFormData(formData) {
+      this.phone_form_data = formData;
+    },
+    updateSmsFormData: function updateSmsFormData(formData) {
+      this.sms_form_data = formData;
+    },
+    updateEmailFormData: function updateEmailFormData(formData) {
+      this.email_form_data = formData;
+    },
+    updateCardFormData: function updateCardFormData(formData) {
+      this.card_form_data = formData;
+    },
+    updateForegroundColor: function updateForegroundColor(color) {
+      this.foreground_color = color;
+    },
+    updateBackgroundColor: function updateBackgroundColor(color) {
+      this.background_color = color;
+    },
+    updateLogoFormData: function updateLogoFormData(formData) {
+      this.logo_form_data = formData;
     },
     createQR: function createQR() {
-      console.log(this.card_form_data);
-      console.log(this.color_form_data);
+      var formData = this.formData();
+      var qrData = {
+        'form_data': formData,
+        'foreground_color': this.foreground_color,
+        'background_color': this.background_color,
+        'logo': this.logo_form_data
+      };
+      console.log(qrData);
+    },
+    formData: function formData() {
+      var formData;
+
+      switch (this.selectedQrType) {
+        case 'url':
+          formData = this.url_form_data;
+          break;
+
+        case 'text':
+          formData = this.text_form_data;
+          break;
+
+        case 'phone':
+          formData = this.phone_form_data;
+          break;
+
+        case 'sms':
+          formData = this.sms_form_data;
+          break;
+
+        case 'email':
+          formData = this.email_form_data;
+          break;
+
+        case 'card':
+          formData = this.card_form_data;
+          break;
+      }
+
+      return formData;
     }
   }
 });
@@ -1426,9 +1756,11 @@ var render = function() {
           swatches: _vm.swatches,
           value: _vm.color_form_data,
           "show-swatches": "",
-          "hide-canvas": ""
+          "hide-canvas": "",
+          mode: "hexa",
+          elevation: "15"
         },
-        on: { "update:color": _vm.updateColorForm }
+        on: { "update:color": _vm.updateColor }
       })
     ],
     1
@@ -1470,7 +1802,13 @@ var render = function() {
                 attrs: {
                   label: "Email",
                   name: "email",
+                  value: _vm.email_form_data.email,
                   placeholder: "example@email.com"
+                },
+                on: {
+                  keyup: function($event) {
+                    return _vm.updateFormData("email", $event.target.value)
+                  }
                 }
               })
             ],
@@ -1491,7 +1829,13 @@ var render = function() {
                 attrs: {
                   label: "Subject",
                   name: "subject",
+                  value: _vm.email_form_data.subject,
                   placeholder: "Greeting!"
+                },
+                on: {
+                  keyup: function($event) {
+                    return _vm.updateFormData("subject", $event.target.value)
+                  }
                 }
               })
             ],
@@ -1513,8 +1857,14 @@ var render = function() {
                   id: "qrcode-text",
                   label: "Body",
                   name: "body",
+                  value: _vm.email_form_data.body,
                   placeholder: "Today, I write this email to inform",
                   rows: "2"
+                },
+                on: {
+                  keyup: function($event) {
+                    return _vm.updateFormData("body", $event.target.value)
+                  }
                 }
               })
             ],
@@ -1586,7 +1936,7 @@ var render = function() {
           attrs: {
             height: "200",
             width: "200",
-            src: _vm.uploadedLogoSrc,
+            src: _vm.logo_src,
             alt: "Your QR logo"
           }
         }),
@@ -1605,7 +1955,11 @@ var render = function() {
                 bottom: "-16px"
               },
               attrs: { type: "file", accept: ".jpg, .png, .svg, .jpeg" },
-              on: { change: _vm.readURL }
+              on: {
+                change: function($event) {
+                  return _vm.updateFormData("logo_src", $event.target.value)
+                }
+              }
             }),
             _vm._v(" "),
             _c(
@@ -1673,9 +2027,14 @@ var render = function() {
             [
               _c("v-text-field", {
                 attrs: {
-                  id: "qrcode-phone",
                   label: "Phone Number",
+                  value: _vm.phone_form_data.phone,
                   placeholder: "+84 *******"
+                },
+                on: {
+                  keyup: function($event) {
+                    return _vm.updateFormData("phone", $event.target.value)
+                  }
                 }
               })
             ],
@@ -1721,19 +2080,24 @@ var render = function() {
             { attrs: { cols: "12" } },
             [
               _c("v-text-field", {
-                attrs: {
-                  id: "qrcode-phone",
-                  label: "Phone Number",
-                  placeholder: "+84 *******"
+                attrs: { label: "Phone Number", placeholder: "+84 *******" },
+                on: {
+                  keyup: function($event) {
+                    return _vm.updateFormData("phone", $event.target.value)
+                  }
                 }
               }),
               _vm._v(" "),
               _c("v-textarea", {
                 attrs: {
-                  id: "qrcode-message",
                   label: "Your Message",
                   placeholder: "Hello!",
                   rows: "2"
+                },
+                on: {
+                  keyup: function($event) {
+                    return _vm.updateFormData("message", $event.target.value)
+                  }
                 }
               })
             ],
@@ -1780,10 +2144,15 @@ var render = function() {
             [
               _c("v-textarea", {
                 attrs: {
-                  id: "qrcode-text",
                   label: "Text",
+                  value: _vm.text_form_data.text,
                   placeholder: "Fill in your text",
                   rows: "2"
+                },
+                on: {
+                  keyup: function($event) {
+                    return _vm.updateFormData("text", $event.target.value)
+                  }
                 }
               })
             ],
@@ -1832,7 +2201,13 @@ var render = function() {
                 attrs: {
                   id: "qrcode-text",
                   label: "URL",
+                  value: _vm.url_form_data.text,
                   placeholder: "https://www.facebook.com/"
+                },
+                on: {
+                  keyup: function($event) {
+                    return _vm.updateFormData("url", $event.target.value)
+                  }
                 }
               })
             ],
@@ -1901,7 +2276,7 @@ var render = function() {
                                   staticClass: "mx-2",
                                   class: {
                                     "purple white--text":
-                                      _vm.selectedQrType == type
+                                      _vm.selectedQrType === type
                                   },
                                   attrs: {
                                     "input-value": active,
@@ -1914,7 +2289,7 @@ var render = function() {
                                     }
                                   }
                                 },
-                                [_vm._v(_vm._s(type))]
+                                [_vm._v(_vm._s(type) + "\n            ")]
                               )
                             ]
                           }
@@ -1936,13 +2311,17 @@ var render = function() {
                       {
                         name: "show",
                         rawName: "v-show",
-                        value: _vm.selectedQrType == "text",
-                        expression: "selectedQrType == 'text'"
+                        value: _vm.selectedQrType === "text",
+                        expression: "selectedQrType === 'text'"
                       }
-                    ],
-                    staticClass: "qrcode-text-form"
+                    ]
                   },
-                  [_c("TextForm")],
+                  [
+                    _c("TextForm", {
+                      attrs: { text_form_data: _vm.text_form_data },
+                      on: { "update-text-form-data": _vm.updateTextFormData }
+                    })
+                  ],
                   1
                 ),
                 _vm._v(" "),
@@ -1953,13 +2332,17 @@ var render = function() {
                       {
                         name: "show",
                         rawName: "v-show",
-                        value: _vm.selectedQrType == "url",
-                        expression: "selectedQrType == 'url'"
+                        value: _vm.selectedQrType === "url",
+                        expression: "selectedQrType === 'url'"
                       }
-                    ],
-                    staticClass: "qrcode-text-form"
+                    ]
                   },
-                  [_c("UrlForm")],
+                  [
+                    _c("UrlForm", {
+                      attrs: { url_form_data: _vm.url_form_data },
+                      on: { "update-url-form-data": _vm.updateUrlFormData }
+                    })
+                  ],
                   1
                 ),
                 _vm._v(" "),
@@ -1970,13 +2353,17 @@ var render = function() {
                       {
                         name: "show",
                         rawName: "v-show",
-                        value: _vm.selectedQrType == "phone",
-                        expression: "selectedQrType == 'phone'"
+                        value: _vm.selectedQrType === "phone",
+                        expression: "selectedQrType === 'phone'"
                       }
-                    ],
-                    staticClass: "qrcode-text-form"
+                    ]
                   },
-                  [_c("PhoneForm")],
+                  [
+                    _c("PhoneForm", {
+                      attrs: { phone_form_data: _vm.phone_form_data },
+                      on: { "update-phone-form-data": _vm.updatePhoneFormData }
+                    })
+                  ],
                   1
                 ),
                 _vm._v(" "),
@@ -1987,13 +2374,17 @@ var render = function() {
                       {
                         name: "show",
                         rawName: "v-show",
-                        value: _vm.selectedQrType == "sms",
-                        expression: "selectedQrType == 'sms'"
+                        value: _vm.selectedQrType === "sms",
+                        expression: "selectedQrType === 'sms'"
                       }
-                    ],
-                    staticClass: "qrcode-text-form"
+                    ]
                   },
-                  [_c("SmsForm")],
+                  [
+                    _c("SmsForm", {
+                      attrs: { sms_form_data: _vm.sms_form_data },
+                      on: { "update-sms-form-data": _vm.updateSmsFormData }
+                    })
+                  ],
                   1
                 ),
                 _vm._v(" "),
@@ -2004,13 +2395,17 @@ var render = function() {
                       {
                         name: "show",
                         rawName: "v-show",
-                        value: _vm.selectedQrType == "email",
-                        expression: "selectedQrType == 'email'"
+                        value: _vm.selectedQrType === "email",
+                        expression: "selectedQrType === 'email'"
                       }
-                    ],
-                    attrs: { id: "qrcode-email-form" }
+                    ]
                   },
-                  [_c("EmailForm")],
+                  [
+                    _c("EmailForm", {
+                      attrs: { email_form_data: _vm.email_form_data },
+                      on: { "update-email-form-data": _vm.updateEmailFormData }
+                    })
+                  ],
                   1
                 ),
                 _vm._v(" "),
@@ -2021,11 +2416,10 @@ var render = function() {
                       {
                         name: "show",
                         rawName: "v-show",
-                        value: _vm.selectedQrType == "card",
-                        expression: "selectedQrType == 'card'"
+                        value: _vm.selectedQrType === "card",
+                        expression: "selectedQrType === 'card'"
                       }
-                    ],
-                    attrs: { id: "qrcode-card-form" }
+                    ]
                   },
                   [
                     _c("CardForm", {
@@ -2041,16 +2435,11 @@ var render = function() {
                 _c("div", { staticClass: "row" }, [
                   _c(
                     "div",
-                    {
-                      staticClass: "col-md-6",
-                      attrs: { id: "qr-colors-section" }
-                    },
+                    { staticClass: "col-md-6" },
                     [
                       _c("ColorForm", {
-                        attrs: { color_form_data: _vm.color_form_data },
-                        on: {
-                          "update-color-form-data": _vm.updateColorFormData
-                        }
+                        attrs: { color_form_data: _vm.foreground_color },
+                        on: { "update-color": _vm.updateForegroundColor }
                       })
                     ],
                     1
@@ -2058,15 +2447,32 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "div",
-                    {
-                      staticClass: "col-md-6 mt-auto",
-                      staticStyle: { "margin-bottom": "20px" },
-                      attrs: { id: "qr-logo" }
-                    },
-                    [_c("LogoForm")],
+                    { staticClass: "col-md-6" },
+                    [
+                      _c("ColorForm", {
+                        attrs: { color_form_data: _vm.background_color },
+                        on: { "update-color": _vm.updateBackgroundColor }
+                      })
+                    ],
                     1
                   )
                 ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "mt-3 mb-3",
+                    staticStyle: { "margin-bottom": "20px" },
+                    attrs: { id: "qr-logo" }
+                  },
+                  [
+                    _c("LogoForm", {
+                      attrs: { logo_form_data: _vm.logo_form_data },
+                      on: { "update-logo-form-data": _vm.updateLogoFormData }
+                    })
+                  ],
+                  1
+                ),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -2095,7 +2501,7 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Create QR")]
+                    [_vm._v("Create QR\n          ")]
                   )
                 ],
                 1
@@ -2131,7 +2537,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Download")]
+                [_vm._v("Download\n        ")]
               )
             ],
             1
@@ -61393,15 +61799,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _EmailForm_vue_vue_type_template_id_f8effa86___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EmailForm.vue?vue&type=template&id=f8effa86& */ "./resources/js/components/qr/EmailForm.vue?vue&type=template&id=f8effa86&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _EmailForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EmailForm.vue?vue&type=script&lang=js& */ "./resources/js/components/qr/EmailForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _EmailForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _EmailForm_vue_vue_type_template_id_f8effa86___WEBPACK_IMPORTED_MODULE_0__["render"],
   _EmailForm_vue_vue_type_template_id_f8effa86___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -61415,6 +61823,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/components/qr/EmailForm.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/qr/EmailForm.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/qr/EmailForm.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_EmailForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./EmailForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/qr/EmailForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_EmailForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -61568,15 +61990,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _PhoneForm_vue_vue_type_template_id_78c3028f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PhoneForm.vue?vue&type=template&id=78c3028f& */ "./resources/js/components/qr/PhoneForm.vue?vue&type=template&id=78c3028f&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _PhoneForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PhoneForm.vue?vue&type=script&lang=js& */ "./resources/js/components/qr/PhoneForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _PhoneForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _PhoneForm_vue_vue_type_template_id_78c3028f___WEBPACK_IMPORTED_MODULE_0__["render"],
   _PhoneForm_vue_vue_type_template_id_78c3028f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -61590,6 +62014,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/components/qr/PhoneForm.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/qr/PhoneForm.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/qr/PhoneForm.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PhoneForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./PhoneForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/qr/PhoneForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PhoneForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -61621,15 +62059,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SmsForm_vue_vue_type_template_id_1e768cba___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SmsForm.vue?vue&type=template&id=1e768cba& */ "./resources/js/components/qr/SmsForm.vue?vue&type=template&id=1e768cba&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _SmsForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SmsForm.vue?vue&type=script&lang=js& */ "./resources/js/components/qr/SmsForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SmsForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _SmsForm_vue_vue_type_template_id_1e768cba___WEBPACK_IMPORTED_MODULE_0__["render"],
   _SmsForm_vue_vue_type_template_id_1e768cba___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -61643,6 +62083,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/components/qr/SmsForm.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/qr/SmsForm.vue?vue&type=script&lang=js&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/qr/SmsForm.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SmsForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./SmsForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/qr/SmsForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SmsForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -61674,15 +62128,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _TextForm_vue_vue_type_template_id_44beaf64___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TextForm.vue?vue&type=template&id=44beaf64& */ "./resources/js/components/qr/TextForm.vue?vue&type=template&id=44beaf64&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _TextForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TextForm.vue?vue&type=script&lang=js& */ "./resources/js/components/qr/TextForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _TextForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _TextForm_vue_vue_type_template_id_44beaf64___WEBPACK_IMPORTED_MODULE_0__["render"],
   _TextForm_vue_vue_type_template_id_44beaf64___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -61696,6 +62152,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/components/qr/TextForm.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/qr/TextForm.vue?vue&type=script&lang=js&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/qr/TextForm.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TextForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./TextForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/qr/TextForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TextForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -61727,15 +62197,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _UrlForm_vue_vue_type_template_id_005fc260___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./UrlForm.vue?vue&type=template&id=005fc260& */ "./resources/js/components/qr/UrlForm.vue?vue&type=template&id=005fc260&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _UrlForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./UrlForm.vue?vue&type=script&lang=js& */ "./resources/js/components/qr/UrlForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _UrlForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _UrlForm_vue_vue_type_template_id_005fc260___WEBPACK_IMPORTED_MODULE_0__["render"],
   _UrlForm_vue_vue_type_template_id_005fc260___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -61749,6 +62221,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/components/qr/UrlForm.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/qr/UrlForm.vue?vue&type=script&lang=js&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/qr/UrlForm.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_UrlForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./UrlForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/qr/UrlForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_UrlForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -61894,8 +62380,8 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/phuctc/Projects/qr-code-generate/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/phuctc/Projects/qr-code-generate/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /media/phuctc/Extended data/Projects/qr-code/qr-code-generate/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /media/phuctc/Extended data/Projects/qr-code/qr-code-generate/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

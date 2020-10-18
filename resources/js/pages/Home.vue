@@ -3,7 +3,7 @@
     <div class="row m-3">
       <div class="col-md-9">
         <v-card elevation="8" class="p-4 rounded-lg">
-          <input name="token" type="hidden" value />
+          <input name="token" type="hidden" value/>
           <v-slide-group show-arrows>
             <v-slide-item
               v-for="type in qr_types"
@@ -13,37 +13,53 @@
               <v-btn
                 class="mx-2"
                 :input-value="active"
-                v-bind:class="{ 'purple white--text': selectedQrType == type }"
+                v-bind:class="{ 'purple white--text': selectedQrType === type }"
                 depressed
                 rounded
                 @click="changeQrType(type)"
-                >{{ type }}</v-btn
+              >{{ type }}
+              </v-btn
               >
             </v-slide-item>
           </v-slide-group>
 
           <div class="mt-3">
-            <div class="qrcode-text-form" v-show="selectedQrType == 'text'">
-              <TextForm></TextForm>
+            <div v-show="selectedQrType === 'text'">
+              <TextForm
+                :text_form_data="text_form_data"
+                @update-text-form-data="updateTextFormData"
+              ></TextForm>
             </div>
 
-            <div class="qrcode-text-form" v-show="selectedQrType == 'url'">
-              <UrlForm></UrlForm>
+            <div v-show="selectedQrType === 'url'">
+              <UrlForm
+                :url_form_data="url_form_data"
+                @update-url-form-data="updateUrlFormData"
+              ></UrlForm>
             </div>
 
-            <div class="qrcode-text-form" v-show="selectedQrType == 'phone'">
-              <PhoneForm></PhoneForm>
+            <div v-show="selectedQrType === 'phone'">
+              <PhoneForm
+                :phone_form_data="phone_form_data"
+                @update-phone-form-data="updatePhoneFormData"
+              ></PhoneForm>
             </div>
 
-            <div class="qrcode-text-form" v-show="selectedQrType == 'sms'">
-              <SmsForm></SmsForm>
+            <div v-show="selectedQrType === 'sms'">
+              <SmsForm
+                :sms_form_data="sms_form_data"
+                @update-sms-form-data="updateSmsFormData"
+              ></SmsForm>
             </div>
 
-            <div id="qrcode-email-form" v-show="selectedQrType == 'email'">
-              <EmailForm></EmailForm>
+            <div v-show="selectedQrType === 'email'">
+              <EmailForm
+                :email_form_data="email_form_data"
+                @update-email-form-data="updateEmailFormData"
+              ></EmailForm>
             </div>
 
-            <div id="qrcode-card-form" v-show="selectedQrType == 'card'">
+            <div v-show="selectedQrType === 'card'">
               <CardForm
                 :card_form_data="card_form_data"
                 @update-card-form-data="updateCardFormData"
@@ -53,19 +69,29 @@
 
           <div class="mt-3 customize">
             <div class="row">
-              <div id="qr-colors-section" class="col-md-6">
+              <div class="col-md-6">
                 <ColorForm
-                  :color_form_data="color_form_data"
-                  @update-color-form-data="updateColorFormData"
+                  :color_form_data="foreground_color"
+                  @update-color="updateForegroundColor"
                 ></ColorForm>
               </div>
-              <div
-                id="qr-logo"
-                class="col-md-6 mt-auto"
-                style="margin-bottom: 20px"
-              >
-                <LogoForm></LogoForm>
+              <div class="col-md-6">
+                <ColorForm
+                  :color_form_data="background_color"
+                  @update-color="updateBackgroundColor"
+                ></ColorForm>
               </div>
+            </div>
+            <div
+              id="qr-logo"
+              class="mt-3 mb-3"
+              style="margin-bottom: 20px"
+            >
+              <LogoForm
+                :logo_form_data="logo_form_data"
+                @update-logo-form-data="updateLogoFormData"
+              >
+              </LogoForm>
             </div>
             <div id="qr-eyes-style">
               <EyesForm></EyesForm>
@@ -79,21 +105,23 @@
               size="lg"
               block
               v-on:click="createQR()"
-              >Create QR</v-btn
+            >Create QR
+            </v-btn
             >
           </div>
         </v-card>
       </div>
       <div id="qrcode-img" class="col-md-3 text-center">
         <v-card elevation="8" class="p-4 rounded-lg">
-          <img v-bind:src="qrImageSrc" class="w-100" />
+          <img v-bind:src="qrImageSrc" class="w-100"/>
           <v-btn
             id="btn_save_qr"
             color="primary"
             size="lg"
             class="mt-3"
             v-on:click="downloadQr()"
-            >Download</v-btn
+          >Download
+          </v-btn
           >
         </v-card>
       </div>
@@ -127,23 +155,45 @@ export default {
   },
   data() {
     return {
-      selectedQrType: "url",
-      qrImageSrc: "img/brand/qr-logo.png",
+      selectedQrType: 'url',
+      qrImageSrc: 'img/brand/qr-logo.png',
       card_form_data: {
-        full_name: "",
-        email: "",
-        work_phone: "",
-        private_phone: "",
-        cell_phone: "",
-        address_label: "",
-        address_postcode: "",
-        address_street: "",
-        address_town: "",
-        address_region: "",
-        address_country: ""
+        full_name: '',
+        email: '',
+        work_phone: '',
+        private_phone: '',
+        cell_phone: '',
+        address_label: '',
+        address_postcode: '',
+        address_street: '',
+        address_town: '',
+        address_region: '',
+        address_country: ''
       },
-      color_form_data: '#000000',
-      qr_types: ["url", "text", "phone", "sms", "email", "card"]
+      url_form_data: {
+        url: ''
+      },
+      text_form_data: {
+        text: ''
+      },
+      phone_form_data: {
+        phone: ''
+      },
+      sms_form_data: {
+        phone: '',
+        message: ''
+      },
+      email_form_data: {
+        email: '',
+        subject: '',
+        body: ''
+      },
+      background_color: '#FFFFFF',
+      foreground_color: '#000000',
+      logo_form_data: {
+        logo_src: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=='
+      },
+      qr_types: ['url', 'text', 'phone', 'sms', 'email', 'card']
     };
   },
   methods: {
@@ -151,20 +201,72 @@ export default {
       this.selectedQrType = qr_type;
     },
     downloadQr() {
-      var qr_tag = document.createElement("a");
+      let qr_tag = document.createElement('a');
       qr_tag.href = this.qrImageSrc;
-      qr_tag.download = "qr_code.png";
+      qr_tag.download = 'qr_code.png';
       qr_tag.click();
     },
-    updateCardFormData(cardFormData) {
-      this.card_form_data = cardFormData;
+    updateTextFormData(formData) {
+      this.text_form_data = formData;
     },
-    updateColorFormData(colorFormData) {
-      this.color_form_data = colorFormData;
+    updateUrlFormData(formData) {
+      this.url_form_data = formData;
+    },
+    updatePhoneFormData(formData) {
+      this.phone_form_data = formData;
+    },
+    updateSmsFormData(formData) {
+      this.sms_form_data = formData;
+    },
+    updateEmailFormData(formData) {
+      this.email_form_data = formData;
+    },
+    updateCardFormData(formData) {
+      this.card_form_data = formData;
+    },
+    updateForegroundColor(color) {
+      this.foreground_color = color;
+    },
+    updateBackgroundColor(color) {
+      this.background_color = color;
+    },
+    updateLogoFormData(formData) {
+      this.logo_form_data = formData;
     },
     createQR() {
-      console.log(this.card_form_data);
-      console.log(this.color_form_data);
+      let formData = this.formData();
+
+      let qrData = {
+        'form_data': formData,
+        'foreground_color': this.foreground_color,
+        'background_color': this.background_color,
+        'logo': this.logo_form_data
+      }
+      console.log(qrData);
+    },
+    formData() {
+      let formData;
+      switch (this.selectedQrType) {
+        case 'url':
+          formData = this.url_form_data;
+          break;
+        case 'text':
+          formData = this.text_form_data;
+          break;
+        case 'phone':
+          formData = this.phone_form_data;
+          break;
+        case 'sms':
+          formData = this.sms_form_data;
+          break;
+        case 'email':
+          formData = this.email_form_data;
+          break;
+        case 'card':
+          formData = this.card_form_data;
+          break;
+      }
+      return formData;
     }
   }
 };
