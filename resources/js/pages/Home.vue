@@ -243,6 +243,12 @@ export default {
         'logo': this.logo_form_data
       }
       console.log(qrData);
+      axios.post('/qrcode/render')
+        .then(res => {
+          commit('CREATE_POST', qrData)
+        }).catch(err => {
+        console.log(err)
+      });
     },
     formData() {
       let formData;
