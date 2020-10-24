@@ -29,9 +29,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="924ff746-2919-4f77-a6fc-ad4952b8b148" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QRController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QRController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/qr_images/result.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/qr-code-generate.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Services/QRCodeServices/RenderQRCode.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/QRCodeServices/RenderQRCode.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/pages/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/Home.vue" afterDir="false" />
     </list>
@@ -167,6 +173,9 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
       <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/simplesoftwareio/simple-qrcode" />
+      <path value="$PROJECT_DIR$/vendor/dasprid/enum" />
+      <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
     </include_path>
   </component>
   <component name="ProjectId" id="1j0oCPODNQvAFlb3LtRPLvXFGLz" />
@@ -176,11 +185,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -245,9 +255,10 @@
       <screen x="0" y="28" width="2560" height="1412" />
     </state>
     <state x="1038" y="300" width="1522" height="1093" key="DiffContextDialog/0.28.2560.1412@0.28.2560.1412" timestamp="1603414710769" />
-    <state x="568" y="274" key="SettingsEditor" timestamp="1603463108160">
-      <screen x="0" y="28" width="2560" height="1412" />
+    <state x="320" y="157" key="SettingsEditor" timestamp="1603505669233">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="320" y="157" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1603505669233" />
     <state x="568" y="274" key="SettingsEditor/0.28.2560.1412@0.28.2560.1412" timestamp="1603463108160" />
     <state x="178" y="185" width="2205" height="1099" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1603464931968">
       <screen x="0" y="28" width="2560" height="1412" />
@@ -270,10 +281,10 @@
       <screen x="0" y="28" width="2560" height="1412" />
     </state>
     <state x="1274" y="338" key="run.anything.popup/0.28.2560.1412@0.28.2560.1412" timestamp="1603027745722" />
-    <state x="943" y="453" width="672" height="678" key="search.everywhere.popup" timestamp="1603462868692">
-      <screen x="0" y="28" width="2560" height="1412" />
+    <state x="530" y="271" width="670" height="433" key="search.everywhere.popup" timestamp="1603512355738">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="530" y="271" width="670" height="433" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1602996511759" />
+    <state x="530" y="271" width="670" height="433" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1603512355738" />
     <state x="943" y="453" width="672" height="678" key="search.everywhere.popup/0.28.2560.1412@0.28.2560.1412" timestamp="1603462868692" />
   </component>
 </project>
