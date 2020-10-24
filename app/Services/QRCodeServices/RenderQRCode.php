@@ -6,6 +6,14 @@ use App\Services\ServiceInterface;
 use App\Services\QRCodeService;
 use QRCode;
 
+/**
+ * @property string type
+ * @property array form_data
+ * @property string fore_color
+ * @property string back_color
+ * @property string logo
+ * @property string format
+ */
 class RenderQRCode extends QRCodeService implements ServiceInterface
 {
   const QR_INPUT_TYPE = [
@@ -20,11 +28,17 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
 
   public function __construct(
     string $type,
-    array $data,
+    array $form_data,
+    string $fore_color,
+    string $back_color,
+    string $logo,
     string $format = 'png')
   {
     $this->type = $type;
-    $this->data = $data;
+    $this->form_data = $form_data;
+    $this->fore_color = $fore_color;
+    $this->back_color = $back_color;
+    $this->logo = $logo;
     $this->format = $format;
   }
 
@@ -33,25 +47,25 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
     $content = '';
     switch ($this->type) {
       case RenderQRCode::QR_INPUT_TYPE['TEXT']:
-        $content = RenderQRCode::render_qr_by_text($this->data);
+        $content = RenderQRCode::render_qr_by_text($this->form_data);
         break;
       case RenderQRCode::QR_INPUT_TYPE['URL']:
-        $content = RenderQRCode::render_qr_by_url($this->data);
+        $content = RenderQRCode::render_qr_by_url($this->form_data);
         break;
       case RenderQRCode::QR_INPUT_TYPE['PHONE']:
-        $content = RenderQRCode::render_qr_by_phone($this->data);
+        $content = RenderQRCode::render_qr_by_phone($this->form_data);
         break;
       case RenderQRCode::QR_INPUT_TYPE['SMS']:
-        $content = RenderQRCode::render_qr_by_sms($this->data);
+        $content = RenderQRCode::render_qr_by_sms($this->form_data);
         break;
       case RenderQRCode::QR_INPUT_TYPE['EMAIL']:
-        $content = RenderQRCode::render_qr_by_email($this->data);
+        $content = RenderQRCode::render_qr_by_email($this->form_data);
         break;
       case RenderQRCode::QR_INPUT_TYPE['SKYPE']:
-        $content = RenderQRCode::render_qr_by_skype($this->data);
+        $content = RenderQRCode::render_qr_by_skype($this->form_data);
         break;
       case RenderQRCode::QR_INPUT_TYPE['BUSINESS_CARD']:
-        $content = RenderQRCode::render_qr_by_business_card($this->data, $this->data['type']);
+        $content = RenderQRCode::render_qr_by_business_card($this->form_data, $this->form_data['type']);
         break;
     }
     switch ($this->format) {
@@ -114,17 +128,17 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
 
   function render_qr_by_text($data)
   {
-    return $data['content'];
+    return $data['text'];
   }
 
   function render_qr_by_url($data)
   {
-    return $data['content'];
+    return $data['url'];
   }
 
   function render_qr_by_phone($data)
   {
-    return $data['content'];
+    return $data['phone'];
   }
 
   function render_qr_by_sms($data)

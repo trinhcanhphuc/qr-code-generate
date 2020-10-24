@@ -13,7 +13,10 @@ class QRController extends Controller
     \Log::info($request);
     return QRCodeService::RenderQRCode(
       $request['type'],
-      $request['data'],
-      'png');
+      $request['form_data'],
+      $request['fore_color'],
+      $request['back_color'],
+      $request['logo'],
+      $request['format']);
   }
 }

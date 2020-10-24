@@ -30,13 +30,10 @@
   <component name="ChangeListManager">
     <list default="true" id="924ff746-2919-4f77-a6fc-ad4952b8b148" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QRController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QRController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/QRCodeServices/RenderQRCode.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/QRCodeServices/RenderQRCode.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/pages/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,12 +202,15 @@
       <workItem from="1603015676692" duration="11224000" />
       <workItem from="1603291807274" duration="40000" />
       <workItem from="1603413004015" duration="2190000" />
-      <workItem from="1603461166859" duration="1651000" />
+      <workItem from="1603461166859" duration="6664000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.log" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -249,10 +249,11 @@
       <screen x="0" y="28" width="2560" height="1412" />
     </state>
     <state x="568" y="274" key="SettingsEditor/0.28.2560.1412@0.28.2560.1412" timestamp="1603463108160" />
-    <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1602994608439">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="178" y="185" width="2205" height="1099" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1603464931968">
+      <screen x="0" y="28" width="2560" height="1412" />
     </state>
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1602994608439" />
+    <state x="178" y="185" width="2205" height="1099" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.28.2560.1412@0.28.2560.1412" timestamp="1603464931968" />
     <state x="1054" y="426" width="442" height="612" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602951126834">
       <screen x="0" y="28" width="2560" height="1412" />
     </state>

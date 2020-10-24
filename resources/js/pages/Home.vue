@@ -237,15 +237,17 @@ export default {
       let formData = this.formData();
 
       let qrData = {
+        'type': this.selectedQrType,
         'form_data': formData,
-        'foreground_color': this.foreground_color,
-        'background_color': this.background_color,
-        'logo': this.logo_form_data
+        'fore_color': this.foreground_color,
+        'back_color': this.background_color,
+        'logo': this.logo_form_data.logo_src,
+        'format': 'png'
       }
       console.log(qrData);
-      axios.post('/qrcode/render')
+      axios.post('/qrcode/render', qrData)
         .then(res => {
-          commit('CREATE_POST', qrData)
+          console.log(res);
         }).catch(err => {
         console.log(err)
       });
