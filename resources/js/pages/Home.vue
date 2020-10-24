@@ -59,7 +59,7 @@
               ></EmailForm>
             </div>
 
-            <div v-show="selectedQrType === 'card'">
+            <div v-show="selectedQrType === 'business_card'">
               <CardForm
                 :card_form_data="card_form_data"
                 @update-card-form-data="updateCardFormData"
@@ -193,7 +193,7 @@ export default {
       logo_form_data: {
         logo_src: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=='
       },
-      qr_types: ['url', 'text', 'phone', 'sms', 'email', 'card']
+      qr_types: ['url', 'text', 'phone', 'sms', 'email', 'business_card']
     };
   },
   methods: {
@@ -239,15 +239,15 @@ export default {
       let qrData = {
         'type': this.selectedQrType,
         'form_data': formData,
-        'fore_color': this.foreground_color,
-        'back_color': this.background_color,
+        'fore_color': this.foreground_color.slice(1).convertToRGB(),
+        'back_color': this.background_color.slice(1).convertToRGB(),
         'logo': this.logo_form_data.logo_src,
         'format': 'png'
       }
-      console.log(qrData);
       axios.post('/qrcode/render', qrData)
         .then(res => {
           console.log(res);
+          this.qrImageSrc = res.data + '?' + new Date().getTime();
         }).catch(err => {
         console.log(err)
       });
@@ -270,7 +270,7 @@ export default {
         case 'email':
           formData = this.email_form_data;
           break;
-        case 'card':
+        case 'business_card':
           formData = this.card_form_data;
           break;
       }
@@ -278,4 +278,18 @@ export default {
     }
   }
 };
+
+String.prototype.convertToRGB = function () {
+  if (this.length != 6) {
+    throw "Only six-digit hex colors are allowed.";
+  }
+
+  var aRgbHex = this.match(/.{1,2}/g);
+  var aRgb = [
+    parseInt(aRgbHex[0], 16),
+    parseInt(aRgbHex[1], 16),
+    parseInt(aRgbHex[2], 16)
+  ];
+  return aRgb;
+}
 </script>

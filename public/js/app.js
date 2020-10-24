@@ -2633,7 +2633,7 @@ __webpack_require__.r(__webpack_exports__);
       logo_form_data: {
         logo_src: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=='
       },
-      qr_types: ['url', 'text', 'phone', 'sms', 'email', 'card']
+      qr_types: ['url', 'text', 'phone', 'sms', 'email', 'business_card']
     };
   },
   methods: {
@@ -2674,18 +2674,20 @@ __webpack_require__.r(__webpack_exports__);
       this.logo_form_data = formData;
     },
     createQR: function createQR() {
+      var _this = this;
+
       var formData = this.formData();
       var qrData = {
         'type': this.selectedQrType,
         'form_data': formData,
-        'fore_color': this.foreground_color,
-        'back_color': this.background_color,
+        'fore_color': this.foreground_color.slice(1).convertToRGB(),
+        'back_color': this.background_color.slice(1).convertToRGB(),
         'logo': this.logo_form_data.logo_src,
         'format': 'png'
       };
-      console.log(qrData);
       axios.post('/qrcode/render', qrData).then(function (res) {
         console.log(res);
+        _this.qrImageSrc = res.data + '?' + new Date().getTime();
       })["catch"](function (err) {
         console.log(err);
       });
@@ -2714,7 +2716,7 @@ __webpack_require__.r(__webpack_exports__);
           formData = this.email_form_data;
           break;
 
-        case 'card':
+        case 'business_card':
           formData = this.card_form_data;
           break;
       }
@@ -2723,6 +2725,16 @@ __webpack_require__.r(__webpack_exports__);
     }
   }
 });
+
+String.prototype.convertToRGB = function () {
+  if (this.length != 6) {
+    throw "Only six-digit hex colors are allowed.";
+  }
+
+  var aRgbHex = this.match(/.{1,2}/g);
+  var aRgb = [parseInt(aRgbHex[0], 16), parseInt(aRgbHex[1], 16), parseInt(aRgbHex[2], 16)];
+  return aRgb;
+};
 
 /***/ }),
 
@@ -4236,8 +4248,8 @@ var render = function() {
                       {
                         name: "show",
                         rawName: "v-show",
-                        value: _vm.selectedQrType === "card",
-                        expression: "selectedQrType === 'card'"
+                        value: _vm.selectedQrType === "business_card",
+                        expression: "selectedQrType === 'business_card'"
                       }
                     ]
                   },
@@ -64201,8 +64213,8 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /media/phuctc/Extended data/Projects/qr-code/qr-code-generate/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /media/phuctc/Extended data/Projects/qr-code/qr-code-generate/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/phuctc/Projects/qr-code-generate/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/phuctc/Projects/qr-code-generate/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

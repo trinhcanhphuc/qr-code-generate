@@ -4,13 +4,13 @@ namespace App\Services\QRCodeServices;
 
 use App\Services\ServiceInterface;
 use App\Services\QRCodeService;
-use QRCode;
+use QrCode;
 
 /**
  * @property string type
  * @property array form_data
- * @property string fore_color
- * @property string back_color
+ * @property array fore_color
+ * @property array back_color
  * @property string logo
  * @property string format
  */
@@ -29,8 +29,8 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
   public function __construct(
     string $type,
     array $form_data,
-    string $fore_color,
-    string $back_color,
+    array $fore_color,
+    array $back_color,
     string $logo,
     string $format = 'png')
   {
@@ -65,16 +65,16 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
         $content = RenderQRCode::render_qr_by_skype($this->form_data);
         break;
       case RenderQRCode::QR_INPUT_TYPE['BUSINESS_CARD']:
-        $content = RenderQRCode::render_qr_by_business_card($this->form_data, $this->form_data['type']);
+        $content = RenderQRCode::render_qr_by_business_card($this->form_data);
         break;
     }
     switch ($this->format) {
       case 'png':
-        $fore_color = isset($this->data['fore_color']) ? $this->data['fore_color'] : [255, 255, 255];
-        $back_color = isset($this->data['back_color']) ? $this->data['back_color'] : [0, 0, 0];
+        $fore_color = isset($this->fore_color) ? $this->fore_color : [255, 255, 255];
+        $back_color = isset($this->back_color) ? $this->back_color : [0, 0, 0];
+        \Log::info($content);
         $QR_path = RenderQRCode::get_qr_images_path() . 'result.' . $this->format;
-        $qrcode = new QRcode();
-        $qrcode->format('png')->merge($this->data['logo'], 0.3, true)
+        QRcode::format('png')->merge($this->logo, 0.3, true)
           ->size(500)->errorCorrection('H')
           ->color($fore_color[0], $fore_color[1], $fore_color[2])
           ->backgroundColor($back_color[0], $back_color[1], $back_color[2])
@@ -82,10 +82,9 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
           ->generate($content, $this->get_qr_images_path());
         break;
       case 'svg':
-        $fore_color = isset($this->data['fore_color']) ? $this->data['fore_color'] : [255, 255, 255];
-        $back_color = isset($this->data['back_color']) ? $this->data['back_color'] : [0, 0, 0];
-        $qrcode = new QRcode();
-        $qrcode->encoding('UTF-8')
+        $fore_color = isset($this->fore_color) ? $this->fore_color : [255, 255, 255];
+        $back_color = isset($this->back_color) ? $this->back_color : [0, 0, 0];
+        QRcode::encoding('UTF-8')
           ->generate('Make me into a QrCode!', $this->get_qr_images_path());
         break;
     }
@@ -143,7 +142,7 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
 
   function render_qr_by_sms($data)
   {
-    return 'sms:' . $data['content'];
+    return 'smsto:' . $data['phone'] . ':' . $data['message'];
   }
 
   function render_qr_by_email($data)
@@ -165,7 +164,6 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
         $content .= 'TEL;WORK;VOICE:' . $data['phone'] . "\n";
         $content .= 'END:VCARD';
         return $content;
-        break;
       case 'detailed':
         $content = 'BEGIN:VCARD' . "\n";
         $content .= 'VERSION:2.1' . "\n";
@@ -174,11 +172,10 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
 
         $content .= 'TEL;WORK;VOICE:' . $data['work_phone'] . "\n";
         $content .= 'TEL;HOME;VOICE:' . $data['private_phone'] . "\n";
-        $content .= 'TEL;TYPE=cell:' . $data['phone_cell'] . "\n";
+        $content .= 'TEL;TYPE=cell:' . $data['cell_phone'] . "\n";
 
         $content .= 'ADR;TYPE=work;' .
           'LABEL="' . $data['address_label'] . '"'
-          . $data['address_ext'] . ';'
           . $data['address_street'] . ';'
           . $data['address_town'] . ';'
           . $data['address_region'] . ';'
@@ -191,7 +188,6 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
         $content .= 'END:VCARD';
 
         return $content;
-        break;
       case 'photo':
         break;
     }
