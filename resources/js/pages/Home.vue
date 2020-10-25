@@ -3,6 +3,7 @@
     <v-app-bar
       color="white"
       elevation="8"
+      fixed
       flat
     >
       <v-container class="py-0 px-2 fill-height">
@@ -25,7 +26,7 @@
         </v-btn>
       </v-container>
     </v-app-bar>
-    <div class="container mb-16">
+    <div class="container mt-16 mb-16">
       <div class="row m-3">
         <div class="col-md-9">
           <v-card elevation="8" class="p-4 rounded-lg">
@@ -262,7 +263,7 @@ export default {
       ],
       valid: true,
       panel: [0],
-      selectedQrType: 'email',
+      selectedQrType: 'url',
       qrImageSrc: 'img/brand/qr-logo.png',
       card_form_data: {
         full_name: '',
