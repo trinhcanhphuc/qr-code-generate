@@ -5,10 +5,11 @@
         <v-text-field
           id="qrcode-text"
           label="URL"
-          :value="url_form_data.text"
+          :value="url_form_data.url"
           @keyup="updateFormData('url', $event.target.value)"
           placeholder="https://www.facebook.com/"
           type="url"
+          :rules="[rules.urlRules('URL', url_form_data.url)]"
         />
       </v-col>
     </v-row>
@@ -23,6 +24,17 @@ export default {
       type: Object,
       required: true,
     },
+  },
+  data() {
+    return {
+      rules: {
+        urlRules(fieldName, v) {
+          if (!(v)) return fieldName + ' is required';
+          if (!(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/.test(v))) return fieldName + ' must be valid';
+          return true;
+        },
+      }
+    }
   },
   methods: {
     updateFormData(key, value) {

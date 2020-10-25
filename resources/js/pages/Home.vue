@@ -36,49 +36,84 @@
               <v-expansion-panel-header>Input Data</v-expansion-panel-header>
               <v-expansion-panel-content>
                 <div class="mt-3">
-                  <form>
-                    <div v-show="selectedQrType === 'text'">
+                  <div v-show="selectedQrType === 'text'">
+                    <v-form
+                      ref="text_form"
+                      v-model="valid"
+                      lazy-validation
+                    >
                       <TextForm
                         :text_form_data="text_form_data"
                         @update-text-form-data="updateTextFormData"
                       ></TextForm>
-                    </div>
+                    </v-form>
+                  </div>
 
-                    <div v-show="selectedQrType === 'url'">
+                  <div v-show="selectedQrType === 'url'">
+                    <v-form
+                      ref="url_form"
+                      v-model="valid"
+                      lazy-validation
+                    >
                       <UrlForm
                         :url_form_data="url_form_data"
                         @update-url-form-data="updateUrlFormData"
                       ></UrlForm>
-                    </div>
+                    </v-form>
+                  </div>
 
-                    <div v-show="selectedQrType === 'phone'">
+                  <div v-show="selectedQrType === 'phone'">
+                    <v-form
+                      ref="phone_form"
+                      v-model="valid"
+                      lazy-validation
+                    >
                       <PhoneForm
                         :phone_form_data="phone_form_data"
                         @update-phone-form-data="updatePhoneFormData"
                       ></PhoneForm>
-                    </div>
+                    </v-form>
+                  </div>
 
-                    <div v-show="selectedQrType === 'sms'">
+                  <div v-show="selectedQrType === 'sms'">
+                    <v-form
+                      ref="sms_form"
+                      v-model="valid"
+                      lazy-validation
+                    >
                       <SmsForm
                         :sms_form_data="sms_form_data"
                         @update-sms-form-data="updateSmsFormData"
                       ></SmsForm>
-                    </div>
+                    </v-form>
+                  </div>
 
-                    <div v-show="selectedQrType === 'email'">
+                  <div v-show="selectedQrType === 'email'">
+                    <v-form
+                      ref="email_form"
+                      v-model="valid"
+                      lazy-validation
+                    >
                       <EmailForm
                         :email_form_data="email_form_data"
                         @update-email-form-data="updateEmailFormData"
                       ></EmailForm>
-                    </div>
+                    </v-form>
+                  </div>
 
-                    <div v-show="selectedQrType === 'business_card'">
+                  <div v-show="selectedQrType === 'business_card'">
+
+                    <v-form
+                      ref="card_form"
+                      v-model="valid"
+                      lazy-validation
+                    >
                       <CardForm
                         :card_form_data="card_form_data"
                         @update-card-form-data="updateCardFormData"
                       ></CardForm>
-                    </div>
-                  </form>
+                    </v-form>
+                  </div>
                 </div>
               </v-expansion-panel-content>
 
@@ -180,6 +215,7 @@ export default {
   },
   data() {
     return {
+      valid: true,
       panel: [0],
       selectedQrType: 'email',
       qrImageSrc: 'img/brand/qr-logo.png',
@@ -225,6 +261,9 @@ export default {
     };
   },
   methods: {
+    validate() {
+      this.$refs.form.validate()
+    },
     changeQrType(qr_type) {
       this.selectedQrType = qr_type;
     },
@@ -262,8 +301,9 @@ export default {
       this.logo_form_data = formData;
     },
     createQR() {
-      let formData = this.formData();
+      if (!this.validateForm()) return;
 
+      let formData = this.formData();
       let qrData = {
         'type': this.selectedQrType,
         'form_data': formData,
@@ -278,6 +318,22 @@ export default {
         }).catch(err => {
         console.log(err);
       });
+    },
+    validateForm() {
+      switch (this.selectedQrType) {
+        case 'url':
+          return this.$refs.url_form.validate();
+        case 'text':
+          return this.$refs.text_form.validate();
+        case 'phone':
+          return this.$refs.phone_form.validate();
+        case 'sms':
+          return this.$refs.sms_form.validate();
+        case 'email':
+          return this.$refs.email_form.validate();
+        case 'business_card':
+          return this.$refs.card_form.validate();
+      }
     },
     formData() {
       let formData;
@@ -311,8 +367,8 @@ String.prototype.convertToRGB = function () {
     throw "Only six-digit hex colors are allowed.";
   }
 
-  var aRgbHex = this.match(/.{1,2}/g);
-  var aRgb = [
+  let aRgbHex = this.match(/.{1,2}/g);
+  let aRgb = [
     parseInt(aRgbHex[0], 16),
     parseInt(aRgbHex[1], 16),
     parseInt(aRgbHex[2], 16)
