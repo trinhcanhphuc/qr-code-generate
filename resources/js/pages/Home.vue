@@ -181,7 +181,7 @@ export default {
   data() {
     return {
       panel: [0],
-      selectedQrType: 'url',
+      selectedQrType: 'email',
       qrImageSrc: 'img/brand/qr-logo.png',
       card_form_data: {
         full_name: '',

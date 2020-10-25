@@ -4,6 +4,7 @@
       <v-col cols="12">
         <v-text-field label="Email" name="email" :value="email_form_data.email" type="email"
                       @keyup="updateFormData('email', $event.target.value)" placeholder="example@email.com"
+                      v-validate="'required|email'"
         />
       </v-col>
     </v-row>
@@ -40,6 +41,15 @@ export default {
   },
   methods: {
     updateFormData(key, value) {
+      this.$validator.validateAll().then((result) => {
+        if (result) {
+          // eslint-disable-next-line
+          alert('Form Submitted!');
+          return;
+        }
+
+        alert('Correct them errors!');
+      });
       let formData = this.email_form_data;
       formData[key] = value;
       this.$emit('update-email-form-data', formData);
