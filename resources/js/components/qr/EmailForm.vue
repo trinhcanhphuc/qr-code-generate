@@ -2,7 +2,7 @@
   <div>
     <v-row>
       <v-col cols="12">
-        <v-text-field label="Email" name="email" :value="email_form_data.email"
+        <v-text-field label="Email" name="email" :value="email_form_data.email" type="email"
                       @keyup="updateFormData('email', $event.target.value)" placeholder="example@email.com"
         />
       </v-col>

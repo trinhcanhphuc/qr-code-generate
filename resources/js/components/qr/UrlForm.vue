@@ -8,6 +8,7 @@
           :value="url_form_data.text"
           @keyup="updateFormData('url', $event.target.value)"
           placeholder="https://www.facebook.com/"
+          type="url"
         />
       </v-col>
     </v-row>

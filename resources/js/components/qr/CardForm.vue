@@ -18,6 +18,7 @@
           name="email"
           :value="card_form_data.email"
           @keyup="updateFormData('email', $event.target.value)"
+          type="email"
           placeholder="example@email.com"
         />
       </v-col>
@@ -29,6 +30,7 @@
           name="work_phone"
           :value="card_form_data.work_phone"
           @keyup="updateFormData('work_phone', $event.target.value)"
+          type="tel"
           placeholder="0963*******"
         />
       </v-col>
@@ -38,6 +40,7 @@
           name="private_phone"
           :value="card_form_data.private_phone"
           @keyup="updateFormData('private_phone', $event.target.value)"
+          type="tel"
           placeholder="0963*******"
         />
       </v-col>
@@ -47,6 +50,7 @@
           name="cell_phone"
           :value="card_form_data.cell_phone"
           @keyup="updateFormData('cell_phone', $event.target.value)"
+          type="tel"
           placeholder="0963*******"
         />
       </v-col>
@@ -67,6 +71,7 @@
           name="address_postcode"
           :value="card_form_data.address_postcode"
           @keyup="updateFormData('address_postcode', $event.target.value)"
+          type="number"
           placeholder="700000"
         />
       </v-col>

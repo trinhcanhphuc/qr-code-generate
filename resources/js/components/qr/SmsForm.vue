@@ -3,7 +3,7 @@
     <v-row>
       <v-col cols="12">
         <v-text-field
-          @keyup="updateFormData('phone', $event.target.value)" label="Phone Number" placeholder="+84 *******" />
+          @keyup="updateFormData('phone', $event.target.value)" label="Phone Number" type="tel" placeholder="+84 *******" />
         <v-textarea
           @keyup="updateFormData('message', $event.target.value)" label="Your Message" placeholder="Hello!" rows="2" />
       </v-col>
