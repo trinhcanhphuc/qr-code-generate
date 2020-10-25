@@ -36,47 +36,49 @@
               <v-expansion-panel-header>Input Data</v-expansion-panel-header>
               <v-expansion-panel-content>
                 <div class="mt-3">
-                  <div v-show="selectedQrType === 'text'">
-                    <TextForm
-                      :text_form_data="text_form_data"
-                      @update-text-form-data="updateTextFormData"
-                    ></TextForm>
-                  </div>
+                  <form>
+                    <div v-show="selectedQrType === 'text'">
+                      <TextForm
+                        :text_form_data="text_form_data"
+                        @update-text-form-data="updateTextFormData"
+                      ></TextForm>
+                    </div>
 
-                  <div v-show="selectedQrType === 'url'">
-                    <UrlForm
-                      :url_form_data="url_form_data"
-                      @update-url-form-data="updateUrlFormData"
-                    ></UrlForm>
-                  </div>
+                    <div v-show="selectedQrType === 'url'">
+                      <UrlForm
+                        :url_form_data="url_form_data"
+                        @update-url-form-data="updateUrlFormData"
+                      ></UrlForm>
+                    </div>
 
-                  <div v-show="selectedQrType === 'phone'">
-                    <PhoneForm
-                      :phone_form_data="phone_form_data"
-                      @update-phone-form-data="updatePhoneFormData"
-                    ></PhoneForm>
-                  </div>
+                    <div v-show="selectedQrType === 'phone'">
+                      <PhoneForm
+                        :phone_form_data="phone_form_data"
+                        @update-phone-form-data="updatePhoneFormData"
+                      ></PhoneForm>
+                    </div>
 
-                  <div v-show="selectedQrType === 'sms'">
-                    <SmsForm
-                      :sms_form_data="sms_form_data"
-                      @update-sms-form-data="updateSmsFormData"
-                    ></SmsForm>
-                  </div>
+                    <div v-show="selectedQrType === 'sms'">
+                      <SmsForm
+                        :sms_form_data="sms_form_data"
+                        @update-sms-form-data="updateSmsFormData"
+                      ></SmsForm>
+                    </div>
 
-                  <div v-show="selectedQrType === 'email'">
-                    <EmailForm
-                      :email_form_data="email_form_data"
-                      @update-email-form-data="updateEmailFormData"
-                    ></EmailForm>
-                  </div>
+                    <div v-show="selectedQrType === 'email'">
+                      <EmailForm
+                        :email_form_data="email_form_data"
+                        @update-email-form-data="updateEmailFormData"
+                      ></EmailForm>
+                    </div>
 
-                  <div v-show="selectedQrType === 'business_card'">
-                    <CardForm
-                      :card_form_data="card_form_data"
-                      @update-card-form-data="updateCardFormData"
-                    ></CardForm>
-                  </div>
+                    <div v-show="selectedQrType === 'business_card'">
+                      <CardForm
+                        :card_form_data="card_form_data"
+                        @update-card-form-data="updateCardFormData"
+                      ></CardForm>
+                    </div>
+                  </form>
                 </div>
               </v-expansion-panel-content>
 
@@ -88,6 +90,7 @@
                       <div class="text-center my-3">Foreground Color</div>
                       <ColorForm
                         :color_form_data="foreground_color"
+                        :default_color="default_foreground_color"
                         @update-color="updateForegroundColor"
                       ></ColorForm>
                     </div>
@@ -95,6 +98,7 @@
                       <div class="text-center my-3">Background Color</div>
                       <ColorForm
                         :color_form_data="background_color"
+                        :default_color="default_background_color"
                         @update-color="updateBackgroundColor"
                       ></ColorForm>
                     </div>
@@ -107,7 +111,7 @@
                 <v-expansion-panel-content>
                   <div
                     id="qr-logo"
-                    class="mt-3 mb-3"
+                    class="mt-8 mb-5"
                     style="margin-bottom: 20px"
                   >
                     <LogoForm
@@ -212,8 +216,10 @@ export default {
       },
       background_color: '#FFFFFF',
       foreground_color: '#000000',
+      default_background_color: '#FFFFFF',
+      default_foreground_color: '#000000',
       logo_form_data: {
-        logo_src: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=='
+        logo_src: ''
       },
       qr_types: ['url', 'text', 'phone', 'sms', 'email', 'business_card']
     };

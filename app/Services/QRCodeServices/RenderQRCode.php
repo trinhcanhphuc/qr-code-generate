@@ -31,7 +31,7 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
     array $form_data,
     array $fore_color,
     array $back_color,
-    string $logo,
+    $logo,
     string $format = 'png')
   {
     $this->type = $type;
@@ -72,14 +72,21 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
       case 'png':
         $fore_color = isset($this->fore_color) ? $this->fore_color : [255, 255, 255];
         $back_color = isset($this->back_color) ? $this->back_color : [0, 0, 0];
-        \Log::info($content);
-        $QR_path = RenderQRCode::get_qr_images_path() . 'result.' . $this->format;
-        QRcode::format('png')->merge($this->logo, 0.3, true)
-          ->size(500)->errorCorrection('H')
-          ->color($fore_color[0], $fore_color[1], $fore_color[2])
-          ->backgroundColor($back_color[0], $back_color[1], $back_color[2])
-          ->encoding('UTF-8')
-          ->generate($content, $this->get_qr_images_path());
+        if ($this->logo) {
+          QRcode::format('png')->merge($this->logo, 0.3, true)
+            ->size(500)->errorCorrection('H')
+            ->color($fore_color[0], $fore_color[1], $fore_color[2])
+            ->backgroundColor($back_color[0], $back_color[1], $back_color[2])
+            ->encoding('UTF-8')
+            ->generate($content, $this->get_qr_images_path());
+        }
+        else {
+          QRcode::format('png')->size(500)->errorCorrection('H')
+            ->color($fore_color[0], $fore_color[1], $fore_color[2])
+            ->backgroundColor($back_color[0], $back_color[1], $back_color[2])
+            ->encoding('UTF-8')
+            ->generate($content, $this->get_qr_images_path());
+        }
         break;
       case 'svg':
         $fore_color = isset($this->fore_color) ? $this->fore_color : [255, 255, 255];

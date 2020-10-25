@@ -2,6 +2,10 @@
   <div style="position: relative;">
     <div class="rounded-lg m-auto" style="width: 200px; height: 200px;">
       <v-img
+        src="/img/sample_image.png"
+        style="position: absolute; z-index: 0; width: 200px; height: 200px;">
+      </v-img>
+      <v-img
         ref="qrLogoUpload"
         height="200"
         width="200"
@@ -16,6 +20,12 @@
           accept=".jpg, .png, .svg, .jpeg"
           style="width: 30px; opacity: 0; position: absolute; left: calc(50% - 16px); bottom: -16px"
         />
+        <v-btn class="mx-2" fab dark x-small color="red"
+               @click="removeLogo()"
+               style="position: absolute; z-index: 1; left: calc(50% + 75px); top: -15px"
+        >
+          <v-icon dark>mdi-close</v-icon>
+        </v-btn>
         <v-btn
           elevation="2"
           fab
@@ -45,6 +55,12 @@ export default {
     }
   },
   methods: {
+    removeLogo() {
+      this.logo_src = '';
+      let formData = this.logo_form_data;
+      formData.logo_src = '';
+      this.$emit('update-logo-form-data', formData);
+    },
     updateFormData(key, value) {
       let formData = this.logo_form_data;
       let inputLogo = this.$refs.btnUploadLogo;

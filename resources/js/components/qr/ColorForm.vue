@@ -11,6 +11,11 @@
       elevation="15"
       width="100%"
     ></v-color-picker>
+    <div class="text-center mt-3">
+      <v-btn
+        @click="resetColor"
+      >Reset</v-btn>
+    </div>
   </div>
 </template>
 
@@ -21,11 +26,18 @@ export default {
     color_form_data: {
       type: String,
       required: false,
+    },
+    default_color: {
+      type: String,
+      required: false
     }
   },
   methods: {
     updateColor(value) {
       this.$emit('update-color', value.hex);
+    },
+    resetColor() {
+      this.$emit('update-color', this.default_color);
     }
   },
   data: () => ({
