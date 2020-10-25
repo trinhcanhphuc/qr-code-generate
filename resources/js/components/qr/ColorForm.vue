@@ -9,6 +9,7 @@
       hide-canvas
       mode="hexa"
       elevation="15"
+      width="100%"
     ></v-color-picker>
   </div>
 </template>
