@@ -27,7 +27,12 @@
       </v-container>
     </v-app-bar>
     <div class="container mt-16 mb-16">
-      <div class="row m-3">
+      <div class="row">
+        <div class="col-12 mt-5">
+          <h1 class="text-center">QR Generator</h1>
+        </div>
+      </div>
+      <div class="row m-3 mt-0">
         <div class="col-md-9">
           <v-card elevation="8" class="p-4 rounded-lg">
             <input name="token" type="hidden" value/>
@@ -216,6 +221,7 @@
           </v-card>
         </div>
       </div>
+      <YourQuestion></YourQuestion>
     </div>
     <v-footer
       absolute
@@ -241,10 +247,12 @@ import CardForm from "../components//qr/CardForm";
 import EmailForm from "../components/qr/EmailForm";
 import ColorForm from "../components/qr/ColorForm";
 import LogoForm from "../components/qr/LogoForm";
+import YourQuestion from "../components/YourQuestion";
 
 export default {
   name: "Dashboard",
   components: {
+    YourQuestion,
     TextForm,
     UrlForm,
     PhoneForm,
