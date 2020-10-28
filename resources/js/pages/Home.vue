@@ -221,6 +221,7 @@
           </v-card>
         </div>
       </div>
+      <HowDoQRCodeWork></HowDoQRCodeWork>
       <YourQuestion></YourQuestion>
     </div>
     <v-footer
@@ -248,11 +249,13 @@ import EmailForm from "../components/qr/EmailForm";
 import ColorForm from "../components/qr/ColorForm";
 import LogoForm from "../components/qr/LogoForm";
 import YourQuestion from "../components/YourQuestion";
+import HowDoQRCodeWork from "../components/HowDoQRCodeWork"
 
 export default {
   name: "Dashboard",
   components: {
     YourQuestion,
+    HowDoQRCodeWork,
     TextForm,
     UrlForm,
     PhoneForm,
