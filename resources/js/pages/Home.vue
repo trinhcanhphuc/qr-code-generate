@@ -207,7 +207,13 @@
         </div>
         <div id="qrcode-img" class="col-md-3 text-center">
           <v-card elevation="8" class="p-4 rounded-lg">
-            <img v-bind:src="qrImageSrc" class="w-100"/>
+            <v-btn class="mx-2" fab dark x-small
+                   @click="is_qr_full_screen = true"
+                   style="position: absolute; z-index: 1; left: calc(50% + 75px); top: -15px"
+            >
+              <v-icon>fas fa-expand-arrows-alt</v-icon>
+            </v-btn>
+            <img v-bind:src="qrImageSrc" class="w-100 mt-3"/>
             <v-btn
               id="btn_save_qr"
               color="primary"
@@ -219,6 +225,28 @@
             </v-btn
             >
           </v-card>
+          <v-row justify="center">
+            <v-dialog
+              v-model="is_qr_full_screen"
+              width="400px"
+            >
+              <v-card>
+                <v-card-actions>
+                  <v-btn class="ml-auto" fab dark x-small color="red"
+                         @click="is_qr_full_screen = false"
+                  >
+                    <v-icon dark>mdi-close</v-icon>
+                  </v-btn>
+                </v-card-actions>
+                <div class="py-5 px-10">
+                  <img v-bind:src="qrImageSrc" class="w-100"/>
+                </div>
+              </v-card>
+            </v-dialog>
+          </v-row>
+        </div>
+        <div>
+
         </div>
       </div>
       <HowDoQRCodeWork></HowDoQRCodeWork>
@@ -290,6 +318,7 @@ export default {
         'QR Scanner',
         'About'
       ],
+      is_qr_full_screen: false,
       valid: true,
       panel: [0],
       selectedQrType: 'url',

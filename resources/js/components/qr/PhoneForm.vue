@@ -3,8 +3,8 @@
     <v-row>
       <v-col cols="12">
         <v-text-field label="Phone Number" :value="phone_form_data.phone" type="tel"
-                      @keyup="updateFormData('phone', $event.target.value)" placeholder="+84 *******"
-                      :rules="[rules.phoneRules('Phone Number', phone_form_data.work_phone)]"
+                      @keyup="updateFormData('phone', $event.target.value)" placeholder="+84*******"
+                      :rules="[rules.phoneRules('Phone Number', phone_form_data.phone)]"
         />
       </v-col>
     </v-row>
@@ -25,7 +25,7 @@ export default {
       rules: {
         phoneRules(fieldName, v) {
           if (!(v)) return fieldName + ' is required';
-          if (!(/^[+]*[(]?[0-9]{1,4}[)]?[-\s\./0-9]*$/.test(v))) return fieldName + ' must be valid';
+          if (!(/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/.test(v))) return fieldName + ' must be valid';
           return true;
         }
       }

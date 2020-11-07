@@ -30,7 +30,7 @@ export default {
       rules: {
         urlRules(fieldName, v) {
           if (!(v)) return fieldName + ' is required';
-          if (!(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/.test(v))) return fieldName + ' must be valid';
+          if (!(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.?[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/.test(v))) return fieldName + ' must be valid';
           return true;
         },
       }
