@@ -26,7 +26,7 @@
         </v-btn>
       </v-container>
     </v-app-bar>
-    <div class="container mt-16 mb-16">
+    <div class="container mt-16 mb-16 scroll-y">
       <div class="row">
         <div class="col-12 mt-5">
           <h1 class="text-center">QR Generator</h1>
@@ -225,6 +225,20 @@
       <WhyUseQR></WhyUseQR>
       <YourQuestion></YourQuestion>
     </div>
+
+    <v-btn
+      v-scroll="onScroll"
+      v-show="fab"
+      fab
+      dark
+      fixed
+      bottom
+      right
+      color="primary"
+      @click="toTop"
+    >
+      <v-icon>fas fa-arrow-up</v-icon>
+    </v-btn>
     <v-footer
       absolute
       flat
@@ -270,6 +284,7 @@ export default {
   },
   data() {
     return {
+      fab: false,
       links: [
         'QR Generator',
         'QR Scanner',
@@ -321,6 +336,14 @@ export default {
     };
   },
   methods: {
+    onScroll(e) {
+      if (typeof window === 'undefined') return
+      const top = window.pageYOffset || e.target.scrollTop || 0
+      this.fab = top > 20
+    },
+    toTop() {
+      this.$vuetify.goTo(0)
+    },
     validate() {
       this.$refs.form.validate()
     },
