@@ -67,20 +67,6 @@ export default {
         }
       ],
     }
-  },
-  methods: {
-    filteredUsesItems(column, columns) {
-      const self = this; // Enables us to pass this to the method
-      const total = this.uses.length; // How many uses
-      const gap = Math.ceil(total / columns); // How many per col
-      let top = (gap * column); // Top of the col
-      const bottom = ((top - gap) + 1); // Bottom of the col
-      top -= 1; // Adjust top back down one
-      return self.uses.filter(item =>
-        self.uses.indexOf(item) >= bottom
-        && self.uses.indexOf(item) <= top,
-      ); // Return the uses for the given col
-    },
   }
-};
+}
 </script>

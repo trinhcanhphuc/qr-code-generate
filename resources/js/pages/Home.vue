@@ -222,6 +222,7 @@
         </div>
       </div>
       <HowDoQRCodeWork></HowDoQRCodeWork>
+      <WhyUseQR></WhyUseQR>
       <YourQuestion></YourQuestion>
     </div>
     <v-footer
@@ -249,13 +250,15 @@ import EmailForm from "../components/qr/EmailForm";
 import ColorForm from "../components/qr/ColorForm";
 import LogoForm from "../components/qr/LogoForm";
 import YourQuestion from "../components/YourQuestion";
-import HowDoQRCodeWork from "../components/HowDoQRCodeWork"
+import HowDoQRCodeWork from "../components/HowDoQRCodeWork";
+import WhyUseQR from "../components/WhyUseQR";
 
 export default {
   name: "Dashboard",
   components: {
     YourQuestion,
     HowDoQRCodeWork,
+    WhyUseQR,
     TextForm,
     UrlForm,
     PhoneForm,
