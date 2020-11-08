@@ -232,10 +232,7 @@ return [
     'Validator' => Illuminate\Support\Facades\Validator::class,
     'View' => Illuminate\Support\Facades\View::class,
 
-    /*
-     * Third parties
-     */
-    'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class
+
   ],
 
 ];

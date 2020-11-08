@@ -213,7 +213,7 @@
             >
               <v-icon>fas fa-expand-arrows-alt</v-icon>
             </v-btn>
-            <img v-bind:src="qrImageSrc" class="w-100 mt-3"/>
+            <img v-bind:src="qrImageSrc" class="w-100"/>
             <v-btn
               id="btn_save_qr"
               color="primary"
@@ -323,17 +323,19 @@ export default {
       selectedQrType: 'url',
       qrImageSrc: 'img/brand/qr-logo.png',
       card_form_data: {
-        full_name: '',
-        email: '',
-        work_phone: '',
-        private_phone: '',
-        cell_phone: '',
-        address_label: '',
-        address_postcode: '',
-        address_street: '',
-        address_town: '',
-        address_region: '',
-        address_country: ''
+        pre_gender: 'Mr',
+        first_name: 'Trinh',
+        last_name: 'Phuc',
+        email: 'trinhcanhphuc@gmail.com',
+        work_phone: '0963783481',
+        private_phone: '0963783482',
+        cell_phone: '0963783483',
+        address_label: 'IMT Solution',
+        address_street: '55 Bau Cat 4, Ward 13, Tan Binh District',
+        address_city: 'Ho Chi Minh',
+        address_province: 'Ho Chi Minh 1',
+        address_postcode: '700000',
+        address_country: 'Viet Nam'
       },
       url_form_data: {
         url: ''

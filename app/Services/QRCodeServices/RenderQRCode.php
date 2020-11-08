@@ -4,7 +4,7 @@ namespace App\Services\QRCodeServices;
 
 use App\Services\ServiceInterface;
 use App\Services\QRCodeService;
-use QrCode;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 /**
  * @property string type
@@ -173,25 +173,15 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
         return $content;
       case 'detailed':
         $content = 'BEGIN:VCARD' . "\n";
-        $content .= 'VERSION:2.1' . "\n";
-        $content .= 'N:' . $data['full_name'] . "\n";
+        $content .= 'VERSION:4.0' . "\n";
+        $content .= 'N:' . $data['last_name'] . ';' . $data['first_name'] . ';;Mr.;' . "\n";
         $content .= 'ORG:' . 'IMT Solutions' . "\n";
-
+        $content .= 'TITLE:' . 'Software Developer' . "\n";
         $content .= 'TEL;WORK;VOICE:' . $data['work_phone'] . "\n";
         $content .= 'TEL;HOME;VOICE:' . $data['private_phone'] . "\n";
-        $content .= 'TEL;TYPE=cell:' . $data['cell_phone'] . "\n";
-
-        $content .= 'ADR;TYPE=work;' .
-          'LABEL="' . $data['address_label'] . '"'
-          . $data['address_street'] . ';'
-          . $data['address_town'] . ';'
-          . $data['address_region'] . ';'
-          . $data['address_postcode'] . ';'
-          . $data['address_country']
-          . "\n";
-
+        $content .= 'TEL;MAIN;VOICE:' . $data['cell_phone'] . "\n";
+        $content .= 'ADR;TYPE#WORK;PREF#1;LABEL#"Normality\n"' . ':;;' . $data['address_street'] . ';' . $data['address_city'] . ';' . $data['address_province'] . ';' . $data['address_postcode'] . ';' . $data['address_country'] . "\n";
         $content .= 'EMAIL:' . $data['email'] . "\n";
-
         $content .= 'END:VCARD';
 
         return $content;

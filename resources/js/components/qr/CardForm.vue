@@ -1,14 +1,32 @@
 <template>
   <div>
     <v-row>
-      <v-col sm="12">
+      <v-col sm="2"
+          class="d-flex"
+        >
+        <v-select
+          :items="pre_genders"
+          v-model="card_form_data.pre_gender"
+        ></v-select>
+      </v-col>
+      <v-col sm="5">
         <v-text-field
-          label="Full Name"
-          name="full_name"
-          :value="card_form_data.full_name"
-          @keyup="updateFormData('full_name', $event.target.value)"
-          placeholder="Your Name"
-          :rules="[rules.textRules('Your Name', card_form_data.subject)]"
+          label="First Name"
+          name="first_name"
+          :value="card_form_data.first_name"
+          @keyup="updateFormData('first_name', $event.target.value)"
+          placeholder="First Name"
+          :rules="[rules.textRules('First Name', card_form_data.first_name)]"
+        />
+      </v-col>
+      <v-col sm="5">
+        <v-text-field
+          label="Last Name"
+          name="last_name"
+          :value="card_form_data.last_name"
+          @keyup="updateFormData('last_name', $event.target.value)"
+          placeholder="Last Name"
+          :rules="[rules.textRules('Last Name', card_form_data.last_name)]"
         />
       </v-col>
     </v-row>
@@ -61,7 +79,7 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col sm="8">
+      <v-col sm="4">
         <v-text-field
           label="Your Company"
           name="address_label"
@@ -71,20 +89,7 @@
           :rules="[rules.textRules('Your Office', card_form_data.address_label)]"
         />
       </v-col>
-      <v-col sm="4">
-        <v-text-field
-          label="Postcode"
-          name="address_postcode"
-          :value="card_form_data.address_postcode"
-          @keyup="updateFormData('address_postcode', $event.target.value)"
-          type="number"
-          placeholder="700000"
-          :rules="[rules.textRules('Postcode', card_form_data.address_postcode)]"
-        />
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col sm="3">
+      <v-col sm="8">
         <v-text-field
           label="Street"
           name="address_street"
@@ -94,24 +99,37 @@
           :rules="[rules.textRules('Street', card_form_data.address_street)]"
         />
       </v-col>
+    </v-row>
+    <v-row>
       <v-col sm="3">
         <v-text-field
-          label="Town"
-          name="address_town"
-          :value="card_form_data.address_town"
-          @keyup="updateFormData('address_town', $event.target.value)"
-          placeholder="District 1"
-          :rules="[rules.textRules('Town', card_form_data.address_town)]"
+          label="City"
+          name="address_city"
+          :value="card_form_data.address_city"
+          @keyup="updateFormData('address_city', $event.target.value)"
+          placeholder="Ho Chi Minh"
+          :rules="[rules.textRules('City', card_form_data.address_city)]"
         />
       </v-col>
       <v-col sm="3">
         <v-text-field
-          label="Region"
-          name="address_region"
-          :value="card_form_data.address_region"
-          @keyup="updateFormData('address_region', $event.target.value)"
+          label="Province"
+          name="address_province"
+          :value="card_form_data.address_province"
+          @keyup="updateFormData('address_province', $event.target.value)"
           placeholder="Ho Chi Minh"
-          :rules="[rules.textRules('Region', card_form_data.address_region)]"
+          :rules="[rules.textRules('Province', card_form_data.address_province)]"
+          />
+      </v-col>
+      <v-col sm="3">
+        <v-text-field
+          label="Postcode"
+          name="address_postcode"
+          :value="card_form_data.address_postcode"
+          @keyup="updateFormData('address_postcode', $event.target.value)"
+          type="number"
+          placeholder="700000"
+          :rules="[rules.textRules('Postcode', card_form_data.address_postcode)]"
         />
       </v-col>
       <v-col sm="3">
@@ -139,6 +157,9 @@ export default {
   },
   data() {
     return {
+      pre_genders: [
+        '', 'Mr', 'Mrs', 'Ms'
+      ],
       rules: {
         textRules(fieldName, v) {
           if (v)
