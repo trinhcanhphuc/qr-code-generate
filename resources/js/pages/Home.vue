@@ -209,7 +209,7 @@
           <v-card elevation="8" class="p-4 rounded-lg">
             <v-btn class="mx-2" fab dark x-small
                    @click="is_qr_full_screen = true"
-                   style="position: absolute; z-index: 1; left: calc(50% + 75px); top: -15px"
+                   style="position: absolute; z-index: 1; left: calc(100% - 24px); top: -16px"
             >
               <v-icon>fas fa-expand-arrows-alt</v-icon>
             </v-btn>
@@ -231,14 +231,13 @@
               width="400px"
             >
               <v-card>
-                <v-card-actions>
-                  <v-btn class="ml-auto" fab dark x-small color="red"
-                         @click="is_qr_full_screen = false"
-                  >
-                    <v-icon dark>mdi-close</v-icon>
-                  </v-btn>
-                </v-card-actions>
-                <div class="py-5 px-10">
+                <v-btn class="ml-auto" fab dark x-small color="red"
+                       @click="is_qr_full_screen = false" link
+                       style="position: absolute; z-index: 1; left: calc(100% - 42px); top: 8px"
+                >
+                  <v-icon dark>mdi-close</v-icon>
+                </v-btn>
+                <div class="px-10 py-12">
                   <img v-bind:src="qrImageSrc" class="w-100"/>
                 </div>
               </v-card>
