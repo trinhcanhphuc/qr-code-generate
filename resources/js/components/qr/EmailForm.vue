@@ -2,9 +2,25 @@
   <div>
     <v-row>
       <v-col cols="12">
-        <v-text-field label="Email" name="email" :value="email_form_data.email" type="email"
+        <v-text-field label="To" name="email" :value="email_form_data.email" type="email"
                       @keyup="updateFormData('email', $event.target.value)" placeholder="example@email.com"
-                      :rules="[rules.emailRules('Email', email_form_data.email)]"
+                      :rules="[rules.emailRules('To', email_form_data.email)]"
+        />
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="12">
+        <v-text-field label="Cc" name="cc" :value="email_form_data.cc" type="email"
+                      @keyup="updateFormData('cc', $event.target.value)" placeholder="example@email.com"
+                      :rules="[rules.emailRules('Cc', email_form_data.cc)]"
+        />
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="12">
+        <v-text-field label="Bcc" name="bcc" :value="email_form_data.bcc" type="email"
+                      @keyup="updateFormData('bcc', $event.target.value)" placeholder="example@email.com"
+                      :rules="[rules.emailRules('Bcc', email_form_data.bcc)]"
         />
       </v-col>
     </v-row>

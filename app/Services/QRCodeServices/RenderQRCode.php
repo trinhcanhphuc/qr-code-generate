@@ -154,7 +154,7 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
 
   function render_qr_by_email($data)
   {
-    return 'mailto:' . $data['email'] . '?subject=' . $data['subject'] . '&body=' . $data['body'];
+    return 'mailto:' . $data['email'] . '?cc=' . $data['cc'] . '&bcc=' . $data['bcc'] . '&subject=' . $data['subject'] . '&body=' . $data['body'];
   }
 
   function render_qr_by_skype($skype)

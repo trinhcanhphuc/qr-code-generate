@@ -353,6 +353,8 @@ export default {
       email_form_data: {
         email: '',
         subject: '',
+        cc: '',
+        bcc: '',
         body: ''
       },
       background_color: '#FFFFFF',
