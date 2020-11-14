@@ -200,8 +200,7 @@
                 block
                 v-on:click="createQR()"
               >Generate QR Code
-              </v-btn
-              >
+              </v-btn>
             </div>
           </v-card>
         </div>
@@ -214,17 +213,62 @@
               <v-icon>fas fa-expand-arrows-alt</v-icon>
             </v-btn>
             <img v-bind:src="qrImageSrc" class="w-100"/>
+          </v-card>
+          <div class="qr-action-btns mt-5">
             <v-btn
               id="btn_save_qr"
-              color="primary"
-              size="lg"
-              class="mt-5"
-              block
+              color="green"
+              dark
+              fab
+              style="float: left"
               v-on:click="downloadQr()"
-            >Download
-            </v-btn
             >
-          </v-card>
+              <v-icon>
+                mdi-download
+              </v-icon>
+            </v-btn>
+            <v-speed-dial
+              v-model="btn_share_property.fab"
+              :direction="btn_share_property.direction"
+              :open-on-hover="btn_share_property.hover"
+              :transition="btn_share_property.transition"
+              style="float: right"
+            >
+              <template v-slot:activator>
+                <v-btn
+                  v-model="btn_share_property.fab"
+                  color="blue darken-2"
+                  dark
+                  fab
+                >
+                  <v-icon v-if="btn_share_property.fab">
+                    mdi-close
+                  </v-icon>
+                  <v-icon v-else>
+                    mdi-share
+                  </v-icon>
+                </v-btn>
+              </template>
+              <v-btn
+                fab
+                dark
+                small
+                color="blue"
+                v-on:click="shareToSocial('TW')"
+              >
+                <v-icon>mdi-twitter</v-icon>
+              </v-btn>
+              <v-btn
+                fab
+                dark
+                small
+                color="indigo"
+                v-on:click="shareToSocial('FB')"
+              >
+                <v-icon>mdi-facebook</v-icon>
+              </v-btn>
+            </v-speed-dial>
+          </div>
           <v-row justify="center">
             <v-dialog
               v-model="is_qr_full_screen"
@@ -252,20 +296,6 @@
       <WhyUseQR></WhyUseQR>
       <YourQuestion></YourQuestion>
     </div>
-
-    <v-btn
-      v-scroll="onScroll"
-      v-show="fab"
-      fab
-      dark
-      fixed
-      bottom
-      right
-      color="primary"
-      @click="toTop"
-    >
-      <v-icon>fas fa-arrow-up</v-icon>
-    </v-btn>
     <v-footer
       absolute
       flat
@@ -311,6 +341,14 @@ export default {
   },
   data() {
     return {
+    btn_share_property: {
+      direction: 'top',
+      fab: false,
+      fling: false,
+      hover: false,
+      tabs: null,
+      transition: 'slide-y-reverse-transition',
+    },
       fab: false,
       links: [
         'QR Generator',
@@ -473,6 +511,27 @@ export default {
           break;
       }
       return formData;
+    },
+    shareToSocial(socialName) {
+      switch (socialName) {
+        case 'FB':
+          window.open(this.getFbShareLink(), '_blank');
+          break;
+        case 'TW':
+          window.open(this.getTwitterLink(), '_blank');
+          break;
+      }
+
+
+    },
+    getFbShareLink() {
+      return 'http://www.facebook.com/sharer.php?u=' + this.getImageLink();
+    },
+    getTwitterLink() {
+      return 'https://twitter.com/intent/tweet?url=' + this.getImageLink();
+    },
+    getImageLink() {
+      return window.location.origin + '/' + this.qrImageSrc;
     }
   }
 };
