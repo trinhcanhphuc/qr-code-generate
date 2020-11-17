@@ -362,18 +362,18 @@ export default {
       qrImageSrc: 'img/brand/qr-logo.png',
       card_form_data: {
         pre_gender: 'Mr',
-        first_name: 'Trinh',
-        last_name: 'Phuc',
-        email: 'trinhcanhphuc@gmail.com',
-        work_phone: '0963783481',
-        private_phone: '0963783482',
-        cell_phone: '0963783483',
-        address_label: 'IMT Solution',
-        address_street: '55 Bau Cat 4, Ward 13, Tan Binh District',
-        address_city: 'Ho Chi Minh',
-        address_province: 'Ho Chi Minh 1',
-        address_postcode: '700000',
-        address_country: 'Viet Nam'
+        first_name: '',
+        last_name: '',
+        email: '',
+        work_phone: '',
+        private_phone: '',
+        cell_phone: '',
+        address_label: '',
+        address_street: '',
+        address_city: '',
+        address_province: '',
+        address_postcode: '',
+        address_country: ''
       },
       url_form_data: {
         url: ''
