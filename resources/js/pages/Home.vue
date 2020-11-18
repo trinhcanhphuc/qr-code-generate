@@ -1,314 +1,274 @@
 <template>
-  <div>
-    <v-app-bar
-      color="white"
-      elevation="8"
-      fixed
-      flat
-    >
-      <v-container class="py-0 px-2 fill-height">
-        <v-avatar
-          size="40"
-          tile
-        >
-          <v-img
-            src="/img/brand/qr-logo.png"
-            alt="QR Generator Logo"
-          ></v-img>
-        </v-avatar>
-        <v-spacer></v-spacer>
-        <v-btn
-          v-for="link in links"
-          :key="link"
-          text
-        >
-          {{ link }}
-        </v-btn>
-      </v-container>
-    </v-app-bar>
-    <div class="container mt-16 mb-16 scroll-y">
-      <div class="row">
-        <div class="col-12 mt-5">
-          <h1 class="text-center">QR Generator</h1>
-        </div>
+  <default-layout>
+    <div class="row">
+      <div class="col-12 mt-5">
+        <h1 class="text-center">QR Generator</h1>
       </div>
-      <div class="row m-3 mt-0">
-        <div class="col-md-9">
-          <v-card elevation="8" class="p-4 rounded-lg">
-            <input name="token" type="hidden" value/>
-            <v-slide-group show-arrows>
-              <v-slide-item
-                v-for="type in qr_types"
-                :key="type"
-                v-slot:default="{ active, toggle }"
-              >
-                <v-btn
-                  class="mx-2"
-                  :input-value="active"
-                  v-bind:class="{ 'purple white--text': selectedQrType === type }"
-                  depressed
-                  rounded
-                  @click="changeQrType(type)"
-                >{{ type }}
-                </v-btn
-                >
-              </v-slide-item>
-            </v-slide-group>
-
-
-            <v-expansion-panels
-              v-model="panel"
-              focusable
-              multiple
-              class="mt-8 mb-5"
+    </div>
+    <div class="row m-3 mt-0">
+      <div class="col-md-9">
+        <v-card elevation="8" class="p-4 rounded-lg">
+          <input name="token" type="hidden" value/>
+          <v-slide-group show-arrows>
+            <v-slide-item
+              v-for="type in qr_types"
+              :key="type"
+              v-slot:default="{ active, toggle }"
             >
-              <v-expansion-panel
-                :value="0"
+              <v-btn
+                class="mx-2"
+                :input-value="active"
+                v-bind:class="{ 'purple white--text': selectedQrType === type }"
+                depressed
+                rounded
+                @click="changeQrType(type)"
+              >{{ type }}
+              </v-btn
               >
-                <v-expansion-panel-header>Input Data</v-expansion-panel-header>
+            </v-slide-item>
+          </v-slide-group>
+
+
+          <v-expansion-panels
+            v-model="panel"
+            focusable
+            multiple
+            class="mt-8 mb-5"
+          >
+            <v-expansion-panel
+              :value="0"
+            >
+              <v-expansion-panel-header>Input Data</v-expansion-panel-header>
+              <v-expansion-panel-content>
+                <div class="mt-3">
+                  <div v-show="selectedQrType === 'text'">
+                    <v-form
+                      ref="text_form"
+                      v-model="valid"
+                      lazy-validation
+                    >
+                      <TextForm
+                        :text_form_data="text_form_data"
+                        @update-text-form-data="updateTextFormData"
+                      ></TextForm>
+                    </v-form>
+                  </div>
+
+                  <div v-show="selectedQrType === 'url'">
+                    <v-form
+                      ref="url_form"
+                      v-model="valid"
+                      lazy-validation
+                    >
+                      <UrlForm
+                        :url_form_data="url_form_data"
+                        @update-url-form-data="updateUrlFormData"
+                      ></UrlForm>
+                    </v-form>
+                  </div>
+
+                  <div v-show="selectedQrType === 'phone'">
+                    <v-form
+                      ref="phone_form"
+                      v-model="valid"
+                      lazy-validation
+                    >
+                      <PhoneForm
+                        :phone_form_data="phone_form_data"
+                        @update-phone-form-data="updatePhoneFormData"
+                      ></PhoneForm>
+                    </v-form>
+                  </div>
+
+                  <div v-show="selectedQrType === 'sms'">
+                    <v-form
+                      ref="sms_form"
+                      v-model="valid"
+                      lazy-validation
+                    >
+                      <SmsForm
+                        :sms_form_data="sms_form_data"
+                        @update-sms-form-data="updateSmsFormData"
+                      ></SmsForm>
+                    </v-form>
+                  </div>
+
+                  <div v-show="selectedQrType === 'email'">
+                    <v-form
+                      ref="email_form"
+                      v-model="valid"
+                      lazy-validation
+                    >
+                      <EmailForm
+                        :email_form_data="email_form_data"
+                        @update-email-form-data="updateEmailFormData"
+                      ></EmailForm>
+                    </v-form>
+                  </div>
+
+                  <div v-show="selectedQrType === 'business_card'">
+
+                    <v-form
+                      ref="card_form"
+                      v-model="valid"
+                      lazy-validation
+                    >
+                      <CardForm
+                        :card_form_data="card_form_data"
+                        @update-card-form-data="updateCardFormData"
+                      ></CardForm>
+                    </v-form>
+                  </div>
+                </div>
+              </v-expansion-panel-content>
+
+              <v-expansion-panel>
+                <v-expansion-panel-header>Custom Colors</v-expansion-panel-header>
                 <v-expansion-panel-content>
-                  <div class="mt-3">
-                    <div v-show="selectedQrType === 'text'">
-                      <v-form
-                        ref="text_form"
-                        v-model="valid"
-                        lazy-validation
-                      >
-                        <TextForm
-                          :text_form_data="text_form_data"
-                          @update-text-form-data="updateTextFormData"
-                        ></TextForm>
-                      </v-form>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="text-center my-3">Foreground Color</div>
+                      <ColorForm
+                        :color_form_data="foreground_color"
+                        :default_color="default_foreground_color"
+                        @update-color="updateForegroundColor"
+                      ></ColorForm>
                     </div>
-
-                    <div v-show="selectedQrType === 'url'">
-                      <v-form
-                        ref="url_form"
-                        v-model="valid"
-                        lazy-validation
-                      >
-                        <UrlForm
-                          :url_form_data="url_form_data"
-                          @update-url-form-data="updateUrlFormData"
-                        ></UrlForm>
-                      </v-form>
-                    </div>
-
-                    <div v-show="selectedQrType === 'phone'">
-                      <v-form
-                        ref="phone_form"
-                        v-model="valid"
-                        lazy-validation
-                      >
-                        <PhoneForm
-                          :phone_form_data="phone_form_data"
-                          @update-phone-form-data="updatePhoneFormData"
-                        ></PhoneForm>
-                      </v-form>
-                    </div>
-
-                    <div v-show="selectedQrType === 'sms'">
-                      <v-form
-                        ref="sms_form"
-                        v-model="valid"
-                        lazy-validation
-                      >
-                        <SmsForm
-                          :sms_form_data="sms_form_data"
-                          @update-sms-form-data="updateSmsFormData"
-                        ></SmsForm>
-                      </v-form>
-                    </div>
-
-                    <div v-show="selectedQrType === 'email'">
-                      <v-form
-                        ref="email_form"
-                        v-model="valid"
-                        lazy-validation
-                      >
-                        <EmailForm
-                          :email_form_data="email_form_data"
-                          @update-email-form-data="updateEmailFormData"
-                        ></EmailForm>
-                      </v-form>
-                    </div>
-
-                    <div v-show="selectedQrType === 'business_card'">
-
-                      <v-form
-                        ref="card_form"
-                        v-model="valid"
-                        lazy-validation
-                      >
-                        <CardForm
-                          :card_form_data="card_form_data"
-                          @update-card-form-data="updateCardFormData"
-                        ></CardForm>
-                      </v-form>
+                    <div class="col-md-6">
+                      <div class="text-center my-3">Background Color</div>
+                      <ColorForm
+                        :color_form_data="background_color"
+                        :default_color="default_background_color"
+                        @update-color="updateBackgroundColor"
+                      ></ColorForm>
                     </div>
                   </div>
                 </v-expansion-panel-content>
-
-                <v-expansion-panel>
-                  <v-expansion-panel-header>Custom Colors</v-expansion-panel-header>
-                  <v-expansion-panel-content>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="text-center my-3">Foreground Color</div>
-                        <ColorForm
-                          :color_form_data="foreground_color"
-                          :default_color="default_foreground_color"
-                          @update-color="updateForegroundColor"
-                        ></ColorForm>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="text-center my-3">Background Color</div>
-                        <ColorForm
-                          :color_form_data="background_color"
-                          :default_color="default_background_color"
-                          @update-color="updateBackgroundColor"
-                        ></ColorForm>
-                      </div>
-                    </div>
-                  </v-expansion-panel-content>
-                </v-expansion-panel>
-
-                <v-expansion-panel>
-                  <v-expansion-panel-header>QR Logo</v-expansion-panel-header>
-                  <v-expansion-panel-content>
-                    <div
-                      id="qr-logo"
-                      class="mt-8 mb-5"
-                      style="margin-bottom: 20px"
-                    >
-                      <LogoForm
-                        :logo_form_data="logo_form_data"
-                        @update-logo-form-data="updateLogoFormData"
-                      >
-                      </LogoForm>
-                    </div>
-                  </v-expansion-panel-content>
-                </v-expansion-panel>
               </v-expansion-panel>
-            </v-expansion-panels>
 
-            <div class="mt-3 mb-3 text-center">
-              <v-btn
-                id="btn_create_qr"
-                color="primary"
-                size="lg"
-                block
-                v-on:click="createQR()"
-              >Generate QR Code
-              </v-btn>
-            </div>
-          </v-card>
-        </div>
-        <div id="qrcode-img" class="col-md-3 text-center">
-          <v-card elevation="8" class="p-4 rounded-lg">
-            <v-btn class="mx-2" fab dark x-small
-                   @click="is_qr_full_screen = true"
-                   style="position: absolute; z-index: 1; left: calc(100% - 24px); top: -16px"
-            >
-              <v-icon>fas fa-expand-arrows-alt</v-icon>
-            </v-btn>
-            <img v-bind:src="qrImageSrc" class="w-100"/>
-          </v-card>
-          <div class="qr-action-btns mt-5">
+              <v-expansion-panel>
+                <v-expansion-panel-header>QR Logo</v-expansion-panel-header>
+                <v-expansion-panel-content>
+                  <div
+                    id="qr-logo"
+                    class="mt-8 mb-5"
+                    style="margin-bottom: 20px"
+                  >
+                    <LogoForm
+                      :logo_form_data="logo_form_data"
+                      @update-logo-form-data="updateLogoFormData"
+                    >
+                    </LogoForm>
+                  </div>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
+            </v-expansion-panel>
+          </v-expansion-panels>
+
+          <div class="mt-3 mb-3 text-center">
             <v-btn
-              id="btn_save_qr"
-              color="green"
-              dark
-              fab
-              style="float: left"
-              v-on:click="downloadQr()"
-            >
-              <v-icon>
-                mdi-download
-              </v-icon>
+              id="btn_create_qr"
+              color="primary"
+              size="lg"
+              block
+              v-on:click="createQR()"
+            >Generate QR Code
             </v-btn>
-            <v-speed-dial
-              v-model="btn_share_property.fab"
-              :direction="btn_share_property.direction"
-              :open-on-hover="btn_share_property.hover"
-              :transition="btn_share_property.transition"
-              style="float: right"
-            >
-              <template v-slot:activator>
-                <v-btn
-                  v-model="btn_share_property.fab"
-                  color="blue darken-2"
-                  dark
-                  fab
-                >
-                  <v-icon v-if="btn_share_property.fab">
-                    mdi-close
-                  </v-icon>
-                  <v-icon v-else>
-                    mdi-share
-                  </v-icon>
-                </v-btn>
-              </template>
-              <v-btn
-                fab
-                dark
-                small
-                color="blue"
-                v-on:click="shareToSocial('TW')"
-              >
-                <v-icon>mdi-twitter</v-icon>
-              </v-btn>
-              <v-btn
-                fab
-                dark
-                small
-                color="indigo"
-                v-on:click="shareToSocial('FB')"
-              >
-                <v-icon>mdi-facebook</v-icon>
-              </v-btn>
-            </v-speed-dial>
           </div>
-          <v-row justify="center">
-            <v-dialog
-              v-model="is_qr_full_screen"
-              width="400px"
-            >
-              <v-card>
-                <v-btn class="ml-auto" fab dark x-small color="red"
-                       @click="is_qr_full_screen = false" link
-                       style="position: absolute; z-index: 1; left: calc(100% - 42px); top: 8px"
-                >
-                  <v-icon dark>mdi-close</v-icon>
-                </v-btn>
-                <div class="px-10 py-12">
-                  <img v-bind:src="qrImageSrc" class="w-100"/>
-                </div>
-              </v-card>
-            </v-dialog>
-          </v-row>
-        </div>
-        <div>
-
-        </div>
+        </v-card>
       </div>
-      <HowDoQRCodeWork></HowDoQRCodeWork>
-      <WhyUseQR></WhyUseQR>
-      <YourQuestion></YourQuestion>
+      <div id="qrcode-img" class="col-md-3 text-center">
+        <v-card elevation="8" class="p-4 rounded-lg">
+          <v-btn class="mx-2" fab dark x-small
+                  @click="is_qr_full_screen = true"
+                  style="position: absolute; z-index: 1; left: calc(100% - 24px); top: -16px"
+          >
+            <v-icon>fas fa-expand-arrows-alt</v-icon>
+          </v-btn>
+          <img v-bind:src="qrImageSrc" class="w-100"/>
+        </v-card>
+        <div class="qr-action-btns mt-5">
+          <v-btn
+            id="btn_save_qr"
+            color="green"
+            dark
+            fab
+            style="float: left"
+            v-on:click="downloadQr()"
+          >
+            <v-icon>
+              mdi-download
+            </v-icon>
+          </v-btn>
+          <v-speed-dial
+            v-model="btn_share_property.fab"
+            :direction="btn_share_property.direction"
+            :open-on-hover="btn_share_property.hover"
+            :transition="btn_share_property.transition"
+            style="float: right"
+          >
+            <template v-slot:activator>
+              <v-btn
+                v-model="btn_share_property.fab"
+                color="blue darken-2"
+                dark
+                fab
+              >
+                <v-icon v-if="btn_share_property.fab">
+                  mdi-close
+                </v-icon>
+                <v-icon v-else>
+                  mdi-share
+                </v-icon>
+              </v-btn>
+            </template>
+            <v-btn
+              fab
+              dark
+              small
+              color="blue"
+              v-on:click="shareToSocial('TW')"
+            >
+              <v-icon>mdi-twitter</v-icon>
+            </v-btn>
+            <v-btn
+              fab
+              dark
+              small
+              color="indigo"
+              v-on:click="shareToSocial('FB')"
+            >
+              <v-icon>mdi-facebook</v-icon>
+            </v-btn>
+          </v-speed-dial>
+        </div>
+        <v-row justify="center">
+          <v-dialog
+            v-model="is_qr_full_screen"
+            width="400px"
+          >
+            <v-card>
+              <v-btn class="ml-auto" fab dark x-small color="red"
+                      @click="is_qr_full_screen = false" link
+                      style="position: absolute; z-index: 1; left: calc(100% - 42px); top: 8px"
+              >
+                <v-icon dark>mdi-close</v-icon>
+              </v-btn>
+              <div class="px-10 py-12">
+                <img v-bind:src="qrImageSrc" class="w-100"/>
+              </div>
+            </v-card>
+          </v-dialog>
+        </v-row>
+      </div>
+      <div>
+
+      </div>
     </div>
-    <v-footer
-      absolute
-      flat
-      elevation="8"
-    >
-      <v-col
-        class="text-center"
-        cols="12"
-      >
-        {{ new Date().getFullYear() }} — <strong>QR Code Generator</strong>
-      </v-col>
-    </v-footer>
-  </div>
+    <HowDoQRCodeWork></HowDoQRCodeWork>
+    <WhyUseQR></WhyUseQR>
+    <YourQuestion></YourQuestion>
+  </default-layout>
 </template>
 
 <script>
@@ -323,10 +283,12 @@ import LogoForm from "../components/qr/LogoForm";
 import YourQuestion from "../components/YourQuestion";
 import HowDoQRCodeWork from "../components/HowDoQRCodeWork";
 import WhyUseQR from "../components/WhyUseQR";
+import DefaultLayout from '../layouts/DefaultLayout.vue';
 
 export default {
-  name: "Dashboard",
+  name: "Home",
   components: {
+    DefaultLayout,
     YourQuestion,
     HowDoQRCodeWork,
     WhyUseQR,
@@ -350,10 +312,19 @@ export default {
       transition: 'slide-y-reverse-transition',
     },
       fab: false,
-      links: [
-        'QR Generator',
-        'QR Scanner',
-        'About'
+      pages: [
+        {
+          'title': 'QR Generator',
+          'url': '/'
+        },
+        {
+          'title': 'QR Scanner',
+          'url': '/qr-scanner'
+        },
+        {
+          'title': 'About',
+          'url': '/about'
+        }
       ],
       is_qr_full_screen: false,
       valid: true,
