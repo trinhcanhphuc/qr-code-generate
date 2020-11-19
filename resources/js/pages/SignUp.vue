@@ -2,7 +2,7 @@
   <default-layout>
     <div class="row">
       <div class="col-12 mt-5">
-        <h1 class="text-center">Log In</h1>
+        <h1 class="text-center">Sign Up</h1>
       </div>
     </div>
     <div class="row m-3 mt-0 justify-content-center">
@@ -10,26 +10,34 @@
         <v-card elevation="8" class="p-4 rounded-lg">
           <v-row>
             <v-col cols="12">
-              <v-text-field label="Email" name="email" :value="login_form_data.email" type="email"
+              <v-text-field label="Full Name" name="name" :value="signup_form_data.name" type="name"
+                            @keyup="updateFormData('name', $event.target.value)" placeholder="John Doe"
+                            :rules="[rules.textRules('Name', signup_form_data.name)]"
+              />
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col cols="12">
+              <v-text-field label="Email" name="email" :value="signup_form_data.email" type="email"
                             @keyup="updateFormData('email', $event.target.value)" placeholder="example@email.com"
-                            :rules="[rules.emailRules('Email', login_form_data.email)]"
+                            :rules="[rules.emailRules('Email', signup_form_data.email)]"
               />
             </v-col>
           </v-row>
           <v-row>
             <v-col cols="12">
-              <v-text-field label="Password" name="password" :value="login_form_data.password" type="password"
+              <v-text-field label="Password" name="password" :value="signup_form_data.password" type="password"
                             @keyup="updateFormData('password', $event.target.value)" placeholder="********"
-                            :rules="[rules.textRules('Password', login_form_data.password)]"
+                            :rules="[rules.textRules('Password', signup_form_data.password)]"
               />
             </v-col>
           </v-row>
           <v-row>
             <v-col cols="12">
-              <v-checkbox
-                :value="login_form_data.remember"
-                label="Remember me!"
-              ></v-checkbox>
+              <v-text-field label="Confirm Password" name="confirm_password" :value="signup_form_data.confirm_password" type="password"
+                            @keyup="updateFormData('confirm_password', $event.target.value)" placeholder="********"
+                            :rules="[rules.textRules('Confirm Password', signup_form_data.confirm_password)]"
+              />
             </v-col>
           </v-row>
           <v-row>
@@ -37,18 +45,18 @@
               <v-btn
                 color="primary"
                 block
-                v-on:click="login()"
+                v-on:click="signup()"
               >
-                Log In
+                Sign Up
               </v-btn>
             </v-col>
           </v-row>
           <v-row>
             <v-col cols="12">
               <router-link
-                to='/signup'
+                to='/login'
               >
-                Register an account
+                Login to account
               </router-link>
             </v-col>
           </v-row>
@@ -62,16 +70,17 @@
 import DefaultLayout from '../layouts/DefaultLayout.vue';
 
 export default {
-  name: "Login",
+  name: "SignUp",
   components: {
     DefaultLayout
   },
   data() {
     return {
-      login_form_data: {
+      signup_form_data: {
+        'name': '',
         'email': '',
         'password': '',
-        'remember': false
+        'confirm_password': ''
       },
       rules: {
         textRules(fieldName, v) {
@@ -90,12 +99,12 @@ export default {
   },
   methods: {
     updateFormData(key, value) {
-      let formData = this.login_form_data;
+      let formData = this.signup_form_data;
       formData[key] = value;
-      this.$emit('update-login-form-data', formData);
+      this.$emit('update-signup-form-data', formData);
     },
-    login() {
-      console.log('login');
+    signup() {
+      console.log('signup');
     }
   },
 };
