@@ -4,6 +4,7 @@ namespace App\Services\QRCodeServices;
 
 use App\Services\ServiceInterface;
 use App\Services\QRCodeService;
+use Illuminate\Support\Str;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 /**
@@ -68,6 +69,7 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
         $content = RenderQRCode::render_qr_by_business_card($this->form_data);
         break;
     }
+    $imageName = Str::random(32);
     switch ($this->format) {
       case 'png':
         $fore_color = isset($this->fore_color) ? $this->fore_color : [255, 255, 255];
@@ -78,29 +80,29 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
             ->color($fore_color[0], $fore_color[1], $fore_color[2])
             ->backgroundColor($back_color[0], $back_color[1], $back_color[2])
             ->encoding('UTF-8')
-            ->generate($content, $this->get_qr_images_path());
+            ->generate($content, $this->get_qr_images_path($imageName));
         }
         else {
           QRcode::format('png')->size(500)->errorCorrection('H')
             ->color($fore_color[0], $fore_color[1], $fore_color[2])
             ->backgroundColor($back_color[0], $back_color[1], $back_color[2])
             ->encoding('UTF-8')
-            ->generate($content, $this->get_qr_images_path());
+            ->generate($content, $this->get_qr_images_path($imageName));
         }
         break;
       case 'svg':
         $fore_color = isset($this->fore_color) ? $this->fore_color : [255, 255, 255];
         $back_color = isset($this->back_color) ? $this->back_color : [0, 0, 0];
         QRcode::encoding('UTF-8')
-          ->generate('Make me into a QrCode!', $this->get_qr_images_path());
+          ->generate('Make me into a QrCode!', $this->get_qr_images_path($imageName));
         break;
     }
-    return '/qr_images/result.' . $this->format;
+    return '/qr_images/' . $imageName . '.' . $this->format;
   }
 
-  function get_qr_images_path()
+  function get_qr_images_path($imageName)
   {
-    return public_path('qr_images/result.png');
+    return public_path('qr_images/' . $imageName . '.png');
   }
 
   function decoded_base64_image($base64_encoded)

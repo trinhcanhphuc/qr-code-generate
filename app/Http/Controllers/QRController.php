@@ -10,7 +10,6 @@ class QRController extends Controller
 {
   public function render(Request $request)
   {
-    \Log::info($request);
     return QRCodeService::RenderQRCode(
       $request['type'],
       $request['form_data'],

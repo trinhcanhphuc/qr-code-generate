@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>QR Code Generator</title>
 
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -60,6 +61,10 @@
       <router-view></router-view>
     </v-app>
   </div>
+
+  <script>
+    const AUTH_USER_NAME = "{{ Auth::check() ? Auth::user()->name : '' }}";
+  </script>
 
   <script src="{{ asset('js/app.js') }}"></script>
 

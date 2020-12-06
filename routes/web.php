@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QRController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +16,12 @@ use App\Http\Controllers\HomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Auth::routes();
 Route::get('/sitemap', [HomeController::class, 'sitemap']);
+Route::post('/profile', [UserController::class, 'profile']);
+Route::post('/qrcode/render', [QRController::class, 'render']);
+
 Route::get('/{any}', function () {
   return view('home');
 })->where('any', '.*');
-
-Route::post('/qrcode/render', [QRController::class, 'render']);

@@ -18,7 +18,7 @@
               <v-btn
                 class="mx-2"
                 :input-value="active"
-                v-bind:class="{ 'purple white--text': selectedQrType === type }"
+                v-bind:class="{ 'primary': selectedQrType === type }"
                 depressed
                 rounded
                 @click="changeQrType(type)"
@@ -313,18 +313,6 @@ export default {
     },
       fab: false,
       pages: [
-        {
-          'title': 'QR Generator',
-          'url': '/'
-        },
-        {
-          'title': 'QR Scanner',
-          'url': '/qr-scanner'
-        },
-        {
-          'title': 'About',
-          'url': '/about'
-        }
       ],
       is_qr_full_screen: false,
       valid: true,
@@ -492,8 +480,6 @@ export default {
           window.open(this.getTwitterLink(), '_blank');
           break;
       }
-
-
     },
     getFbShareLink() {
       return 'http://www.facebook.com/sharer.php?u=' + this.getImageLink();
