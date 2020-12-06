@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QRController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,7 @@ use App\Http\Controllers\QRController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/sitemap', [HomeController::class, 'sitemap']);
 Route::get('/{any}', function () {
   return view('home');
 })->where('any', '.*');
