@@ -19,7 +19,6 @@ export default {
   mounted: function() {
     axios.post('/profile')
       .then(res => {
-        console.log(res);
       }).catch(err => {
         console.log(err);
       }

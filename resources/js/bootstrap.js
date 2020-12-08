@@ -26,8 +26,6 @@ let user_token = $('meta[name="user-token"]').attr('content');
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.axios.defaults.headers.common['Authorization'] = `Bearer ${user_token}`;
 
-console.log("{{ csrf_token() }}");
-
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting

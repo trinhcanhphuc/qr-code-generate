@@ -2,7 +2,6 @@
   <default-layout>
     <div class="row">
       <div class="col-12 mt-5">
-        <h1 class="text-center">QR Generator</h1>
       </div>
     </div>
     <div class="row m-3 mt-0">
@@ -172,7 +171,7 @@
               size="lg"
               block
               v-on:click="createQR()"
-            >Generate QR Code
+            >Create QR Code
             </v-btn>
           </div>
         </v-card>

@@ -15,7 +15,7 @@
         >
           <v-img
             src="/img/brand/qr-logo.png"
-            alt="QR Generator Logo"
+            alt="QR Tool Logo"
           ></v-img>
         </v-avatar>
       </router-link>
@@ -26,6 +26,8 @@
         text
       >
         <router-link
+          class='text-dark user-select-none'
+          style='text-decoration: none;'
           :to=page.url
         >
         {{ page.title }}
@@ -35,11 +37,21 @@
         v-if="AUTH_USER_NAME"
         to='/profile'
       >
-        <v-icon class='ml-3'>
-          fas fa-user
-        </v-icon>
-        {{ AUTH_USER_NAME}}
+        <v-avatar
+          size="56"
+        >
+          <v-icon class='ml-3'>
+            fas fa-user
+          </v-icon>
+        </v-avatar>
       </router-link>
+      <v-btn
+        v-else
+        text
+        @click="goLogin()"
+      >
+        Login
+      </v-btn>
     </v-container>
   </v-app-bar>
 </template>
@@ -50,23 +62,18 @@ export default {
   data() {
     return {
       pages: [
+        {
+          'title': 'About',
+          'url': '/about'
+        }
       ],
       AUTH_USER_NAME: AUTH_USER_NAME
     };
+  },
+  methods: {
+    goLogin() {
+      window.location = '/login';
+    }
   }
-}
-
-String.prototype.convertToRGB = function () {
-  if (this.length != 6) {
-    throw "Only six-digit hex colors are allowed.";
-  }
-
-  let aRgbHex = this.match(/.{1,2}/g);
-  let aRgb = [
-    parseInt(aRgbHex[0], 16),
-    parseInt(aRgbHex[1], 16),
-    parseInt(aRgbHex[2], 16)
-  ];
-  return aRgb;
 }
 </script>

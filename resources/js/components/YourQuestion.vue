@@ -31,7 +31,7 @@ export default {
       questions: [
         {
           'question': 'How do I make a QR Code?',
-          'answer': 'You can use our Free QR Code Generator app.\nAll you need to do is click on the link above and type the data you want to create a QR Code.'
+          'answer': 'You can use our Free QR Codes app.\nAll you need to do is click on the link above and type the data you want to create a QR Code.'
         },
         {
           'question': 'What can I do with a QR Code?',

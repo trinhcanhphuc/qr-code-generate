@@ -17,8 +17,18 @@ class UserController extends Controller
     $this->middleware('auth');
   }
 
+  public function auth() {
+    return Auth::user();
+  }
+
   public function profile()
   {
-    return Auth::user();
+    $user = Auth::user();
+    $qr_results = $user->qr_results();
+
+    return [
+      'user' => $user,
+      'qr_results' => $qr_results
+    ];
   }
 }

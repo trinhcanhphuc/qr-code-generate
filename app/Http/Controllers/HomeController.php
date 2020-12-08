@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\QrResult;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -29,6 +31,9 @@ class HomeController extends Controller
 
   public function sitemap()
   {
+
+    dd(QrResult::where('user_id', 1)->get());
+
     return response(file_get_contents(resource_path('sitemap.xml')), 200, [
       'Content-Type' => 'application/xml'
     ]);

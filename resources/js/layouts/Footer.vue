@@ -8,7 +8,7 @@
       class="text-center"
       cols="12"
     >
-      {{ new Date().getFullYear() }} — <strong>QR Code Generator</strong>
+      {{ new Date().getFullYear() }} — <strong>QR Tool</strong>
     </v-col>
   </v-footer>
 </template>
