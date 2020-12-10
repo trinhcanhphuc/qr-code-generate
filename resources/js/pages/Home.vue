@@ -1,11 +1,7 @@
 <template>
   <default-layout>
-    <div class="row">
-      <div class="col-12 mt-5">
-      </div>
-    </div>
-    <div class="row m-3 mt-0">
-      <div class="col-md-9">
+    <div class="row m-sm-3 mt-md-5">
+      <div class="col-lg-9">
         <v-card elevation="8" class="p-4 rounded-lg">
           <input name="token" type="hidden" value/>
           <v-slide-group show-arrows>
@@ -176,7 +172,7 @@
           </div>
         </v-card>
       </div>
-      <div id="qrcode-img" class="col-md-3 text-center">
+      <div id="qrcode-img" class="col-lg-3 text-center m-auto" style='max-width: 400px'>
         <v-card elevation="8" class="p-4 rounded-lg">
           <v-btn class="mx-2" fab dark x-small
                   @click="is_qr_full_screen = true"

@@ -2,7 +2,6 @@
   <v-app-bar
     color="white"
     elevation="8"
-    fixed
     flat
   >
     <v-container class="py-0 px-2 fill-height">

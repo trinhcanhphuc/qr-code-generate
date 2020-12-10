@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-12 mt-10">
+  <div class="mt-10 mx-sm-12 m-3">
     <h1 class="text-center">How can we help you?</h1>
     <v-row>
       <v-expansion-panels
