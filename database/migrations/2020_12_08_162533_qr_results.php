@@ -18,6 +18,7 @@ class QrResults extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('name')->unique();
             $table->string('type');
+            $table->longText('form_data');
             $table->timestamps();
         });
     }
