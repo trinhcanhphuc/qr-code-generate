@@ -16,7 +16,7 @@ class HomeController extends Controller
 
   public function index()
   {
-    $imgSrc = QRCodeService::RenderQRCode(
+    $imgSrc = QrCodeService::RenderQrCode(
       'url',
       [
         'content' => 'https://www.facebook.com',
@@ -31,9 +31,6 @@ class HomeController extends Controller
 
   public function sitemap()
   {
-
-    dd(QrResult::where('user_id', 1)->get());
-
     return response(file_get_contents(resource_path('sitemap.xml')), 200, [
       'Content-Type' => 'application/xml'
     ]);

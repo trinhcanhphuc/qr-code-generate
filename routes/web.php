@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\QRController;
+use App\Http\Controllers\QrController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -21,7 +21,7 @@ Auth::routes();
 Route::get('/sitemap', [HomeController::class, 'sitemap']);
 Route::post('/user_auth', [UserController::class, 'auth']);
 Route::post('/profile', [UserController::class, 'profile']);
-Route::post('/qrcode/render', [QRController::class, 'render']);
+Route::post('/qrcode/render', [QrController::class, 'render']);
 
 Route::get('/{any}', function () {
   return view('home');

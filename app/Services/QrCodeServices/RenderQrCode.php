@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Services\QRCodeServices;
+namespace App\Services\QrCodeServices;
 
 use App\Services\ServiceInterface;
-use App\Services\QRCodeService;
+use App\Services\QrCodeService;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 /**
+ * @property string image_name
  * @property string type
  * @property array form_data
  * @property array fore_color
@@ -14,7 +15,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
  * @property string logo
  * @property string format
  */
-class RenderQRCode extends QRCodeService implements ServiceInterface
+class RenderQrCode extends QrCodeService implements ServiceInterface
 {
   const QR_INPUT_TYPE = [
     'TEXT' => 'text',
@@ -48,26 +49,26 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
   {
     $content = '';
     switch ($this->type) {
-      case RenderQRCode::QR_INPUT_TYPE['TEXT']:
-        $content = RenderQRCode::render_qr_by_text($this->form_data);
+      case RenderQrCode::QR_INPUT_TYPE['TEXT']:
+        $content = RenderQrCode::render_qr_by_text($this->form_data);
         break;
-      case RenderQRCode::QR_INPUT_TYPE['URL']:
-        $content = RenderQRCode::render_qr_by_url($this->form_data);
+      case RenderQrCode::QR_INPUT_TYPE['URL']:
+        $content = RenderQrCode::render_qr_by_url($this->form_data);
         break;
-      case RenderQRCode::QR_INPUT_TYPE['PHONE']:
-        $content = RenderQRCode::render_qr_by_phone($this->form_data);
+      case RenderQrCode::QR_INPUT_TYPE['PHONE']:
+        $content = RenderQrCode::render_qr_by_phone($this->form_data);
         break;
-      case RenderQRCode::QR_INPUT_TYPE['SMS']:
-        $content = RenderQRCode::render_qr_by_sms($this->form_data);
+      case RenderQrCode::QR_INPUT_TYPE['SMS']:
+        $content = RenderQrCode::render_qr_by_sms($this->form_data);
         break;
-      case RenderQRCode::QR_INPUT_TYPE['EMAIL']:
-        $content = RenderQRCode::render_qr_by_email($this->form_data);
+      case RenderQrCode::QR_INPUT_TYPE['EMAIL']:
+        $content = RenderQrCode::render_qr_by_email($this->form_data);
         break;
-      case RenderQRCode::QR_INPUT_TYPE['SKYPE']:
-        $content = RenderQRCode::render_qr_by_skype($this->form_data);
+      case RenderQrCode::QR_INPUT_TYPE['SKYPE']:
+        $content = RenderQrCode::render_qr_by_skype($this->form_data);
         break;
-      case RenderQRCode::QR_INPUT_TYPE['BUSINESS_CARD']:
-        $content = RenderQRCode::render_qr_by_business_card($this->form_data);
+      case RenderQrCode::QR_INPUT_TYPE['BUSINESS_CARD']:
+        $content = RenderQrCode::render_qr_by_business_card($this->form_data);
         break;
     }
     switch ($this->format) {
@@ -75,7 +76,7 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
         $fore_color = isset($this->fore_color) ? $this->fore_color : [255, 255, 255];
         $back_color = isset($this->back_color) ? $this->back_color : [0, 0, 0];
         if ($this->logo) {
-          QRcode::format('png')->merge($this->logo, 0.3, true)
+          QrCode::format('png')->merge($this->logo, 0.3, true)
             ->size(500)->errorCorrection('H')
             ->color($fore_color[0], $fore_color[1], $fore_color[2])
             ->backgroundColor($back_color[0], $back_color[1], $back_color[2])
@@ -83,7 +84,7 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
             ->generate($content, $this->get_qr_images_path($this->image_name));
         }
         else {
-          QRcode::format('png')->size(500)->errorCorrection('H')
+          QrCode::format('png')->size(500)->errorCorrection('H')
             ->color($fore_color[0], $fore_color[1], $fore_color[2])
             ->backgroundColor($back_color[0], $back_color[1], $back_color[2])
             ->encoding('UTF-8')
@@ -93,11 +94,11 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
       case 'svg':
         $fore_color = isset($this->fore_color) ? $this->fore_color : [255, 255, 255];
         $back_color = isset($this->back_color) ? $this->back_color : [0, 0, 0];
-        QRcode::encoding('UTF-8')
+        QrCode::encoding('UTF-8')
           ->generate('Make me into a QrCode!', $this->get_qr_images_path($this->image_name));
         break;
     }
-    return '/qr_images/' . $this->image_name . '.' . $this->format;
+    return true;
   }
 
   function get_qr_images_path($image_name)
@@ -110,24 +111,24 @@ class RenderQRCode extends QRCodeService implements ServiceInterface
     return base64_decode(explode(',', $base64_encoded, 2)[1]);
   }
 
-  function combine_QR_with_logo($QR_path, $logo_decoded)
+  function combine_qr_with_logo($qr_path, $logo_decoded)
   {
-    $QR = imagecreatefromstring(file_get_contents($QR_path));
+    $qr = imagecreatefromstring(file_get_contents($qr_path));
     $logo = imagecreatefromstring($logo_decoded);
-    $QR_width = imagesx($QR);
-    $QR_height = imagesy($QR);
+    $qr_width = imagesx($qr);
+    $qr_height = imagesy($qr);
     $logo_width = imagesx($logo);
     $logo_height = imagesy($logo);
-    $logo_qr_width = $QR_width / 4;
+    $logo_qr_width = $qr_width / 4;
     $scale = $logo_width / $logo_qr_width;
     $logo_qr_height = $logo_height / $scale;
-    $from_width = ($QR_width - $logo_qr_width) / 2;
-    imagecopyresampled($QR, $logo, $from_width, $from_width, 0, 0, $logo_qr_width, $logo_qr_height, $logo_width, $logo_height);
+    $from_width = ($qr_width - $logo_qr_width) / 2;
+    imagecopyresampled($qr, $logo, $from_width, $from_width, 0, 0, $logo_qr_width, $logo_qr_height, $logo_width, $logo_height);
 
-    //Output pictures
-    imagepng($QR, $QR_path);
-    imagedestroy($QR);
-    if (file_exists($QR_path)) {
+    // Output pictures
+    imagepng($qr, $qr_path);
+    imagedestroy($qr);
+    if (file_exists($qr_path)) {
       return true;
     } else {
       return false;
