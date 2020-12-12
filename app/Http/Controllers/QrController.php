@@ -26,15 +26,15 @@ class QrController extends Controller
       $request['format']);
 
     if ($render_status) {
-      $execute_result = QrCodeService::SaveUserQrResult(
-        \App::make(QrResultRepository::class),
-        Auth::user()->id,
-        $image_name,
-        $request['format'],
-        $request['form_data']);
-      if ($execute_result) {
-        return '/qr_images/' . $image_name . '.' . $request['format'];
+      if (Auth::user()) {
+        QrCodeService::SaveUserQrResult(
+          \App::make(QrResultRepository::class),
+          Auth::user()->id,
+          $image_name,
+          $request['format'],
+          $request['form_data']);
       }
+      return '/qr_images/' . $image_name . '.' . $request['format'];
     }
   }
 }
