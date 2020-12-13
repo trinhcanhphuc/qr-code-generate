@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+use App\Services\UserService;
+use Illuminate\Support\Facades\App;
+use App\Http\Controllers\Controller;
+use App\Repositories\UserRepository;
 use Illuminate\Support\Facades\Auth;
+use App\Repositories\QrResultRepository;
 
 class UserController extends Controller
 {
@@ -23,10 +29,16 @@ class UserController extends Controller
   public function profile()
   {
     $user = Auth::user();
-    $qr_results = $user->qr_results();
+  }
 
+  public function history()
+  {
+    $qr_results = UserService::GetQrResults(
+      App::make(UserRepository::class),
+      App::make(QrResultRepository::class),
+      Auth::user()->id
+    );
     return [
-      'user' => $user,
       'qr_results' => $qr_results
     ];
   }

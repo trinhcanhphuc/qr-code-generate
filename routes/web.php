@@ -19,8 +19,9 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 Route::get('/sitemap', [HomeController::class, 'sitemap']);
-Route::post('/user_auth', [UserController::class, 'auth']);
-Route::post('/profile', [UserController::class, 'profile']);
+Route::post('/user/auth', [UserController::class, 'auth']);
+Route::post('/user/profile', [UserController::class, 'profile']);
+Route::post('/user/history', [UserController::class, 'history']);
 Route::post('/qrcode/render', [QrController::class, 'render']);
 
 Route::get('/{any}', function () {

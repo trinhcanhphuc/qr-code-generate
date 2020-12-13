@@ -14,4 +14,9 @@ class QrResult extends Authenticatable
   protected $fillable = [
     'user_id', 'name', 'type', 'form_data'
   ];
+  
+  public function getCreatedAtAttribute($value)
+  {
+    return Verta($value)->formatGregorian('Y-m-d H:i:s');
+  }
 }

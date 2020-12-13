@@ -178,7 +178,8 @@ return [
     /*
      * Third parties
      */
-    SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class
+    SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
+    Hekmatinasser\Verta\VertaServiceProvider::class
 
   ],
 

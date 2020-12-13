@@ -23,7 +23,6 @@
             </v-slide-item>
           </v-slide-group>
 
-
           <v-expansion-panels
             v-model="panel"
             focusable
