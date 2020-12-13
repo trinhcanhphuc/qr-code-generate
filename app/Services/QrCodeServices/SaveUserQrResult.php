@@ -2,11 +2,10 @@
 
 namespace App\Services\QrCodeServices;
 
-use App\Services\ServiceInterface;
 use App\Services\QrCodeService;
-use App\Serivces\UserService;
-use App\Repositories\QrResultRepositoryInterface;
+use App\Services\ServiceInterface;
 use Illuminate\Support\Facades\DB;
+use App\Repositories\QrResultRepositoryInterface;
 
 /**
  * @property string image_name

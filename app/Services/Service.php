@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use Illuminate\Support\Facades\Log;
 use App\Exceptions\ServiceException;
 
 class Service
@@ -34,11 +35,11 @@ class Service
       }
     }
 
-    \Log::info(sprintf('[Start Service] %s', $class), $params);
+    Log::info(sprintf('[Start Service] %s', $class), $params);
 
     $result = $service->newInstanceArgs($arguments)->execute();
 
-    \Log::info(sprintf('[End Service] %s', $class));
+    Log::info(sprintf('[End Service] %s', $class));
 
     return $result;
   }

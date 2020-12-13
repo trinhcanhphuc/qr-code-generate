@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\QrResult;
-
-use Illuminate\Http\Request;
+use App\Services\QrCodeService;
 
 class HomeController extends Controller
 {

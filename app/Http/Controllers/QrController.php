@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Services\QrCodeService;
-use App\Services\QrCodeServices\RenderQrCode;
-use App\Services\QrCodeServices\SaveUserQrResult;
-use App\Repositories\QrResultRepository;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
+use App\Repositories\QrResultRepository;
+
 
 class QrController extends Controller
 {
@@ -28,7 +28,7 @@ class QrController extends Controller
     if ($render_status) {
       if (Auth::user()) {
         QrCodeService::SaveUserQrResult(
-          \App::make(QrResultRepository::class),
+          App::make(QrResultRepository::class),
           Auth::user()->id,
           $image_name,
           $request['format'],

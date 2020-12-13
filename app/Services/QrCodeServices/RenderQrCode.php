@@ -2,8 +2,8 @@
 
 namespace App\Services\QrCodeServices;
 
-use App\Services\ServiceInterface;
 use App\Services\QrCodeService;
+use App\Services\ServiceInterface;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 /**
