@@ -6,20 +6,20 @@
     >
       <v-card class="m-3">
         <v-row>
-          <v-col md="3">
+          <v-col md="3" sm="2">
             <v-img
               :lazy-src="'/qr_images/' + qr_result.name + '.' + qr_result.type"
-              max-height="150"
-              max-width="150"
+              max-height="100"
+              max-width="100"
               :src="'/qr_images/' + qr_result.name + '.' + qr_result.type"
               class="m-auto"
             ></v-img>
           </v-col>
-          <v-col md="6">
+          <v-col md="7" sm="9">
           <v-chip>{{ qr_result.type }}</v-chip>
           <div>{{ qr_result.created_at }}</div>
           </v-col>
-          <v-col md="3" class="text-right">
+          <v-col md="2" sm="1" class="text-right">
             <v-menu
               bottom
               left
@@ -68,7 +68,6 @@ export default {
   mounted: function() {
     axios.post('/user/history')
       .then(res => {
-        console.log(res);
         this.qr_results = res.data.qr_results;
       }).catch(err => {
         console.log(err);

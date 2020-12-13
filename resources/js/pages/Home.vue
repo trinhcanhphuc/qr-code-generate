@@ -4,25 +4,19 @@
       <div class="col-lg-9">
         <v-card elevation="8" class="p-4 rounded-lg">
           <input name="token" type="hidden" value/>
-          <v-slide-group show-arrows>
-            <v-slide-item
+          <v-tabs
+            primary
+            show-arrows
+          >
+            <v-tabs-slider></v-tabs-slider>
+            <v-tab
               v-for="type in qr_types"
               :key="type"
-              v-slot:default="{ active, toggle }"
+              @click="changeQrType(type)"
             >
-              <v-btn
-                class="mx-2"
-                :input-value="active"
-                v-bind:class="{ 'primary': selectedQrType === type }"
-                depressed
-                rounded
-                @click="changeQrType(type)"
-              >{{ type }}
-              </v-btn
-              >
-            </v-slide-item>
-          </v-slide-group>
-
+              {{ type }}
+            </v-tab>
+          </v-tabs>
           <v-expansion-panels
             v-model="panel"
             focusable
