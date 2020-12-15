@@ -30,6 +30,7 @@ class QrController extends Controller
         QrCodeService::SaveUserQrResult(
           App::make(QrResultRepository::class),
           Auth::user()->id,
+          $request['type'],
           $image_name,
           $request['format'],
           $request['form_data']);

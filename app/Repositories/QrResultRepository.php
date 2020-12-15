@@ -48,4 +48,18 @@ class QrResultRepository implements QrResultRepositoryInterface
   {
     return $this->model->create($params);
   }
+
+  /**
+   * deleteByIdAndUserId.
+   *
+   * @param int $id
+   * @param int $user_id
+   *
+   * @return boolean
+   */
+  public function deleteByIdAndUserId(int $id, int $user_id)
+  {
+    $this->model->where('user_id', $user_id)->where('id', $id)->delete();
+    return true;
+  }
 }

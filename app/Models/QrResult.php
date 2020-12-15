@@ -12,7 +12,7 @@ class QrResult extends Authenticatable
    * @var array
    */
   protected $fillable = [
-    'user_id', 'name', 'type', 'form_data'
+    'user_id', 'type', 'image_name', 'image_extension', 'form_data'
   ];
   
   public function getCreatedAtAttribute($value)

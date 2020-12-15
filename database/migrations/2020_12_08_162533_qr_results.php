@@ -16,8 +16,9 @@ class QrResults extends Migration
         Schema::create('qr_results', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id')->unsigned();
-            $table->string('name')->unique();
             $table->string('type');
+            $table->string('image_name')->unique();
+            $table->string('image_extension');
             $table->longText('form_data');
             $table->timestamps();
         });
