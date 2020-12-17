@@ -1,6 +1,7 @@
 import Vuetify from "vuetify";
 import { router } from "./routes";
 import * as VeeValidate from "vee-validate";
+import './utils/common';
 
 window.Vue = require("vue");
 Vue.use(Vuetify);
@@ -12,7 +13,7 @@ const app = new Vue({
   router,
   vuetify: new Vuetify({
     icons: {
-      iconfont: "fa" // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
+      iconfont: "mdi"
     }
   })
-});
+})

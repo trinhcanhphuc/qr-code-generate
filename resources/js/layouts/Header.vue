@@ -25,8 +25,7 @@
         text
       >
         <router-link
-          class='text-dark user-select-none'
-          style='text-decoration: none;'
+          class='text-dark user-select-none nounderline'
           :to=page.url
         >
         {{ page.title }}

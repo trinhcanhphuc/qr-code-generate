@@ -33,7 +33,7 @@
           @click="$refs.btnUploadLogo.click()"
           style="position: absolute; z-index: 1; left: calc(50% - 16px); bottom: -16px"
         >
-          <v-icon small>fas fa-camera</v-icon>
+          <v-icon small>mdi-camera-enhance</v-icon>
         </v-btn>
       </div>
     </div>
