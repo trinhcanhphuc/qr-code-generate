@@ -21,7 +21,7 @@ Auth::routes();
 Route::get('/sitemap', [HomeController::class, 'sitemap']);
 Route::post('/user/auth', [UserController::class, 'auth']);
 Route::post('/user/profile', [UserController::class, 'profile']);
-Route::post('/user/history', [UserController::class, 'history']);
+Route::post('/user/history/{page_number}', [UserController::class, 'history']);
 Route::delete('/user/qr-results/{qr_result_id}', [UserController::class, 'delete_qr_result']);
 Route::post('/qrcode/render', [QrController::class, 'render']);
 

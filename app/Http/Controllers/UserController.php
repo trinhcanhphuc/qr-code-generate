@@ -32,13 +32,14 @@ class UserController extends Controller
     $user = Auth::user();
   }
 
-  public function history()
+  public function history(int $page_number)
   {
     $qr_results = UserService::GetQrResults(
       App::make(UserRepository::class),
       App::make(QrResultRepository::class),
       Auth::user()->id
-    );
+    )->orderBy('updated_at', 'desc')
+    ->paginate(5, ['*'], 'page', $page_number);
     return [
       'qr_results' => $qr_results
     ];

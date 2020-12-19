@@ -2,21 +2,10 @@
   <default-layout>
     <div class="row m-sm-3 mt-md-5">
       <div class="col-lg-12">
-        <div class="profile-cover position-relative">
-          <v-img
-            lazy-src="https://picsum.photos/id/11/10/6"
-            max-height="200"
-            src="https://picsum.photos/id/11/500/300"
-            class="rounded-lg"
-          ></v-img>
-        </div>
-        <div class="profile-avatar w-100 text-center position-relative" style="height: 30px">
-          <v-avatar style="width: 120px; height: 120px; top: -100px; border: 3px solid white;">
-            <img
-              src="https://cdn.vuetifyjs.com/images/john.jpg"
-              alt="Phuc Trinh"
-            >
-          </v-avatar>
+        <div class="profile-avatar w-100 text-center position-relative mb-3">
+          <v-icon style='font-size: 200px'>
+            fas fa-user-circle
+          </v-icon>
         </div>
         <h2 class="text-center">Phuc Trinh</h2>
         <v-tabs

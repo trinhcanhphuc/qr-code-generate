@@ -1,7 +1,7 @@
 <template>
   <v-card class="py-3">
     <div
-      v-for="(qr_result, i) in qr_results"
+      v-for="(qr_result, i) in qr_results.data"
       :key="i"
     >
       <v-card class="m-3">
@@ -55,6 +55,11 @@
         </v-row>
       </v-card>
     </div>
+    <v-pagination
+      v-model="qr_results.current_page"
+      :length="qr_results.last_page"
+      @input="getQrResultsHistory(qr_results.current_page)"
+    ></v-pagination>
 
     <v-dialog
       v-model="dialog_detail.visibility"
@@ -250,7 +255,11 @@ export default {
   data() {
     return {
       valid: true,
-      qr_results: [],
+      qr_results: {
+        current_page: 0,
+        last_page: 0,
+        data: []
+      },
       options: [
         { title: 'Detail' },
         { title: 'Delete' }
@@ -312,18 +321,10 @@ export default {
     }
   },
   mounted: function() {
-    axios.post('/user/history')
-      .then(res => {
-        this.qr_results = res.data.qr_results
-
-      }).catch(err => {
-        console.log(err);
-      }
-    );
+    this.getQrResultsHistory(1)
   },
   methods: {
     showQrResult(qr_result) {
-
       this.qr_type = qr_result.type
       this.qr_result_img = '/qr_images/' + qr_result.image_name + '.' + qr_result.image_extension
       let qr_data = JSON.parse(qr_result.form_data)
@@ -350,7 +351,8 @@ export default {
           this.snackbar.visibility = true
           this.snackbar.text = 'QR ' + qr_result.id + ' has been deleted succesfully'
           this.snackbar.color = 'blue'
-          this.qr_results.splice(this.qr_results.indexOf(qr_result), 1)
+
+          this.getQrResultsHistory(this.qr_results.current_page)
         }).catch(err => {
           this.snackbar.visibility = true
           this.snackbar.text = 'An error has occurred'
@@ -358,6 +360,21 @@ export default {
         }
       );
     },
+    getQrResultsHistory(qr_results_page) {
+      axios.post('/user/history/' + qr_results_page)
+      .then(res => {
+        let res_data = res.data.qr_results
+
+        this.qr_results.data = res_data.data
+        this.qr_results.current_page = res_data.current_page
+        this.qr_results.last_page = res_data.last_page
+        console.log(this.qr_results)
+
+      }).catch(err => {
+        console.log(err);
+      }
+    );
+    }
   }
 }
 </script>

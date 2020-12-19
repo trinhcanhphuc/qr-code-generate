@@ -34,7 +34,7 @@ class QrResultRepository implements QrResultRepositoryInterface
    */
   public function getByUserId(int $user_id)
   {
-    return $this->model->where('user_id', $user_id)->get();
+    return $this->model->where('user_id', $user_id);
   }
 
   /**
