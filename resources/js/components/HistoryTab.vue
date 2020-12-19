@@ -349,7 +349,7 @@ export default {
       axios.delete('/user/qr-results/' + qr_result.id)
         .then(res => {
           this.snackbar.visibility = true
-          this.snackbar.text = 'QR ' + qr_result.id + ' has been deleted succesfully'
+          this.snackbar.text = 'QR has been deleted succesfully'
           this.snackbar.color = 'blue'
 
           this.getQrResultsHistory(this.qr_results.current_page)
@@ -362,18 +362,18 @@ export default {
     },
     getQrResultsHistory(qr_results_page) {
       axios.post('/user/history/' + qr_results_page)
-      .then(res => {
-        let res_data = res.data.qr_results
+        .then(res => {
+          let res_data = res.data.qr_results
 
-        this.qr_results.data = res_data.data
-        this.qr_results.current_page = res_data.current_page
-        this.qr_results.last_page = res_data.last_page
-        console.log(this.qr_results)
+          this.qr_results.data = res_data.data
+          this.qr_results.current_page = res_data.current_page
+          this.qr_results.last_page = res_data.last_page
+          console.log(this.qr_results)
 
-      }).catch(err => {
-        console.log(err);
-      }
-    );
+        }).catch(err => {
+          console.log(err);
+        }
+      );
     }
   }
 }

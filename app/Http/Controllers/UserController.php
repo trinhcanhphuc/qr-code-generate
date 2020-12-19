@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
+use Illuminate\Http\Request;
 use App\Services\UserService;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\App;
 use App\Http\Controllers\Controller;
 use App\Repositories\UserRepository;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Request;
 use App\Repositories\QrResultRepository;
 
 class UserController extends Controller
@@ -27,9 +27,18 @@ class UserController extends Controller
     return Auth::user();
   }
 
-  public function profile()
+  public function profile(Request $request)
   {
     $user = Auth::user();
+    if ($user->email == $request['email']) {
+      $user->email = $request['email'];
+      $user->name = $request['name'];
+      $user->save();
+      return response()->json(Response::HTTP_OK);
+    }
+    else {
+      return response()->json(Response::HTTP_BAD_REQUEST);
+    }
   }
 
   public function history(int $page_number)

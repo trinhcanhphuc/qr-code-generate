@@ -7,7 +7,7 @@
             fas fa-user-circle
           </v-icon>
         </div>
-        <h2 class="text-center">Phuc Trinh</h2>
+        <h2 class="text-center">{{ profile_form_data.name }}</h2>
         <v-tabs
           v-model="tab"
           align-with-title
@@ -25,7 +25,9 @@
         <v-tabs-items v-model="tab">
         <v-tab-item>
           <v-card flat>
-            <ProfileTab>
+            <ProfileTab
+              :profile_form_data="profile_form_data"
+            >
             </ProfileTab>
           </v-card>
         </v-tab-item>
@@ -54,7 +56,14 @@ export default {
       items: [
         { tab: 'profile' },
         { tab: 'history' }
-      ]
+      ],
+      profile_form_data: {},
+      snackbar: {
+        visibility: false,
+        text: 'An error has occurred',
+        timeout: 2000,
+        color: 'red'
+      }
     }
   },
   components: {
@@ -65,6 +74,7 @@ export default {
   mounted: function() {
     axios.post('/user/auth')
       .then(res => {
+        this.profile_form_data = res.data
       }).catch(err => {
         console.log(err);
       }
