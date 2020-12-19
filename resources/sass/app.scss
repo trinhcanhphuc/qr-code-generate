@@ -16,6 +16,10 @@
 // Font awesome
 @import "~@fortawesome/fontawesome-free/css/all.css";
 
+header {
+  max-height: 64px;
+}
+
 // custom style
 @media (min-width: 1540px) {
   .container {
