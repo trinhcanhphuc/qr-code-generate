@@ -7,6 +7,7 @@
         <v-select
           :items="pre_genders"
           v-model="card_form_data.pre_gender"
+          :disabled="disabled_input"
         ></v-select>
       </v-col>
       <v-col sm="5">
@@ -17,6 +18,7 @@
           @keyup="updateFormData('first_name', $event.target.value)"
           placeholder="First Name"
           :rules="[rules.textRules('First Name', card_form_data.first_name)]"
+          :disabled="disabled_input"
         />
       </v-col>
       <v-col sm="5">
@@ -27,6 +29,7 @@
           @keyup="updateFormData('last_name', $event.target.value)"
           placeholder="Last Name"
           :rules="[rules.textRules('Last Name', card_form_data.last_name)]"
+          :disabled="disabled_input"
         />
       </v-col>
     </v-row>
@@ -40,6 +43,7 @@
           type="email"
           placeholder="example@email.com"
           :rules="[rules.emailRules('Email', card_form_data.email)]"
+          :disabled="disabled_input"
         />
       </v-col>
     </v-row>
@@ -53,6 +57,7 @@
           type="tel"
           placeholder="0963*******"
           :rules="[rules.phoneRules('Work Phone', card_form_data.work_phone)]"
+          :disabled="disabled_input"
         />
       </v-col>
       <v-col sm="4">
@@ -64,6 +69,7 @@
           type="tel"
           placeholder="0963*******"
           :rules="[rules.phoneRules('Private Phone', card_form_data.work_phone)]"
+          :disabled="disabled_input"
         />
       </v-col>
       <v-col sm="4">
@@ -75,6 +81,7 @@
           type="tel"
           placeholder="0963*******"
           :rules="[rules.phoneRules('Cell Phone', card_form_data.cell_phone)]"
+          :disabled="disabled_input"
         />
       </v-col>
     </v-row>
@@ -87,6 +94,7 @@
           @keyup="updateFormData('address_label', $event.target.value)"
           placeholder="Your Office"
           :rules="[rules.textRules('Your Office', card_form_data.address_label)]"
+          :disabled="disabled_input"
         />
       </v-col>
       <v-col sm="8">
@@ -97,6 +105,7 @@
           @keyup="updateFormData('address_street', $event.target.value)"
           placeholder="Nam Ki Khoi Nghia"
           :rules="[rules.textRules('Street', card_form_data.address_street)]"
+          :disabled="disabled_input"
         />
       </v-col>
     </v-row>
@@ -109,6 +118,7 @@
           @keyup="updateFormData('address_city', $event.target.value)"
           placeholder="Ho Chi Minh"
           :rules="[rules.textRules('City', card_form_data.address_city)]"
+          :disabled="disabled_input"
         />
       </v-col>
       <v-col sm="3">
@@ -119,6 +129,7 @@
           @keyup="updateFormData('address_province', $event.target.value)"
           placeholder="Ho Chi Minh"
           :rules="[rules.textRules('Province', card_form_data.address_province)]"
+          :disabled="disabled_input"
           />
       </v-col>
       <v-col sm="3">
@@ -130,6 +141,7 @@
           type="number"
           placeholder="700000"
           :rules="[rules.textRules('Postcode', card_form_data.address_postcode)]"
+          :disabled="disabled_input"
         />
       </v-col>
       <v-col sm="3">
@@ -140,6 +152,7 @@
           @keyup="updateFormData('address_country', $event.target.value)"
           placeholder="Viet Nam"
           :rules="[rules.textRules('Country', card_form_data.address_country)]"
+          :disabled="disabled_input"
         />
       </v-col>
     </v-row>
@@ -154,6 +167,11 @@ export default {
       type: Object,
       required: true,
     },
+    disabled_input: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
   },
   data() {
     return {

@@ -64,139 +64,162 @@
     <v-dialog
       v-model="dialog_detail.visibility"
       persistent
+      scrollable
       max-width="600px"
     >
       <v-card>
         <v-card-title>
           <span class="headline">QR Result Detail</span>
         </v-card-title>
-        <v-card class="m-5">
-          <v-img :src="qr_result_img"></v-img>
-        </v-card>
-        <v-expansion-panels
-          v-model="panel"
-          focusable
-          multiple
-          class="mt-8 mb-5"
-        >
-          <v-expansion-panel
-            :value="0"
+        <v-divider></v-divider>
+        <v-card-text style="max-height: 500px;">
+          <v-img
+            :src="qr_result_img"
+            class="m-auto"
+            style="max-width: 400px;"
+          ></v-img>
+          <v-expansion-panels
+            v-model="panel"
+            focusable
+            multiple
+            class="mt-8 mb-5"
           >
-            <v-expansion-panel-header>Input Data</v-expansion-panel-header>
-              <v-expansion-panel-content>
-                <div class="mt-3">
-                  <div v-show="qr_type === 'text'">
-                    <v-form
-                      ref="text_form"
-                      v-model="valid"
-                      lazy-validation
-                    >
-                      <TextForm
-                        :text_form_data="text_form_data"
-                      ></TextForm>
-                    </v-form>
-                  </div>
+            <v-expansion-panel
+              :value="0"
+            >
+              <v-expansion-panel-header>Input Data</v-expansion-panel-header>
+                <v-expansion-panel-content>
+                  <div class="mt-3">
+                    <div v-show="qr_type === 'text'">
+                      <v-form
+                        ref="text_form"
+                        v-model="valid"
+                        lazy-validation
+                      >
+                        <TextForm
+                          :text_form_data="text_form_data"
+                          :disabled_input="true"
+                        ></TextForm>
+                      </v-form>
+                    </div>
 
-                  <div v-show="qr_type === 'url'">
-                    <v-form
-                      ref="url_form"
-                      v-model="valid"
-                      lazy-validation
-                    >
-                      <UrlForm
-                        :url_form_data="url_form_data"
-                      ></UrlForm>
-                    </v-form>
-                  </div>
+                    <div v-show="qr_type === 'url'">
+                      <v-form
+                        ref="url_form"
+                        v-model="valid"
+                        lazy-validation
+                      >
+                        <UrlForm
+                          :url_form_data="url_form_data"
+                          :disabled_input="true"
+                        ></UrlForm>
+                      </v-form>
+                    </div>
 
-                  <div v-show="qr_type === 'phone'">
-                    <v-form
-                      ref="phone_form"
-                      v-model="valid"
-                      lazy-validation
-                    >
-                      <PhoneForm
-                        :phone_form_data="phone_form_data"
-                      ></PhoneForm>
-                    </v-form>
-                  </div>
+                    <div v-show="qr_type === 'phone'">
+                      <v-form
+                        ref="phone_form"
+                        v-model="valid"
+                        lazy-validation
+                      >
+                        <PhoneForm
+                          :phone_form_data="phone_form_data"
+                          :disabled_input="true"
+                        ></PhoneForm>
+                      </v-form>
+                    </div>
 
-                  <div v-show="qr_type === 'sms'">
-                    <v-form
-                      ref="sms_form"
-                      v-model="valid"
-                      lazy-validation
-                    >
-                      <SmsForm
-                        :sms_form_data="sms_form_data"
-                      ></SmsForm>
-                    </v-form>
-                  </div>
+                    <div v-show="qr_type === 'sms'">
+                      <v-form
+                        ref="sms_form"
+                        v-model="valid"
+                        lazy-validation
+                      >
+                        <SmsForm
+                          :sms_form_data="sms_form_data"
+                          :disabled_input="true"
+                        ></SmsForm>
+                      </v-form>
+                    </div>
 
-                  <div v-show="qr_type === 'email'">
-                    <v-form
-                      ref="email_form"
-                      v-model="valid"
-                      lazy-validation
-                    >
-                      <EmailForm
-                        :email_form_data="email_form_data"
-                      ></EmailForm>
-                    </v-form>
-                  </div>
+                    <div v-show="qr_type === 'email'">
+                      <v-form
+                        ref="email_form"
+                        v-model="valid"
+                        lazy-validation
+                      >
+                        <EmailForm
+                          :email_form_data="email_form_data"
+                          :disabled_input="true"
+                        ></EmailForm>
+                      </v-form>
+                    </div>
 
-                  <div v-show="qr_type === 'business_card'">
-                    <v-form
-                      ref="card_form"
-                      v-model="valid"
-                      lazy-validation
-                    >
-                      <CardForm
-                        :card_form_data="card_form_data"
-                      ></CardForm>
-                    </v-form>
+                    <div v-show="qr_type === 'business_card'">
+                      <v-form
+                        ref="card_form"
+                        v-model="valid"
+                        lazy-validation
+                      >
+                        <CardForm
+                          :card_form_data="card_form_data"
+                          :disabled_input="true"
+                        ></CardForm>
+                      </v-form>
+                    </div>
                   </div>
-                </div>
-              </v-expansion-panel-content>
-            <v-expansion-panel>
-              <v-expansion-panel-header>Custom Colors</v-expansion-panel-header>
-              <v-expansion-panel-content>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="text-center my-3">Foreground Color</div>
-                    <ColorForm
-                      :color_form_data="foreground_color"
-                      :default_color="default_foreground_color"
-                    ></ColorForm>
+                </v-expansion-panel-content>
+              <v-expansion-panel>
+                <v-expansion-panel-header>Custom Colors</v-expansion-panel-header>
+                <v-expansion-panel-content>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="text-center my-3">Foreground Color</div>
+                      <ColorForm
+                        :color_form_data="foreground_color"
+                        :default_color="default_foreground_color"
+                        :disabled_choose_color="true"
+                        :show_swatches="false"
+                        :disabled_reset_button="true"
+                      ></ColorForm>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="text-center my-3">Background Color</div>
+                      <ColorForm
+                        :color_form_data="background_color"
+                        :default_color="default_background_color"
+                        :disabled_choose_color="true"
+                        :show_swatches="false"
+                        :disabled_reset_button="true"
+                      ></ColorForm>
+                    </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="text-center my-3">Background Color</div>
-                    <ColorForm
-                      :color_form_data="background_color"
-                      :default_color="default_background_color"
-                    ></ColorForm>
-                  </div>
-                </div>
-              </v-expansion-panel-content>
-            </v-expansion-panel>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
 
-            <v-expansion-panel>
-              <v-expansion-panel-header>QR Logo</v-expansion-panel-header>
-              <v-expansion-panel-content>
-                <div
-                  id="qr-logo"
-                  class="mt-8 mb-5"
-                  style="margin-bottom: 20px"
-                >
-                  <LogoForm
-                    :logo_form_data="logo_form_data"
+              <v-expansion-panel>
+                <v-expansion-panel-header>QR Logo</v-expansion-panel-header>
+                <v-expansion-panel-content>
+                  <div
+                    id="qr-logo"
+                    class="mt-8 mb-5"
+                    style="margin-bottom: 20px"
                   >
-                  </LogoForm>
-                </div>
-              </v-expansion-panel-content>
+                    <LogoForm
+                      :logo_form_data="logo_form_data"
+                      :disabled_input="true"
+                      :show_remove_button="false"
+                    >
+                    </LogoForm>
+                  </div>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
             </v-expansion-panel>
-          </v-expansion-panel>
-        </v-expansion-panels>
+          </v-expansion-panels>
+        
+        </v-card-text>
+        
+        <v-divider></v-divider>
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn
@@ -209,7 +232,6 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-
     <v-snackbar
       v-model="snackbar.visibility"
       :timeout="snackbar.timeout"
@@ -368,8 +390,6 @@ export default {
           this.qr_results.data = res_data.data
           this.qr_results.current_page = res_data.current_page
           this.qr_results.last_page = res_data.last_page
-          console.log(this.qr_results)
-
         }).catch(err => {
           console.log(err);
         }

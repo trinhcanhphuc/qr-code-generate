@@ -5,6 +5,7 @@
         <v-textarea label="Text" :value="text_form_data.text"
                     @keyup="updateFormData('text', $event.target.value)" placeholder="Fill in your text" rows="2"
                     :rules="[rules.textRules('Text', text_form_data.text)]"
+          :disabled="disabled_input"
         />
       </v-col>
     </v-row>
@@ -19,6 +20,11 @@ export default {
       type: Object,
       required: true,
     },
+    disabled_input: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
   },
   data() {
     return {

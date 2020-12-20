@@ -166,7 +166,7 @@
       </div>
       <div id="qrcode-img" class="col-lg-3 text-center m-auto" style='max-width: 400px'>
         <v-card elevation="8" class="p-4 rounded-lg">
-          <v-btn class="mx-2" fab dark x-small
+          <v-btn class="mx-2 hidden-sm-and-down" fab dark x-small
             @click="is_qr_full_screen = true"
             style="position: absolute; z-index: 1; left: calc(100% - 24px); top: -16px"
           >

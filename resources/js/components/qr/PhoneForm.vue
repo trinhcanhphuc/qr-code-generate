@@ -5,6 +5,7 @@
         <v-text-field label="Phone Number" :value="phone_form_data.phone" type="tel"
                       @keyup="updateFormData('phone', $event.target.value)" placeholder="+84*******"
                       :rules="[rules.phoneRules('Phone Number', phone_form_data.phone)]"
+          :disabled="disabled_input"
         />
       </v-col>
     </v-row>
@@ -19,6 +20,11 @@ export default {
       type: Object,
       required: true,
     },
+    disabled_input: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
   },
   data() {
     return {

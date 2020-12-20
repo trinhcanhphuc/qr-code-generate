@@ -32,6 +32,12 @@
         </router-link>
       </v-btn>
       <router-link
+        class='text-dark user-select-none nounderline'
+        to='/profile'
+      >
+      {{ AUTH_USER_NAME }}
+      </router-link>
+      <router-link
         v-if="AUTH_USER_NAME"
         to='/profile'
       >
@@ -60,10 +66,6 @@ export default {
   data() {
     return {
       pages: [
-        {
-          'title': 'About',
-          'url': '/about'
-        }
       ],
       AUTH_USER_NAME: AUTH_USER_NAME
     };

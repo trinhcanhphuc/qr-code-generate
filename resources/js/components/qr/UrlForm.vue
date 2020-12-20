@@ -10,6 +10,7 @@
           placeholder="https://www.facebook.com/"
           type="url"
           :rules="[rules.urlRules('URL', url_form_data.url)]"
+          :disabled="disabled_input"
         />
       </v-col>
     </v-row>
@@ -24,6 +25,11 @@ export default {
       type: Object,
       required: true,
     },
+    disabled_input: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
   },
   data() {
     return {

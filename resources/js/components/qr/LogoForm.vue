@@ -19,10 +19,12 @@
           type="file"
           accept=".jpg, .png, .svg, .jpeg"
           style="width: 30px; opacity: 0; position: absolute; left: calc(50% - 16px); bottom: -16px"
+          :disabled="disabled_input"
         />
         <v-btn class="mx-2" fab dark x-small color="red"
                @click="removeLogo()"
                style="position: absolute; z-index: 1; left: calc(50% + 75px); top: -15px"
+          v-if="remove_button"
         >
           <v-icon dark>mdi-close</v-icon>
         </v-btn>
@@ -48,30 +50,51 @@ export default {
       type: Object,
       required: true,
     },
+    disabled_input: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    show_remove_button: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
   },
   data() {
     return {
-      logo_src: this.logo_form_data.logo_src
+      logo_src: this.logo_form_data.logo_src,
+      remove_button: false
     }
   },
+  watch: {
+    show_remove_button: [{
+      handler: 'initRemoveButton'
+    }]
+  },
   methods: {
+    initRemoveButton(show_remove_button) {
+      this.remove_button =show_remove_button
+    },
     removeLogo() {
-      this.logo_src = '';
-      let formData = this.logo_form_data;
-      formData.logo_src = '';
-      this.$emit('update-logo-form-data', formData);
+      this.logo_src = ''
+      let formData = this.logo_form_data
+      formData.logo_src = ''
+      this.$emit('update-logo-form-data', formData)
+      this.remove_button = false
     },
     updateFormData(key, value) {
-      let formData = this.logo_form_data;
-      let inputLogo = this.$refs.btnUploadLogo;
+      let formData = this.logo_form_data
+      let inputLogo = this.$refs.btnUploadLogo
       if (inputLogo.files && inputLogo.files[0]) {
-        let reader = new FileReader();
+        let reader = new FileReader()
         reader.onload = e => {
-          formData[key] = e.target.result;
-          this.logo_src = formData[key];
-          this.$emit('update-logo-form-data', formData);
-        };
-        reader.readAsDataURL(inputLogo.files[0]);
+          formData[key] = e.target.result
+          this.logo_src = formData[key]
+          this.$emit('update-logo-form-data', formData)
+        }
+        reader.readAsDataURL(inputLogo.files[0])
+        this.remove_button = true
       }
     }
   }

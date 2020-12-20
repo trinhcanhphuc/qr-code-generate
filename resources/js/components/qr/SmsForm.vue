@@ -7,6 +7,7 @@
           placeholder="+84 *******"
           :value="sms_form_data.phone"
           :rules="[rules.phoneRules('Phone Number', sms_form_data.phone)]"
+          :disabled="disabled_input"
         />
       </v-col>
     </v-row>
@@ -17,6 +18,7 @@
           :value="sms_form_data.message"
           label="Your Message" placeholder="Hello!" rows="2"
           :rules="[rules.textRules('Your Message', sms_form_data.message)]"
+          :disabled="disabled_input"
         />
       </v-col>
     </v-row>
@@ -31,6 +33,11 @@ export default {
       type: Object,
       required: true,
     },
+    disabled_input: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
   },
   data() {
     return {

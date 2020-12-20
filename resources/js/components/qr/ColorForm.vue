@@ -5,15 +5,17 @@
       :swatches="swatches"
       :value="color_form_data"
       @update:color="updateColor"
-      show-swatches
+      :show-swatches="show_swatches"
       hide-canvas
       mode="hexa"
       elevation="15"
       width="100%"
+      :disabled="disabled_choose_color"
     ></v-color-picker>
     <div class="text-center mt-3">
       <v-btn
         @click="resetColor"
+        :disabled="disabled_reset_button"
       >Reset</v-btn>
     </div>
   </div>
@@ -30,6 +32,21 @@ export default {
     default_color: {
       type: String,
       required: false
+    },
+    show_swatches: {
+      type: Boolean,
+      required: false,
+      default: true
+    },
+    disabled_choose_color: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    disabled_reset_button: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
   methods: {
