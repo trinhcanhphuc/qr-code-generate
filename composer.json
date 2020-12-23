@@ -15,6 +15,7 @@
     "guzzlehttp/guzzle": "^7.0.1",
     "hekmatinasser/verta": "^1.11",
     "laravel/framework": "^8.0",
+    "laravel/passport": "^10.1",
     "laravel/tinker": "^2.0",
     "laravel/ui": "^3.0",
     "simplesoftwareio/simple-qrcode": "^4.1"

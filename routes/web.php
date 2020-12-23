@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Auth::routes();
-Route::get('/sitemap', [HomeController::class, 'sitemap']);
+Route::get('/sitemap.xml', [HomeController::class, 'sitemap']);
 Route::post('/user/auth', [UserController::class, 'auth']);
 Route::post('/user/profile', [UserController::class, 'profile']);
 Route::post('/user/history/{page_number}', [UserController::class, 'history']);

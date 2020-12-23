@@ -179,7 +179,8 @@ return [
      * Third parties
      */
     SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
-    Hekmatinasser\Verta\VertaServiceProvider::class
+    Hekmatinasser\Verta\VertaServiceProvider::class,
+    Laravel\Passport\PassportServiceProvider::class,
 
   ],
 
