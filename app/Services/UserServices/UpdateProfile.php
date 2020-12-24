@@ -25,8 +25,7 @@ class UpdateProfile extends UserService implements ServiceInterface
 
   public function execute()
   {
-    $res = $this->repo
-                ->updateById(Auth::user()->id, $this->user_profile);
+    $res = $this->repo->updateById(Auth::user()->id, $this->user_profile);
 
     if ($res) {
       return $this->get_http_response(

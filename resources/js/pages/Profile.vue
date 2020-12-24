@@ -1,18 +1,11 @@
 <template>
   <default-layout>
-    <div class="row m-sm-3 mt-md-5">
+    <div class="row m-sm-3">
       <div class="col-lg-12">
-        <div class="profile-avatar w-100 text-center position-relative mb-3">
-          <v-icon style='font-size: 200px'>
-            fas fa-user-circle
-          </v-icon>
-        </div>
-        <h2 class="text-center">{{ profile_form_data.name }}</h2>
         <v-tabs
           v-model="tab"
           align-with-title
           show-arrows
-          class="mt-10"
         >
           <v-tabs-slider color="primary"></v-tabs-slider>
           <v-tab
