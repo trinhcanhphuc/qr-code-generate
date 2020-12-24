@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers\MobileApi;
 
-use App\Models\User; 
 use Validator;
+use App\Models\User; 
 use Illuminate\Http\Request; 
-use App\Http\Controllers\Controller; 
 use Illuminate\Support\Facades\Hash;
+use App\Http\Controllers\Controller; 
 use Illuminate\Support\Facades\Auth; 
 use Symfony\Component\HttpFoundation\Response;
 

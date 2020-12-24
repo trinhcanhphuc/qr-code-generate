@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\WebApi;
 
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Services\QrCodeService;
 use Illuminate\Support\Facades\App;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Repositories\QrResultRepository;
 
