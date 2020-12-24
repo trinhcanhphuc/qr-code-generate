@@ -43,4 +43,15 @@ class Service
 
     return $result;
   }
+
+  public function get_http_response(string $status = null, $data = null, $response){
+    return response()->json([
+      'status' => $status, 
+      'data' => $data,
+    ], $response);
+  }
+
+  public function get_user_token($user, string $token_name = null) {
+    return $user->createToken($token_name)->accessToken; 
+  }
 }

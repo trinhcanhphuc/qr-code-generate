@@ -20,4 +20,5 @@ Route::post('/signup', [AuthController::class, 'signup']);
 
 Route::middleware('auth:api')->group(function(){
   Route::post('/user/history/{page_number}', [UserController::class, 'history']);
+  Route::post('/user/profile', [UserController::class, 'profile']);
 });

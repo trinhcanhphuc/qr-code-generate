@@ -4,7 +4,10 @@ namespace App\Http\Controllers\MobileApi;
 
 use Validator;
 use App\Models\User; 
+use App\Services\AuthService;
 use Illuminate\Http\Request; 
+use Illuminate\Support\Facades\App;
+use App\Repositories\UserRepository;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller; 
 use Illuminate\Support\Facades\Auth; 
@@ -13,25 +16,25 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AuthController extends Controller 
 {
-  CONST HTTP_OK = Response::HTTP_OK;
-  CONST HTTP_CREATED = Response::HTTP_CREATED;
-  CONST HTTP_UNAUTHORIZED = Response::HTTP_UNAUTHORIZED;
+  public function login(Request $request)
+  {
+    $validator = Validator::make($request->all(), [ 
+      'email' => 'required|email', 
+      'password' => 'required'
+    ]);
 
-  public function login(Request $request){ 
-    $credentials = [
+    if ($validator->fails()) { 
+      return response()->json([ 'error'=> $validator->errors() ]);
+    }
+
+    $credential = [
       'email' => $request->email, 
       'password' => $request->password
     ];
-    if( auth()->attempt($credentials) ){ 
-      $user = Auth::user(); 
-      $token['token'] = $this->get_user_token($user,"TestToken");
-      $response = self::HTTP_OK;
-      return $this->get_http_response( "success", $token, $response );
-    } else {
-      $error = "Unauthorized Access";
-      $response = self::HTTP_UNAUTHORIZED;
-      return $this->get_http_response( "Error", $error, $response );
-    } 
+
+    return AuthService::login(
+      $credential
+    );
   }
 
   public function signup(Request $request) 
@@ -47,35 +50,9 @@ class AuthController extends Controller
       return response()->json([ 'error'=> $validator->errors() ]);
     }
 
-    $data = $request->all(); 
-    $data['password'] = Hash::make($data['password']);
-    $user = User::create($data); 
-    $success['token'] = $this->get_user_token($user,"TestToken");
-    $success['name'] =  $user->name;
-    $response =  self::HTTP_CREATED;
-    return $this->get_http_response( "success", $success, $response );
+    return AuthService::signup(
+      App::make(UserRepository::class),
+      $request->all()
+    );
   }
-
-  public function get_user_details_info() 
-  { 
-
-    $user = Auth::user(); 
-
-    $response =  self::HTTP_OK;
-
-    return $user ? $this->get_http_response( "success", $user, $response )
-                   : $this->get_http_response( "Unauthenticated user", $user, $response );
-  }
-
-  public function get_http_response( string $status = null, $data = null, $response ){
-    return response()->json([
-      'status' => $status, 
-      'data' => $data,
-    ], $response);
-  }
-
-  public function get_user_token( $user, string $token_name = null ) {
-    return $user->createToken($token_name)->accessToken; 
-  }
-
 }

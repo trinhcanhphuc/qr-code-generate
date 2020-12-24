@@ -29,16 +29,15 @@ class UserController extends Controller
 
   public function profile(Request $request)
   {
-    $user = Auth::user();
-    if ($user->email == $request['email']) {
-      $user->email = $request['email'];
-      $user->name = $request['name'];
-      $user->save();
-      return response()->json(Response::HTTP_OK);
-    }
-    else {
-      return response()->json(Response::HTTP_BAD_REQUEST);
-    }
+    $response =  Response::HTTP_OK;
+
+    return UserService::UpdateProfile(
+      App::make(UserRepository::class),
+      [
+        'email' => $request['email'],
+        'name' => $request['name']
+      ]
+    );
   }
 
   public function history(int $page_number)
