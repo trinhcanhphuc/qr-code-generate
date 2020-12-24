@@ -31,24 +31,60 @@
         {{ page.title }}
         </router-link>
       </v-btn>
-      <router-link
-        class='text-dark user-select-none nounderline'
-        to='/profile'
-      >
-      {{ AUTH_USER_NAME }}
-      </router-link>
-      <router-link
+      <v-menu
+        bottom
+        min-width="200px"
+        rounded
+        offset-y
         v-if="AUTH_USER_NAME"
-        to='/profile'
       >
-        <v-avatar
-          size="56"
-        >
-          <v-icon class='ml-3'>
-            fas fa-user
-          </v-icon>
-        </v-avatar>
-      </router-link>
+        <template v-slot:activator="{ on }">
+          <v-btn
+            icon
+            x-large
+            v-on="on"
+          >
+            <v-avatar
+              size="48"
+            >
+              <span class="headline">
+                <v-icon>mdi-account</v-icon>
+              </span>
+            </v-avatar>
+          </v-btn>
+        </template>
+        <v-card>
+          <v-list-item-content class="justify-center">
+            <div class="mx-auto text-center">
+              <router-link
+                class='text-dark user-select-none nounderline'
+                to='/profile'
+              >
+                <v-avatar
+                  size="48"
+                >
+                  <span class="headline">
+                    <v-icon>mdi-account-circle</v-icon>
+                  </span>
+                </v-avatar>
+                {{ AUTH_USER_NAME }}
+              </router-link>
+              <v-divider class="my-3"></v-divider>
+              <v-btn
+                depressed
+                rounded
+                text
+                @click="goLogout()"
+              >
+                <v-icon>
+                  mdi-logout
+                </v-icon>
+                Logout
+              </v-btn>
+            </div>
+          </v-list-item-content>
+        </v-card>
+      </v-menu>
       <v-btn
         v-else
         text
@@ -66,6 +102,7 @@ export default {
   data() {
     return {
       pages: [
+
       ],
       AUTH_USER_NAME: AUTH_USER_NAME
     };
@@ -73,6 +110,9 @@ export default {
   methods: {
     goLogin() {
       window.location = '/login';
+    },
+    goLogout() {
+      window.location = '/logout';
     }
   }
 }

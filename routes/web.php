@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebApi\QrController;
+use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\WebApi\HomeController;
 use App\Http\Controllers\WebApi\UserController;
 
@@ -18,6 +19,8 @@ use App\Http\Controllers\WebApi\UserController;
 */
 
 Auth::routes();
+
+Route::get('/logout', [LogoutController::class, 'logout']);
 Route::get('/sitemap.xml', [HomeController::class, 'sitemap']);
 Route::post('/user/auth', [UserController::class, 'auth']);
 Route::post('/user/profile', [UserController::class, 'profile']);
