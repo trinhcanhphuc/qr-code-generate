@@ -2,11 +2,9 @@
 
 namespace App\Services\AuthServices;
 
-use App\Models\User;
+use App\Services\Service;
 use App\Services\AuthService;
 use App\Services\ServiceInterface;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth;
 use App\Repositories\UserRepositoryInterface;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -32,8 +30,9 @@ class Signup extends AuthService implements ServiceInterface
     ];
 
     return $this->get_http_response(
-      'success',
+      Service::STATUSES['success'],
       $success,
-      Response::HTTP_CREATED );
+      Response::HTTP_CREATED
+    );
   }
 }

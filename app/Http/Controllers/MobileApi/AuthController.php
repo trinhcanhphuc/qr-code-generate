@@ -3,15 +3,11 @@
 namespace App\Http\Controllers\MobileApi;
 
 use Validator;
-use App\Models\User; 
 use App\Services\AuthService;
 use Illuminate\Http\Request; 
 use Illuminate\Support\Facades\App;
 use App\Repositories\UserRepository;
-use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller; 
-use Illuminate\Support\Facades\Auth; 
-use Symfony\Component\HttpFoundation\Response;
 
 
 class AuthController extends Controller 
@@ -27,13 +23,9 @@ class AuthController extends Controller
       return response()->json([ 'error'=> $validator->errors() ]);
     }
 
-    $credential = [
-      'email' => $request->email, 
-      'password' => $request->password
-    ];
-
     return AuthService::login(
-      $credential
+      $request->email,
+      $request->password
     );
   }
 

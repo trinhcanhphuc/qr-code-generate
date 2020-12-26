@@ -4,9 +4,15 @@ namespace App\Services;
 
 use Illuminate\Support\Facades\Log;
 use App\Exceptions\ServiceException;
+use Symfony\Component\HttpFoundation\Response;
 
 class Service
 {
+  const STATUSES = [
+    'success' => 'SUCCESS',
+    'failed' => 'FAILED'
+  ];
+
   protected static $namespace = '\\App\\Services';
   protected static $service = null;
 
@@ -37,21 +43,29 @@ class Service
 
     Log::info(sprintf('[Start Service] %s', $class), $params);
 
-    $result = $service->newInstanceArgs($arguments)->execute();
+    try {
+      $result = $service->newInstanceArgs($arguments)->execute();
+    } catch (\Exception $e) {
+      $result = Service::get_http_response(
+        SERVICE::STATUSES['failed'],
+        $e->getMessage(),
+        Response::HTTP_EXPECTATION_FAILED
+      );
+    }
 
     Log::info(sprintf('[End Service] %s', $class));
 
     return $result;
   }
 
-  public function get_http_response(string $status = null, $data = null, $response){
+  public static function get_http_response(string $status = null, $data = null, $response){
     return response()->json([
       'status' => $status, 
       'data' => $data,
     ], $response);
   }
 
-  public function get_user_token($user, string $token_name = null) {
+  public static function get_user_token($user, string $token_name = null) {
     return $user->createToken($token_name)->accessToken; 
   }
 }
