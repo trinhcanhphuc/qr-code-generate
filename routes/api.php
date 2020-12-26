@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MobileApi\QrController;
 use App\Http\Controllers\MobileApi\AuthController;
 use App\Http\Controllers\MobileApi\UserController;
 
@@ -17,6 +18,7 @@ use App\Http\Controllers\MobileApi\UserController;
 
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/signup', [AuthController::class, 'signup']);
+Route::post('/qrcode/render', [QrController::class, 'render']);
 
 Route::middleware('auth:api')->group(function(){
   Route::post('/user/history/{page_number}', [UserController::class, 'history']);
