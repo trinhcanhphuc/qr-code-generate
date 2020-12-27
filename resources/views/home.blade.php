@@ -1,15 +1,45 @@
 <!DOCTYPE html>
 <html>
 
+@php
+  $seo = [
+    'title' => @trans('seo.title'),
+    'keywords' => @trans('seo.home.keywords'),
+    'description' => @trans('seo.home.description'),
+    'copyright' => @trans('seo.copyright'),
+    'author' => @trans('seo.auth'),
+    'fb_pages' => @trans('seo.fb_pages')
+  ];
+  \Log::debug($seo);
+@endphp
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="icon" href="favicon.ico">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>QR Tool</title>
+
+  <!-- Begin SEO -->
+
+  <meta name="keywords"
+        content="{{ $seo['keywords'] }}"/>
+  <meta name="description" content="{{ $seo['description'] }}"/>
+  <meta content="INDEX,FOLLOW" name="robots"/>
+  <meta name="viewport" content="width=device-width"/>
+  <meta name="copyright" content="{{ $seo['copyright'] }}"/>
+  <meta name="author" content="{{ $seo['author'] }}"/>
+  <meta property="og:site_name" content="https://qrtool.com"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="{{ App::getLocale() }}"/>
+  <meta property="fb:pages" content="{{ $seo['fb_pages'] }}"/>
+
+  <title>{{ $seo['title'] }}</title>
+
+  <!-- End SEO -->
 
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
