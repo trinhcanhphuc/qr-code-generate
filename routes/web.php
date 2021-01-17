@@ -6,6 +6,7 @@ use App\Http\Controllers\WebApi\QrController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\WebApi\HomeController;
 use App\Http\Controllers\WebApi\UserController;
+use App\Http\Controllers\WebApi\FeedbackController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::post('/user/profile', [UserController::class, 'profile']);
 Route::post('/user/history/{page_number}', [UserController::class, 'history']);
 Route::delete('/user/qr-results/{qr_result_id}', [UserController::class, 'delete_qr_result']);
 Route::post('/qrcode/render', [QrController::class, 'render']);
+Route::post('/feedback', [FeedbackController::class, 'index']);
 
 Route::get('/{any}', function () {
   return view('home');

@@ -19,18 +19,6 @@
         </v-avatar>
       </router-link>
       <v-spacer></v-spacer>
-      <v-btn
-        v-for="(page, idx) in pages"
-        :key="idx"
-        text
-      >
-        <router-link
-          class='text-dark user-select-none nounderline'
-          :to=page.url
-        >
-        {{ page.title }}
-        </router-link>
-      </v-btn>
       <v-menu
         bottom
         min-width="200px"
@@ -92,6 +80,18 @@
       >
         Login
       </v-btn>
+      <v-btn
+        v-for="(page, idx) in pages"
+        :key="idx"
+        text
+      >
+        <router-link
+          class='text-dark user-select-none nounderline'
+          :to=page.url
+        >
+        {{ page.title }}
+        </router-link>
+      </v-btn>
     </v-container>
   </v-app-bar>
 </template>
@@ -102,7 +102,10 @@ export default {
   data() {
     return {
       pages: [
-
+        {
+          'title': 'Feedback',
+          'url': 'feedback'
+        }
       ],
       AUTH_USER_NAME: AUTH_USER_NAME
     };
