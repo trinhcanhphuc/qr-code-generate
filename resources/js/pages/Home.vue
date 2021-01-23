@@ -250,9 +250,36 @@
 
       </div>
     </div>
-    <HowDoQRCodeWork></HowDoQRCodeWork>
-    <WhyUseQR></WhyUseQR>
-    <YourQuestion></YourQuestion>
+    <v-lazy
+      v-model="isHowDoCardActive"
+      :options="{
+        threshold: .5
+      }"
+      min-height="200"
+      transition="fade-transition"
+      >
+        <HowDoQRCodeWork></HowDoQRCodeWork>
+    </v-lazy>
+    <v-lazy
+      v-model="isWhyUseCardActive"
+      :options="{
+        threshold: .5
+      }"
+      min-height="200"
+      transition="fade-transition"
+      >
+      <WhyUseQR></WhyUseQR>
+    </v-lazy>
+    <v-lazy
+      v-model="isQuestionCardActive"
+      :options="{
+        threshold: .5
+      }"
+      min-height="200"
+      transition="fade-transition"
+      >
+      <YourQuestion></YourQuestion>
+    </v-lazy>
   </default-layout>
 </template>
 
@@ -288,6 +315,9 @@ export default {
   },
   data() {
     return {
+      isHowDoCardActive: false,
+      isWhyUseCardActive: false,
+      isQuestionCardActive: false,
       valid: true,
       btn_share_property: {
         direction: 'top',
